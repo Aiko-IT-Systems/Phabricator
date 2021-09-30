@@ -264,11 +264,11 @@ span.single-display-line-content {
 }
 
 .aphront-table-view tr.highlighted {
-  background: #fdf9e4;
+  background: #173b68;
 }
 
 .aphront-table-view tr.alt-highlighted {
-  background: {$sh-yellowbackground};
+  background: #173b68;
 }
 
 .aphront-table-view tr.diff-removed,

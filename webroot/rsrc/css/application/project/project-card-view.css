@@ -191,7 +191,7 @@
 
 .project-card-view.project-card-pink .phui-header-shell {
   background: linear-gradient(to bottom,
-    {$sh-pinkbackground} 42px, {$page.content} 42px);
+    #555555 42px, {$page.content} 42px);
 }
 
 .project-card-view.project-card-grey .phui-header-shell,

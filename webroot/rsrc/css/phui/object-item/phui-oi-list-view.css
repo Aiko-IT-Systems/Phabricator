@@ -723,7 +723,7 @@ ul.phui-oi-list-view .phui-oi-selectable
 .phui-oi-tail {
   text-align: center;
   padding: 8px 0;
-  background: linear-gradient({$lightbluebackground}, #fff 66%, #fff);
+  background: linear-gradient({$lightbluebackground}, #f54 66%,#544);
 }
 
 .phui-oi-menu {

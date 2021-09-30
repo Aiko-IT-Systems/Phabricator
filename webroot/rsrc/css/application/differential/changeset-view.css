@@ -113,14 +113,14 @@
 .differential-diff td.old span.bright,
 .differential-diff td.old-full,
 .prose-diff span.old {
-  background: {$old-bright};
+  background: lightsalmon;
 }
 
 
 .differential-diff td.new span.bright,
 .differential-diff td.new-full,
 .prose-diff span.new {
-  background: {$new-bright};
+  background: darkseagreen;
 }
 
 .differential-diff td span.depth-out,
@@ -332,7 +332,7 @@ td.cov-I {
 .differential-loading {
   border-top: 1px solid {$gentle.highlight.border};
   border-bottom: 1px solid {$gentle.highlight.border};
-  background-color: {$gentle.highlight};
+  background-color: darkgrey;
   padding: 12px;
   text-align: center;
 }

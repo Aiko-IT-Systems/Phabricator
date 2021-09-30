@@ -9,6 +9,9 @@
 phutil_register_library_map(array(
   '__library_version__' => 2,
   'class' => array(
+    'AITSYSDiscordAdapter' => 'applications/auth/adapter/AITSYSDiscordAdapter.php',
+    'AITSYSDiscordAuthProvider' => 'applications/auth/provider/AITSYSDiscordAuthProvider.php',
+    'AITSYSDiscordFuture' => 'applications/auth/future/AITSYSDiscordFuture.php',
     'AlmanacAddress' => 'applications/almanac/util/AlmanacAddress.php',
     'AlmanacBinding' => 'applications/almanac/storage/AlmanacBinding.php',
     'AlmanacBindingDeletePropertyTransaction' => 'applications/almanac/xaction/AlmanacBindingDeletePropertyTransaction.php',
@@ -3555,6 +3558,7 @@ phutil_register_library_map(array(
     'PhabricatorGarbageCollectorManagementSetPolicyWorkflow' => 'infrastructure/daemon/garbagecollector/management/PhabricatorGarbageCollectorManagementSetPolicyWorkflow.php',
     'PhabricatorGarbageCollectorManagementWorkflow' => 'infrastructure/daemon/garbagecollector/management/PhabricatorGarbageCollectorManagementWorkflow.php',
     'PhabricatorGeneralCachePurger' => 'applications/cache/purger/PhabricatorGeneralCachePurger.php',
+    'PhabricatorGermanTranslation' => 'infrastructure/internationalization/translation/PhabricatorGermanTranslation.php',
     'PhabricatorGestureUIExample' => 'applications/uiexample/examples/PhabricatorGestureUIExample.php',
     'PhabricatorGitGraphStream' => 'applications/repository/daemon/PhabricatorGitGraphStream.php',
     'PhabricatorGitHubAuthProvider' => 'applications/auth/provider/PhabricatorGitHubAuthProvider.php',
@@ -6024,6 +6028,9 @@ phutil_register_library_map(array(
     'xsprintf_query' => 'infrastructure/storage/xsprintf/qsprintf.php',
   ),
   'xmap' => array(
+    'AITSYSDiscordAdapter' => 'PhutilOAuthAuthAdapter',
+    'AITSYSDiscordAuthProvider' => 'PhabricatorOAuth2AuthProvider',
+    'AITSYSDiscordFuture' => 'FutureProxy',
     'AlmanacAddress' => 'Phobject',
     'AlmanacBinding' => array(
       'AlmanacDAO',
@@ -10120,6 +10127,7 @@ phutil_register_library_map(array(
     'PhabricatorGarbageCollectorManagementSetPolicyWorkflow' => 'PhabricatorGarbageCollectorManagementWorkflow',
     'PhabricatorGarbageCollectorManagementWorkflow' => 'PhabricatorManagementWorkflow',
     'PhabricatorGeneralCachePurger' => 'PhabricatorCachePurger',
+    'PhabricatorGermanTranslation' => 'PhutilTranslation',
     'PhabricatorGestureUIExample' => 'PhabricatorUIExample',
     'PhabricatorGitGraphStream' => 'PhabricatorRepositoryGraphStream',
     'PhabricatorGitHubAuthProvider' => 'PhabricatorOAuth2AuthProvider',

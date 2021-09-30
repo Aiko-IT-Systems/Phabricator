@@ -158,7 +158,7 @@
 }
 
 .phabricator-action-view-selected {
-  background: {$sh-violetbackground};
+  background: black;
   border-radius: 3px;
 }
 

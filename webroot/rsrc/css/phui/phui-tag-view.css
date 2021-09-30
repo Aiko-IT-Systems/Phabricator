@@ -386,9 +386,9 @@ a.phui-tag-view:hover.phui-tag-pink .phui-tag-core,
 
 .phui-tag-grey .phui-tag-core,
 .jx-tokenizer-token.grey {
-  background: {$sh-greybackground};
+  background: #3c4b5e;
   border-color: {$sh-lightgreyborder};
-  color: {$sh-greytext};
+  color: #b6bcc3;
 }
 
 .phui-tag-grey .phui-icon-view,
@@ -443,7 +443,7 @@ a.phui-tag-view:hover.phui-tag-disabled .phui-tag-core {
 
 .phui-tag-placeholder .phui-tag-core {
   border-color: transparent;
-  background-color: {$sh-disabledbackground};
+  background-color: firebrick;
   opacity: 0.5;
 }
 

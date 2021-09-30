@@ -67,11 +67,11 @@ a.jx-tokenizer-token {
   padding: 1px 6px;
   border:  1px solid {$lightblueborder};
   margin: 3px 2px 0 4px;
-  background-color: {$sh-bluebackground};
+  background-color: #dee7f8;
   float: left;
   cursor: pointer;
   border-radius: 3px;
-  color: {$sh-bluetext};
+  color: ivory;
 
   /* See T13495. Certain Chinese glyphs can cause layout artifacts unless
      we're fairly aggressive about specifying element sizing. */

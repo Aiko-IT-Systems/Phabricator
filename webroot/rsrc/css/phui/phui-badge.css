@@ -90,7 +90,7 @@
 }
 
 .phui-badge-illustration {
-  background-color: #fff;
+  background-color: darkcyan;
   box-shadow: inset 0 -1px 1px 0 rgba({$alphablack},.1);
   text-align: center;
   height: 100px;
@@ -168,14 +168,14 @@
 }
 
 .phui-badge-view-yellow .phui-badge-card {
-  background-color: {$sh-yellowbackground};
+  background-color: inherit;
   border-color: {$sh-lightyellowborder};
 }
 
 /** Mini View ****************************************************************/
 
 .phui-badge-mini {
-  background-color: {$greyborder};
+  background-color: inherit;
   border-radius: 18px;
   height: 25px;
   width: 25px;

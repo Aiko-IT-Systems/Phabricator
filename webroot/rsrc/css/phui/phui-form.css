@@ -79,6 +79,7 @@ input[type="tel"]:focus,
 input[type="color"]:focus,
 div.jx-tokenizer-container-focused {
   border-color: rgba(82, 168, 236, 0.8);
+  color: rgba(255,255,255,.6);
   outline: 0;
   /* IE6-9 */
 

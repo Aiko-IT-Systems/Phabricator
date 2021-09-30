@@ -164,7 +164,7 @@
 /* Backgrounds */
 
 .phui-icon-view.bg-dark {
-  background-color: {$darkgreytext};
+  background-color: burlywood;
 }
 .phui-icon-view.bg-bluegrey {
   background-color: {$bluetext};

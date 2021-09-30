@@ -16,6 +16,11 @@
       "rule": ".login-Bitbucket",
       "hash": "32f7cf08badb1181f883c211eddd89f5"
     },
+    "login-Discord": {
+      "name": "login-Discord",
+      "rule": ".login-Discord",
+      "hash": "0392b19a21be6ec05e53e8bcd9a22fe7"
+    },
     "login-Disqus": {
       "name": "login-Disqus",
       "rule": ".login-Disqus",

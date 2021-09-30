@@ -42,11 +42,11 @@ final class PhutilTwitchAuthAdapter extends PhutilOAuthAuthAdapter {
   }
 
   protected function getAuthenticateBaseURI() {
-    return 'https://api.twitch.tv/kraken/oauth2/authorize';
+    return 'https://api.twitch.tv/helix/oauth2/authorize';
   }
 
   protected function getTokenBaseURI() {
-    return 'https://api.twitch.tv/kraken/oauth2/token';
+    return 'https://api.twitch.tv/helix/oauth2/token';
   }
 
   public function getScope() {

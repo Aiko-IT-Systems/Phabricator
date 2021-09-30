@@ -1,0 +1,13 @@
+[
+  {
+    "key": "stmp-mailer",
+    "type": "smtp",
+    "options": {
+      "host": "mail.aitsys.dev",
+      "port": 465,
+      "user": "discatsharp@aitsys.dev",
+      "password": "Ratiasu7",
+      "protocol": "ssl"
+    }
+  }
+]

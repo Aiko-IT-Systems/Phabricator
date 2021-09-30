@@ -4,7 +4,7 @@
 
 button.icon-button {
   background-color: #F7F7F9;
-  background-image: linear-gradient(to bottom, #ffffff, #f1f0f1);
+  /*background-image: linear-gradient(to bottom, #ffffff, #f1f0f1);*/
   border: 1px solid rgba({$alphablue},.2);
   color: {$darkgreytext};
   position: relative;
@@ -38,5 +38,5 @@ button.icon-button.selected {
 }
 
 button.icon-button.selected .phui-icon-view {
-  color: {$sky};
+  color: navy;
 }

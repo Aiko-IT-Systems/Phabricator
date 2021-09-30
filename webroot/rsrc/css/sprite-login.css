@@ -31,28 +31,32 @@ only screen and (min-resolution: 1.5dppx) {
   background-position: -58px 0px;
 }
 
-.login-Disqus {
+.login-Discord {
   background-position: -87px 0px;
 }
 
-.login-Facebook {
+.login-Disqus {
   background-position: -116px 0px;
 }
 
-.login-Generic {
+.login-Facebook {
   background-position: 0px -29px;
 }
 
-.login-Github {
+.login-Generic {
   background-position: -29px -29px;
 }
 
-.login-Google {
+.login-Github {
   background-position: -58px -29px;
 }
 
-.login-HTTP {
+.login-Google {
   background-position: -87px -29px;
+}
+
+.login-HTTP {
+  background-position: -116px -29px;
 }
 
 .login-Jira {

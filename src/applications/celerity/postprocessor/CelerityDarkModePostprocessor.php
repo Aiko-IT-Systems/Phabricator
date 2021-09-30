@@ -217,7 +217,6 @@ final class CelerityDarkModePostprocessor
       'grey.button.color' => '#223246',
       'grey.button.gradient' => 'linear-gradient(to bottom, #223246, #223246)',
       'grey.button.hover' => 'linear-gradient(to bottom, #1c293b, #1c293b)',
-
     );
   }
 
