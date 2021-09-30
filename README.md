@@ -1,5 +1,3 @@
-Effective June 1, 2021: Phabricator is no longer actively maintained.
-
 **Phabricator** is a collection of web applications for software development.
 
 **LICENSE**
