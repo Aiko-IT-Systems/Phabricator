@@ -187,7 +187,7 @@ return array(
     'rsrc/css/phui/workboards/phui-workboard-color.css' => '2fa8f109',
     'rsrc/css/phui/workboards/phui-workboard.css' => '74fc9d98',
     'rsrc/css/phui/workboards/phui-workcard.css' => '913441b6',
-    'rsrc/css/phui/workboards/phui-workpanel.css' => '3ae89b20',
+    'rsrc/css/phui/workboards/phui-workpanel.css' => 'e0a5b44e',
     'rsrc/css/sprite-login.css' => '8b8889b5',
     'rsrc/css/sprite-tokens.css' => 'f1896dc5',
     'rsrc/css/syntax/syntax-default.css' => '1ad55b43',
@@ -895,7 +895,7 @@ return array(
     'phui-workboard-color-css' => '2fa8f109',
     'phui-workboard-view-css' => '74fc9d98',
     'phui-workcard-view-css' => '913441b6',
-    'phui-workpanel-view-css' => '3ae89b20',
+    'phui-workpanel-view-css' => 'e0a5b44e',
     'phuix-action-list-view' => 'c68f183f',
     'phuix-action-view' => 'a8f573a9',
     'phuix-autocomplete' => '2fbe234d',
@@ -1250,9 +1250,6 @@ return array(
       'trigger-rule-editor',
       'trigger-rule',
       'trigger-rule-type',
-    ),
-    '3ae89b20' => array(
-      'phui-workcard-view-css',
     ),
     '3b4899b0' => array(
       'javelin-behavior',
@@ -2153,6 +2150,9 @@ return array(
       'javelin-request',
       'javelin-uri',
       'phui-hovercard',
+    ),
+    'e0a5b44e' => array(
+      'phui-workcard-view-css',
     ),
     'e150bd50' => array(
       'javelin-behavior',
