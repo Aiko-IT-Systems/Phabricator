@@ -8,7 +8,7 @@
 .remarkup-code .kp,
 .remarkup-code .kr,
 .remarkup-code .nb {
-  color: #304a96
+  color: darkolivegreen
 }
 
 .remarkup-code .c,
@@ -57,14 +57,14 @@
 .remarkup-code .mh,
 .remarkup-code .mi,
 .remarkup-code .mo {
-  color: #601200
+  color: forestgreen
 }
 
 .remarkup-code .k,
 .remarkup-code .kd,
 .remarkup-code .kn,
 .remarkup-code .kt {
-  color: #aa4000
+  color: deepskyblue
 }
 
 .remarkup-code .kc,
@@ -73,7 +73,7 @@
 }
 
 .remarkup-code .na {
-  color: #354bb3
+  color: aqua
 }
 
 .remarkup-code .nc,
@@ -105,7 +105,7 @@
 }
 
 .remarkup-code .nn {
-  color: #0000ff
+  color: chartreuse
 }
 
 .remarkup-code .nv,
