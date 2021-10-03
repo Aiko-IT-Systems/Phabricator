@@ -11,6 +11,7 @@ final class PhabricatorPeopleQuery
   private $dateCreatedAfter;
   private $dateCreatedBefore;
   private $isAdmin;
+  private $isGroup;
   private $isSystemAgent;
   private $isMailingList;
   private $isDisabled;
@@ -64,6 +65,11 @@ final class PhabricatorPeopleQuery
 
   public function withIsAdmin($admin) {
     $this->isAdmin = $admin;
+    return $this;
+  }
+
+  public function withIsGroup($group) {
+    $this->isGroup = $group;
     return $this;
   }
 

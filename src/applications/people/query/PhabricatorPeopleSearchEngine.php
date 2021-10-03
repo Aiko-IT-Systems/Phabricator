@@ -63,6 +63,16 @@ final class PhabricatorPeopleSearchEngine
           pht(
             'Pass true to find only bots, or false to omit bots.')),
       id(new PhabricatorSearchThreeStateField())
+        ->setLabel(pht('Groups'))
+        ->setKey('isGroup')
+        ->setOptions(
+          pht('(Show All)'),
+          pht('Show Only Groups'),
+          pht('Hide Groups'))
+        ->setDescription(
+          pht(
+            'Pass true to find only groups, or false to omit groups.')),
+      id(new PhabricatorSearchThreeStateField())
         ->setLabel(pht('Mailing Lists'))
         ->setKey('isMailingList')
         ->setOptions(
@@ -151,6 +161,10 @@ final class PhabricatorPeopleSearchEngine
 
     if ($map['isAdmin'] !== null) {
       $query->withIsAdmin($map['isAdmin']);
+    }
+
+    if ($map['isGroup'] !== null) {
+      $query->withIsGroup($map['isGroup']);
     }
 
     if ($map['isDisabled'] !== null) {
@@ -276,6 +290,10 @@ final class PhabricatorPeopleSearchEngine
 
       if ($user->getIsAdmin()) {
         $item->addIcon('fa-star', pht('Admin'));
+      }
+
+      if ($user->getIsGroup()) {
+        $item->addIcon('fa-team', pht('Team'));
       }
 
       if ($user->getIsSystemAgent()) {

@@ -15,7 +15,7 @@ final class PhabricatorPeopleCreateController
     if ($request->isFormPost()) {
       $v_type = $request->getStr('type');
 
-      if ($v_type == 'standard' || $v_type == 'bot' || $v_type == 'list') {
+      if ($v_type == 'standard' || $v_type == 'bot' || $v_type == 'list' || $v_type == 'group') {
         return id(new AphrontRedirectResponse())->setURI(
           $this->getApplicationURI('new/'.$v_type.'/'));
       }
@@ -39,6 +39,10 @@ final class PhabricatorPeopleCreateController
     $bot_admin = pht(
       'Administrators have greater access to edit these accounts.');
 
+
+    $group_caption = pht(
+      'Create a group user account. These users can not use the web interface or the API.');
+      
     $types = array();
 
     $can_create = $this->hasApplicationCapability(
@@ -48,6 +52,11 @@ final class PhabricatorPeopleCreateController
         'type' => 'standard',
         'name' => pht('Create Standard User'),
         'help' => pht('Create a standard user account.'),
+      );
+      $types[] = array(
+        'type' => 'group',
+        'name' => pht('Create Group'),
+        'help' => pht('Create a group account.'),
       );
     }
 

@@ -40,6 +40,7 @@ final class PhabricatorUser
   protected $isSystemAgent = 0;
   protected $isMailingList = 0;
   protected $isAdmin = 0;
+  protected $isGroup = 0;
   protected $isDisabled = 0;
   protected $isEmailVerified = 0;
   protected $isApproved = 0;
@@ -76,6 +77,8 @@ final class PhabricatorUser
         return (bool)$this->isDisabled;
       case 'isSystemAgent':
         return (bool)$this->isSystemAgent;
+      case 'isGroup':
+        return (bool)$this->isGroup;
       case 'isMailingList':
         return (bool)$this->isMailingList;
       case 'isEmailVerified':
@@ -220,6 +223,7 @@ final class PhabricatorUser
         'isMailingList' => 'bool',
         'isDisabled' => 'bool',
         'isAdmin' => 'bool',
+        'isGroup' => 'bool',
         'isEmailVerified' => 'uint32',
         'isApproved' => 'uint32',
         'accountSecret' => 'bytes64',
@@ -1213,6 +1217,10 @@ final class PhabricatorUser
 
     if ($this->getIsAdmin()) {
       $roles[] = 'admin';
+    }
+
+    if ($this->getIsGroup()) {
+      $roles[] = 'group';
     }
 
     if ($this->getIsEmailVerified()) {
