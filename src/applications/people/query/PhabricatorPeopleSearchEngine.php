@@ -293,7 +293,7 @@ final class PhabricatorPeopleSearchEngine
       }
 
       if ($user->getIsGroup()) {
-        $item->addIcon('fa-users', pht('Team'));
+        $item->addIcon('fa-users', pht('Group'));
       }
 
       if ($user->getIsSystemAgent()) {

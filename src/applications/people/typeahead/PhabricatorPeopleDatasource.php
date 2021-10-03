@@ -89,8 +89,19 @@ final class PhabricatorPeopleDatasource
             ));
         }
 
+        if ($user->getIsGroup()) {
+          $result->addAttribute(
+            array(
+              id(new PHUIIconView())->setIcon('fa-users'),
+              ' ',
+              pht('Group'),
+            ));
+        }
+
         if ($user->getIsAdmin()) {
           $display_type = pht('Administrator');
+        } else if ($user->getIsGroup()) {
+          $display_type = pht('Group');
         } else {
           $display_type = pht('User');
         }
