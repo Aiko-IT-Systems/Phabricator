@@ -72,6 +72,12 @@ abstract class PhabricatorPeopleProfileController
         ->setColor('orange');
     }
 
+    if ($user->getIsGroup()) {
+      $tags[] = id(clone $tag)
+        ->setName(pht('Group'))
+        ->setColor('orange');
+    }
+
     if (!$user->getIsEmailVerified()) {
       $tags[] = id(clone $tag)
         ->setName(pht('Email Not Verified'))
