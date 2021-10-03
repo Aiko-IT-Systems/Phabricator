@@ -130,6 +130,35 @@ final class PhabricatorUserEditor extends PhabricatorEditor {
   /**
    * @task role
    */
+  public function makeGroupUser(PhabricatorUser $user, $group) {
+    $actor = $this->requireActor();
+
+    if (!$user->getID()) {
+      throw new Exception(pht('User has not been created yet!'));
+    }
+
+    $user->openTransaction();
+      $user->beginWriteLocking();
+
+        $user->reload();
+        if ($user->getIsGroup() == $group) {
+          $user->endWriteLocking();
+          $user->killTransaction();
+          return $this;
+        }
+
+        $user->setIsGroup((int)$group);
+        $user->save();
+
+      $user->endWriteLocking();
+    $user->saveTransaction();
+
+    return $this;
+  }
+
+  /**
+   * @task role
+   */
   public function makeMailingListUser(PhabricatorUser $user, $mailing_list) {
     $actor = $this->requireActor();
 
