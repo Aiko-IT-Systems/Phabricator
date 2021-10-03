@@ -51,6 +51,9 @@ final class PhabricatorPeopleUserPHIDType extends PhabricatorPHIDType {
       if ($user->getIsMailingList()) {
         $handle->setIcon('fa-envelope-o');
         $handle->setSubtitle(pht('Mailing List'));
+      } else if ($user->getIsGroup()) {
+          $handle->setIcon('fa-users');
+          $handle->setSubtitle(pht('Group'));
       } else {
         $profile = $user->getUserProfile();
         $icon_key = $profile->getIcon();
