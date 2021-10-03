@@ -53,8 +53,6 @@ final class PhabricatorPeopleDatasource
         $closed = pht('Disabled');
       } else if ($user->getIsSystemAgent()) {
         $closed = pht('Bot');
-      } else if ($user->getIsGroup()) {
-        $closed = pht('Group');
       } else if ($user->getIsMailingList()) {
         $closed = pht('Mailing List');
       }
