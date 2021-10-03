@@ -340,6 +340,13 @@ final class PhabricatorPeopleQuery
         (int)$this->isSystemAgent);
     }
 
+    if ($this->isGroup !== null) {
+      $where[] = qsprintf(
+        $conn,
+        'user.isGroup = %d',
+        (int)$this->isGroup);
+    }
+
     if ($this->isMailingList !== null) {
       $where[] = qsprintf(
         $conn,
