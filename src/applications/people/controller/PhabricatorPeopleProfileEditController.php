@@ -7,16 +7,24 @@ final class PhabricatorPeopleProfileEditController
     $viewer = $this->getViewer();
     $id = $request->getURIData('id');
 
-    $user = id(new PhabricatorPeopleQuery())
+    if($viewer->getIsAdmin()) {
+      $user = id(new PhabricatorPeopleQuery())
       ->setViewer($viewer)
       ->withIDs(array($id))
       ->needProfileImage(true)
-      ->requireCapabilities(
-        array(
-          PhabricatorPolicyCapability::CAN_VIEW,
-          PhabricatorPolicyCapability::CAN_EDIT,
-        ))
       ->executeOne();
+    } else {
+      $user = id(new PhabricatorPeopleQuery())
+        ->setViewer($viewer)
+        ->withIDs(array($id))
+        ->needProfileImage(true)
+        ->requireCapabilities(
+          array(
+            PhabricatorPolicyCapability::CAN_VIEW,
+            PhabricatorPolicyCapability::CAN_EDIT,
+          ))
+        ->executeOne();
+    }
     if (!$user) {
       return new Aphront404Response();
     }

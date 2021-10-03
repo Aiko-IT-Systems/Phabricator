@@ -37,6 +37,9 @@ final class PhabricatorUserRolesField
     if ($user->getIsSystemAgent()) {
       $roles[] = pht('Bot');
     }
+    if ($user->getIsGroup()) {
+      $roles[] = pht('Group');
+    }
     if ($user->getIsMailingList()) {
       $roles[] = pht('Mailing List');
     }

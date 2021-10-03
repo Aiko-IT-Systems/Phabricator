@@ -102,13 +102,25 @@ final class PhabricatorPeopleProfileManageController
     $can_welcome = $welcome_engine->canSendMail();
     $curtain = $this->newCurtainView($user);
 
-    $curtain->addAction(
-      id(new PhabricatorActionView())
-        ->setIcon('fa-pencil')
-        ->setName(pht('Edit Profile'))
-        ->setHref($this->getApplicationURI('editprofile/'.$id.'/'))
-        ->setDisabled(!$can_edit)
-        ->setWorkflow(!$can_edit));
+
+
+    if ($user->getIsAdmin()) {
+      $curtain->addAction(
+        id(new PhabricatorActionView())
+          ->setIcon('fa-pencil')
+          ->setName(pht('Edit Profile'))
+          ->setHref($this->getApplicationURI('editprofile/'.$id.'/'))
+          ->setDisabled(!$is_admin)
+          ->setWorkflow(!$is_admin));
+    } else {
+      $curtain->addAction(
+        id(new PhabricatorActionView())
+          ->setIcon('fa-pencil')
+          ->setName(pht('Edit Profile'))
+          ->setHref($this->getApplicationURI('editprofile/'.$id.'/'))
+          ->setDisabled(!$can_edit)
+          ->setWorkflow(!$can_edit));
+    }
 
     $curtain->addAction(
       id(new PhabricatorActionView())
