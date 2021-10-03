@@ -4,9 +4,9 @@
       "type": "client",
       "port": 22280,
       "listen": "0.0.0.0",
-      "ssl.key": null,
-      "ssl.cert": null,
-      "ssl.chain": null
+      "ssl.key": "/opt/bugs/privkey.pem",
+      "ssl.cert": "/opt/bugs/cert.pem",
+      "ssl.chain": "/opt/bugs/chain.pem"
     },
     {
       "type": "admin",
