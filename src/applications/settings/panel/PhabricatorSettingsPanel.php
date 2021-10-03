@@ -178,7 +178,7 @@ abstract class PhabricatorSettingsPanel extends Phobject {
 
   /**
    * Return true if this panel is available to administrators while managing
-   * bot and mailing list accounts.
+   * bot, group and mailing list accounts.
    *
    * @return bool True to enable management on behalf of accounts.
    * @task config

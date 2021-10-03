@@ -16,6 +16,7 @@ final class PhabricatorMetaMTAActor extends Phobject {
   const REASON_SELF = 'self';
   const REASON_MAILTAGS = 'mailtags';
   const REASON_BOT = 'bot';
+  const REASON_GROUP = 'grpup';
   const REASON_FORCE = 'force';
   const REASON_FORCE_HERALD = 'force-herald';
   const REASON_ROUTE_AS_NOTIFICATION = 'route-as-notification';

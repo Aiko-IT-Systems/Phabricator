@@ -22,6 +22,9 @@ final class PhabricatorPeopleNewController
       case 'bot':
         $is_bot = true;
         break;
+      case 'group':
+        $is_group = true;
+        break;
       case 'list':
         $is_list = true;
         break;
@@ -90,7 +93,7 @@ final class PhabricatorPeopleNewController
           $user->setIsApproved(1);
 
           // If the user is a bot or list, approve their email too.
-          if ($is_bot || $is_list) {
+          if ($is_bot || $is_list || $is_group) {
             $email->setIsVerified(1);
           }
 
@@ -102,6 +105,12 @@ final class PhabricatorPeopleNewController
             id(new PhabricatorUserEditor())
               ->setActor($admin)
               ->makeSystemAgentUser($user, true);
+          }
+
+          if ($is_group) {
+            id(new PhabricatorUserEditor())
+              ->setActor($admin)
+              ->makeGroupUser($user, true);
           }
 
           if ($is_list) {
@@ -152,6 +161,10 @@ final class PhabricatorPeopleNewController
       $title = pht('Create New Mailing List');
       $form->appendRemarkupInstructions(
         pht('You are creating a new **mailing list** user account.'));
+    } else if ($is_group) {
+      $title = pht('Create New Group');
+      $form->appendRemarkupInstructions(
+        pht('You are creating a new **group** user account.'));
     } else {
       $title = pht('Create New User');
       $form->appendRemarkupInstructions(
@@ -179,7 +192,7 @@ final class PhabricatorPeopleNewController
           ->setCaption(PhabricatorUserEmail::describeAllowedAddresses())
           ->setError($e_email));
 
-    if (!$is_bot && !$is_list) {
+    if (!$is_bot && !$is_list && !$is_group) {
       $form->appendChild(
         id(new AphrontFormCheckboxControl())
           ->addCheckbox(
