@@ -79,6 +79,10 @@ final class PhabricatorUserCardView extends AphrontTagView {
       $tag_icon = 'fa-envelope';
       $tag_title = pht('Email Not Verified');
       $tag_shade = PHUITagView::COLOR_VIOLET;
+    } else if ($user->getIsGroup()) {
+      $tag_icon = 'fa-users';
+      $tag_title = pht('Group');
+      $tag_shade = PHUITagView::COLOR_INDIGO;
     } else if ($user->getIsAdmin()) {
       $tag_icon = 'fa-star';
       $tag_title = pht('Administrator');
