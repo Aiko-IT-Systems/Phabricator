@@ -14,6 +14,7 @@ final class PhabricatorPeopleNewController
 
     $is_bot = false;
     $is_list = false;
+    $is_group = false;
     switch ($type) {
       case 'standard':
         $this->requireApplicationCapability(
