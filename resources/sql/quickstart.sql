@@ -10323,6 +10323,7 @@ CREATE TABLE `user` (
   `profileImagePHID` varbinary(64) DEFAULT NULL,
   `conduitCertificate` varchar(255) CHARACTER SET {$CHARSET} COLLATE {$COLLATE_TEXT} NOT NULL,
   `isSystemAgent` tinyint(1) NOT NULL DEFAULT '0',
+  `isGroup` tinyint(1) NOT NULL DEFAULT '0',
   `isDisabled` tinyint(1) NOT NULL,
   `isAdmin` tinyint(1) NOT NULL,
   `isEmailVerified` int(10) unsigned NOT NULL,
