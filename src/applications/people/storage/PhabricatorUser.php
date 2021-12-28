@@ -1018,7 +1018,7 @@ final class PhabricatorUser
       case PhabricatorPolicyCapability::CAN_VIEW:
         return PhabricatorPolicies::POLICY_PUBLIC;
       case PhabricatorPolicyCapability::CAN_EDIT:
-        if ($this->getIsSystemAgent() || $this->getIsMailingList() || $this.getIsGroup()) {
+        if ($this->getIsSystemAgent() || $this->getIsMailingList() || $this->getIsGroup()) {
           return PhabricatorPolicies::POLICY_ADMIN;
         } else if($viewer->getIsAdmin()) {
           return PhabricatorPolicies::POLICY_ADMIN;
