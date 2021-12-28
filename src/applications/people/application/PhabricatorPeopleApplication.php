@@ -96,6 +96,9 @@ final class PhabricatorPeopleApplication extends PhabricatorApplication {
       PeopleCreateUsersCapability::CAPABILITY => array(
         'default' => PhabricatorPolicies::POLICY_ADMIN,
       ),
+      PeopleEditUsersCapability::CAPABILITY => array (
+        'default' => PhabricatorPolicies::POLICY_ADMIN,
+      ),
       PeopleDisableUsersCapability::CAPABILITY => array(
         'default' => PhabricatorPolicies::POLICY_ADMIN,
       ),

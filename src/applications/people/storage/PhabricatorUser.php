@@ -1009,6 +1009,7 @@ final class PhabricatorUser
     return array(
       PhabricatorPolicyCapability::CAN_VIEW,
       PhabricatorPolicyCapability::CAN_EDIT,
+      PhabricatorPolicyCapability::CAN_EDIT_AS_ADMIN,
     );
   }
 
@@ -1022,6 +1023,8 @@ final class PhabricatorUser
         } else {
           return PhabricatorPolicies::POLICY_NOONE;
         }
+      case PhabricatorPolicyCapability::CAN_EDIT_AS_ADMIN:
+        return PhabricatorPolicies::POLICY_ADMIN;
     }
   }
 
@@ -1033,6 +1036,8 @@ final class PhabricatorUser
     switch ($capability) {
       case PhabricatorPolicyCapability::CAN_EDIT:
         return pht('Only you can edit your information.');
+      case PhabricatorPolicyCapability::CAN_EDIT_AS_ADMIN:
+        return pht('You can edit this informations as admin.');
       default:
         return null;
     }
