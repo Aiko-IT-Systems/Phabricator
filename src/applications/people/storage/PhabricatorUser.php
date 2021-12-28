@@ -1020,8 +1020,6 @@ final class PhabricatorUser
       case PhabricatorPolicyCapability::CAN_EDIT:
         if ($this->getIsSystemAgent() || $this->getIsMailingList() || $this->getIsGroup()) {
           return PhabricatorPolicies::POLICY_ADMIN;
-        } else if($viewer->getIsAdmin()) {
-          return PhabricatorPolicies::POLICY_ADMIN;
         } else {
           return PhabricatorPolicies::POLICY_NOONE;
         }
@@ -1031,7 +1029,11 @@ final class PhabricatorUser
   }
 
   public function hasAutomaticCapability($capability, PhabricatorUser $viewer) {
-    return $this->getPHID() && ($viewer->getPHID() === $this->getPHID());
+    if ($viewer->getIsAdmin()) {
+      return true;
+    } else {
+      return $this->getPHID() && ($viewer->getPHID() === $this->getPHID());
+    }
   }
 
   public function describeAutomaticCapability($capability) {
