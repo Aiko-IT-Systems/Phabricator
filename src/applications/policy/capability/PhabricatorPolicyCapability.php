@@ -6,7 +6,7 @@ abstract class PhabricatorPolicyCapability extends Phobject {
   const CAN_EDIT          = 'edit';
   const CAN_JOIN          = 'join';
   const CAN_INTERACT      = 'interact';
-  const CAN_EDIT_AS_ADMIN = 'edit';
+  const CAN_EDIT_AS_ADMIN = 'edit_as_admin';
 
   /**
    * Get the unique key identifying this capability. This key must be globally
