@@ -179,7 +179,7 @@ final class HeraldWebhookWorker
       ),
       'transactions' => $xaction_data,
     );
-
+   
     $payload = id(new PhutilJSON())->encodeFormatted($payload);
     $key = $hook->getHmacKey();
     $signature = PhabricatorHash::digestHMACSHA256($payload, $key);
