@@ -128,7 +128,6 @@
 
 .aphront-exception-dialog .exception-message {
   font-size: 14px;
-  background: {$sh-yellowbackground};
   border: 1px solid {$sh-yellowborder};
   padding: 12px;
   white-space: pre-wrap;
