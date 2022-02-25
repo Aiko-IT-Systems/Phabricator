@@ -451,7 +451,7 @@ ul.phui-oi-list-view .phui-oi-highlighted
 }
 
 .phui-oi-selected {
-  background: {$sh-bluebackground};
+  background: #296639ba;
 }
 
 ul.phui-oi-list-view .phui-oi-selected
@@ -723,7 +723,7 @@ ul.phui-oi-list-view .phui-oi-selectable
 .phui-oi-tail {
   text-align: center;
   padding: 8px 0;
-  background: linear-gradient({$lightbluebackground}, #f54 66%,#544);
+  background: rgba(255,255,255,.05);
 }
 
 .phui-oi-menu {

@@ -122,7 +122,8 @@ td.diff-toc-path td {
 }
 
 td.diff-toc-path .diff-path-old td {
-  color: {$lightgreytext};
+  color: rgb(0, 0, 0);
+  background-color: rgba(232, 18, 18, 0.66);
 }
 
 .diff-toc-low-importance-row,

@@ -113,14 +113,14 @@
 .differential-diff td.old span.bright,
 .differential-diff td.old-full,
 .prose-diff span.old {
-  background: lightsalmon;
+  background: #861111d6;
 }
 
 
 .differential-diff td.new span.bright,
 .differential-diff td.new-full,
 .prose-diff span.new {
-  background: darkseagreen;
+  background: #317131;
 }
 
 .differential-diff td span.depth-out,
@@ -164,7 +164,7 @@
 }
 
 .differential-diff td.comment {
-  background: #dddddd;
+  background: #1d574c;
 }
 
 .differential-diff .inline > td {
@@ -302,7 +302,7 @@ td.cov-I {
 .differential-meta-notice {
   border-top: 1px solid {$gentle.highlight.border};
   border-bottom: 1px solid {$gentle.highlight.border};
-  background-color: {$gentle.highlight};
+  background-color: #1a797d;
   padding: 12px;
 }
 
@@ -332,7 +332,7 @@ td.cov-I {
 .differential-loading {
   border-top: 1px solid {$gentle.highlight.border};
   border-bottom: 1px solid {$gentle.highlight.border};
-  background-color: darkgrey;
+  background-color: #554e4e;
   padding: 12px;
   text-align: center;
 }

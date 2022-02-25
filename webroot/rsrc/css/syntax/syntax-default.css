@@ -8,14 +8,14 @@
 .remarkup-code .kp,
 .remarkup-code .kr,
 .remarkup-code .nb {
-  color: darkolivegreen
+  color: #93b755
 }
 
 .remarkup-code .c,
 .remarkup-code .c1,
 .remarkup-code .cm,
 .remarkup-code .cs {
-  color: #74777d
+  color: #9ba6bb
 }
 
 .remarkup-code .gd {
@@ -79,7 +79,7 @@
 .remarkup-code .nc,
 .remarkup-code .nt,
 .remarkup-code .vc {
-  color: #00702a
+  color: #29d569
 }
 
 .remarkup-code .nd,
@@ -93,7 +93,7 @@
 
 .remarkup-code .nf,
 .remarkup-code .nx {
-  color: #008229
+  color: #1bc416
 }
 
 .remarkup-code .ni {
@@ -125,7 +125,7 @@
 .remarkup-code .sb,
 .remarkup-code .sc,
 .remarkup-code .sx {
-  color: #766510
+  color: #d5b724
 }
 
 .remarkup-code .sd,

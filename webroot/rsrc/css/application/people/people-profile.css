@@ -34,7 +34,6 @@ form.compose-dialog {
   position: relative;
   width: 48px;
   height: 48px;
-  background-color: {$darkgreytext};
 }
 
 .compose-dialog .compose-icon-bg.phui-icon-view {

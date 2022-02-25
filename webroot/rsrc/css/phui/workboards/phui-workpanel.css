@@ -116,7 +116,7 @@
 }
 
 .project-panel-empty .phui-oi-list-view {
-  background: rgba(234, 230, 247, 0.85);
+  background: rgba(94, 86, 119, 0.85);
   border-radius: 3px;
   margin-bottom: 4px;
   border: 1px dashed {$sh-indigoborder};
