@@ -53,6 +53,7 @@ final class AphrontFormRecaptchaControl extends AphrontFormControl {
         array(
           'class' => 'g-recaptcha',
           'data-sitekey' => $pubkey,
+          'data-theme' => 'dark'
         )),
       phutil_tag(
         'script',
