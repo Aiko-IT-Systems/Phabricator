@@ -84,22 +84,22 @@ final class PHUITimelineExample extends PhabricatorUIExample {
     $pin1 = id(new PHUIPinboardItemView())
       ->setUser($user)
       ->setHeader('user0.png')
-      ->setImageURI(celerity_get_resource_uri('/rsrc/image/people/user0.png'))
-      ->setURI(celerity_get_resource_uri('/rsrc/image/people/user0.png'))
+      ->setImageURI(celerity_get_resource_uri('/rsrc/image/users/user0.png'))
+      ->setURI(celerity_get_resource_uri('/rsrc/image/users/user0.png'))
       ->setImageSize(280, 210);
 
     $pin2 = id(new PHUIPinboardItemView())
       ->setUser($user)
       ->setHeader('user1.png')
-      ->setImageURI(celerity_get_resource_uri('/rsrc/image/people/user1.png'))
-      ->setURI(celerity_get_resource_uri('/rsrc/image/people/user1.png'))
+      ->setImageURI(celerity_get_resource_uri('/rsrc/image/users/user1.png'))
+      ->setURI(celerity_get_resource_uri('/rsrc/image/users/user1.png'))
       ->setImageSize(280, 210);
 
     $pin3 = id(new PHUIPinboardItemView())
       ->setUser($user)
       ->setHeader('user2.png')
-      ->setImageURI(celerity_get_resource_uri('/rsrc/image/people/user2.png'))
-      ->setURI(celerity_get_resource_uri('/rsrc/image/people/user1.png'))
+      ->setImageURI(celerity_get_resource_uri('/rsrc/image/users/user2.png'))
+      ->setURI(celerity_get_resource_uri('/rsrc/image/users/user1.png'))
       ->setImageSize(280, 210);
 
     $events[] = id(new PHUITimelineEventView())

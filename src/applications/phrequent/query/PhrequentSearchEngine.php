@@ -63,7 +63,7 @@ final class PhrequentSearchEngine extends PhabricatorApplicationSearchEngine {
     $form
       ->appendControl(
         id(new AphrontFormTokenizerControl())
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setName('users')
           ->setLabel(pht('Users'))
           ->setValue($user_phids))

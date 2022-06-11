@@ -21,7 +21,7 @@ final class DifferentialRevisionFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $revision->getAuthorPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $revision->getDateCreated());
 
     $document->addRelationship(
@@ -43,14 +43,14 @@ final class DifferentialRevisionFulltextEngine
           $document->addRelationship(
             PhabricatorSearchRelationship::RELATIONSHIP_OWNER,
             $phid,
-            PhabricatorPeopleUserPHIDType::TYPECONST,
+            PhabricatorUsersUserPHIDType::TYPECONST,
             $revision->getDateModified()); // Bogus timestamp.
         }
       } else {
         $document->addRelationship(
           PhabricatorSearchRelationship::RELATIONSHIP_UNOWNED,
           $revision->getPHID(),
-          PhabricatorPeopleUserPHIDType::TYPECONST,
+          PhabricatorUsersUserPHIDType::TYPECONST,
           $revision->getDateModified()); // Bogus timestamp.
       }
     } else {

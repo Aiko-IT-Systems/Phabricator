@@ -27,7 +27,7 @@ abstract class PhabricatorAuthController extends PhabricatorController {
 
     // Otherwise, check if there are any user accounts. If not, we're in first
     // time setup.
-    $any_users = id(new PhabricatorPeopleQuery())
+    $any_users = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->setLimit(1)
       ->execute();
@@ -241,7 +241,7 @@ abstract class PhabricatorAuthController extends PhabricatorController {
     // user accounts. Load the inviting user with the omnipotent viewer.
     $omnipotent_viewer = PhabricatorUser::getOmnipotentUser();
 
-    $invite_author = id(new PhabricatorPeopleQuery())
+    $invite_author = id(new PhabricatorUsersQuery())
       ->setViewer($omnipotent_viewer)
       ->withPHIDs(array($invite->getAuthorPHID()))
       ->needProfileImage(true)

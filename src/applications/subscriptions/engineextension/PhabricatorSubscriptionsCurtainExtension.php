@@ -112,11 +112,11 @@ final class PhabricatorSubscriptionsCurtainExtension
 
     $viewer = $this->getViewer();
 
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
     $viewer_phid = $viewer->getPHID();
 
     $type_order_map = array(
-      PhabricatorPeopleUserPHIDType::TYPECONST => 0,
+      PhabricatorUsersUserPHIDType::TYPECONST => 0,
       PhabricatorProjectProjectPHIDType::TYPECONST => 1,
       PhabricatorOwnersPackagePHIDType::TYPECONST => 2,
     );

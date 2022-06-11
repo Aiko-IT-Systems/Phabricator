@@ -1890,7 +1890,7 @@ abstract class PhabricatorApplicationTransactionEditor
     }
 
     if ($phids) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getActor())
         ->withPHIDs($phids)
         ->execute();
@@ -2938,7 +2938,7 @@ abstract class PhabricatorApplicationTransactionEditor
 
     $actor_phid = $this->getActingAsPHID();
 
-    $type_user = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $type_user = PhabricatorUsersUserPHIDType::TYPECONST;
     if (phid_get_type($actor_phid) != $type_user) {
       // Transactions by application actors like Herald, Harbormaster and
       // Diffusion should not CC the applications.
@@ -2982,7 +2982,7 @@ abstract class PhabricatorApplicationTransactionEditor
 
     $actor = $this->getActor();
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($actor)
       ->withPHIDs(array($actor_phid))
       ->executeOne();
@@ -3386,7 +3386,7 @@ abstract class PhabricatorApplicationTransactionEditor
           // We need to do a visibility check for all the watchers, as
           // watching a project is not a guarantee that you can see objects
           // associated with it.
-          $users = id(new PhabricatorPeopleQuery())
+          $users = id(new PhabricatorUsersQuery())
             ->setViewer($this->requireActor())
             ->withPHIDs($watcher_phids)
             ->execute();

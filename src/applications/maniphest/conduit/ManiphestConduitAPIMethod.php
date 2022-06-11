@@ -108,7 +108,7 @@ abstract class ManiphestConduitAPIMethod extends ConduitAPIMethod {
     if ($owner_phid !== null) {
       $this->validatePHIDList(
         array($owner_phid),
-        PhabricatorPeopleUserPHIDType::TYPECONST,
+        PhabricatorUsersUserPHIDType::TYPECONST,
         'ownerPHID');
       $changes[ManiphestTaskOwnerTransaction::TRANSACTIONTYPE] = $owner_phid;
     }

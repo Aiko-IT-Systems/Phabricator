@@ -20,7 +20,7 @@ These applications currently support custom fields:
 | Diffusion | Limited Support |
 | Maniphest | Full Support |
 | Owners | Full Support |
-| People | Full Support |
+| Users | Full Support |
 | Projects | Full Support |
 
 Custom fields can appear in many interfaces and support search, editing, and
@@ -43,7 +43,7 @@ The relevant configuration settings are:
 | Diffusion | Planned | Planned |
 | Maniphest | `maniphest.custom-field-definitions` | `maniphest.fields` |
 | Owners | `owners.custom-field-definitions` | `owners.fields` |
-| People | `user.custom-field-definitions` | `user.fields` |
+| Users | `user.custom-field-definitions` | `user.fields` |
 | Projects | `projects.custom-field-definitions` | `projects.fields` |
 
 When adding fields, you'll specify a JSON blob like this (for example, as the
@@ -163,7 +163,7 @@ want to add a field to:
 | Diffusion | @{class:PhabricatorCommitCustomField} |
 | Maniphest | @{class:ManiphestCustomField} |
 | Owners | @{class:PhabricatorOwnersCustomField} |
-| People | @{class:PhabricatorUserCustomField} |
+| Users | @{class:PhabricatorUserCustomField} |
 | Projects | @{class:PhabricatorProjectCustomField} |
 
 The easiest way to get started is to drop your subclass into

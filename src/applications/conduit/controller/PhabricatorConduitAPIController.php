@@ -407,7 +407,7 @@ final class PhabricatorConduitAPIController
         );
       }
 
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer(PhabricatorUser::getOmnipotentUser())
         ->withPHIDs(array($token->getUserPHID()))
         ->executeOne();

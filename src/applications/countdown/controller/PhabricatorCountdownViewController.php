@@ -113,7 +113,7 @@ final class PhabricatorCountdownViewController
     $date = phabricator_datetime($countdown->getDateCreated(), $viewer);
     $author = phutil_tag('strong', array(), $author);
 
-    $person = id(new PhabricatorPeopleQuery())
+    $person = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($countdown->getAuthorPHID()))
       ->needProfileImage(true)

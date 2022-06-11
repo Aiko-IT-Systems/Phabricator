@@ -63,7 +63,7 @@ final class FundBackerSearchEngine
         id(new AphrontFormTokenizerControl())
           ->setLabel(pht('Backers'))
           ->setName('backers')
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setValue($backer_phids));
   }
 

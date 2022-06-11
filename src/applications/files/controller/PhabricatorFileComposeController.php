@@ -73,7 +73,7 @@ final class PhabricatorFileComposeController
     $value_color = head_key($color_map);
     $value_icon = head_key($icon_map);
 
-    require_celerity_resource('people-profile-css');
+    require_celerity_resource('users-profile-css');
 
     $buttons = array();
     foreach ($color_map as $color => $info) {

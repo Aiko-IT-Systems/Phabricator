@@ -27,7 +27,7 @@ foreach ($lists as $list) {
       $effective_username = $username.$suffix;
     }
 
-    $collision = id(new PhabricatorPeopleQuery())
+    $collision = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withUsernames(array($effective_username))
       ->executeOne();

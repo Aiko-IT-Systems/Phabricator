@@ -51,16 +51,16 @@ final class PhabricatorSearchApplicationSearchEngine
     $config = clone $saved;
     $viewer = $this->requireViewer();
 
-    $datasource = id(new PhabricatorPeopleOwnerDatasource())
+    $datasource = id(new PhabricatorUsersOwnerDatasource())
       ->setViewer($viewer);
     $owner_phids = $this->readOwnerPHIDs($config);
     $owner_phids = $datasource->evaluateTokens($owner_phids);
     foreach ($owner_phids as $key => $phid) {
-      if ($phid == PhabricatorPeopleNoOwnerDatasource::FUNCTION_TOKEN) {
+      if ($phid == PhabricatorUsersNoOwnerDatasource::FUNCTION_TOKEN) {
         $config->setParameter('withUnowned', true);
         unset($owner_phids[$key]);
       }
-      if ($phid == PhabricatorPeopleAnyOwnerDatasource::FUNCTION_TOKEN) {
+      if ($phid == PhabricatorUsersAnyOwnerDatasource::FUNCTION_TOKEN) {
         $config->setParameter('withAnyOwner', true);
         unset($owner_phids[$key]);
       }
@@ -68,7 +68,7 @@ final class PhabricatorSearchApplicationSearchEngine
     $config->setParameter('ownerPHIDs', $owner_phids);
 
 
-    $datasource = id(new PhabricatorPeopleUserFunctionDatasource())
+    $datasource = id(new PhabricatorUsersUserFunctionDatasource())
       ->setViewer($viewer);
     $author_phids = $config->getParameter('authorPHIDs', array());
     $author_phids = $datasource->evaluateTokens($author_phids);
@@ -148,13 +148,13 @@ final class PhabricatorSearchApplicationSearchEngine
         id(new AphrontFormTokenizerControl())
           ->setName('authorPHIDs')
           ->setLabel(pht('Authors'))
-          ->setDatasource(new PhabricatorPeopleUserFunctionDatasource())
+          ->setDatasource(new PhabricatorUsersUserFunctionDatasource())
           ->setValue($author_phids))
       ->appendControl(
         id(new AphrontFormTokenizerControl())
           ->setName('ownerPHIDs')
           ->setLabel(pht('Owners'))
-          ->setDatasource(new PhabricatorPeopleOwnerDatasource())
+          ->setDatasource(new PhabricatorUsersOwnerDatasource())
           ->setValue($owner_phids))
       ->appendControl(
         id(new AphrontFormTokenizerControl())
@@ -300,7 +300,7 @@ final class PhabricatorSearchApplicationSearchEngine
 
     // This was an old checkbox from before typeahead functions.
     if ($saved->getParameter('withUnowned')) {
-      $owner_phids[] = PhabricatorPeopleNoOwnerDatasource::FUNCTION_TOKEN;
+      $owner_phids[] = PhabricatorUsersNoOwnerDatasource::FUNCTION_TOKEN;
     }
 
     return $owner_phids;

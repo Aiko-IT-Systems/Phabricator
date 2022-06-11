@@ -18,7 +18,7 @@ final class PholioMockFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $mock->getAuthorPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $mock->getDateCreated());
 
     $document->addRelationship(

@@ -14,13 +14,13 @@ final class FundInitiativeFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $initiative->getOwnerPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $initiative->getDateCreated());
 
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_OWNER,
       $initiative->getOwnerPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $initiative->getDateCreated());
 
     $document->addRelationship(

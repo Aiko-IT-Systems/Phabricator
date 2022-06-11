@@ -22,7 +22,7 @@ final class PhabricatorPolicyConfigOptions
   public function getOptions() {
     $policy_locked_type = 'custom:PolicyLockOptionType';
     $policy_locked_example = array(
-      'people.create.users' => 'admin',
+      'users.create.users' => 'admin',
     );
     $json = new PhutilJSON();
     $policy_locked_example = $json->encodeFormatted($policy_locked_example);

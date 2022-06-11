@@ -51,7 +51,7 @@ final class PhabricatorDashboardPanelSearchEngine
         id(new PhabricatorSearchDatasourceField())
           ->setLabel(pht('Authored By'))
           ->setKey('authorPHIDs')
-          ->setDatasource(new PhabricatorPeopleUserFunctionDatasource()),
+          ->setDatasource(new PhabricatorUsersUserFunctionDatasource()),
         id(new PhabricatorSearchSelectField())
           ->setKey('status')
           ->setLabel(pht('Status'))

@@ -118,7 +118,7 @@ http://www.ranum.com/security/computer_security/
 This doesn't apply if you aren't using SQL, but if you are: detect when a query
 fails because of a syntax error (in MySQL, it is error 1064). If the failure
 happened in production, fail in the loudest way possible. (I implemented this in
-2008 at Facebook and had it just email me and a few other people directly. The
+2008 at Facebook and had it just email me and a few other users directly. The
 system was eventually refined.)
 
 This basically creates a high-signal stream that tells you where you have SQL

@@ -957,7 +957,7 @@ final class PhabricatorMetaMTAMail
     $from_phid = $this->getParam('from');
     $from_actor = idx($actors, $from_phid);
     if ($from_actor) {
-      $from_user = id(new PhabricatorPeopleQuery())
+      $from_user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs(array($from_phid))
         ->needUserSettings(true)

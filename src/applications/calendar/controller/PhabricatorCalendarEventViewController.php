@@ -311,7 +311,7 @@ final class PhabricatorCalendarEventViewController
 
       $viewer_phid = $viewer->getPHID();
       $is_rsvp_invited = $event->isRSVPInvited($viewer_phid);
-      $type_user = PhabricatorPeopleUserPHIDType::TYPECONST;
+      $type_user = PhabricatorUsersUserPHIDType::TYPECONST;
 
       $head = array();
       $tail = array();

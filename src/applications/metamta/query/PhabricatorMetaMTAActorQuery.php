@@ -33,7 +33,7 @@ final class PhabricatorMetaMTAActorQuery extends PhabricatorQuery {
 
     foreach ($type_map as $type => $phids) {
       switch ($type) {
-        case PhabricatorPeopleUserPHIDType::TYPECONST:
+        case PhabricatorUsersUserPHIDType::TYPECONST:
           $this->loadUserActors($actors, $phids);
           break;
         default:
@@ -53,7 +53,7 @@ final class PhabricatorMetaMTAActorQuery extends PhabricatorQuery {
       $phids);
     $emails = mpull($emails, null, 'getUserPHID');
 
-    $users = id(new PhabricatorPeopleQuery())
+    $users = id(new PhabricatorUsersQuery())
       ->setViewer($this->getViewer())
       ->withPHIDs($phids)
       ->needUserSettings(true)

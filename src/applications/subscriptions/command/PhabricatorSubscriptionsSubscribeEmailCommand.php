@@ -53,7 +53,7 @@ final class PhabricatorSubscriptionsSubscribeEmailCommand
       ->setViewer($viewer)
       ->setAllowedTypes(
         array(
-          PhabricatorPeopleUserPHIDType::TYPECONST,
+          PhabricatorUsersUserPHIDType::TYPECONST,
           PhabricatorProjectProjectPHIDType::TYPECONST,
         ))
       ->setObjectList(implode(' ', $argv))

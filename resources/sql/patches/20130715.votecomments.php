@@ -31,7 +31,7 @@ foreach ($comments as $comment) {
     continue;
   }
 
-  $user = id(new PhabricatorPeopleQuery())
+  $user = id(new PhabricatorUsersQuery())
     ->setViewer($viewer)
     ->withPHIDs(array($author_phid))
     ->executeOne();

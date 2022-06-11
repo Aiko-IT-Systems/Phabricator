@@ -156,7 +156,7 @@ final class PhabricatorPasteViewController extends PhabricatorPasteController {
     $date = phabricator_datetime($paste->getDateCreated(), $viewer);
     $author = phutil_tag('strong', array(), $author);
 
-    $author_info = id(new PhabricatorPeopleQuery())
+    $author_info = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($paste->getAuthorPHID()))
       ->needProfileImage(true)

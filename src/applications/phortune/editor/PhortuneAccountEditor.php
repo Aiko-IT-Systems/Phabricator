@@ -46,7 +46,7 @@ final class PhortuneAccountEditor
                   continue;
                 }
 
-                $user = id(new PhabricatorPeopleQuery())
+                $user = id(new PhabricatorUsersQuery())
                   ->setViewer($viewer)
                   ->withPHIDs(array($new_phid))
                   ->executeOne();

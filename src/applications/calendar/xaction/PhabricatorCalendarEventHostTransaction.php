@@ -41,7 +41,7 @@ final class PhabricatorCalendarEventHostTransaction
         continue;
       }
 
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($this->getActor())
         ->withPHIDs(array($host_phid))
         ->executeOne();

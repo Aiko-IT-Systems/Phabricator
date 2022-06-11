@@ -66,7 +66,7 @@ abstract class DifferentialReviewersHeraldAction
     }
 
     $allowed_types = array(
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       PhabricatorProjectProjectPHIDType::TYPECONST,
       PhabricatorOwnersPackagePHIDType::TYPECONST,
     );

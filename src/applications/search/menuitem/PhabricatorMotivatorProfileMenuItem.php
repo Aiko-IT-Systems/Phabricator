@@ -139,7 +139,7 @@ final class PhabricatorMotivatorProfileMenuItem
       pht('Many cats appear black in low light, suffering a -2 modifier to '.
           'luck rolls.'),
       pht('The popular trivia game "World of Warcraft" features a race of '.
-          'cat people called the Khajiit.'),
+          'cat users called the Khajiit.'),
     );
   }
 

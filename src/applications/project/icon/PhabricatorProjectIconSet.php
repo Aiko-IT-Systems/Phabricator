@@ -36,7 +36,7 @@ final class PhabricatorProjectIconSet
         'key' => 'group',
         'icon' => 'fa-users',
         'name' => pht('Group'),
-        'image' => 'v3/people.png',
+        'image' => 'v3/users.png',
       ),
       array(
         'key' => 'folder',

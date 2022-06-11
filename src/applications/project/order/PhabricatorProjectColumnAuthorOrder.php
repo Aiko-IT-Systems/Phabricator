@@ -39,7 +39,7 @@ final class PhabricatorProjectColumnAuthorOrder
     $author_phids = array_filter($author_phids);
 
     if ($author_phids) {
-      $author_users = id(new PhabricatorPeopleQuery())
+      $author_users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withPHIDs($author_phids)
         ->execute();
@@ -84,7 +84,7 @@ final class PhabricatorProjectColumnAuthorOrder
     $author_phids = array_filter($author_phids);
 
     if ($author_phids) {
-      $author_users = id(new PhabricatorPeopleQuery())
+      $author_users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withPHIDs($author_phids)
         ->needProfileImage(true)

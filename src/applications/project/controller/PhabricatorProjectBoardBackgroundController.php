@@ -80,7 +80,7 @@ final class PhabricatorProjectBoardBackgroundController
     $options = PhabricatorProjectWorkboardBackgroundColor::getOptions();
     $option_groups = igroup($options, 'group');
 
-    require_celerity_resource('people-profile-css');
+    require_celerity_resource('users-profile-css');
     require_celerity_resource('phui-workboard-color-css');
     Javelin::initBehavior('phabricator-tooltips', array());
 

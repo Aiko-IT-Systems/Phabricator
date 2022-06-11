@@ -52,7 +52,7 @@ final class PhabricatorProjectManageController
       ->setCurtain($curtain)
       ->addPropertySection(pht('Details'), $properties)
       ->addClass('project-view-home')
-      ->addClass('project-view-people-home')
+      ->addClass('project-view-users-home')
       ->setMainColumn(
         array(
           $timeline,

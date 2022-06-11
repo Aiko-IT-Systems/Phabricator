@@ -185,7 +185,7 @@ final class PonderQuestionViewController extends PonderController {
     $date = phabricator_datetime($question->getDateCreated(), $viewer);
     $asker = phutil_tag('strong', array(), $asker);
 
-    $author = id(new PhabricatorPeopleQuery())
+    $author = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($question->getAuthorPHID()))
       ->needProfileImage(true)

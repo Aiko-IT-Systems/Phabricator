@@ -98,7 +98,7 @@ final class FundBackerProduct extends PhortuneProductImplementation {
     // product purchase is completing from a background worker or a merchant
     // action.
 
-    $actor = id(new PhabricatorPeopleQuery())
+    $actor = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($backer->getBackerPHID()))
       ->executeOne();

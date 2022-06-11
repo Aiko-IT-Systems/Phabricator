@@ -32,7 +32,7 @@ final class PhabricatorAphlictManagementNotifyWorkflow
           'Specify a user to notify with "--user".'));
     }
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withUsernames(array($username))
       ->executeOne();

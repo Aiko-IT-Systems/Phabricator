@@ -48,7 +48,7 @@ final class PhabricatorProjectBoardManageController
     $view = id(new PHUITwoColumnView())
       ->setHeader($header)
       ->addClass('project-view-home')
-      ->addClass('project-view-people-home')
+      ->addClass('project-view-users-home')
       ->setCurtain($curtain)
       ->setMainColumn($columns_list);
 

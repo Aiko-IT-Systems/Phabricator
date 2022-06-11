@@ -70,7 +70,7 @@ final class PhabricatorAuthManagementStripWorkflow
           'Use "--user <username>" to specify which user to strip factors '.
           'from, or "--all-users" to strip factors from all users.'));
     } else if ($usernames) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withUsernames($usernames)
         ->execute();

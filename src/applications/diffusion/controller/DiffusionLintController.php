@@ -144,7 +144,7 @@ final class DiffusionLintController extends DiffusionController {
         ->setMethod('GET')
         ->appendControl(
           id(new AphrontFormTokenizerControl())
-            ->setDatasource(new PhabricatorPeopleDatasource())
+            ->setDatasource(new PhabricatorUsersDatasource())
             ->setLimit(1)
             ->setName('owner')
             ->setLabel(pht('Owner'))

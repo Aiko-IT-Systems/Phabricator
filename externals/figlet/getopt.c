@@ -6,7 +6,7 @@
  * Here's something you've all been waiting for:  the AT&T public domain
  * source for getopt(3).  It is the code which was given out at the 1985
  * UNIFORUM conference in Dallas. I obtained it by electronic mail directly
- * from AT&T.  The people there assure me that it is indeed in the public
+ * from AT&T.  The users there assure me that it is indeed in the public
  * domain. 
  *
  * There is no manual page. That is because the one they gave out at UNIFORUM

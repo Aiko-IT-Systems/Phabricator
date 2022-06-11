@@ -17,7 +17,7 @@ final class DifferentialBlockingReviewerDatasource
 
   public function getComponentDatasources() {
     return array(
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
       new PhabricatorProjectDatasource(),
       new PhabricatorOwnersPackageDatasource(),
     );
@@ -103,13 +103,13 @@ final class DifferentialBlockingReviewerDatasource
   private function resolvePHIDs(array $phids) {
     $usernames = array();
     foreach ($phids as $key => $phid) {
-      if (phid_get_type($phid) != PhabricatorPeopleUserPHIDType::TYPECONST) {
+      if (phid_get_type($phid) != PhabricatorUsersUserPHIDType::TYPECONST) {
         $usernames[$key] = $phid;
       }
     }
 
     if ($usernames) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withUsernames($usernames)
         ->execute();

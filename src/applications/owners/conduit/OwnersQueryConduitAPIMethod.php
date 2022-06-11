@@ -49,7 +49,7 @@ final class OwnersQueryConduitAPIMethod extends OwnersConduitAPIMethod {
 
   protected static function queryByOwner($owner) {
     $is_valid_phid =
-      phid_get_type($owner) == PhabricatorPeopleUserPHIDType::TYPECONST ||
+      phid_get_type($owner) == PhabricatorUsersUserPHIDType::TYPECONST ||
       phid_get_type($owner) == PhabricatorProjectProjectPHIDType::TYPECONST;
 
     if (!$is_valid_phid) {

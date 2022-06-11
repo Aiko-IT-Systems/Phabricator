@@ -15,7 +15,7 @@ final class PhabricatorProjectTriggerManiphestOwnerRule
 
   private function convertTokenizerValueToOwner($value) {
     $value = head($value);
-    if ($value === PhabricatorPeopleNoOwnerDatasource::FUNCTION_TOKEN) {
+    if ($value === PhabricatorUsersNoOwnerDatasource::FUNCTION_TOKEN) {
       $value = null;
     }
     return $value;
@@ -47,7 +47,7 @@ final class PhabricatorProjectTriggerManiphestOwnerRule
 
     $owner_phid = $this->convertTokenizerValueToOwner($value);
     if ($owner_phid !== null) {
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withPHIDs(array($owner_phid))
         ->executeOne();

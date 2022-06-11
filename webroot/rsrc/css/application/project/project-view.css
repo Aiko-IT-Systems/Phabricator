@@ -2,7 +2,7 @@
  * @provides project-view-css
  */
 
-.project-view-people-home.phui-two-column-view .phui-two-column-header {
+.project-view-users-home.phui-two-column-view .phui-two-column-header {
   background: transparent;
   border: none;
   margin-bottom: 8px;
@@ -75,10 +75,10 @@
   padding: 24px 0;
 }
 
-.people-profile-header.phui-profile-header .phui-header-col1 {
+.users-profile-header.phui-profile-header .phui-header-col1 {
   display: none;
 }
 
-.device .people-profile-header.phui-profile-header .phui-header-col1 {
+.device .users-profile-header.phui-profile-header .phui-header-col1 {
   display: table-cell;
 }

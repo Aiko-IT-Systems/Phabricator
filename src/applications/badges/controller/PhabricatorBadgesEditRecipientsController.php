@@ -67,7 +67,7 @@ final class PhabricatorBadgesEditRecipientsController
           id(new AphrontFormTokenizerControl())
             ->setName('phids')
             ->setLabel(pht('Recipients'))
-            ->setDatasource(new PhabricatorPeopleDatasource()));
+            ->setDatasource(new PhabricatorUsersDatasource()));
     }
 
     $dialog = id(new AphrontDialogView())

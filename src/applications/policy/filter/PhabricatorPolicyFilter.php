@@ -577,7 +577,7 @@ final class PhabricatorPolicyFilter extends Phobject {
           } else {
             $this->rejectObject($object, $policy, $capability);
           }
-        } else if ($type == PhabricatorPeopleUserPHIDType::TYPECONST) {
+        } else if ($type == PhabricatorUsersUserPHIDType::TYPECONST) {
           if ($viewer->getPHID() == $policy) {
             return true;
           } else {

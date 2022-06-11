@@ -181,7 +181,7 @@ final class ConpherenceEditor extends PhabricatorApplicationTransactionEditor {
 
     $participant_phids = mpull($participants, 'getParticipantPHID');
 
-    $users = id(new PhabricatorPeopleQuery())
+    $users = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withPHIDs($participant_phids)
       ->needUserSettings(true)

@@ -216,9 +216,9 @@
       "name": "Paste",
       "include": "(^src/applications/paste/)"
     },
-    "people": {
-      "name": "People",
-      "include": "(^src/applications/people/)"
+    "users": {
+      "name": "Users",
+      "include": "(^src/applications/users/)"
     },
     "phame": {
       "name": "Phame",

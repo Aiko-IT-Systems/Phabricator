@@ -30,7 +30,7 @@ final class PhabricatorPasteFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $paste->getAuthorPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $paste->getDateCreated());
   }
 

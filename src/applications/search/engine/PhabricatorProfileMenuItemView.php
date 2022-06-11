@@ -181,10 +181,10 @@ final class PhabricatorProfileMenuItemView
     }
 
     if ($this->images) {
-      require_celerity_resource('people-picture-menu-item-css');
+      require_celerity_resource('users-picture-menu-item-css');
       foreach ($this->images as $image_src) {
         $classes = array();
-        $classes[] = 'people-menu-image';
+        $classes[] = 'users-menu-image';
 
         if ($this->getDisabled()) {
           $classes[] = 'phui-image-disabled';
@@ -200,7 +200,7 @@ final class PhabricatorProfileMenuItemView
         $image = phutil_tag(
           'div',
           array(
-            'class' => 'people-menu-image-container',
+            'class' => 'users-menu-image-container',
           ),
           $image);
 

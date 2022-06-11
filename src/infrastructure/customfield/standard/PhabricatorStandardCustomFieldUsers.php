@@ -8,7 +8,7 @@ final class PhabricatorStandardCustomFieldUsers
   }
 
   public function getDatasource() {
-    return new PhabricatorPeopleDatasource();
+    return new PhabricatorUsersDatasource();
   }
 
   protected function getHTTPParameterType() {

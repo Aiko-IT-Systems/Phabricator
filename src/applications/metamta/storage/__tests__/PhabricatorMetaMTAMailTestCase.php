@@ -255,7 +255,7 @@ final class PhabricatorMetaMTAMailTestCase extends PhabricatorTestCase {
     $xactions[] = $preferences->newTransaction($key, $value);
     $editor->applyTransactions($preferences, $xactions);
 
-    return id(new PhabricatorPeopleQuery())
+    return id(new PhabricatorUsersQuery())
       ->setViewer($user)
       ->withIDs(array($user->getID()))
       ->executeOne();

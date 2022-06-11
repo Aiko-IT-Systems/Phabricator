@@ -88,7 +88,7 @@ final class ReleephRequestSearchEngine
           ->setOptions($this->getSeverityOptions()))
       ->appendControl(
         id(new AphrontFormTokenizerControl())
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setName('requestors')
           ->setLabel(pht('Requestors'))
           ->setValue($requestor_phids));

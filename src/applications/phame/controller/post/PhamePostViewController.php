@@ -87,7 +87,7 @@ final class PhamePostViewController
         ),
         $engine->getOutput($post, PhamePost::MARKUP_FIELD_BODY)));
 
-    $blogger = id(new PhabricatorPeopleQuery())
+    $blogger = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($post->getBloggerPHID()))
       ->needProfileImage(true)
@@ -115,7 +115,7 @@ final class PhamePostViewController
     }
 
     $user_icon = $blogger_profile->getIcon();
-    $user_icon = PhabricatorPeopleIconSet::getIconIcon($user_icon);
+    $user_icon = PhabricatorUsersIconSet::getIconIcon($user_icon);
     $user_icon = id(new PHUIIconView())->setIcon($user_icon);
 
     $about = id(new PhameDescriptionView())

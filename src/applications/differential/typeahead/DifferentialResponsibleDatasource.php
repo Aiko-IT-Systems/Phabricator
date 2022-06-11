@@ -31,7 +31,7 @@ final class DifferentialResponsibleDatasource
 
     $phids = array();
     foreach ($values as $value) {
-      if (phid_get_type($value) == PhabricatorPeopleUserPHIDType::TYPECONST) {
+      if (phid_get_type($value) == PhabricatorUsersUserPHIDType::TYPECONST) {
         $phids[] = $value;
       }
     }

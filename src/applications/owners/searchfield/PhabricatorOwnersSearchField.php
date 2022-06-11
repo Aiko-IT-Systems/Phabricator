@@ -12,7 +12,7 @@ final class PhabricatorOwnersSearchField
   }
 
   protected function newDatasource() {
-    return new PhabricatorPeopleOwnerDatasource();
+    return new PhabricatorUsersOwnerDatasource();
   }
 
   protected function newConduitParameterType() {

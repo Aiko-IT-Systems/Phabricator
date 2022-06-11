@@ -308,7 +308,7 @@ final class HeraldRuleQuery extends PhabricatorCursorPagedPolicyAwareQuery {
 
     // For personal rules, the author needs to exist and not be disabled.
     $user_phids = mpull($rules, 'getAuthorPHID');
-    $users = id(new PhabricatorPeopleQuery())
+    $users = id(new PhabricatorUsersQuery())
       ->setViewer($this->getViewer())
       ->withPHIDs($user_phids)
       ->execute();

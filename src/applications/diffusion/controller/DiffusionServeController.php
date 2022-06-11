@@ -734,7 +734,7 @@ final class DiffusionServeController extends DiffusionController {
       return null;
     }
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($omnipotent_viewer)
       ->withPHIDs(array($token->getUserPHID()))
       ->executeOne();
@@ -771,7 +771,7 @@ final class DiffusionServeController extends DiffusionController {
       return null;
     }
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withUsernames(array($username))
       ->executeOne();

@@ -45,7 +45,7 @@ final class PhabricatorOwnersOwner extends PhabricatorOwnersDAO {
       'packageID IN (%Ls)',
       $package_ids);
 
-    $type_user = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $type_user = PhabricatorUsersUserPHIDType::TYPECONST;
     $type_project = PhabricatorProjectProjectPHIDType::TYPECONST;
 
     $user_phids = array();
@@ -53,7 +53,7 @@ final class PhabricatorOwnersOwner extends PhabricatorOwnersDAO {
     foreach ($owners as $owner) {
       $owner_phid = $owner->getUserPHID();
       switch (phid_get_type($owner_phid)) {
-        case PhabricatorPeopleUserPHIDType::TYPECONST:
+        case PhabricatorUsersUserPHIDType::TYPECONST:
           $user_phids[] = $owner_phid;
           break;
         case PhabricatorProjectProjectPHIDType::TYPECONST:

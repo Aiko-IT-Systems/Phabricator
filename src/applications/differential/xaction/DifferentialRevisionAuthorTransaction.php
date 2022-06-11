@@ -41,7 +41,7 @@ final class DifferentialRevisionAuthorTransaction
         continue;
       }
 
-      $author_objects = id(new PhabricatorPeopleQuery())
+      $author_objects = id(new PhabricatorUsersQuery())
         ->setViewer($actor)
         ->withPHIDs(array($new))
         ->execute();

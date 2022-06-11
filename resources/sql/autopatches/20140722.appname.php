@@ -36,7 +36,7 @@ $applications = array(
   'Owners',
   'Passphrase',
   'Paste',
-  'People',
+  'Users',
   'Phame',
   'Phlux',
   'Pholio',

@@ -28,7 +28,7 @@ final class PhabricatorCalendarExportICSController
       return new Aphront404Response();
     }
 
-    $author = id(new PhabricatorPeopleQuery())
+    $author = id(new PhabricatorUsersQuery())
       ->setViewer($omnipotent)
       ->withPHIDs(array($export->getAuthorPHID()))
       ->needUserSettings(true)

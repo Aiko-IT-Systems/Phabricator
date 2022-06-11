@@ -18,7 +18,7 @@ final class PhamePostFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $post->getBloggerPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $post->getDateCreated());
 
     $document->addRelationship(

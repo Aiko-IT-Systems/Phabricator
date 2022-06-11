@@ -93,9 +93,9 @@ final class DiffusionUpdateObjectAfterCommitWorker
 
     $viewer = $this->getViewer();
 
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
     if (phid_get_type($acting_phid) === $user_type) {
-      $acting_user = id(new PhabricatorPeopleQuery())
+      $acting_user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs(array($acting_phid))
         ->executeOne();

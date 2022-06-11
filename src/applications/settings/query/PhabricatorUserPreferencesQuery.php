@@ -92,7 +92,7 @@ final class PhabricatorUserPreferencesQuery
       $load_phids = array_keys($load_phids);
 
       if ($load_phids) {
-        $load_users = id(new PhabricatorPeopleQuery())
+        $load_users = id(new PhabricatorUsersQuery())
           ->setViewer($this->getViewer())
           ->withPHIDs($load_phids)
           ->execute();

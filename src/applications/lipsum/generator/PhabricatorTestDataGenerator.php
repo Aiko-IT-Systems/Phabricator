@@ -42,7 +42,7 @@ abstract class PhabricatorTestDataGenerator extends Phobject {
 
     $user = null;
     if ($user_phid) {
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs(array($user_phid))
         ->needUserSettings(true)

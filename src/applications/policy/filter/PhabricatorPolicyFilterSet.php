@@ -129,7 +129,7 @@ final class PhabricatorPolicyFilterSet
       return;
     }
 
-    $users = id(new PhabricatorPeopleQuery())
+    $users = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array_keys($viewer_map))
       ->execute();

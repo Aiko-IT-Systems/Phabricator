@@ -112,7 +112,7 @@ final class PhabricatorAuthFactorConfig
   public function destroyObjectPermanently(
     PhabricatorDestructionEngine $engine) {
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($engine->getViewer())
       ->withPHIDs(array($this->getUserPHID()))
       ->executeOne();

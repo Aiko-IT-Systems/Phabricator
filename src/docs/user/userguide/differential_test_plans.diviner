@@ -37,7 +37,7 @@ you are writing; they are adapted from Facebook's internal documentation.
     question, or would a failure of a database or network service cause your
     test to fail?
   - **Concurrent Change Robustness:** If you're making a refactoring change, is
-    it robust against people introducing new calls between the time you started
+    it robust against users introducing new calls between the time you started
     the change and when you commit it? For example, if you change the parameter
     order of some function from `f(a, b)` to `f(b, a)` and a new callsite is
     introduced in the meantime, could it go unnoticed? How bad would that be?

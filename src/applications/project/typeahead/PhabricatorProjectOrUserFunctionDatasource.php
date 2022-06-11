@@ -14,7 +14,7 @@ final class PhabricatorProjectOrUserFunctionDatasource
   public function getComponentDatasources() {
     return array(
       new PhabricatorViewerDatasource(),
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
       new PhabricatorProjectDatasource(),
       new PhabricatorProjectMembersDatasource(),
       new PhabricatorProjectUserFunctionDatasource(),

@@ -38,7 +38,7 @@ final class ManiphestAssignEmailCommand
 
     $assign_to = head($argv);
     if ($assign_to) {
-      $assign_user = id(new PhabricatorPeopleQuery())
+      $assign_user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withUsernames(array($assign_to))
         ->executeOne();

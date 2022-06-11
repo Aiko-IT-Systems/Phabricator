@@ -39,7 +39,7 @@ abstract class PhabricatorMetaMTAEmailHeraldAction
     $adapter = $this->getAdapter();
 
     $allowed_types = array(
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       PhabricatorProjectProjectPHIDType::TYPECONST,
     );
 

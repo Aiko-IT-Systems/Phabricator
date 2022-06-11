@@ -64,7 +64,7 @@ final class PhabricatorRemarkupControl extends AphrontFormTextAreaControl {
 
     $root_id = celerity_generate_unique_node_id();
 
-    $user_datasource = new PhabricatorPeopleDatasource();
+    $user_datasource = new PhabricatorUsersDatasource();
     $emoji_datasource = new PhabricatorEmojiDatasource();
     $proj_datasource = id(new PhabricatorProjectDatasource())
       ->setParameters(

@@ -25,7 +25,7 @@ final class DifferentialSubscribersCommitMessageField
     return $this->parseObjectList(
       $value,
       array(
-        PhabricatorPeopleUserPHIDType::TYPECONST,
+        PhabricatorUsersUserPHIDType::TYPECONST,
         PhabricatorProjectProjectPHIDType::TYPECONST,
         PhabricatorOwnersPackagePHIDType::TYPECONST,
       ));

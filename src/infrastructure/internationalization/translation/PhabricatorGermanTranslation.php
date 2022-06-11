@@ -1864,7 +1864,7 @@ final class PhabricatorGermanTranslation
       'Enabled' => 'Aktiviert',
       'User' => 'Benutzer',
       'User Account' => ' Benutzerkonto',
-      'People' => 'Personen',
+      'Users' => 'Personen',
       'User Since' => 'Benutzer seit',
       'Roles' => 'Rollen',
       'Not Approved' => 'Nicht bestätigt',

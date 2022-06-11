@@ -13,7 +13,7 @@ final class PhabricatorProjectOrUserDatasource
 
   public function getComponentDatasources() {
     return array(
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
       new PhabricatorProjectDatasource(),
     );
   }

@@ -24,7 +24,7 @@ Supported Commands
   - **rXYZ** - Jump to Diffusion Repository XYZ.
   - **rXYZabcdef** - Jump to Diffusion Commit rXYZabcdef.
   - **r <name>** - Search for repositories by name.
-  - **u** - Jump to People
+  - **u** - Jump to Users
   - **u username** - Jump to username's Profile
   - **p** - Jump to Project
   - **p Some Project** - Jump to Project: Some Project

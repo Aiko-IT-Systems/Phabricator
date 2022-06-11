@@ -135,7 +135,7 @@ Guide: Test Plans}. You can make it optional or disable it in the configuration,
 but consider adopting it. Having this information can be particularly helpful
 for reviewers.
 
-Some things that people sometimes feel strongly about but which are probably not
+Some things that users sometimes feel strongly about but which are probably not
 really all that important in commit messages include:
 
   - If/where text is wrapped.

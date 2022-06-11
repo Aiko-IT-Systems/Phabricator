@@ -142,7 +142,7 @@ final class PhabricatorPolicyManagementUnlockWorkflow
       return null;
     }
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withUsernames(array($username))
       ->executeOne();

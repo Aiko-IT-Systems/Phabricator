@@ -87,7 +87,7 @@ final class DiffusionRepositoryIdentityEngine
     $unassigned = DiffusionIdentityUnassignedDatasource::FUNCTION_TOKEN;
     if ($assigned_phid && ($assigned_phid !== $unassigned)) {
       $viewer = $this->getViewer();
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs(array($assigned_phid))
         ->executeOne();

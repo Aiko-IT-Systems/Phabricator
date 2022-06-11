@@ -12,7 +12,7 @@ final class DifferentialResponsibleViewerFunctionDatasource
   }
 
   public function getDatasourceApplicationClass() {
-    return 'PhabricatorPeopleApplication';
+    return 'PhabricatorUsersApplication';
   }
 
   public function getDatasourceFunctions() {

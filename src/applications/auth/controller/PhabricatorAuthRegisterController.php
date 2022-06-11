@@ -443,12 +443,12 @@ final class PhabricatorAuthRegisterController
               $content_source = PhabricatorContentSource::newFromRequest(
                 $request);
 
-              $people_application_phid = id(new PhabricatorPeopleApplication())
+              $users_application_phid = id(new PhabricatorUsersApplication())
                 ->getPHID();
 
               $transaction_editor = id(new PhabricatorUserTransactionEditor())
                 ->setActor($actor)
-                ->setActingAsPHID($people_application_phid)
+                ->setActingAsPHID($users_application_phid)
                 ->setContentSource($content_source)
                 ->setContinueOnMissingFields(true);
 
@@ -725,14 +725,14 @@ final class PhabricatorAuthRegisterController
     $body->addLinkSection(
       pht('APPROVAL QUEUE'),
       PhabricatorEnv::getProductionURI(
-        '/people/query/approval/'));
+        '/users/query/approval/'));
 
     $body->addLinkSection(
       pht('DISABLE APPROVAL QUEUE'),
       PhabricatorEnv::getProductionURI(
         '/config/edit/auth.require-approval/'));
 
-    $admins = id(new PhabricatorPeopleQuery())
+    $admins = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withIsAdmin(true)
       ->execute();

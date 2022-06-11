@@ -26,7 +26,7 @@ abstract class PhabricatorTransactionFactEngine
     $breaks = array();
 
     $touch_window = phutil_units('15 minutes in seconds');
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
 
     $last_actor = null;
     $last_epoch = null;

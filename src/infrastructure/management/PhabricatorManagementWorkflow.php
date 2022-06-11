@@ -76,7 +76,7 @@ abstract class PhabricatorManagementWorkflow extends PhutilArgumentWorkflow {
     $phids = array();
     $usernames = array();
 
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
 
     foreach ($identifiers as $identifier) {
       // If the value is a user PHID, treat as a PHID.
@@ -107,7 +107,7 @@ abstract class PhabricatorManagementWorkflow extends PhutilArgumentWorkflow {
     $results = array();
 
     if ($phids) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs($phids)
         ->execute();
@@ -118,7 +118,7 @@ abstract class PhabricatorManagementWorkflow extends PhutilArgumentWorkflow {
     }
 
     if ($usernames) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withUsernames($usernames)
         ->execute();
@@ -150,7 +150,7 @@ abstract class PhabricatorManagementWorkflow extends PhutilArgumentWorkflow {
     }
 
     if ($ids) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withIDs($ids)
         ->execute();

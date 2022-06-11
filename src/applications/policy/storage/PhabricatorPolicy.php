@@ -90,7 +90,7 @@ final class PhabricatorPolicy
           ->setName($handle->getName())
           ->setIcon($handle->getIcon());
         break;
-      case PhabricatorPeopleUserPHIDType::TYPECONST:
+      case PhabricatorUsersUserPHIDType::TYPECONST:
         $policy->setType(PhabricatorPolicyType::TYPE_USER);
         $policy->setName($handle->getFullName());
         break;
@@ -267,7 +267,7 @@ final class PhabricatorPolicy
             'Members of a particular project can take this action. (You '.
             'can not see this object, so the name of this project is '.
             'restricted.)');
-        } else if ($type == PhabricatorPeopleUserPHIDType::TYPECONST) {
+        } else if ($type == PhabricatorUsersUserPHIDType::TYPECONST) {
           return pht(
             '%s can take this action.',
             $handle->getFullName());

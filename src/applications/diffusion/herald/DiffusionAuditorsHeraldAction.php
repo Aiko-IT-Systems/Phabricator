@@ -42,7 +42,7 @@ abstract class DiffusionAuditorsHeraldAction
     }
 
     $allowed_types = array(
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       PhabricatorProjectProjectPHIDType::TYPECONST,
       PhabricatorOwnersPackagePHIDType::TYPECONST,
     );

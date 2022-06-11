@@ -17,7 +17,7 @@ final class PhabricatorOwnersPackageOwnerDatasource
 
   public function getComponentDatasources() {
     return array(
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
       new PhabricatorProjectDatasource(),
     );
   }
@@ -64,7 +64,7 @@ final class PhabricatorOwnersPackageOwnerDatasource
     $owner_phids = array();
     foreach ($phids as $key => $phid) {
       switch (phid_get_type($phid)) {
-        case PhabricatorPeopleUserPHIDType::TYPECONST:
+        case PhabricatorUsersUserPHIDType::TYPECONST:
         case PhabricatorProjectProjectPHIDType::TYPECONST:
           $owner_phids[] = $phid;
           unset($phids[$key]);
@@ -120,7 +120,7 @@ final class PhabricatorOwnersPackageOwnerDatasource
     $usernames = array();
     foreach ($phids as $key => $phid) {
       switch (phid_get_type($phid)) {
-        case PhabricatorPeopleUserPHIDType::TYPECONST:
+        case PhabricatorUsersUserPHIDType::TYPECONST:
         case PhabricatorProjectProjectPHIDType::TYPECONST:
           break;
         default:
@@ -130,7 +130,7 @@ final class PhabricatorOwnersPackageOwnerDatasource
     }
 
     if ($usernames) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withUsernames($usernames)
         ->execute();

@@ -12,10 +12,10 @@ foreach ($iterator as $event) {
     echo pht('Renaming event %d...', $id)."\n";
     $viewer = PhabricatorUser::getOmnipotentUser();
 
-    // NOTE: This uses PeopleQuery directly, instead of HandleQuery, to avoid
+    // NOTE: This uses UsersQuery directly, instead of HandleQuery, to avoid
     // performing cache fills as a side effect; the caches were added by a
     // later patch. See T8209.
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($event->getHostPHID()))
       ->executeOne();

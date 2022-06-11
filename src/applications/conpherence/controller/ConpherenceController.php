@@ -38,7 +38,7 @@ abstract class ConpherenceController extends PhabricatorController {
         ->setType(PHUIListItemView::TYPE_LINK)
         ->setHref('#')
         ->addSigil('conpherence-widget-adder')
-        ->setMetadata(array('widget' => 'widgets-people')));
+        ->setMetadata(array('widget' => 'widgets-users')));
     }
 
     // Global Links

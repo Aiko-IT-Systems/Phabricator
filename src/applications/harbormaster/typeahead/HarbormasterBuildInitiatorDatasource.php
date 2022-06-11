@@ -14,7 +14,7 @@ final class HarbormasterBuildInitiatorDatasource
   public function getComponentDatasources() {
     return array(
       new PhabricatorApplicationDatasource(),
-      new PhabricatorPeopleUserFunctionDatasource(),
+      new PhabricatorUsersUserFunctionDatasource(),
       new HeraldRuleDatasource(),
     );
   }

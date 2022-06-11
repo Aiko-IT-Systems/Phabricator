@@ -44,7 +44,7 @@ final class PhabricatorAuthManagementVerifyWorkflow
 
     $viewer = $this->getViewer();
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($email->getUserPHID()))
       ->executeOne();

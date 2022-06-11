@@ -327,7 +327,7 @@ final class DifferentialTransactionEditor
     // so we don't need to try to deduce the state of reviewers by examining
     // all the changes made by the transactions. Then, update the reviewers
     // on the object to make sure we're acting on the current reviewer set
-    // (and, for example, sending mail to the right people).
+    // (and, for example, sending mail to the right users).
 
     $new_revision = id(new DifferentialRevisionQuery())
       ->setViewer($this->getActor())
@@ -1594,7 +1594,7 @@ final class DifferentialTransactionEditor
         // to the author if it isn't already a user so that mail comes from
         // the natural author.
         $acting_phid = $this->getActingAsPHID();
-        $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+        $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
         if (phid_get_type($acting_phid) != $user_type) {
           $this->setActingAsPHID($author_phid);
         }

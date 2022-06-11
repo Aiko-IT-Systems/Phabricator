@@ -394,7 +394,7 @@ final class ManiphestTaskSearchEngine
     // could remove it by migrating old saved queries.
     $assigned_phids = $saved->getParameter('assignedPHIDs', array());
     if ($saved->getParameter('withUnassigned')) {
-      $assigned_phids[] = PhabricatorPeopleNoOwnerDatasource::FUNCTION_TOKEN;
+      $assigned_phids[] = PhabricatorUsersNoOwnerDatasource::FUNCTION_TOKEN;
     }
     $saved->setParameter('assignedPHIDs', $assigned_phids);
 

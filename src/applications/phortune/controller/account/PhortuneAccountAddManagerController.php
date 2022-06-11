@@ -63,7 +63,7 @@ final class PhortuneAccountAddManagerController
           ->setValue($handle->renderLink()))
       ->appendControl(
         id(new AphrontFormTokenizerControl())
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setLabel(pht('Add Managers'))
           ->setName('managerPHIDs')
           ->setValue($v_managers)

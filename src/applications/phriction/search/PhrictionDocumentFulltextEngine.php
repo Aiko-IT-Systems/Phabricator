@@ -30,7 +30,7 @@ final class PhrictionDocumentFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $content->getAuthorPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $content->getDateCreated());
 
     $document->addRelationship(

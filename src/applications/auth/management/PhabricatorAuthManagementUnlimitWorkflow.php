@@ -33,7 +33,7 @@ final class PhabricatorAuthManagementUnlimitWorkflow
           'Use %s to choose a user to reset actions for.', '--user'));
     }
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($this->getViewer())
       ->withUsernames(array($username))
       ->executeOne();

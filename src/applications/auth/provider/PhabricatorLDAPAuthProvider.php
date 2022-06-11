@@ -286,7 +286,7 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
           phutil_tag('tt', array(), pht('ldaps://ldaps.example.com/'))),
       self::KEY_DISTINGUISHED_NAME =>
         pht('Example: %s',
-          phutil_tag('tt', array(), pht('ou=People, dc=example, dc=com'))),
+          phutil_tag('tt', array(), pht('ou=Users, dc=example, dc=com'))),
       self::KEY_USERNAME_ATTRIBUTE =>
         pht('Example: %s',
           phutil_tag('tt', array(), pht('sn'))),

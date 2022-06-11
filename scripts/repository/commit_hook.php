@@ -151,7 +151,7 @@ if ($is_svnrevprop) {
   throw new Exception(pht('Unknown repository type.'));
 }
 
-$user = id(new PhabricatorPeopleQuery())
+$user = id(new PhabricatorUsersQuery())
   ->setViewer(PhabricatorUser::getOmnipotentUser())
   ->withUsernames(array($username))
   ->executeOne();

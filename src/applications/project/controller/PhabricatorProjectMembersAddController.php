@@ -65,7 +65,7 @@ final class PhabricatorProjectMembersAddController
         id(new AphrontFormTokenizerControl())
           ->setName('memberPHIDs')
           ->setLabel(pht('Members'))
-          ->setDatasource(new PhabricatorPeopleDatasource()));
+          ->setDatasource(new PhabricatorUsersDatasource()));
 
     return $this->newDialog()
       ->setTitle(pht('Add Members'))

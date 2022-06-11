@@ -351,7 +351,7 @@ final class PhabricatorObjectHandle
       );
     }
 
-    if ($this->getType() == PhabricatorPeopleUserPHIDType::TYPECONST) {
+    if ($this->getType() == PhabricatorUsersUserPHIDType::TYPECONST) {
       $classes[] = 'phui-link-person';
     }
 
@@ -386,7 +386,7 @@ final class PhabricatorObjectHandle
 
   public function getLinkName() {
     switch ($this->getType()) {
-      case PhabricatorPeopleUserPHIDType::TYPECONST:
+      case PhabricatorUsersUserPHIDType::TYPECONST:
         $name = $this->getName();
         break;
       default:
@@ -406,7 +406,7 @@ final class PhabricatorObjectHandle
       return false;
     }
 
-    return ($this->getType() === PhabricatorPeopleUserPHIDType::TYPECONST);
+    return ($this->getType() === PhabricatorUsersUserPHIDType::TYPECONST);
   }
 
   public function attachCapability(

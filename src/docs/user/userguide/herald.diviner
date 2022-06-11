@@ -61,7 +61,7 @@ You can create three kinds of Herald rules: personal rules, object rules, and
 global rules.
 
   - **Personal Rules** are rules owned by an individual. They're often used
-    to keep people informed about changes they're interested in.
+    to keep users informed about changes they're interested in.
   - **Object Rules** are rules associated with an object (like a repository
     or project). These are similar to global rules.
   - **Global Rules** are apply to all objects. They're often used to block

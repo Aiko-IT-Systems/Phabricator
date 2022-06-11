@@ -233,7 +233,7 @@ final class PhabricatorAuditManagementDeleteWorkflow
       return null;
     }
 
-    $objects = id(new PhabricatorPeopleQuery())
+    $objects = id(new PhabricatorUsersQuery())
       ->setViewer($this->getViewer())
       ->withUsernames($users)
       ->execute();

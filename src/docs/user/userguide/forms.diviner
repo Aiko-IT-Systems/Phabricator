@@ -106,7 +106,7 @@ message and a link back into the external tool.
 
 **Convenience**: You can create lightweight, ad-hoc links that make taking
 actions a little easier for users. For example, if you're sending out an email
-about a change you just made to a lot of people, you could include instructions
+about a change you just made to a lot of users, you could include instructions
 like "If you run into any issues, assign a task to me with details: ..." and
 include a link which prefills you as the task assignee.
 

@@ -110,7 +110,7 @@ You can later upgrade Arcanist to the latest version with `arc upgrade`:
 == Installing Arcanist for a Team ==
 
 Arcanist changes quickly, so it can be something of a headache to get it
-installed and keep people up to date. Here are some approaches you might be
+installed and keep users up to date. Here are some approaches you might be
 able to use:
 
   - Facebook does most development on development servers, which have a standard

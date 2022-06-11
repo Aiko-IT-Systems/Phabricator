@@ -104,7 +104,7 @@ try {
         $user_name,
         $device_name));
   } else if (strlen($user_name)) {
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withUsernames(array($user_name))
       ->executeOne();
@@ -181,7 +181,7 @@ try {
     if (preg_match('/^@/', $first_argument)) {
       $act_as_name = array_shift($original_argv);
       $act_as_name = substr($act_as_name, 1);
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer(PhabricatorUser::getOmnipotentUser())
         ->withUsernames(array($act_as_name))
         ->executeOne();

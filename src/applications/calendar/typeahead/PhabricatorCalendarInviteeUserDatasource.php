@@ -17,7 +17,7 @@ final class PhabricatorCalendarInviteeUserDatasource
 
   public function getComponentDatasources() {
     return array(
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
     );
   }
 

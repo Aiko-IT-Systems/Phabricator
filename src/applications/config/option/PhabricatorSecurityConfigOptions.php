@@ -73,12 +73,12 @@ force all users to add at least one authentication factor before they can use
 their accounts.
 
 Administrators can query a list of users who do not have MFA configured in
-{nav People}:
+{nav Users}:
 
   - **[[ %s | %s ]]**
 EOTEXT
       ,
-      '/people/?mfa=false',
+      '/users/?mfa=false',
       pht('List of Users Without MFA')));
 
     return array(

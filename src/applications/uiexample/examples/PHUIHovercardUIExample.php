@@ -57,10 +57,10 @@ final class PHUIHovercardUIExample extends PhabricatorUIExample {
 
     $user_handle = $this->createBasicDummyHandle(
       'gwashington',
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       'George Washington');
     $user_handle->setImageURI(
-      celerity_get_resource_uri('/rsrc/image/people/washington.png'));
+      celerity_get_resource_uri('/rsrc/image/users/washington.png'));
     $panel = $this->createPanel(pht('Whatevery Hovercard'));
     $panel->appendChild(id(new PHUIHovercardView())
       ->setObjectHandle($user_handle)

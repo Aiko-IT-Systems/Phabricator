@@ -60,7 +60,7 @@ final class PhabricatorMailManagementReceiveTestWorkflow
       $default_phid = $to_application_email->getConfigValue(
         PhabricatorMetaMTAApplicationEmail::CONFIG_DEFAULT_AUTHOR);
       if ($default_phid) {
-        $default_user = id(new PhabricatorPeopleQuery())
+        $default_user = id(new PhabricatorUsersQuery())
           ->setViewer($this->getViewer())
           ->withPHIDs(array($default_phid))
           ->executeOne();
@@ -75,7 +75,7 @@ final class PhabricatorMailManagementReceiveTestWorkflow
         pht("Use '--as' to specify the acting user."));
     }
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($this->getViewer())
       ->withUsernames(array($as))
       ->executeOne();

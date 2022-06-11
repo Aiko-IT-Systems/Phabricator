@@ -743,7 +743,7 @@ abstract class PhabricatorApplicationSearchEngine extends Phobject {
     $phids = array();
     $names = array();
     $allow_types = array_fuse($allow_types);
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
     foreach ($list as $item) {
       $type = phid_get_type($item);
       if ($type == $user_type) {
@@ -762,7 +762,7 @@ abstract class PhabricatorApplicationSearchEngine extends Phobject {
     }
 
     if ($names) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->requireViewer())
         ->withUsernames($names)
         ->execute();

@@ -10,7 +10,7 @@ final class PhabricatorAuthInviteWorker
     $address = idx($data, 'address');
     $author_phid = idx($data, 'authorPHID');
 
-    $author = id(new PhabricatorPeopleQuery())
+    $author = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($author_phid))
       ->executeOne();

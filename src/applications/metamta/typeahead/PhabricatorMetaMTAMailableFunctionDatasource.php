@@ -19,7 +19,7 @@ final class PhabricatorMetaMTAMailableFunctionDatasource
   public function getComponentDatasources() {
     return array(
       new PhabricatorViewerDatasource(),
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
       new PhabricatorProjectMembersDatasource(),
       new PhabricatorProjectDatasource(),
       new PhabricatorOwnersPackageDatasource(),

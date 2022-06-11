@@ -280,7 +280,7 @@ final class PhortuneCartEditor
     $id = $cart->getID();
     $name = $cart->getName();
 
-    $origin_user = id(new PhabricatorPeopleQuery())
+    $origin_user = id(new PhabricatorUsersQuery())
       ->setViewer($xviewer)
       ->withPHIDs(array($email->getAuthorPHID()))
       ->executeOne();

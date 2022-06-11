@@ -35,7 +35,7 @@ abstract class PhabricatorSearchTokenizerField
     $phids = array();
     $names = array();
     $allow_types = array_fuse($allow_types);
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
     foreach ($list as $item) {
       $type = phid_get_type($item);
       if ($type == $user_type) {
@@ -54,7 +54,7 @@ abstract class PhabricatorSearchTokenizerField
     }
 
     if ($names) {
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withUsernames($names)
         ->execute();

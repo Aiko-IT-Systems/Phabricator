@@ -6,8 +6,8 @@ Information about making Phabricator accessible to assistive technologies.
 Overview
 ========
 
-Assistive technologies help people with disabilities use the web. For example,
-screen readers can assist people with limited or no eyesight by reading the
+Assistive technologies help users with disabilities use the web. For example,
+screen readers can assist users with limited or no eyesight by reading the
 contents of pages aloud.
 
 Phabricator has some support for assistive technologies, and we'd like to have

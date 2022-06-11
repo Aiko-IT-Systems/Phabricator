@@ -983,7 +983,7 @@ final class DiffusionCommitQuery
     // filtering is to improve the performance of the final query.
 
     foreach ($phids as $key => $phid) {
-      if (phid_get_type($phid) !== PhabricatorPeopleUserPHIDType::TYPECONST) {
+      if (phid_get_type($phid) !== PhabricatorUsersUserPHIDType::TYPECONST) {
         unset($phids[$key]);
       }
     }

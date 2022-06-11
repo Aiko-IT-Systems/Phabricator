@@ -13,7 +13,7 @@ final class PhabricatorUserPHIDResolver
     $query = id(new PhabricatorObjectQuery())
       ->setViewer($this->getViewer());
 
-    $users = id(new PhabricatorPeopleUserPHIDType())
+    $users = id(new PhabricatorUsersUserPHIDType())
       ->loadNamedObjects($query, $names);
 
     $results = array();

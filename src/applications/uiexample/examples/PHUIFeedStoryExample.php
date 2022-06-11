@@ -25,7 +25,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
       'D12: New spacer classes for blog views</a>.');
     $story1 = id(new PHUIFeedStoryView())
       ->setTitle($text)
-      ->setImage(celerity_get_resource_uri('/rsrc/image/people/harding.png'))
+      ->setImage(celerity_get_resource_uri('/rsrc/image/users/harding.png'))
       ->setImageHref('http://en.wikipedia.org/wiki/Warren_G._Harding')
       ->setEpoch(1)
       ->setAppIcon('fa-star')
@@ -50,7 +50,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
       'new blog post.');
     $story2 = id(new PHUIFeedStoryView())
       ->setTitle($text)
-      ->setImage(celerity_get_resource_uri('/rsrc/image/people/lincoln.png'))
+      ->setImage(celerity_get_resource_uri('/rsrc/image/users/lincoln.png'))
       ->setImageHref('http://en.wikipedia.org/wiki/Abraham_Lincoln')
       ->setEpoch(strtotime('November 19, 1863'))
       ->setAppIcon('fa-star')
@@ -68,7 +68,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
         'live. It is altogether fitting and proper that we should do this.',
         'Gettysburg Address');
 
-    /* Action Story, let's give people tokens! */
+    /* Action Story, let's give users tokens! */
 
     $text = hsprintf(
       '<strong><a>harding (Tom Harding)</a></strong> awarded '.
@@ -82,7 +82,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
           ->setSpriteIcon('like-1');
     $story3 = id(new PHUIFeedStoryView())
       ->setTitle($text)
-      ->setImage(celerity_get_resource_uri('/rsrc/image/people/harding.png'))
+      ->setImage(celerity_get_resource_uri('/rsrc/image/users/harding.png'))
       ->setImageHref('http://en.wikipedia.org/wiki/Warren_G._Harding')
       ->appendChild($token)
       ->setEpoch(1)
@@ -102,7 +102,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
       ->setHref('#');
     $story4 = id(new PHUIFeedStoryView())
       ->setTitle($text)
-      ->setImage(celerity_get_resource_uri('/rsrc/image/people/harding.png'))
+      ->setImage(celerity_get_resource_uri('/rsrc/image/users/harding.png'))
       ->setImageHref('http://en.wikipedia.org/wiki/Warren_G._Harding')
       ->setEpoch(1)
       ->setAppIcon('fa-cogs')
@@ -118,7 +118,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
       'his status.');
     $story5 = id(new PHUIFeedStoryView())
       ->setTitle($text)
-      ->setImage(celerity_get_resource_uri('/rsrc/image/people/lincoln.png'))
+      ->setImage(celerity_get_resource_uri('/rsrc/image/users/lincoln.png'))
       ->setImageHref('http://en.wikipedia.org/wiki/Abraham_Lincoln')
       ->setEpoch(strtotime('November 19, 1863'))
       ->setAppIcon('fa-rocket')
@@ -133,7 +133,7 @@ final class PHUIFeedStoryExample extends PhabricatorUIExample {
       'D12: New spacer classes for blog views</a>.');
     $story6 = id(new PHUIFeedStoryView())
       ->setTitle($text)
-      ->setImage(celerity_get_resource_uri('/rsrc/image/people/harding.png'))
+      ->setImage(celerity_get_resource_uri('/rsrc/image/users/harding.png'))
       ->setImageHref('http://en.wikipedia.org/wiki/Warren_G._Harding')
       ->setEpoch(1)
       ->setAppIcon('fa-wifi')

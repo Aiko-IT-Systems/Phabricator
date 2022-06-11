@@ -34,13 +34,13 @@ other mechanisms and defaults.
 = Configuring Base Commit Rules =
 
 Base commit rule configuration may be more complicated than you expect. This is
-because people use many different workflows in Git and Mercurial, and have very
+because users use many different workflows in Git and Mercurial, and have very
 different expectations about what base commit `arc` should pick when run. To
 make matters worse, some of the most common ways of thinking about which commits
 represent a change are incompatible when selecting defaults.
 
 Historically, we tried to use a number of heuristics and simpler approaches to
-determine the base commit, but there is so much diversity in how people think
+determine the base commit, but there is so much diversity in how users think
 about version control and what they expect to happen that some users were always
 unhappy.
 

@@ -49,7 +49,7 @@ final class PhortuneMerchantAddManagerController
       ->setUser($viewer)
       ->appendControl(
         id(new AphrontFormTokenizerControl())
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setLabel(pht('New Managers'))
           ->setName('managerPHIDs')
           ->setValue($v_members)

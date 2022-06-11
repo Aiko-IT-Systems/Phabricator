@@ -546,7 +546,7 @@ EOBODY
     // Try to identify the user based on their "From" address.
     $from_address = $this->newFromAddress();
     if ($from_address) {
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withEmails(array($from_address->getAddress()))
         ->executeOne();

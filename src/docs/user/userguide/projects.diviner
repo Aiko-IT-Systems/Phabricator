@@ -16,7 +16,7 @@ For example, you can create projects to provide:
 
   - **Organization**: Create a project to represent a product or initiative,
     then use it to organize related work.
-  - **Groups**: Create a project to represent a group of people (like a team),
+  - **Groups**: Create a project to represent a group of users (like a team),
     then add members of the group as project members.
   - **Tags**: To create a tag, just create a project without any members. Then
     tag anything you want.

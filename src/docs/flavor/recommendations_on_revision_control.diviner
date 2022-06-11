@@ -79,7 +79,7 @@ particular:
 
 All of these become problems only at scale. Facebook pushes dozens of ideas
 every day and thousands on a weekly basis, and could not do this (at least, not
-without more people or more errors) without choosing a repository strategy where
+without more users or more errors) without choosing a repository strategy where
 **one idea is one commit**.
 
 = Next Steps =

@@ -4,7 +4,7 @@ final class PhabricatorUsersEditField
   extends PhabricatorTokenizerEditField {
 
   protected function newDatasource() {
-    return new PhabricatorPeopleDatasource();
+    return new PhabricatorUsersDatasource();
   }
 
   protected function newHTTPParameterType() {

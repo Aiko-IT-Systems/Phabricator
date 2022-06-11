@@ -465,7 +465,7 @@ final class ManiphestTaskDetailController extends ManiphestController {
     // very interesting to show in a relationship summary since they usually
     // end up as subscribers anyway.
 
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
     foreach ($out_phids as $key => $out_phid) {
       if (phid_get_type($out_phid) == $user_type) {
         unset($out_phids[$key]);

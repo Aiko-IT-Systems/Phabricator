@@ -182,7 +182,7 @@ final class ReleephProductEditController extends ReleephProductController {
         id(new AphrontFormTokenizerControl())
           ->setLabel(pht('Pushers'))
           ->setName('pushers')
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setValue($pusher_phids))
       ->appendChild($branch_template_input)
       ->appendChild($branch_template_preview)

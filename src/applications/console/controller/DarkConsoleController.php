@@ -65,7 +65,7 @@ final class DarkConsoleController extends PhabricatorController {
     // fills that are only filling because you toggled the console or switched
     // tabs. This makes it harder to see what's really going on, so just force
     // a cache regeneration here.
-    id(new PhabricatorPeopleQuery())
+    id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($viewer->getPHID()))
       ->needUserSettings(true)

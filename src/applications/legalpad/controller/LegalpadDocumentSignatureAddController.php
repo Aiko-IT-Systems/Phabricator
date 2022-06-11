@@ -43,7 +43,7 @@ final class LegalpadDocumentSignatureAddController extends LegalpadController {
           $e_user = pht('Required');
           $errors[] = pht('You must choose a user to exempt.');
         } else {
-          $user = id(new PhabricatorPeopleQuery())
+          $user = id(new PhabricatorUsersQuery())
             ->setViewer($viewer)
             ->withPHIDs(array($user_phid))
             ->executeOne();
@@ -123,7 +123,7 @@ final class LegalpadDocumentSignatureAddController extends LegalpadController {
             ->setLabel(pht('Exempt User'))
             ->setName('users')
             ->setLimit(1)
-            ->setDatasource(new PhabricatorPeopleDatasource())
+            ->setDatasource(new PhabricatorUsersDatasource())
             ->setValue($v_users)
             ->setError($e_user));
     } else {

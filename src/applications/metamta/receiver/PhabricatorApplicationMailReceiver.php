@@ -67,7 +67,7 @@ abstract class PhabricatorApplicationMailReceiver
               (string)$target));
         }
 
-        $author = id(new PhabricatorPeopleQuery())
+        $author = id(new PhabricatorUsersQuery())
           ->setViewer($viewer)
           ->withPHIDs(array($author_phid))
           ->executeOne();

@@ -24,7 +24,7 @@ final class PhabricatorDashboardSearchEngine
       id(new PhabricatorSearchDatasourceField())
         ->setLabel(pht('Authored By'))
         ->setKey('authorPHIDs')
-        ->setDatasource(new PhabricatorPeopleUserFunctionDatasource()),
+        ->setDatasource(new PhabricatorUsersUserFunctionDatasource()),
       id(new PhabricatorSearchCheckboxesField())
         ->setKey('statuses')
         ->setLabel(pht('Status'))

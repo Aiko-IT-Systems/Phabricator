@@ -448,7 +448,7 @@ JX.install('Stratcom', {
       // Listeners with the same closest sigil are called in an undefined order
       listeners.sort(function(a, b) {
         if (__DEV__) {
-          // Make sure people play by the rules. >:)
+          // Make sure users play by the rules. >:)
           return (a.distance - b.distance) || (Math.random() - 0.5);
         }
         return a.distance - b.distance;

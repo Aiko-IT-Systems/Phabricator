@@ -78,8 +78,8 @@ final class ManiphestTaskQuery extends PhabricatorCursorPagedPolicyAwareQuery {
       throw new Exception(pht('Empty withOwners() constraint is not valid.'));
     }
 
-    $no_owner = PhabricatorPeopleNoOwnerDatasource::FUNCTION_TOKEN;
-    $any_owner = PhabricatorPeopleAnyOwnerDatasource::FUNCTION_TOKEN;
+    $no_owner = PhabricatorUsersNoOwnerDatasource::FUNCTION_TOKEN;
+    $any_owner = PhabricatorUsersAnyOwnerDatasource::FUNCTION_TOKEN;
 
     foreach ($owners as $k => $phid) {
       if ($phid === $no_owner || $phid === null) {

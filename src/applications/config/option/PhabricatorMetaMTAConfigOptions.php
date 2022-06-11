@@ -61,7 +61,7 @@ of each approach are:
       a normal recipient and also Cc'd on a mailing list.
     - Getting threading to work properly is harder, and probably requires
       making mail less useful by turning off options.
-    - Sometimes people will "Reply All", which can send mail to too many
+    - Sometimes users will "Reply All", which can send mail to too many
       recipients. Phabricator will try not to send mail to users who already
       received a similar message, but can not prevent all stray email arising
       from "Reply All".

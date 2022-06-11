@@ -104,7 +104,7 @@ final class PhabricatorProjectSubprojectsController
       ->setHeader($header)
       ->setCurtain($curtain)
       ->addClass('project-view-home')
-      ->addClass('project-view-people-home')
+      ->addClass('project-view-users-home')
       ->setMainColumn(array(
           $info_view,
           $subproject_list,

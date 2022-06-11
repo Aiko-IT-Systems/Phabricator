@@ -53,37 +53,37 @@ final class PHUIIconExample extends PhabricatorUIExample {
     $person1->setHeadSize(PHUIIconView::HEAD_MEDIUM);
     $person1->setHref('http://en.wikipedia.org/wiki/George_Washington');
     $person1->setImage(
-      celerity_get_resource_uri('/rsrc/image/people/washington.png'));
+      celerity_get_resource_uri('/rsrc/image/users/washington.png'));
 
     $person2 = new PHUIIconView();
     $person2->setHeadSize(PHUIIconView::HEAD_MEDIUM);
     $person2->setHref('http://en.wikipedia.org/wiki/Warren_G._Harding');
     $person2->setImage(
-      celerity_get_resource_uri('/rsrc/image/people/harding.png'));
+      celerity_get_resource_uri('/rsrc/image/users/harding.png'));
 
     $person3 = new PHUIIconView();
     $person3->setHeadSize(PHUIIconView::HEAD_MEDIUM);
     $person3->setHref('http://en.wikipedia.org/wiki/William_Howard_Taft');
     $person3->setImage(
-      celerity_get_resource_uri('/rsrc/image/people/taft.png'));
+      celerity_get_resource_uri('/rsrc/image/users/taft.png'));
 
     $person4 = new PHUIIconView();
     $person4->setHeadSize(PHUIIconView::HEAD_SMALL);
     $person4->setHref('http://en.wikipedia.org/wiki/George_Washington');
     $person4->setImage(
-      celerity_get_resource_uri('/rsrc/image/people/washington.png'));
+      celerity_get_resource_uri('/rsrc/image/users/washington.png'));
 
     $person5 = new PHUIIconView();
     $person5->setHeadSize(PHUIIconView::HEAD_SMALL);
     $person5->setHref('http://en.wikipedia.org/wiki/Warren_G._Harding');
     $person5->setImage(
-      celerity_get_resource_uri('/rsrc/image/people/harding.png'));
+      celerity_get_resource_uri('/rsrc/image/users/harding.png'));
 
     $person6 = new PHUIIconView();
     $person6->setHeadSize(PHUIIconView::HEAD_SMALL);
     $person6->setHref('http://en.wikipedia.org/wiki/William_Howard_Taft');
     $person6->setImage(
-      celerity_get_resource_uri('/rsrc/image/people/taft.png'));
+      celerity_get_resource_uri('/rsrc/image/users/taft.png'));
 
     $tokens = array(
       'like-1',
@@ -212,7 +212,7 @@ final class PHUIIconExample extends PhabricatorUIExample {
       ->appendChild($layout_cicons);
 
     $wrap2 = id(new PHUIObjectBoxView())
-      ->setHeaderText(pht('People!'))
+      ->setHeaderText(pht('Users!'))
       ->appendChild(array($layout2, $layout2a));
 
     $wrap3 = id(new PHUIObjectBoxView())

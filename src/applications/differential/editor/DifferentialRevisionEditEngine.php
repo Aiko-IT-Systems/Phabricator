@@ -179,7 +179,7 @@ final class DifferentialRevisionEditEngine
     $author_field = id(new PhabricatorDatasourceEditField())
       ->setKey(DifferentialRevisionAuthorTransaction::EDITKEY)
       ->setLabel(pht('Author'))
-      ->setDatasource(new PhabricatorPeopleDatasource())
+      ->setDatasource(new PhabricatorUsersDatasource())
       ->setTransactionType(
         DifferentialRevisionAuthorTransaction::TRANSACTIONTYPE)
       ->setDescription(pht('Foist this revision upon someone else.'))

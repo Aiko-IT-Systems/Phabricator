@@ -114,7 +114,7 @@ final class PhortuneMerchantPictureController
       'tip' => pht('Default Picture'),
     );
 
-    require_celerity_resource('people-profile-css');
+    require_celerity_resource('users-profile-css');
     Javelin::initBehavior('phabricator-tooltips', array());
 
     $buttons = array();

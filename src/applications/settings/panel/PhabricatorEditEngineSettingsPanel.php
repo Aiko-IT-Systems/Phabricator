@@ -14,7 +14,7 @@ abstract class PhabricatorEditEngineSettingsPanel
     }
 
     if ($user && $user->getPHID()) {
-      $profile_uri = '/people/manage/'.$user->getID().'/';
+      $profile_uri = '/users/manage/'.$user->getID().'/';
     } else {
       $profile_uri = null;
     }

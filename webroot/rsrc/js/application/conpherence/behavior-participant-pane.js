@@ -44,11 +44,11 @@ JX.behavior('conpherence-participant-pane', function() {
           }
 
           try {
-            var people_root = JX.DOM.find(root, 'div', 'widgets-people');
-            // update the people widget
+            var users_root = JX.DOM.find(root, 'div', 'widgets-users');
+            // update the users widget
             JX.DOM.setContent(
-              people_root,
-              JX.$H(r.people_widget));
+              users_root,
+              JX.$H(r.users_widget));
           } catch (ex) {
           }
 

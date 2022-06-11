@@ -44,7 +44,7 @@ final class PhabricatorMailManagementUnverifyWorkflow
 
       $user_phid = $email->getUserPHID();
 
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs(array($user_phid))
         ->executeOne();

@@ -260,7 +260,7 @@ JX.behavior('conpherence-menu', function(config) {
   }
 
   function getDefaultWidget() {
-    return 'widgets-people';
+    return 'widgets-users';
   }
 
   /**

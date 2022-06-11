@@ -229,7 +229,7 @@ final class PhabricatorObjectListQuery extends Phobject {
     if ($names) {
       // We still have some symbols we haven't been able to resolve, so try to
       // load users. Try by username first...
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withUsernames($names)
         ->execute();

@@ -14,7 +14,7 @@ final class PhabricatorAuthOneTimeLoginController
     $key = $request->getURIData('key');
     $email_id = $request->getURIData('emailID');
 
-    $target_user = id(new PhabricatorPeopleQuery())
+    $target_user = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withIDs(array($id))
       ->executeOne();

@@ -354,7 +354,7 @@ final class DifferentialRevisionReviewersTransaction
         }
 
         switch (phid_get_type($phid)) {
-          case PhabricatorPeopleUserPHIDType::TYPECONST:
+          case PhabricatorUsersUserPHIDType::TYPECONST:
           case PhabricatorOwnersPackagePHIDType::TYPECONST:
           case PhabricatorProjectProjectPHIDType::TYPECONST:
             break;

@@ -56,7 +56,7 @@
   position: relative;
 }
 
-.people-card-view .project-card-inner {
+.users-card-view .project-card-inner {
   padding: 6px;
   min-height: 140px;
 }
@@ -130,7 +130,7 @@
   margin-top: 8px;
 }
 
-.people-card-view .phui-header-subheader .phui-tag-core {
+.users-card-view .phui-header-subheader .phui-tag-core {
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 232px;

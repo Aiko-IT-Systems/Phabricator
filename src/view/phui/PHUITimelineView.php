@@ -244,7 +244,7 @@ final class PHUITimelineView extends AphrontView {
       return;
     }
 
-    $user_phid_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_phid_type = PhabricatorUsersUserPHIDType::TYPECONST;
 
     $user_phids = array();
     foreach ($events as $key => $event) {
@@ -268,7 +268,7 @@ final class PHUITimelineView extends AphrontView {
       return;
     }
 
-    $users = id(new PhabricatorPeopleQuery())
+    $users = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs($user_phids)
       ->needBadgeAwards(true)

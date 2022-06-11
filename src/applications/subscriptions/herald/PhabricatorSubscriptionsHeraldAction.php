@@ -20,7 +20,7 @@ abstract class PhabricatorSubscriptionsHeraldAction
     $adapter = $this->getAdapter();
 
     $allowed_types = array(
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       PhabricatorProjectProjectPHIDType::TYPECONST,
     );
 

@@ -25,7 +25,7 @@ final class PhabricatorActivitySettingsPanel extends PhabricatorSettingsPanel {
     $pager = id(new AphrontCursorPagerView())
       ->readFromRequest($request);
 
-    $logs = id(new PhabricatorPeopleLogQuery())
+    $logs = id(new PhabricatorUsersLogQuery())
       ->setViewer($viewer)
       ->withRelatedPHIDs(array($user->getPHID()))
       ->executeWithCursorPager($pager);

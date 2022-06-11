@@ -59,7 +59,7 @@ final class PHUIBadgeExample extends PhabricatorUIExample {
       ->setHeader(pht('Phabricator User'))
       ->setSubhead(pht('Confirmed your account.'))
       ->setQuality(PhabricatorBadgesQuality::POOR)
-      ->setSource(pht('People (automatic)'))
+      ->setSource(pht('Users (automatic)'))
       ->addByline(pht('Dec 31, 1969'))
       ->addByline('212 Issued (100%)');
 
@@ -104,7 +104,7 @@ final class PHUIBadgeExample extends PhabricatorUIExample {
       ->setHeader(pht('Administrator'))
       ->setSubhead(pht('Drew the short stick'))
       ->setQuality(PhabricatorBadgesQuality::LEGENDARY)
-      ->setSource(pht('People (automatic)'))
+      ->setSource(pht('Users (automatic)'))
       ->addByline(pht('Dec 31, 1969'))
       ->addByline('3 Awarded (1.4%)');
 

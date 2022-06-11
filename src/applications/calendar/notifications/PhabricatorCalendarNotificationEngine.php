@@ -119,7 +119,7 @@ final class PhabricatorCalendarNotificationEngine
       }
     }
 
-    $user_map = id(new PhabricatorPeopleQuery())
+    $user_map = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs($all_attendees)
       ->withIsDisabled(false)

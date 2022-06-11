@@ -36,7 +36,7 @@ final class PhabricatorRepositoryAuditRequest
   }
 
   public function isUser() {
-    $user_type = PhabricatorPeopleUserPHIDType::TYPECONST;
+    $user_type = PhabricatorUsersUserPHIDType::TYPECONST;
     return (phid_get_type($this->getAuditorPHID()) == $user_type);
   }
 

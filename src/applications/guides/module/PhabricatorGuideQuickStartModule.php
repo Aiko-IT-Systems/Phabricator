@@ -144,12 +144,12 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
 
     if (!$instance) {
       $title = pht('Invite Collaborators');
-      $people_check = id(new PhabricatorPeopleQuery())
+      $users_check = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->execute();
-      $people = count($people_check);
-      $href = PhabricatorEnv::getURI('/people/invite/send/');
-      if ($people > 1) {
+      $users = count($users_check);
+      $href = PhabricatorEnv::getURI('/users/invite/send/');
+      if ($users > 1) {
         $icon = 'fa-check';
         $icon_bg = 'bg-green';
         $description = pht(

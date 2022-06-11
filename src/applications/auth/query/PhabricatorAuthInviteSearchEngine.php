@@ -32,7 +32,7 @@ final class PhabricatorAuthInviteSearchEngine
     PhabricatorSavedQuery $saved) {}
 
   protected function getURI($path) {
-    return '/people/invite/'.$path;
+    return '/users/invite/'.$path;
   }
 
   protected function getBuiltinQueryNames() {

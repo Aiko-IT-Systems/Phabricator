@@ -97,7 +97,7 @@ final class ConpherenceThreadParticipantsTransaction
       $rem_map = array_fuse(array_diff($old, $new));
 
       foreach ($add_map as $user_phid) {
-        $user = id(new PhabricatorPeopleQuery())
+        $user = id(new PhabricatorUsersQuery())
           ->setViewer($this->getActor())
           ->withPHIDs(array($user_phid))
           ->executeOne();

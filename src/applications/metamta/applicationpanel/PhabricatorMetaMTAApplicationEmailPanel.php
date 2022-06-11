@@ -255,7 +255,7 @@ final class PhabricatorMetaMTAApplicationEmailPanel
     $form
       ->appendControl(
         id(new AphrontFormTokenizerControl())
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setLabel(pht('Default Author'))
           ->setName($config_default)
           ->setLimit(1)

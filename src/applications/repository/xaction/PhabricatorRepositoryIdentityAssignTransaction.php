@@ -64,7 +64,7 @@ final class PhabricatorRepositoryIdentityAssignTransaction
         continue;
       }
 
-      $assignee_list = id(new PhabricatorPeopleQuery())
+      $assignee_list = id(new PhabricatorUsersQuery())
         ->setViewer($this->getActor())
         ->withPHIDs(array($new))
         ->execute();

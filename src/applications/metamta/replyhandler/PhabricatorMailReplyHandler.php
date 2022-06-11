@@ -344,7 +344,7 @@ abstract class PhabricatorMailReplyHandler extends Phobject {
     if ($all_phids) {
       // We need user settings here because we'll check translations later
       // when generating mail.
-      $users = id(new PhabricatorPeopleQuery())
+      $users = id(new PhabricatorUsersQuery())
         ->setViewer(PhabricatorUser::getOmnipotentUser())
         ->withPHIDs($all_phids)
         ->needUserSettings(true)

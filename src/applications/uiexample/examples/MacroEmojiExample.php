@@ -7,7 +7,7 @@ final class MacroEmojiExample extends PhabricatorUIExample {
   }
 
   public function getDescription() {
-    return pht('Shiny happy people holding hands.');
+    return pht('Shiny happy users holding hands.');
   }
 
   public function getCategory() {

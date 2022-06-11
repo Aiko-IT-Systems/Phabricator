@@ -38,7 +38,7 @@ final class DiffusionCommitFulltextEngine
       $document->addRelationship(
         PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
         $author_phid,
-        PhabricatorPeopleUserPHIDType::TYPECONST,
+        PhabricatorUsersUserPHIDType::TYPECONST,
         $date_created);
     }
 

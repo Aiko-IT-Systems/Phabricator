@@ -93,7 +93,7 @@ final class LegalpadDocumentSignatureSearchEngine
     $form
       ->appendControl(
         id(new AphrontFormTokenizerControl())
-          ->setDatasource(new PhabricatorPeopleDatasource())
+          ->setDatasource(new PhabricatorUsersDatasource())
           ->setName('signers')
           ->setLabel(pht('Signers'))
           ->setValue($signer_phids))

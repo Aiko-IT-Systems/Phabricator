@@ -11,7 +11,7 @@ released before, and I am releasing it in the hope that someone
 other than myself will be amused by it. 
 
 The first major version of cowsay had one cow and one message
-template: $foo is $verb $bar.  Not very flexible, but people managed
+template: $foo is $verb $bar.  Not very flexible, but users managed
 to do pretty interesting things with it.  The second major version
 scrapped many of the limitations of the first, by allowing arbitrary
 messages, multiple cowfiles, and even support for cows talking in

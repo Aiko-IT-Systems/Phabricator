@@ -17,7 +17,7 @@ final class DiffusionAuditorDatasource
 
   public function getComponentDatasources() {
     return array(
-      new PhabricatorPeopleDatasource(),
+      new PhabricatorUsersDatasource(),
       new PhabricatorProjectDatasource(),
       new PhabricatorOwnersPackageDatasource(),
     );

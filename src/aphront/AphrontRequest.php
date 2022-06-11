@@ -349,7 +349,7 @@ final class AphrontRequest extends Phobject {
     if (!$valid) {
 
       // Add some diagnostic details so we can figure out if some CSRF issues
-      // are JS problems or people accessing Ajax URIs directly with their
+      // are JS problems or users accessing Ajax URIs directly with their
       // browsers.
       $info = array();
 

@@ -13,7 +13,7 @@ final class PhabricatorCalendarImportReloadWorker extends PhabricatorWorker {
       return;
     }
 
-    $author = id(new PhabricatorPeopleQuery())
+    $author = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($import->getAuthorPHID()))
       ->needUserSettings(true)

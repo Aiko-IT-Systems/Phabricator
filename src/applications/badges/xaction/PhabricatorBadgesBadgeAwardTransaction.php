@@ -64,7 +64,7 @@ final class PhabricatorBadgesBadgeAwardTransaction
 
       foreach ($user_phids as $user_phid) {
         // Check if a valid user
-        $user = id(new PhabricatorPeopleQuery())
+        $user = id(new PhabricatorUsersQuery())
           ->setViewer($this->getActor())
           ->withPHIDs(array($user_phid))
           ->executeOne();

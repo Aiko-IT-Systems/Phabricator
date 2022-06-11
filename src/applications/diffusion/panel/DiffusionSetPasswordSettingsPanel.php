@@ -175,7 +175,7 @@ final class DiffusionSetPasswordSettingsPanel extends PhabricatorSettingsPanel {
           pht(
             'Having trouble coming up with a good password? Try this '.
             'artisanal password, hand made in small batches by our expert '.
-            'craftspeople: '.
+            'craftsusers: '.
             "\n\n".
             "`%s`",
             $suggest));

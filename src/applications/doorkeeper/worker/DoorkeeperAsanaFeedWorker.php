@@ -600,7 +600,7 @@ final class DoorkeeperAsanaFeedWorker extends DoorkeeperFeedWorker {
         continue;
       }
 
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withPHIDs(array($account->getUserPHID()))
         ->executeOne();

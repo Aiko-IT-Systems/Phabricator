@@ -173,7 +173,7 @@ final class ReleephRequestTransactionalEditor
       return false;
     }
 
-    // Don't email people when we discover that something picks or reverts OK.
+    // Don't email users when we discover that something picks or reverts OK.
     if ($types === array(ReleephRequestTransaction::TYPE_PICK_STATUS)) {
       if (!mfilter($xactions, 'isBoringPickStatus', true /* negate */)) {
         // If we effectively call "isInterestingPickStatus" and get nothing...

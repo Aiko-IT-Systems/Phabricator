@@ -109,7 +109,7 @@ final class PhabricatorEmailLoginController
             $target_user->getPHID(),
             PhabricatorEmailLoginUserLogType::LOGTYPE);
 
-          $mail_engine = id(new PhabricatorPeopleEmailLoginMailEngine())
+          $mail_engine = id(new PhabricatorUsersEmailLoginMailEngine())
             ->setSender($viewer)
             ->setRecipient($target_user)
             ->setRecipientAddress($target_address)
@@ -117,7 +117,7 @@ final class PhabricatorEmailLoginController
 
           try {
             $mail_engine->validateMail();
-          } catch (PhabricatorPeopleMailEngineException $ex) {
+          } catch (PhabricatorUsersMailEngineException $ex) {
             return $this->newDialog()
               ->setTitle($ex->getTitle())
               ->appendParagraph($ex->getBody())

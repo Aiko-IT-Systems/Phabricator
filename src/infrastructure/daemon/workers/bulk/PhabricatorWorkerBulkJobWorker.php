@@ -58,7 +58,7 @@ abstract class PhabricatorWorkerBulkJobWorker
 
   final protected function loadActor(PhabricatorWorkerBulkJob $job) {
     $actor_phid = $job->getAuthorPHID();
-    $actor = id(new PhabricatorPeopleQuery())
+    $actor = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withPHIDs(array($actor_phid))
       ->executeOne();

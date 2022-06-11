@@ -69,7 +69,7 @@ final class DifferentialRevisionQuery
   }
 
   /**
-   * Filter results to revisions which CC one of the listed people. Calling this
+   * Filter results to revisions which CC one of the listed users. Calling this
    * function will clear anything set by previous calls to @{method:withCCs}.
    *
    * @param array List of PHIDs of subscribers.

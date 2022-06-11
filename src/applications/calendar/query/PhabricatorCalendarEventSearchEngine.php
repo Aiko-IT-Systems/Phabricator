@@ -32,7 +32,7 @@ final class PhabricatorCalendarEventSearchEngine
         ->setLabel(pht('Hosts'))
         ->setKey('hostPHIDs')
         ->setAliases(array('host', 'hostPHID', 'hosts'))
-        ->setDatasource(new PhabricatorPeopleUserFunctionDatasource()),
+        ->setDatasource(new PhabricatorUsersUserFunctionDatasource()),
       id(new PhabricatorSearchDatasourceField())
         ->setLabel(pht('Invited'))
         ->setKey('invitedPHIDs')

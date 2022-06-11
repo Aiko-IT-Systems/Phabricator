@@ -204,7 +204,7 @@ final class ConpherenceUpdateController
         id(new AphrontFormTokenizerControl())
           ->setName('add_person')
           ->setUser($user)
-          ->setDatasource(new PhabricatorPeopleDatasource()));
+          ->setDatasource(new PhabricatorUsersDatasource()));
 
     $view = id(new AphrontDialogView())
       ->setTitle(pht('Add Participants'))
@@ -225,7 +225,7 @@ final class ConpherenceUpdateController
     $remove_person = $request->getStr('remove_person');
     $participants = $conpherence->getParticipants();
 
-    $removed_user = id(new PhabricatorPeopleQuery())
+    $removed_user = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs(array($remove_person))
       ->executeOne();
@@ -351,14 +351,14 @@ final class ConpherenceUpdateController
     $update_uri = $this->getApplicationURI('update/'.$conpherence->getID().'/');
     $nav_item = null;
     $header = null;
-    $people_widget = null;
+    $users_widget = null;
     switch ($action) {
       case ConpherenceUpdateActions::ADD_PERSON:
-        $people_widget = id(new ConpherenceParticipantView())
+        $users_widget = id(new ConpherenceParticipantView())
           ->setUser($user)
           ->setConpherence($conpherence)
           ->setUpdateURI($update_uri);
-        $people_widget = hsprintf('%s', $people_widget->render());
+        $users_widget = hsprintf('%s', $users_widget->render());
         break;
       case ConpherenceUpdateActions::REMOVE_PERSON:
       default:
@@ -389,7 +389,7 @@ final class ConpherenceUpdateController
       'nav_item' => $nav_item,
       'conpherence_phid' => $conpherence->getPHID(),
       'header' => $header,
-      'people_widget' => $people_widget,
+      'users_widget' => $users_widget,
       'aphlictDropdownData' => array(
         $dropdown_query->getNotificationData(),
         $dropdown_query->getConpherenceData(),

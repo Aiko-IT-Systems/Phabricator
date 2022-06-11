@@ -44,7 +44,7 @@ final class PhortuneSubscriptionWorker extends PhabricatorWorker {
     // able to create these invoices "as" the application it is acting on
     // behalf of.
 
-    $members = id(new PhabricatorPeopleQuery())
+    $members = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withPHIDs($account->getMemberPHIDs())
       ->execute();

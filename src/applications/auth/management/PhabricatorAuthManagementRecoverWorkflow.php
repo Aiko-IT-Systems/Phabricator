@@ -38,7 +38,7 @@ final class PhabricatorAuthManagementRecoverWorkflow
 
     $username = head($usernames);
 
-    $user = id(new PhabricatorPeopleQuery())
+    $user = id(new PhabricatorUsersQuery())
       ->setViewer($this->getViewer())
       ->withUsernames(array($username))
       ->executeOne();

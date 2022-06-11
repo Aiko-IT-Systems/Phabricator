@@ -98,8 +98,8 @@ final class ConpherenceParticipantView extends AphrontView {
       'div',
       array(
         'class' => 'widgets-body',
-        'id' => 'widgets-people',
-        'sigil' => 'widgets-people',
+        'id' => 'widgets-users',
+        'sigil' => 'widgets-users',
       ),
       array(
         $header,

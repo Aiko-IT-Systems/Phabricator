@@ -18,7 +18,7 @@ final class ManiphestTaskFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $task->getAuthorPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $task->getDateCreated());
 
     $document->addRelationship(
@@ -34,7 +34,7 @@ final class ManiphestTaskFulltextEngine
       $document->addRelationship(
         PhabricatorSearchRelationship::RELATIONSHIP_OWNER,
         $owner,
-        PhabricatorPeopleUserPHIDType::TYPECONST,
+        PhabricatorUsersUserPHIDType::TYPECONST,
         time());
     } else {
       $document->addRelationship(

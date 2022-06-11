@@ -89,7 +89,7 @@ final class PhabricatorMailManagementSendTestWorkflow
 
     $from = $args->getArg('from');
     if ($from) {
-      $user = id(new PhabricatorPeopleQuery())
+      $user = id(new PhabricatorUsersQuery())
         ->setViewer($viewer)
         ->withUsernames(array($from))
         ->executeOne();
@@ -111,7 +111,7 @@ final class PhabricatorMailManagementSendTestWorkflow
     }
 
     $names = array_merge($tos, $ccs);
-    $users = id(new PhabricatorPeopleQuery())
+    $users = id(new PhabricatorUsersQuery())
       ->setViewer($viewer)
       ->withUsernames($names)
       ->execute();

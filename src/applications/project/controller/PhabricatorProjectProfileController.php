@@ -129,7 +129,7 @@ final class PhabricatorProjectProfileController
     $home = id(new PHUITwoColumnView())
       ->setHeader($header)
       ->addClass('project-view-home')
-      ->addClass('project-view-people-home')
+      ->addClass('project-view-users-home')
       ->setMainColumn(
         array(
           $properties,

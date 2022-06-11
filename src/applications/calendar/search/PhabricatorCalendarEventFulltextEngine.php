@@ -18,13 +18,13 @@ final class PhabricatorCalendarEventFulltextEngine
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_AUTHOR,
       $event->getHostPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $event->getDateCreated());
 
     $document->addRelationship(
       PhabricatorSearchRelationship::RELATIONSHIP_OWNER,
       $event->getHostPHID(),
-      PhabricatorPeopleUserPHIDType::TYPECONST,
+      PhabricatorUsersUserPHIDType::TYPECONST,
       $event->getDateCreated());
 
     $document->addRelationship(

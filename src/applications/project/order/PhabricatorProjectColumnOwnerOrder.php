@@ -43,7 +43,7 @@ final class PhabricatorProjectColumnOwnerOrder
     $owner_phids = array_filter($owner_phids);
 
     if ($owner_phids) {
-      $owner_users = id(new PhabricatorPeopleQuery())
+      $owner_users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withPHIDs($owner_phids)
         ->execute();
@@ -105,7 +105,7 @@ final class PhabricatorProjectColumnOwnerOrder
     $owner_phids = array_filter($owner_phids);
 
     if ($owner_phids) {
-      $owner_users = id(new PhabricatorPeopleQuery())
+      $owner_users = id(new PhabricatorUsersQuery())
         ->setViewer($this->getViewer())
         ->withPHIDs($owner_phids)
         ->needProfileImage(true)
