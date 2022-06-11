@@ -111,8 +111,8 @@ return array(
     'rsrc/css/application/slowvote/slowvote.css' => '1694baed',
     'rsrc/css/application/tokens/tokens.css' => 'ce5a50bd',
     'rsrc/css/application/uiexample/example.css' => 'b4795059',
-    'rsrc/css/application/users/users-picture-menu-item.css' => '3956711f',
-    'rsrc/css/application/users/users-profile.css' => '1329e6ae',
+    'rsrc/css/application/users/users-picture-menu-item.css' => 'ebad87cd',
+    'rsrc/css/application/users/users-profile.css' => '6bf89c89',
     'rsrc/css/core/core.css' => 'b3ebd90d',
     'rsrc/css/core/remarkup.css' => '5baa3bd9',
     'rsrc/css/core/syntax.css' => '548567f6',
@@ -775,8 +775,6 @@ return array(
     'owners-path-editor-css' => 'fa7c13ef',
     'paste-css' => 'b37bcd38',
     'path-typeahead' => 'ad486db3',
-    'users-picture-menu-item-css' => '3956711f',
-    'users-profile-css' => '1329e6ae',
     'phabricator-action-list-view-css' => '3ddd6e6b',
     'phabricator-busy' => '5202e831',
     'phabricator-chatlog-css' => 'abdc76ee',
@@ -929,6 +927,8 @@ return array(
     'trigger-rule-type' => '4feea7d3',
     'typeahead-browse-css' => 'b7ed02d2',
     'unhandled-exception-css' => '9ecfc00d',
+    'users-picture-menu-item-css' => 'ebad87cd',
+    'users-profile-css' => '6bf89c89',
   ),
   'requires' => array(
     '0116d3e8' => array(
