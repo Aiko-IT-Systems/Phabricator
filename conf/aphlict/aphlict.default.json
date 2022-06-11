@@ -4,9 +4,9 @@
       "type": "client",
       "port": 22280,
       "listen": "0.0.0.0",
-      "ssl.key": "/opt/bugs/privkey.pem",
-      "ssl.cert": "/opt/bugs/cert.pem",
-      "ssl.chain": "/opt/bugs/chain.pem"
+      "ssl.key": "/etc/letsencrypt/live/aitsys.dev/privkey.pem",
+      "ssl.cert": "/etc/letsencrypt/live/aitsys.dev/cert.pem",
+      "ssl.chain": "/etc/letsencrypt/live/aitsys.dev/fullchain.pem"
     },
     {
       "type": "admin",
