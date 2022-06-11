@@ -1,13 +1,13 @@
 /**
- * @provides people-picture-menu-item-css
+ * @provides users-picture-menu-item-css
  */
 
-.people-menu-image {
+.users-menu-image {
   width: 160px;
   height: 160px;
 }
 
-.people-menu-image-container {
+.users-menu-image-container {
   background: {$page.content};
   padding: 5px;
   border-radius: 5px;
