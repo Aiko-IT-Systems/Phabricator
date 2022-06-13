@@ -690,6 +690,10 @@ final class AphrontRequest extends Phobject {
     return $address->getAddress();
   }
 
+  public function getUrl() {
+    return $_SERVER['SCRIPT_URI'];
+  }
+
   public function isHTTPS() {
     if (empty($_SERVER['HTTPS'])) {
       return false;

@@ -17,17 +17,6 @@ abstract class AphrontPageView extends AphrontView {
     return $title;
   }
 
-  private $description;
-
-  public function setDescription($description) {
-    $this->description = $description;
-    return $this;
-  }
-
-  public function getDescription() {
-    return $this->description;
-  }
-
   protected function getHead() {
     return '';
   }

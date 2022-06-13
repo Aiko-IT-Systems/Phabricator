@@ -75,6 +75,10 @@ final class PhabricatorUsersProfileViewController
       ->setTitle($user->getUsername())
       ->setNavigation($navigation)
       ->setCrumbs($crumbs)
+      ->setPageType('profile')
+      ->setPageProfile($user->getUsername())
+      ->setPageImage($user->getProfileImageURI(), 'User Avatar')
+      ->setPageDescription("User profile")
       ->setPageObjectPHIDs(
         array(
           $user->getPHID(),

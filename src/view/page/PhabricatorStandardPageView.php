@@ -23,6 +23,46 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
   private $crumbs;
   private $navigation;
   private $footer;
+  private $pageDescription;
+  private $pageImage;
+  private $pageImageAlt;
+  private $pageImageType;
+  private $pageType = "website";
+  private $profileSurname;
+  private $profileLastname;
+  private $profileUsername;
+
+  public function setPageDescription($pageDescription) {
+    $this->pageDescription = $pageDescription;
+    return $this;
+  }
+
+  public function getPageDescription() {
+    return $this->pageDescription;
+  }
+  
+  public function setPageType($pageType) {
+    $this->pageType = $pageType;
+    return $this;
+  }
+
+  public function getPageType() {
+    return $this->pageType;
+  }
+
+  public function setPageProfile($username, $surname = null, $lastname = null) {
+    $this->profileUsername = $username;
+    $this->profileSurname = $surname;
+    $this->profileLastname = $lastname;
+    return $this;
+  }
+
+  public function setPageImage($imgUrl, $imgAlt, $imgType = 'image/png') {
+    $this->pageImage = $imgUrl;
+    $this->pageImageAlt = $imgAlt;
+    $this->pageImageType = $imgType;
+    return $this;
+  }
 
   public function setShowFooter($show_footer) {
     $this->showFooter = $show_footer;
@@ -176,7 +216,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
 
     $use_glyph = ($glyph_setting == $glyph_on);
 
-    $title = parent::getTitle();
+    $title = parent::getTitle().' | AITSYS Development'; // TODO: Make setting and dynamically get
 
     $prefix = null;
     if ($use_glyph) {
@@ -406,11 +446,232 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         $monospaced);
     }
 
+    $desc = $this->getPageDescription();
+    if ($desc == null) {
+      $desc = parent::getController()->getCurrentApplication()->getShortDescription();
+    }
+
+    $description = phutil_tag(
+      'meta',
+      array(
+        'property' => 'description',
+        'content' => $desc,
+      ));
+
+    $ogDescription = phutil_tag(
+      'meta',
+      array(
+        'property' => 'og:description',
+        'content' => $desc,
+      ));
+
+    $ogTitle = phutil_tag(
+      'meta',
+      array(
+        'property' => 'og:title',
+        'content' => $this->getTitle(),
+      ));
+
+    $ogType = phutil_tag(
+      'meta',
+      array(
+        'property' => 'og:type',
+        'content' => $this->getPageType(),
+      ));
+
+    $ogLocale = phutil_tag(
+      'meta',
+      array(
+        'property' => 'og:locale',
+        'content' => 'en_US',
+      ));
+
+    $twDomain = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:domain',
+        'content' => parent::getRequest()->getHost(),
+      ));
+
+    $image = null;
+    $imageAlt = null;
+    $twImage = null;
+    $imageType = null;
+    if ($this->pageImage != null) {
+      $image = phutil_tag(
+        'meta',
+        array(
+          'property' => 'og:image',
+          'content' => $this->pageImage,
+        ));
+  
+      $imageAlt = phutil_tag(
+        'meta',
+        array(
+          'property' => 'og:image:alt',
+          'content' => $this->pageImageAlt,
+        ));
+
+      $imageType = phutil_tag(
+        'meta',
+        array(
+          'property' => 'og:image:type',
+          'content' => $this->pageImageType,
+        ));
+
+      $twImage = phutil_tag(
+        'meta',
+        array(
+          'property' => 'twitter:image',
+          'content' => $this->pageImage,
+        ));
+    } else {
+      $image = phutil_tag(
+        'meta',
+        array(
+          'property' => 'og:image',
+          'content' => $this->getPhabricatorLogo(),
+        ));
+  
+      $imageAlt = phutil_tag(
+        'meta',
+        array(
+          'property' => 'og:image:alt',
+          'content' => 'Logo',
+        ));
+
+      $imageType = phutil_tag(
+        'meta',
+        array(
+          'property' => 'og:image:type',
+          'content' => 'image/png',
+        ));
+
+      $twImage = phutil_tag(
+        'meta',
+        array(
+          'property' => 'twitter:image',
+          'content' => $this->getPhabricatorLogo(),
+        ));
+    }
+
+    $profileU = null;
+    if ($this->pageType == 'profile') {
+      $profileU = phutil_tag(
+        'meta',
+        array(
+          'property' => 'profile:username',
+          'content' => $this->profileUsername,
+        ));
+    }
+
+    $siteName = phutil_tag(
+      'meta',
+      array(
+        'property' => 'og:site_name',
+        'content' => 'AITSYS Phabricator',
+      ));
+
+    $ogUrl = phutil_tag(
+      'meta',
+      array(
+        'property' => 'og:url',
+        'content' => parent::getRequest()->getUrl(),
+      ));
+    
+    $twUrl = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:url',
+        'content' => parent::getRequest()->getUrl(),
+      ));
+
+    $twDescription = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:description',
+        'content' => $desc,
+      ));
+
+    $twCard = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:card',
+        'content' => 'summary_large_image',
+      ));
+
+    $twTitle = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:title',
+        'content' => $this->getTitle(),
+      ));
+/*
+og:type article
+
+    article:published_time - datetime - When the article was first published.
+    article:modified_time - datetime - When the article was last changed.
+    article:expiration_time - datetime - When the article is out of date after.
+    article:author - profile array - Writers of the article.
+    article:section - string - A high-level section name. E.g. Technology
+    article:tag - string array - Tag words associated with this article.
+
+
+TODO:
+<meta property="og:image:type" content="image/png">
+*/
+
     return hsprintf(
-      '%s%s%s',
+      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
       parent::getHead(),
       $font_css,
+      $siteName,
+      $description,
+      $ogTitle,
+      $ogUrl,
+      $ogDescription,
+      $ogType,
+      $ogLocale,
+      $image,
+      $imageAlt,
+      $imageType,
+      $profileU,
+      $twCard,
+      $twUrl,
+      $twDomain,
+      $twTitle,
+      $twDescription,
+      $twImage,
       $response->renderSingleResource('javelin-magical-init', 'phabricator'));
+  }
+
+  private function getPhabricatorLogo() {
+    $custom_header = PhabricatorCustomLogoConfigType::getLogoImagePHID();
+
+    if ($custom_header) {
+      $cache = PhabricatorCaches::getImmutableCache();
+      $cache_key_logo = 'ui.custom-header.logo-phid.v3.'.$custom_header;
+
+      $logo_uri = $cache->getKey($cache_key_logo);
+      if (!$logo_uri) {
+        // NOTE: If the file policy has been changed to be restrictive, we'll
+        // miss here and just show the default logo. The cache will fill later
+        // when someone who can see the file loads the page. This might be a
+        // little spooky, see T11982.
+        $files = id(new PhabricatorFileQuery())
+          ->setViewer($this->getViewer())
+          ->withPHIDs(array($custom_header))
+          ->execute();
+        $file = head($files);
+        if ($file) {
+          $logo_uri = $file->getViewURI();
+          $cache->setKey($cache_key_logo, $logo_uri);
+        }
+      }
+      return $logo_uri;
+    } else {
+      return null;
+    }
   }
 
   public function setGlyph($glyph) {
