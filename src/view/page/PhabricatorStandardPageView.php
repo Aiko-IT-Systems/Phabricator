@@ -40,7 +40,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
   public function getPageDescription() {
     return $this->pageDescription;
   }
-  
+
   public function setPageType($pageType) {
     $this->pageType = $pageType;
     return $this;
@@ -216,7 +216,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
 
     $use_glyph = ($glyph_setting == $glyph_on);
 
-    $title = parent::getTitle().' | AITSYS Development'; // TODO: Make setting and dynamically get
+    $title = parent::getTitle().' | '.$this->getCustomTitle();
 
     $prefix = null;
     if ($use_glyph) {
@@ -504,7 +504,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
           'property' => 'og:image',
           'content' => $this->pageImage,
         ));
-  
+
       $imageAlt = phutil_tag(
         'meta',
         array(
@@ -530,9 +530,9 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         'meta',
         array(
           'property' => 'og:image',
-          'content' => $this->getPhabricatorLogo(),
+          'content' => $this->getOgLogo(),
         ));
-  
+
       $imageAlt = phutil_tag(
         'meta',
         array(
@@ -551,7 +551,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         'meta',
         array(
           'property' => 'twitter:image',
-          'content' => $this->getPhabricatorLogo(),
+          'content' => $this->getOgLogo(),
         ));
     }
 
@@ -578,7 +578,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         'property' => 'og:url',
         'content' => parent::getRequest()->getUrl(),
       ));
-    
+
     $twUrl = phutil_tag(
       'meta',
       array(
@@ -671,6 +671,44 @@ TODO:
       return $logo_uri;
     } else {
       return null;
+    }
+  }
+
+  private function getCustomTitle() {
+    $title = PhabricatorCustomSiteTitleConfigType::getSiteTitle();
+    if ($title) {
+      return $title;
+    } else{
+      return "Phabricator";
+    }
+  }
+
+  private function getOgLogo() {
+    $custom_header = PhabricatorCustomSiteTitleConfigType::getOgLogoImagePHID();
+
+    if ($custom_header) {
+      $cache = PhabricatorCaches::getImmutableCache();
+      $cache_key_logo = 'ui.custom-site-title.og-logo-phid.v3.'.$custom_header;
+
+      $logo_uri = $cache->getKey($cache_key_logo);
+      if (!$logo_uri) {
+        // NOTE: If the file policy has been changed to be restrictive, we'll
+        // miss here and just show the default logo. The cache will fill later
+        // when someone who can see the file loads the page. This might be a
+        // little spooky, see T11982.
+        $files = id(new PhabricatorFileQuery())
+          ->setViewer($this->getViewer())
+          ->withPHIDs(array($custom_header))
+          ->execute();
+        $file = head($files);
+        if ($file) {
+          $logo_uri = $file->getViewURI();
+          $cache->setKey($cache_key_logo, $logo_uri);
+        }
+      }
+      return $logo_uri;
+    } else {
+      return this->getPhabricatorLogo();
     }
   }
 
