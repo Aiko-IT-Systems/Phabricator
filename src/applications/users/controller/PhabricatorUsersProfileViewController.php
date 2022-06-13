@@ -78,7 +78,7 @@ final class PhabricatorUsersProfileViewController
       ->setPageType('profile')
       ->setPageProfile($user->getUsername())
       ->setPageImage($user->getProfileImageURI(), 'User Avatar')
-      ->setPageDescription('User profile of '.$user->getUsername().'\n\n'.$user->getUserProfile()->getBlurb())
+      ->setPageDescription('User profile of '.$user->getUsername().'. Description: '.$user->getUserProfile()->getBlurb())
       ->setPageObjectPHIDs(
         array(
           $user->getPHID(),
