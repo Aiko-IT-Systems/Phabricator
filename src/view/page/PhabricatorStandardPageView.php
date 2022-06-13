@@ -454,7 +454,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     $description = phutil_tag(
       'meta',
       array(
-        'property' => 'description',
+        'name' => 'description',
         'content' => $desc,
       ));
 
