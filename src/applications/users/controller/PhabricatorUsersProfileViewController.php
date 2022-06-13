@@ -74,7 +74,10 @@ final class PhabricatorUsersProfileViewController
     $description = 'User profile of '.$user->getUsername().'.';
     $blurb = $user->getUserProfile()->getBlurb();
     if ($blurb != null && $blurb != '') {
-      $description = $description.' Description: '.$blurb;
+      $description = $description."
+
+Description: 
+".$blurb;
     }
 
     return $this->newPage()
