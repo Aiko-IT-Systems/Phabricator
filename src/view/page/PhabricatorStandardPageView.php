@@ -676,7 +676,7 @@ TODO:
 
   private function getCustomTitle() {
     $title = PhabricatorCustomSiteTitleConfigType::getSiteTitle();
-    if ($title) {
+    if ($title !== null && $title != '') {
       return $title;
     } else{
       return "Phabricator";
