@@ -70,10 +70,9 @@ EOJSON;
           pht('Customize the site title and default open-graph image.'))
         ->setDescription(
           pht(
-            "Customize the logo image and text which appears in the main ".
-            "site header:\n\n".
-            "  - **OG Image**: Upload a new 80 x 80px image to replace the ".
-            "open-graph logo.\n\n".
+            "Customize the sites title and the open-graph image\n\n".
+            "  - **OG Image**: Upload a new image to replace the ".
+            "open-graph logo. By default, the ui.logo is used.\n\n".
             "  - **Title**: Choose new title for the site. ".
             "By default, the title displays //Phabricator//.\n\n")),
       $this->newOption('ui.favicons', 'wild', array())

@@ -102,7 +102,7 @@ final class PhabricatorCustomSiteTitleConfigType
         ->addCheckbox(
           'removeLogo',
           1,
-          pht('Remove Custom Logo'));
+          pht('Remove Custom OG Logo Image'));
     }
 
     $controls[] = id(new AphrontFormTextControl())
