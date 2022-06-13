@@ -78,6 +78,12 @@ class PhabricatorBarePageView extends AphrontPageView {
         'content' => 'no-referrer',
       ));
 
+    $description = phutil_tag(
+      'meta',
+      array(
+        'name' => 'description',
+        'content' => $this->getDescription(),
+      ));
 
     $mask_icon = phutil_tag(
       'link',
@@ -109,6 +115,7 @@ class PhabricatorBarePageView extends AphrontPageView {
       $mask_icon,
       $favicon_links,
       $referrer_tag,
+      $description,
       $response->renderResourcesOfType('css'));
   }
 
