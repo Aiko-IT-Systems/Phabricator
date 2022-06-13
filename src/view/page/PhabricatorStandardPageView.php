@@ -708,7 +708,7 @@ TODO:
       }
       return $logo_uri;
     } else {
-      return this->getPhabricatorLogo();
+      return $this->getPhabricatorLogo();
     }
   }
 
