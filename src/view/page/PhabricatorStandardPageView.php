@@ -448,7 +448,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
 
     $desc = $this->getPageDescription();
     if ($desc == null) {
-      $desc = parent::getController()->getCurrentApplication()->getShortDescription();
+      $desc = $this->getDescription();
     }
 
     $description = phutil_tag(
@@ -672,6 +672,12 @@ TODO:
     } else {
       return null;
     }
+  }
+
+  private function getDescription() {
+    $appName = parent::getController()->getCurrentApplication()->getName();
+    $shortDescription = parent::getController()->getCurrentApplication()->getShortDescription();
+    return $appName.' - '.$shortDescription;
   }
 
   private function getCustomTitle() {
