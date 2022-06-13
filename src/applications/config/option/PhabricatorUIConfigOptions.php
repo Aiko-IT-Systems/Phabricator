@@ -36,17 +36,18 @@ final class PhabricatorUIConfigOptions
   },
   {
     "name" : "Privacy Policy",
-    "href" : "http://www.example.org/privacy/"
+    "href" : "http://www.example.org/w/privacy/"
   },
   {
     "name" : "Terms and Conditions",
-    "href" : "http://www.example.org/terms/"
+    "href" : "http://www.example.org/w/terms/"
   }
 ]
 EOJSON;
 
     $logo_type = 'custom:PhabricatorCustomLogoConfigType';
     $footer_type = 'custom:PhabricatorCustomUIFooterConfigType';
+    $title_type = 'custom:PhabricatorCustomSiteTitleConfigType';
 
     return array(
       $this->newOption('ui.header-color', 'enum', 'blindigo')
@@ -64,6 +65,17 @@ EOJSON;
             "Phabricator logo in the site header.\n\n".
             "  - **Wordmark**: Choose new text to display next to the logo. ".
             "By default, the header displays //Phabricator//.\n\n")),
+      $this->newOption('ui.site-title', $title_type, array())
+        ->setSummary(
+          pht('Customize the site title and default open-graph image.'))
+        ->setDescription(
+          pht(
+            "Customize the logo image and text which appears in the main ".
+            "site header:\n\n".
+            "  - **OG Image**: Upload a new 80 x 80px image to replace the ".
+            "open-graph logo.\n\n".
+            "  - **Title**: Choose new title for the site. ".
+            "By default, the title displays //Phabricator//.\n\n")),
       $this->newOption('ui.favicons', 'wild', array())
         ->setSummary(pht('Customize favicons.'))
         ->setDescription(pht('Customize favicons.'))
