@@ -71,6 +71,12 @@ final class PhabricatorUsersProfileViewController
     $crumbs = $this->buildApplicationCrumbs();
     $crumbs->setBorder(true);
 
+    $description = 'User profile of '.$user->getUsername().'.';
+    $blurb = $user->getUserProfile()->getBlurb();
+    if ($blurb != null && $blurb != '') {
+      $description = $description.' Description: '.$blurb;
+    }
+
     return $this->newPage()
       ->setTitle($user->getUsername())
       ->setNavigation($navigation)
@@ -78,7 +84,7 @@ final class PhabricatorUsersProfileViewController
       ->setPageType('profile')
       ->setPageProfile($user->getUsername())
       ->setPageImage($user->getProfileImageURI(), 'User Avatar')
-      ->setPageDescription('User profile of '.$user->getUsername().'. Description: '.$user->getUserProfile()->getBlurb())
+      ->setPageDescription($description)
       ->setPageObjectPHIDs(
         array(
           $user->getPHID(),
