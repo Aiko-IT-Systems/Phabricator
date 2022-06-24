@@ -675,6 +675,8 @@ TODO:
   }
 
   private function getDescription() {
+    if (parent::getController() == null)
+      return "404";
     $appName = parent::getController()->getCurrentApplication()->getName();
     $shortDescription = parent::getController()->getCurrentApplication()->getShortDescription();
     return $appName.' - '.$shortDescription;
