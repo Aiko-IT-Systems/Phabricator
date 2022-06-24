@@ -6,7 +6,6 @@ final class PhrictionTransactionEditor
   const VALIDATE_CREATE_ANCESTRY = 'create';
   const VALIDATE_MOVE_ANCESTRY   = 'move';
 
-  private $description;
   private $oldContent;
   private $newContent;
   private $moveAwayDocument;
@@ -15,15 +14,6 @@ final class PhrictionTransactionEditor
   private $processContentVersionError = true;
   private $contentDiffURI;
   private $notes;
-
-  public function setDescription($description) {
-    $this->description = $description;
-    return $this;
-  }
-
-  private function getDescription() {
-    return $this->description;
-  }
 
   public function setNotes($notes) {
     $this->notes = $notes;

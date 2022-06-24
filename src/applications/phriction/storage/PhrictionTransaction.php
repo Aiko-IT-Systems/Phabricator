@@ -8,6 +8,8 @@ final class PhrictionTransaction
   const MAILTAG_DELETE      = 'phriction-delete';
   const MAILTAG_SUBSCRIBERS = 'phriction-subscribers';
   const MAILTAG_OTHER       = 'phriction-other';
+  const MAILTAG_DISCORD_EMOJI = 'phricton-discord-emoji';
+  const MAILTAG_DESCRIPTION = 'phricton-description';
 
   public function getApplicationName() {
     return 'phriction';
@@ -68,6 +70,12 @@ final class PhrictionTransaction
         break;
       case PhabricatorTransactions::TYPE_SUBSCRIBERS:
         $tags[] = self::MAILTAG_SUBSCRIBERS;
+        break;
+      case PhrictionDocumentDescriptionTransaction::TRANSACTIONTYPE:
+        $tags[] = self::MAILTAG_DESCRIPTION;
+        break;
+      case PhrictionDocumentDiscordEmojiTransaction::TRANSACTIONTYPE:
+        $tags[] = self::MAILTAG_DISCORD_EMOJI;
         break;
       default:
         $tags[] = self::MAILTAG_OTHER;

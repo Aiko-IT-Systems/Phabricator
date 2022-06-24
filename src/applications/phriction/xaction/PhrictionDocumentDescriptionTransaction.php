@@ -20,10 +20,6 @@ final class PhrictionDocumentDescriptionTransaction
     $content->setDescription($value);
   }
 
-  public function getActionStrength() {
-    return 140;
-  }
-
   public function getActionName() {
     $old = $this->getOldValue();
     $new = $this->getNewValue();
@@ -41,20 +37,6 @@ final class PhrictionDocumentDescriptionTransaction
   public function getTitle() {
     $old = $this->getOldValue();
     $new = $this->getNewValue();
-
-    if ($old === null) {
-      if ($this->getMetadataValue('stub:create:phid')) {
-        return pht(
-          '%s stubbed out this document when adding description for %s.',
-          $this->renderAuthor(),
-          $this->renderHandleLink(
-            $this->getMetadataValue('stub:create:phid')));
-      } else {
-        return pht(
-          '%s created this document.',
-          $this->renderAuthor());
-      }
-    }
 
     $rOld = 'null';
     $rNew = 'null';
@@ -77,13 +59,6 @@ final class PhrictionDocumentDescriptionTransaction
   public function getTitleForFeed() {
     $old = $this->getOldValue();
     $new = $this->getNewValue();
-
-    if ($old === null) {
-      return pht(
-        '%s added description for %s.',
-        $this->renderAuthor(),
-        $this->renderObject());
-    }
 
     $rOld = 'null';
     $rNew = 'null';

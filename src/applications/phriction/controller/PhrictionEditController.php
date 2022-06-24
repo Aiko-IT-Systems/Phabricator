@@ -173,7 +173,7 @@ final class PhrictionEditController
         ->setActor($viewer)
         ->setContentSourceFromRequest($request)
         ->setContinueOnNoEffect(true)
-        ->setDescription($notes)
+        ->setNotes($notes)
         ->setProcessContentVersionError(!$request->getBool('overwrite'))
         ->setContentVersion($max_version);
 
