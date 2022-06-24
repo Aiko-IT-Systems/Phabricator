@@ -372,7 +372,7 @@ final class PhrictionDocumentController
     }
 
     $description = "Not found";
-    if ($content !== undefined && $content != null) {
+    if (isset($content) && $content != null) {
       $description = $content->getDescription();
     }
 
