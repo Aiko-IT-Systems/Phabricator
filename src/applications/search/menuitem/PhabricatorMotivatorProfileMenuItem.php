@@ -58,13 +58,13 @@ final class PhabricatorMotivatorProfileMenuItem
     switch ($source) {
       case 'catfacts':
       default:
-        $facts = $this->getCatFacts();
+        //$facts = $this->getCatFacts();
         $fact_name = pht('Cat Facts');
         $fact_icon = 'fa-paw';
         break;
     }
 
-    $fact_text = $this->selectFact($facts);
+    $fact_text = $this->getRandomCatFact();//$this->selectFact($facts);
 
     $item = $this->newItemView()
       ->setName($fact_name)
@@ -75,6 +75,24 @@ final class PhabricatorMotivatorProfileMenuItem
     return array(
       $item,
     );
+  }
+
+  private function getRandomCatFact() {
+    $uri = new PhutilURI('https://catfact.ninja/fact');
+    $uri = (string)$uri;
+
+    $future = new HTTPSFuture($uri);
+    $future->setMethod('GET');
+    list($body) = $future->resolvex();
+
+    try {
+      $data = phutil_json_decode($body);
+      return $data['fact'];
+    } catch (PhutilJSONParserException $ex) {
+      throw new PhutilProxyException(
+        pht('Expected valid JSON response from Disqus account data request.'),
+        $ex);
+    }
   }
 
   private function getCatFacts() {
