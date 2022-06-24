@@ -410,24 +410,33 @@ final class PhrictionDocumentController
     $view->addProperty(
       pht('Last Edited'),
       phabricator_dual_datetime($content->getDateCreated(), $viewer));
-    if ($content->getDescription() != null || $content->getDiscordEmoji() != null) {
-      $view->addSectionHeader("Additional Properties");
-    }
 
-    if ($content->getDescription() != null) {
-      $view->addProperty(
-        pht('Description'),
-        $content->getDescription());
-    }
+      $can_edit = PhabricatorPolicyFilter::hasCapability(
+        $viewer,
+        $document,
+        PhabricatorPolicyCapability::CAN_EDIT);
 
-    if ($content->getDiscordEmoji() != null) {
-      $img = id(new PHUILinkView())
-        ->setURI("https://cdn.discordapp.com/emojis/".$content->getDiscordEmoji().".png?size=32")
-        ->setText($content->getDiscordEmoji())
-        ->setTarget("_blank");
-      $view->addProperty(
-        pht('Discord Emoji'),
-        $img);
+    if ($can_edit) {
+      if ($content->getDescription() != null || $content->getDiscordEmoji() != null) {
+        $view->addSectionHeader("Additional Properties");
+      }
+  
+      if ($content->getDescription() != null) {
+        $view->addProperty(
+          pht('Description'),
+          $content->getDescription());
+      }
+  
+      if ($content->getDiscordEmoji() != null) {
+        $img = id(new PHUILinkView())
+          ->setURI("https://cdn.discordapp.com/emojis/".$content->getDiscordEmoji().".png?size=32")
+          ->setText($content->getDiscordEmoji())
+          ->setTarget("_blank");
+          
+        $view->addProperty(
+          pht('Discord Emoji'),
+          $img);
+      }
     }
 
     return $view;
