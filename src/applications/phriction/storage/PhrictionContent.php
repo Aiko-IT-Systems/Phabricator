@@ -33,9 +33,9 @@ final class PhrictionContent
         'content' => 'text',
         'changeType' => 'uint32',
         'changeRef' => 'uint32?',
-        'notes' => 'text',
-        'discordEmoji' => 'text128',
-        'description' => 'text128',
+        'notes' => 'text?',
+        'discordEmoji' => 'text128?',
+        'description' => 'text128?',
       ),
       self::CONFIG_KEY_SCHEMA => array(
         'key_version' => array(
