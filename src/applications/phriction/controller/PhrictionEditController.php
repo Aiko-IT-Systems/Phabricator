@@ -79,8 +79,8 @@ final class PhrictionEditController
     $validation_exception = null;
     $notes = null;
     $title = $content->getTitle();
-    $discordEmoji = $content->getDiscordEmoji();
     $description = $content->getDescription();
+    $discordEmoji = $content->getDiscordEmoji();
     $overwrite = false;
     $v_cc = PhabricatorSubscribersQuery::loadSubscribersForPHID(
       $document->getPHID());
@@ -138,9 +138,9 @@ final class PhrictionEditController
       $xactions[] = id(new PhrictionTransaction())
         ->setTransactionType(PhrictionDocumentTitleTransaction::TRANSACTIONTYPE)
         ->setNewValue($title);
-        $xactions[] = id(new PhrictionTransaction())
-          ->setTransactionType(PhrictionDocumentDiscordEmojiTransaction::TRANSACTIONTYPE)
-          ->setNewValue($discordEmoji);
+      $xactions[] = id(new PhrictionTransaction())
+        ->setTransactionType(PhrictionDocumentDiscordEmojiTransaction::TRANSACTIONTYPE)
+        ->setNewValue($discordEmoji);
       $xactions[] = id(new PhrictionTransaction())
         ->setTransactionType(PhrictionDocumentDescriptionTransaction::TRANSACTIONTYPE)
         ->setNewValue($description);
@@ -250,15 +250,15 @@ final class PhrictionEditController
           ->setError($e_title)
           ->setName('title'))
       ->appendChild(
+        id(new AphrontFormStaticControl())
+          ->setLabel(pht('URI'))
+          ->setValue($uri))
+      ->appendChild(
         id(new AphrontFormTextControl())
           ->setLabel(pht('Description'))
           ->setValue($description)
           ->setError(null)
           ->setName('description'))
-      ->appendChild(
-        id(new AphrontFormStaticControl())
-          ->setLabel(pht('URI'))
-          ->setValue($uri))
       ->appendChild(
         id(new PhabricatorRemarkupControl())
           ->setLabel(pht('Content'))

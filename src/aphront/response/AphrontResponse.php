@@ -153,7 +153,7 @@ abstract class AphrontResponse extends Phobject {
     // We use "data:" URIs to inline small images into CSS. This policy allows
     // "data:" URIs to be used anywhere, but there doesn't appear to be a way
     // to say that "data:" URIs are okay in CSS files but not in the document.
-    $csp[] = "img-src {$default} data:";
+    $csp[] = "img-src {$default} https://* data:";
 
     // We use inline style="..." attributes in various places, many of which
     // are legitimate. We also currently use a <style> tag to implement the

@@ -204,7 +204,7 @@ final class PhrictionTransactionEditor
               ->setContentSource($this->getContentSource())
               ->setContinueOnNoEffect($this->getContinueOnNoEffect())
               ->setSkipAncestorCheck(true)
-              ->setDescription(pht('Empty Parent Document'))
+              ->setNotes(pht('Empty Parent Document'))
               ->applyTransactions($ancestor_doc, $stub_xactions);
           }
         }
@@ -221,7 +221,7 @@ final class PhrictionTransactionEditor
         ->setActor($this->getActor())
         ->setContentSource($this->getContentSource())
         ->setContinueOnNoEffect($this->getContinueOnNoEffect())
-        ->setDescription($this->getNotes())
+        ->setNotes($this->getNotes())
         ->applyTransactions($this->moveAwayDocument, $move_away_xactions);
     }
 
@@ -272,7 +272,11 @@ final class PhrictionTransactionEditor
       PhrictionTransaction::MAILTAG_DELETE =>
         pht('A document is deleted.'),
       PhrictionTransaction::MAILTAG_SUBSCRIBERS =>
-        pht('A document\'s subscribers change.'),
+        pht("A document's subscribers change."),
+        PhrictionTransaction::MAILTAG_DESCRIPTION =>
+          pht("A document's description changes."),
+        PhrictionTransaction::MAILTAG_DISCORD_EMOJI =>
+        pht("A document's discord emoji changes."),
       PhrictionTransaction::MAILTAG_OTHER =>
         pht('Other document activity not listed above occurs.'),
     );
@@ -554,7 +558,9 @@ final class PhrictionTransactionEditor
       ->setChangeType(PhrictionChangeType::CHANGE_EDIT)
       ->setTitle($this->getOldContent()->getTitle())
       ->setContent($this->getOldContent()->getContent())
-      ->setDescription('');
+      ->setDiscordEmoji($this->getOldContent()->getDiscordEmoji())
+      ->setDescription($this->getOldContent()->getDescription())
+      ->setNotes('');
 
     if (strlen($this->getNotes())) {
       $content->setNotes($this->getNotes());

@@ -6,6 +6,7 @@ final class PHUILinkView
   private $uri;
   private $text;
   private $workflow;
+  private $target;
 
   public function setURI($uri) {
     $this->uri = $uri;
@@ -14,6 +15,15 @@ final class PHUILinkView
 
   public function getURI() {
     return $this->uri;
+  }
+
+  public function setTarget($target) {
+    $this->target = $target;
+    return $this;
+  }
+
+  public function getTarget() {
+    return $this->target;
   }
 
   public function setText($text) {
@@ -40,6 +50,7 @@ final class PHUILinkView
     return array(
       'href' => $this->getURI(),
       'sigil' => $sigil,
+      'target' => $this->getTarget(),
     );
   }
 

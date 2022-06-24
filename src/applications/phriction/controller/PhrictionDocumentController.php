@@ -314,6 +314,12 @@ final class PhrictionDocumentController
       ->setPolicyObject($document)
       ->setHeader($page_title);
 
+    
+    if ($content->getDiscordEmoji() != null)
+    {
+      $header->setImage("https://cdn.discordapp.com/emojis/".$content->getDiscordEmoji().".png?size=32");
+    }
+
     if ($is_draft) {
       $draft_tag = id(new PHUITagView())
         ->setName(pht('Draft'))
@@ -394,7 +400,9 @@ final class PhrictionDocumentController
 
     $view = id(new PHUIPropertyListView())
       ->setUser($viewer);
-
+    
+    $view->addSectionHeader("Document Informations");
+    
     $view->addProperty(
       pht('Last Author'),
       $viewer->renderHandle($content->getAuthorPHID()));
@@ -402,6 +410,25 @@ final class PhrictionDocumentController
     $view->addProperty(
       pht('Last Edited'),
       phabricator_dual_datetime($content->getDateCreated(), $viewer));
+    if ($content->getDescription() != null || $content->getDiscordEmoji() != null) {
+      $view->addSectionHeader("Additional Properties");
+    }
+
+    if ($content->getDescription() != null) {
+      $view->addProperty(
+        pht('Description'),
+        $content->getDescription());
+    }
+
+    if ($content->getDiscordEmoji() != null) {
+      $img = id(new PHUILinkView())
+        ->setURI("https://cdn.discordapp.com/emojis/".$content->getDiscordEmoji().".png?size=32")
+        ->setText($content->getDiscordEmoji())
+        ->setTarget("_blank");
+      $view->addProperty(
+        pht('Discord Emoji'),
+        $img);
+    }
 
     return $view;
   }
@@ -504,6 +531,8 @@ final class PhrictionDocumentController
       ->setOpenInNewWindow(true)
       ->setHref($print_uri));
 
+
+      
     return $curtain;
   }
 
