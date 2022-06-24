@@ -348,9 +348,17 @@ final class PhrictionDocumentController
     }
 
     if ($document->getPHID()) {
-      $timeline = $this->buildTransactionTimeline(
+      $can_edit = PhabricatorPolicyFilter::hasCapability(
+        $viewer,
         $document,
-        new PhrictionTransactionQuery());
+        PhabricatorPolicyCapability::CAN_EDIT);  
+      if ($can_edit) {
+        $timeline = $this->buildTransactionTimeline(
+          $document,
+          new PhrictionTransactionQuery());
+      } else {
+        $timeline = null;
+      }
 
       $edit_engine = id(new PhrictionDocumentEditEngine())
         ->setViewer($viewer)
@@ -382,7 +390,6 @@ final class PhrictionDocumentController
               $comment_view,
             )),
         ));
-
   }
 
   private function buildPropertyListView(
