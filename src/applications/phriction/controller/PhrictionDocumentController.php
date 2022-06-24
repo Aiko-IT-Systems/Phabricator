@@ -351,7 +351,7 @@ final class PhrictionDocumentController
       $can_edit = PhabricatorPolicyFilter::hasCapability(
         $viewer,
         $document,
-        PhabricatorPolicyCapability::CAN_EDIT);  
+        PhabricatorPolicyCapability::CAN_EDIT);
       if ($can_edit) {
         $timeline = $this->buildTransactionTimeline(
           $document,
@@ -371,8 +371,14 @@ final class PhrictionDocumentController
       $comment_view = null;
     }
 
+    $description = "Not found";
+    if ($content !== undefined && $content != null) {
+      $description = $content->getDescription();
+    }
+
     return $this->newPage()
       ->setTitle($page_title)
+      ->setPageDescription($description)
       ->setCrumbs($crumbs)
       ->setPageObjectPHIDs(array($document->getPHID()))
       ->appendChild(
@@ -401,9 +407,9 @@ final class PhrictionDocumentController
 
     $view = id(new PHUIPropertyListView())
       ->setUser($viewer);
-    
+
     $view->addSectionHeader("Document Informations");
-    
+
     $view->addProperty(
       pht('Last Author'),
       $viewer->renderHandle($content->getAuthorPHID()));
@@ -421,13 +427,13 @@ final class PhrictionDocumentController
       if ($content->getDescription() != null || $content->getDiscordEmoji() != null) {
         $view->addSectionHeader("Additional Properties");
       }
-  
+
       if ($content->getDescription() != null) {
         $view->addProperty(
           pht('Description'),
           $content->getDescription());
       }
-  
+
       if ($content->getDiscordEmoji() != null) {
         $img = id(new PHUILinkView())
           ->setURI("https://cdn.discordapp.com/emojis/".$content->getDiscordEmoji().".png?size=32")
@@ -542,7 +548,7 @@ final class PhrictionDocumentController
       ->setHref($print_uri));
 
 
-      
+
     return $curtain;
   }
 

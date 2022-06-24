@@ -76,7 +76,7 @@ final class PhabricatorUsersProfileViewController
     if ($blurb != null && $blurb != '') {
       $description = $description."
 
-Description: 
+Description:
 ".$blurb;
     }
 
