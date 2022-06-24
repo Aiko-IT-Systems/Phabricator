@@ -31,8 +31,9 @@ abstract class PhrictionConduitAPIMethod extends ConduitAPIMethod {
       'content'     => $content->getContent(),
       'status'      => PhrictionDocumentStatus::getConduitConstant($doc_status),
       'description' => $content->getDescription(),
+      'notes'       => $content->getNotes(),
       'dateCreated' => $content->getDateCreated(),
-      'discordEmoji' => $content->getDiscordEmoji(),
+      'discordEmoji'=> $content->getDiscordEmoji(),
     );
   }
 

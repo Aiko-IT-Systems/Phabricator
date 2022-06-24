@@ -29,7 +29,7 @@ final class PhrictionMoveController extends PhrictionController {
 
     $validation_exception = null;
     if ($request->isFormPost()) {
-      $v_note = $request->getStr('description');
+      $v_note = $request->getStr('notes');
       $v_slug = $request->getStr('slug');
       $normal_slug = PhabricatorSlug::normalize($v_slug);
 
@@ -50,7 +50,7 @@ final class PhrictionMoveController extends PhrictionController {
                 'Would you like to use the path %s instead?',
                 phutil_tag('strong', array(), $normal_slug)))
             ->addHiddenInput('slug', $normal_slug)
-            ->addHiddenInput('description', $v_note)
+            ->addHiddenInput('notes', $v_note)
             ->addCancelButton($cancel_uri)
             ->addSubmitButton(pht('Accept Path'));
         }
@@ -117,7 +117,7 @@ final class PhrictionMoveController extends PhrictionController {
         id(new AphrontFormTextControl())
           ->setLabel(pht('Edit Notes'))
           ->setValue($v_note)
-          ->setName('description'));
+          ->setName('notes'));
 
     return $this->newDialog()
       ->setTitle(pht('Move Document'))

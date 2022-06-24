@@ -80,6 +80,7 @@ final class PhrictionEditController
     $notes = null;
     $title = $content->getTitle();
     $discordEmoji = $content->getDiscordEmoji();
+    $description = $content->getDescription();
     $overwrite = false;
     $v_cc = PhabricatorSubscribersQuery::loadSubscribersForPHID(
       $document->getPHID());
@@ -112,7 +113,8 @@ final class PhrictionEditController
       $title = $request->getStr('title');
       $discordEmoji = $request->getStr('discordEmoji');
       $content_text = $request->getStr('content');
-      $notes = $request->getStr('description');
+      $description = $request->getStr('description');
+      $notes = $request->getStr('notes');
       $max_version = $request->getInt('contentVersion');
       $v_view = $request->getStr('viewPolicy');
       $v_edit = $request->getStr('editPolicy');
@@ -139,6 +141,9 @@ final class PhrictionEditController
         $xactions[] = id(new PhrictionTransaction())
           ->setTransactionType(PhrictionDocumentDiscordEmojiTransaction::TRANSACTIONTYPE)
           ->setNewValue($discordEmoji);
+      $xactions[] = id(new PhrictionTransaction())
+        ->setTransactionType(PhrictionDocumentDescriptionTransaction::TRANSACTIONTYPE)
+        ->setNewValue($description);
       $xactions[] = id(new PhrictionTransaction())
         ->setTransactionType($edit_type)
         ->setNewValue($content_text);
@@ -245,6 +250,12 @@ final class PhrictionEditController
           ->setError($e_title)
           ->setName('title'))
       ->appendChild(
+        id(new AphrontFormTextControl())
+          ->setLabel(pht('Description'))
+          ->setValue($description)
+          ->setError(null)
+          ->setName('description'))
+      ->appendChild(
         id(new AphrontFormStaticControl())
           ->setLabel(pht('URI'))
           ->setValue($uri))
@@ -284,18 +295,18 @@ final class PhrictionEditController
           ->setPolicyObject($document)
           ->setCapability($edit_capability)
           ->setPolicies($policies))
-      ->appendChild(
-        id(new AphrontFormTextControl())
-          ->setLabel(pht('Edit Notes'))
-          ->setValue($notes)
-          ->setError(null)
-          ->setName('description'))
         ->appendChild(
           id(new AphrontFormTextControl())
             ->setLabel(pht('Discord Emoji Id'))
             ->setValue($discordEmoji)
             ->setError(null)
-            ->setName('discordEmoji'));
+            ->setName('discordEmoji'))
+        ->appendChild(
+          id(new AphrontFormTextControl())
+            ->setLabel(pht('Edit Notes'))
+            ->setValue($notes)
+            ->setError(null)
+            ->setName('notes'));
 
     if ($is_draft_mode) {
       $form->appendControl(

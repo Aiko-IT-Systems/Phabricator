@@ -16,6 +16,8 @@ final class PhrictionEditConduitAPIMethod extends PhrictionConduitAPIMethod {
       'title'         => 'optional string',
       'content'       => 'optional string',
       'description'   => 'optional string',
+      'discordEmoji'  => 'optional string',
+      'notes'         => 'optional string',
     );
   }
 
@@ -55,11 +57,24 @@ final class PhrictionEditConduitAPIMethod extends PhrictionConduitAPIMethod {
         ->setNewValue($request->getValue('content'));
     }
 
+    
+    if ($request->getValue('discordEmoji')) {
+      $xactions[] = id(new PhrictionTransaction())
+        ->setTransactionType(PhrictionDocumentDiscordEmojiTransaction::TRANSACTIONTYPE)
+        ->setNewValue($request->getValue('discordEmoji'));
+    }
+
+    if ($request->getValue('description')) {
+      $xactions[] = id(new PhrictionTransaction())
+        ->setTransactionType(PhrictionDocumentDescriptionTransaction::TRANSACTIONTYPE)
+        ->setNewValue($request->getValue('description'));
+    }
+
     $editor = id(new PhrictionTransactionEditor())
       ->setActor($request->getUser())
       ->setContentSource($request->newContentSource())
       ->setContinueOnNoEffect(true)
-      ->setDescription((string)$request->getValue('description'));
+      ->setDescription((string)$request->getValue('notes'));
 
     try {
       $editor->applyTransactions($doc, $xactions);

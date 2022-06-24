@@ -1,2 +1,2 @@
 ALTER TABLE {$NAMESPACE}_phriction.phriction_content
-  ADD discordEmoji VARCHAR(128) NOT NULL;
+  RENAME COLUMN description TO notes;

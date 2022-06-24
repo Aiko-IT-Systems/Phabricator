@@ -237,8 +237,8 @@ final class PhrictionDiffController extends PhrictionController {
           phabricator_date($c->getDateCreated(), $viewer),
           phabricator_time($c->getDateCreated(), $viewer)));
 
-      if ($c->getDescription()) {
-        $item->addAttribute($c->getDescription());
+      if ($c->getNotes()) {
+        $item->addAttribute($c->getNotes());
       }
 
       if ($first == true) {

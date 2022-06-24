@@ -1,15 +1,15 @@
 <?php
 
-final class PhrictionDocumentDiscordEmojiTransaction
+final class PhrictionDocumentDescriptionTransaction
   extends PhrictionDocumentVersionTransaction {
 
-  const TRANSACTIONTYPE = 'discordemoji';
+  const TRANSACTIONTYPE = 'description';
 
   public function generateOldValue($object) {
     if ($this->isNewObject()) {
       return null;
     }
-    return $this->getEditor()->getOldContent()->getDiscordEmoji();
+    return $this->getEditor()->getOldContent()->getDescription();
   }
 
   public function applyInternalEffects($object, $value) {
@@ -17,7 +17,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
 
     $content = $this->getNewDocumentContent($object);
 
-    $content->setDiscordEmoji($value);
+    $content->setDescription($value);
   }
 
   public function getActionStrength() {
@@ -45,7 +45,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
     if ($old === null) {
       if ($this->getMetadataValue('stub:create:phid')) {
         return pht(
-          '%s stubbed out this document when adding discord emoji for %s.',
+          '%s stubbed out this document when adding description for %s.',
           $this->renderAuthor(),
           $this->renderHandleLink(
             $this->getMetadataValue('stub:create:phid')));
@@ -68,7 +68,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
     }
 
     return pht(
-      '%s changed the discord emoji from %s to %s.',
+      '%s changed the description from %s to %s.',
       $this->renderAuthor(),
       $rOld,
       $rNew);
@@ -80,7 +80,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
 
     if ($old === null) {
       return pht(
-        '%s added discord emoji for %s.',
+        '%s added description for %s.',
         $this->renderAuthor(),
         $this->renderObject());
     }
@@ -97,7 +97,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
     }
 
     return pht(
-      '%s changed discord emoji for %s from %s to %s.',
+      '%s changed description for %s from %s to %s.',
       $this->renderAuthor(),
       $this->renderObject(),
       $rOld,
@@ -111,7 +111,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
     // we're validating that: you can't edit away a document; and you can't
     // create an empty document.
 
-    $content = $object->getContent()->getDiscordEmoji();
+    $content = $object->getContent()->getDescription();
     /*if ($this->isEmptyTextTransaction($content, $xactions)) {
       $errors[] = $this->newRequiredError(
         pht('Documents must have a discord emoji.'));

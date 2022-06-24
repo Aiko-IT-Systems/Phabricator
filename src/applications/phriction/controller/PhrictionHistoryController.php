@@ -89,9 +89,9 @@ final class PhrictionHistoryController
         ->setHeader($header)
         ->setStatusIcon($icon.' '.$color);
 
-      $description = $content->getDescription();
-      if (strlen($description)) {
-        $item->addAttribute($description);
+      $notes = $content->getNotes();
+      if (strlen($notes)) {
+        $item->addAttribute($notes);
       }
 
       $item->addIcon(

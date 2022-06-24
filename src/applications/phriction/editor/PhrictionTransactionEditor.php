@@ -14,6 +14,7 @@ final class PhrictionTransactionEditor
   private $contentVersion;
   private $processContentVersionError = true;
   private $contentDiffURI;
+  private $notes;
 
   public function setDescription($description) {
     $this->description = $description;
@@ -22,6 +23,15 @@ final class PhrictionTransactionEditor
 
   private function getDescription() {
     return $this->description;
+  }
+
+  public function setNotes($notes) {
+    $this->notes = $notes;
+    return $this;
+  }
+
+  private function getNotes() {
+    return $this->notes;
   }
 
   private function setOldContent(PhrictionContent $content) {
@@ -221,7 +231,7 @@ final class PhrictionTransactionEditor
         ->setActor($this->getActor())
         ->setContentSource($this->getContentSource())
         ->setContinueOnNoEffect($this->getContinueOnNoEffect())
-        ->setDescription($this->getDescription())
+        ->setDescription($this->getNotes())
         ->applyTransactions($this->moveAwayDocument, $move_away_xactions);
     }
 
@@ -306,11 +316,11 @@ final class PhrictionTransactionEditor
         PhabricatorEnv::getProductionURI($this->contentDiffURI));
     }
 
-    $description = $object->getContent()->getDescription();
-    if (strlen($description)) {
+    $notes = $object->getContent()->getNotes();
+    if (strlen($notes)) {
       $body->addTextSection(
         pht('EDIT NOTES'),
-        $description);
+        $notes);
     }
 
     $body->addLinkSection(
@@ -556,8 +566,8 @@ final class PhrictionTransactionEditor
       ->setContent($this->getOldContent()->getContent())
       ->setDescription('');
 
-    if (strlen($this->getDescription())) {
-      $content->setDescription($this->getDescription());
+    if (strlen($this->getNotes())) {
+      $content->setNotes($this->getNotes());
     }
 
     $content->setVersion($document->getMaxVersion() + 1);
