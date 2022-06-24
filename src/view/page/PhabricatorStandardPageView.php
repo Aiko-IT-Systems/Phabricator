@@ -496,6 +496,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     $image = null;
     $imageAlt = null;
     $twImage = null;
+    $twImageAlt = null;
     $imageType = null;
     if ($this->pageImage != null) {
       $image = phutil_tag(
@@ -525,6 +526,13 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
           'property' => 'twitter:image',
           'content' => $this->pageImage,
         ));
+
+      $twImageAlt = phutil_tag(
+        'meta',
+        array(
+          'property' => 'twitter:image:alt',
+          'content' => $this->pageImageAlt,
+        ));
     } else {
       $image = phutil_tag(
         'meta',
@@ -552,6 +560,13 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         array(
           'property' => 'twitter:image',
           'content' => $this->getOgLogo(),
+        ));
+
+      $twImageAlt = phutil_tag(
+        'meta',
+        array(
+          'property' => 'twitter:image:alt',
+          'content' => 'Logo',
         ));
     }
 
@@ -632,7 +647,7 @@ og:type article
 */
 
     return hsprintf(
-      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
+      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
       parent::getHead(),
       $font_css,
       $siteName,
@@ -654,6 +669,7 @@ og:type article
       $twTitle,
       $twDescription,
       $twImage,
+      $twImageAlt,
       $response->renderSingleResource('javelin-magical-init', 'phabricator'));
   }
 
