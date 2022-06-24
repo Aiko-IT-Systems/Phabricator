@@ -79,6 +79,7 @@ final class PhrictionEditController
     $validation_exception = null;
     $notes = null;
     $title = $content->getTitle();
+    $discordEmoji = $content->getDiscordEmoji();
     $overwrite = false;
     $v_cc = PhabricatorSubscribersQuery::loadSubscribersForPHID(
       $document->getPHID());
@@ -109,6 +110,7 @@ final class PhrictionEditController
       }
 
       $title = $request->getStr('title');
+      $discordEmoji = $request->getStr('discordEmoji');
       $content_text = $request->getStr('content');
       $notes = $request->getStr('description');
       $max_version = $request->getInt('contentVersion');
@@ -134,6 +136,9 @@ final class PhrictionEditController
       $xactions[] = id(new PhrictionTransaction())
         ->setTransactionType(PhrictionDocumentTitleTransaction::TRANSACTIONTYPE)
         ->setNewValue($title);
+        $xactions[] = id(new PhrictionTransaction())
+          ->setTransactionType(PhrictionDocumentDiscordEmojiTransaction::TRANSACTIONTYPE)
+          ->setNewValue($discordEmoji);
       $xactions[] = id(new PhrictionTransaction())
         ->setTransactionType($edit_type)
         ->setNewValue($content_text);
@@ -284,7 +289,13 @@ final class PhrictionEditController
           ->setLabel(pht('Edit Notes'))
           ->setValue($notes)
           ->setError(null)
-          ->setName('description'));
+          ->setName('description'))
+        ->appendChild(
+          id(new AphrontFormTextControl())
+            ->setLabel(pht('Discord Emoji Id'))
+            ->setValue($discordEmoji)
+            ->setError(null)
+            ->setName('discordEmoji'));
 
     if ($is_draft_mode) {
       $form->appendControl(

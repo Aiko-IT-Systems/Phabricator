@@ -137,6 +137,10 @@ final class PhrictionDocument extends PhrictionDAO
     return $this->assertAttached($this->contentObject);
   }
 
+  public function getDiscordEmoji() {
+    return $this->discordEmoji;
+  }
+
   public function getAncestors() {
     return $this->ancestors;
   }

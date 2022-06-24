@@ -15,6 +15,7 @@ final class PhrictionContent
   protected $slug;
   protected $content;
   protected $description;
+  protected $discordEmoji;
 
   protected $changeType;
   protected $changeRef;
@@ -32,6 +33,7 @@ final class PhrictionContent
         'changeType' => 'uint32',
         'changeRef' => 'uint32?',
         'description' => 'text',
+        'discordEmoji' => 'text128',
       ),
       self::CONFIG_KEY_SCHEMA => array(
         'key_version' => array(
