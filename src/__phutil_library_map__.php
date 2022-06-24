@@ -12647,7 +12647,7 @@ phutil_register_library_map(array(
     'PhrictionDocumentController' => 'PhrictionController',
     'PhrictionDocumentDatasource' => 'PhabricatorTypeaheadDatasource',
     'PhrictionDocumentDeleteTransaction' => 'PhrictionDocumentVersionTransaction',
-    'PhrictionDocumentDiscordEmojiTransaction' => 'PhrictionDocumentEditTransaction',
+    'PhrictionDocumentDiscordEmojiTransaction' => 'PhrictionDocumentVersionTransaction',
     'PhrictionDocumentDraftTransaction' => 'PhrictionDocumentEditTransaction',
     'PhrictionDocumentEditEngine' => 'PhabricatorEditEngine',
     'PhrictionDocumentEditTransaction' => 'PhrictionDocumentVersionTransaction',

@@ -1,7 +1,7 @@
 <?php
 
 final class PhrictionDocumentDiscordEmojiTransaction
-  extends PhrictionDocumentEditTransaction {
+  extends PhrictionDocumentVersionTransaction {
 
   const TRANSACTIONTYPE = 'discordemoji';
 
@@ -38,7 +38,7 @@ final class PhrictionDocumentDiscordEmojiTransaction
     return pht('ReDEmoted');
   }
 
-  public function getDiscordEmoji() {
+  public function getTitle() {
     $old = $this->getOldValue();
     $new = $this->getNewValue();
 
@@ -56,30 +56,45 @@ final class PhrictionDocumentDiscordEmojiTransaction
       }
     }
 
+    $rOld = 'null';
+    $rNew = 'null';
+
+    if (!empty($old)) {
+      $rOld = $this->renderOldValue();
+    }
+
+    if (!empty($new)) {
+      $rNew = $this->renderNewValue();
+    }
+
     return pht(
       '%s changed the discord emoji from %s to %s.',
       $this->renderAuthor(),
-      $this->renderOldValue(),
-      $this->renderNewValue());
+      $rOld,
+      $rNew);
   }
 
-  public function getDiscordEmojiForFeed() {
+  public function getTitleForFeed() {
     $old = $this->getOldValue();
     $new = $this->getNewValue();
 
-    if ($old === null) {
-      return pht(
-        '%s created %s.',
-        $this->renderAuthor(),
-        $this->renderObject());
+    $rOld = 'null';
+    $rNew = 'null';
+
+    if (!empty($old)) {
+      $rOld = $this->renderOldValue();
+    }
+
+    if (!empty($new)) {
+      $rNew = $this->renderNewValue();
     }
 
     return pht(
       '%s changed discord emoji for %s from %s to %s.',
       $this->renderAuthor(),
       $this->renderObject(),
-      $this->renderOldValue(),
-      $this->renderNewValue());
+      $rOld,
+      $rNew);
   }
 
   public function validateTransactions($object, array $xactions) {
@@ -89,8 +104,8 @@ final class PhrictionDocumentDiscordEmojiTransaction
     // we're validating that: you can't edit away a document; and you can't
     // create an empty document.
 
-    $content = $object->getContent()->getDiscordEmoji();
-    /*if ($this->isEmptyTextTransaction($content, $xactions)) {
+    /*$content = $object->getContent()->getDiscordEmoji();
+    if ($this->isEmptyTextTransaction($content, $xactions)) {
       $errors[] = $this->newRequiredError(
         pht('Documents must have a discord emoji.'));
     }*/
