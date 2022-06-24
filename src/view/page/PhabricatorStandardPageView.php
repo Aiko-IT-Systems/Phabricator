@@ -597,7 +597,21 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
       'meta',
       array(
         'property' => 'twitter:card',
-        'content' => 'summary_large_image',
+        'content' => 'summary',
+      ));
+
+    $twSite = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:site',
+        'content' => '@aiko_it_systems',
+      ));
+
+    $twCreator = phutil_tag(
+      'meta',
+      array(
+        'property' => 'twitter:creator',
+        'content' => '@Lala_Devi_Chan',
       ));
 
     $twTitle = phutil_tag(
@@ -615,14 +629,10 @@ og:type article
     article:author - profile array - Writers of the article.
     article:section - string - A high-level section name. E.g. Technology
     article:tag - string array - Tag words associated with this article.
-
-
-TODO:
-<meta property="og:image:type" content="image/png">
 */
 
     return hsprintf(
-      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
+      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
       parent::getHead(),
       $font_css,
       $siteName,
@@ -637,6 +647,8 @@ TODO:
       $imageType,
       $profileU,
       $twCard,
+      $twSite,
+      $twCreator,
       $twUrl,
       $twDomain,
       $twTitle,
