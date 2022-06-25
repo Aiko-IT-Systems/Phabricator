@@ -329,6 +329,7 @@ abstract class PhabricatorController extends AphrontController {
     $application = $this->getCurrentApplication();
     if ($application) {
       $icon = $application->getIcon();
+      $brand = $application->isBrandIcon();
       if (!$icon) {
         $icon = 'fa-puzzle';
       }
@@ -336,7 +337,7 @@ abstract class PhabricatorController extends AphrontController {
       $crumbs[] = id(new PHUICrumbView())
         ->setHref($this->getApplicationURI())
         ->setName($application->getName())
-        ->setIcon($icon);
+        ->setIcon($icon, $brand);
     }
 
     $view = new PHUICrumbsView();
@@ -369,7 +370,7 @@ abstract class PhabricatorController extends AphrontController {
     $can_act = $this->hasApplicationCapability($capability);
     if ($can_act) {
       $message = $positive_message;
-      $icon_name = 'fa-play-circle-o lightgreytext';
+      $icon_name = 'fa-play-circle lightgreytext';
     } else {
       $message = $negative_message;
       $icon_name = 'fa-lock';

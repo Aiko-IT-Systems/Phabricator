@@ -15,7 +15,7 @@ final class PhabricatorGuideApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-map-o';
+    return 'fa-map';
   }
 
   public function getApplicationGroup() {

@@ -178,6 +178,10 @@ abstract class PhabricatorApplication
     return 'fa-puzzle-piece';
   }
 
+  public function isBrandIcon() {
+    return false;
+  }
+
   public function getApplicationOrder() {
     return PHP_INT_MAX;
   }

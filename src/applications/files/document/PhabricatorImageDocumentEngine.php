@@ -10,7 +10,7 @@ final class PhabricatorImageDocumentEngine
   }
 
   protected function getDocumentIconIcon(PhabricatorDocumentRef $ref) {
-    return 'fa-file-image-o';
+    return 'fa-file-image';
   }
 
   protected function getByteLengthLimit() {

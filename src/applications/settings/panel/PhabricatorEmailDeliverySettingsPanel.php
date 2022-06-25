@@ -10,7 +10,7 @@ final class PhabricatorEmailDeliverySettingsPanel
   }
 
   public function getPanelMenuIcon() {
-    return 'fa-envelope-o';
+    return 'fa-envelope';
   }
 
   public function getPanelGroupKey() {

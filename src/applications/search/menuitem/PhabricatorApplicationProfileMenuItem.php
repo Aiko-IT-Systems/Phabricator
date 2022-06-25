@@ -86,7 +86,7 @@ final class PhabricatorApplicationProfileMenuItem
     $item = $this->newItemView()
       ->setURI($app->getApplicationURI())
       ->setName($this->getDisplayName($config))
-      ->setIcon($app->getIcon());
+      ->setIcon($app->getIcon(), $app->isBrandIcon());
 
     // Don't show tooltip if they've set a custom name
     $name = $config->getMenuItemProperty('name');

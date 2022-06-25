@@ -32,7 +32,7 @@ final class DrydockConsoleController extends DrydockController {
     $menu->addItem(
       id(new PHUIObjectItemView())
         ->setHeader(pht('Blueprints'))
-        ->setImageIcon('fa-map-o')
+        ->setImageIcon('fa-map')
         ->setHref($this->getApplicationURI('blueprint/'))
         ->setClickable(true)
         ->addAttribute(

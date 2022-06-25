@@ -22,7 +22,7 @@ final class PhabricatorDaemonLogViewController
 
     $header = id(new PHUIHeaderView())
       ->setHeader($log->getDaemon())
-      ->setHeaderIcon('fa-pied-piper-alt');
+      ->setHeaderIcon('fa-monitor-waveform');
 
     $tag = id(new PHUITagView())
       ->setType(PHUITagView::TYPE_STATE);
@@ -47,7 +47,7 @@ final class PhabricatorDaemonLogViewController
       case PhabricatorDaemonLog::STATUS_WAIT:
         $color = 'blue';
         $name = pht('Waiting');
-        $icon = 'fa-clock-o';
+        $icon = 'fa-clock';
         break;
       case PhabricatorDaemonLog::STATUS_EXITING:
         $color = 'yellow';

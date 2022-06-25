@@ -56,7 +56,7 @@ final class HeraldCommentAction extends HeraldAction {
   protected function getActionEffectMap() {
     return array(
       self::DO_COMMENT => array(
-        'icon' => 'fa-comment',
+        'icon' => 'fa-solid fa-comment',
         'color' => 'blue',
         'name' => pht('Added Comment'),
       ),

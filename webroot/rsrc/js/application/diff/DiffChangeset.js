@@ -139,7 +139,7 @@ JX.install('DiffChangeset', {
 
     getIcon: function() {
       if (!this._visible) {
-        return 'fa-file-o';
+        return 'fa-file';
       }
 
       return this._icon;

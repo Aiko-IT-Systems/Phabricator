@@ -117,7 +117,7 @@ final class PhortuneMerchantDetailsController
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Edit Logo'))
-        ->setIcon('fa-picture-o')
+        ->setIcon('fa-image')
         ->setDisabled(!$can_edit)
         ->setWorkflow(!$can_edit)
         ->setHref($this->getApplicationURI("merchant/{$id}/picture/edit/")));

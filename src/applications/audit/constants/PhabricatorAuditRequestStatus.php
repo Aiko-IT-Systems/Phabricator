@@ -55,31 +55,31 @@ final class PhabricatorAuditRequestStatus extends Phobject {
     return array(
       self::AUDIT_REQUIRED => array(
         'name' => pht('Audit Required'),
-        'icon' => 'fa-exclamation-circle',
+        'icon' => 'fa-solid fa-exclamation-circle',
         'icon.color' => 'orange',
         'value.conduit' => 'audit-required',
       ),
       self::AUDIT_REQUESTED => array(
         'name' => pht('Audit Requested'),
-        'icon' => 'fa-exclamation-circle',
+        'icon' => 'fa-solid fa-exclamation-circle',
         'icon.color' => 'orange',
         'value.conduit' => 'audit-requested',
       ),
       self::CONCERNED => array(
         'name' => pht('Concern Raised'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'icon.color' => 'red',
         'value.conduit' => 'concern-raised',
       ),
       self::ACCEPTED => array(
         'name' => pht('Accepted'),
-        'icon' => 'fa-check-circle',
+        'icon' => 'fa-solid fa-check-circle',
         'icon.color' => 'green',
         'value.conduit' => 'accepted',
       ),
       self::RESIGNED => array(
         'name' => pht('Resigned'),
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'icon.color' => 'grey',
         'value.conduit' => 'resigned',
       ),

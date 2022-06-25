@@ -346,7 +346,7 @@ final class DiffusionCommitController extends DiffusionController {
           ->setText(pht('Show All Changes'))
           ->setHref('?show_all=true')
           ->setTag('a')
-          ->setIcon('fa-files-o');
+          ->setIcon('fa-files');
 
         $warning_view = id(new PHUIInfoView())
           ->setSeverity(PHUIInfoView::SEVERITY_WARNING)

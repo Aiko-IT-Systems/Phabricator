@@ -104,7 +104,7 @@ abstract class PhragmentController extends PhabricatorController {
         ->setName(pht('Download Contents as ZIP'))
         ->setHref($this->isCorrectlyConfigured() ? $zip_uri : null)
         ->setDisabled(!$this->isCorrectlyConfigured())
-        ->setIcon('fa-floppy-o'));
+        ->setIcon('fa-box'));
     if (!$fragment->isDirectory()) {
       $actions->addAction(
         id(new PhabricatorActionView())
@@ -120,7 +120,7 @@ abstract class PhragmentController extends PhabricatorController {
           ->setHref($this->getApplicationURI('update/'.$fragment->getPath()))
           ->setDisabled(!$can_edit)
           ->setWorkflow(!$can_edit)
-          ->setIcon('fa-file-o'));
+          ->setIcon('fa-file'));
     }
     $actions->addAction(
       id(new PhabricatorActionView())
@@ -149,7 +149,7 @@ abstract class PhragmentController extends PhabricatorController {
           'snapshot/create/'.$fragment->getPath()))
         ->setDisabled(!$can_edit)
         ->setWorkflow(!$can_edit)
-        ->setIcon('fa-files-o'));
+        ->setIcon('fa-files'));
     $actions->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Promote Snapshot to Here'))

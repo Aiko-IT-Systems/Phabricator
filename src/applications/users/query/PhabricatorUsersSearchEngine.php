@@ -284,7 +284,7 @@ final class PhabricatorUsersSearchEngine
 
       if (!$is_approval) {
         if (!$user->getIsApproved()) {
-          $item->addIcon('fa-clock-o', pht('Needs Approval'));
+          $item->addIcon('fa-clock', pht('Needs Approval'));
         }
       }
 
@@ -301,7 +301,7 @@ final class PhabricatorUsersSearchEngine
       }
 
       if ($user->getIsMailingList()) {
-        $item->addIcon('fa-envelope-o', pht('Mailing List'));
+        $item->addIcon('fa-envelope', pht('Mailing List'));
       }
 
       if ($viewer->getIsAdmin()) {
@@ -321,7 +321,7 @@ final class PhabricatorUsersSearchEngine
               ->setHref($this->getApplicationURI('disapprove/'.$user_id.'/')));
           $item->addAction(
             id(new PHUIListItemView())
-              ->setIcon('fa-thumbs-o-up')
+              ->setIcon('fa-thumbs-up')
               ->setName(pht('Approve'))
               ->setWorkflow(true)
               ->setHref($this->getApplicationURI('approve/'.$user_id.'/')));

@@ -92,8 +92,16 @@ final class PhabricatorTypeaheadTokenView
   }
 
   public function setIcon($icon) {
+    if($this->startsWith($icon, 'fa-')) {
+      $icon = "fa-solid {$icon}";
+    }
     $this->icon = $icon;
     return $this;
+  }
+
+  private function startsWith( $haystack, $needle ) {
+    $length = strlen( $needle );
+    return substr( $haystack, 0, $length ) === $needle;
   }
 
   public function getIcon() {
@@ -180,7 +188,7 @@ final class PhabricatorTypeaheadTokenView
       $icon_view = phutil_tag(
         'span',
         array(
-          'class' => 'phui-icon-view phui-font-fa '.$icon,
+          'class' => 'phui-icon-view phui-font-fa fa-solid fa-brands'.$icon,
         ));
     }
 

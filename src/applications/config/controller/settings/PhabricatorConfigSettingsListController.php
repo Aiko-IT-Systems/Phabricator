@@ -98,7 +98,7 @@ final class PhabricatorConfigSettingsListController
     } else if ($color) {
       $item->setStatusIcon('fa-pencil '.$color, pht('Editable'));
     } else {
-      $item->setStatusIcon('fa-circle-o grey', pht('Default'));
+      $item->setStatusIcon('fa-circle grey', pht('Default'));
     }
 
     return $item;

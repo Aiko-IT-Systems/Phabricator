@@ -10,7 +10,7 @@ final class PhabricatorRemarkupDocumentEngine
   }
 
   protected function getDocumentIconIcon(PhabricatorDocumentRef $ref) {
-    return 'fa-file-text-o';
+    return 'fa-file-text';
   }
 
   protected function getContentScore(PhabricatorDocumentRef $ref) {

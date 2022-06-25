@@ -128,7 +128,7 @@ final class PhabricatorEditEngineConfigurationSearchEngine
         $item->setDisabled(true);
         $item->setStatusIcon('fa-ban grey', pht('Disabled'));
       } else {
-        $item->setStatusIcon('fa-file-text-o green', pht('Enabled'));
+        $item->setStatusIcon('fa-file-text green', pht('Enabled'));
       }
 
       $subtype_key = $config->getSubtype();

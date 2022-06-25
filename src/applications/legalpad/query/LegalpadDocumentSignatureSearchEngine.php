@@ -163,12 +163,12 @@ final class LegalpadDocumentSignatureSearchEngine
       pht('Verified, Current'));
 
     $sig_corp = $this->renderIcon(
-      'fa-building-o',
+      'fa-building',
       null,
       pht('Verified, Corporate'));
 
     $sig_old = $this->renderIcon(
-      'fa-clock-o',
+      'fa-clock',
       'orange',
       pht('Signed Older Version'));
 

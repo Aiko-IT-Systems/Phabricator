@@ -8,14 +8,14 @@ final class PhabricatorProjectWorkboardBackgroundColor extends Phobject {
         'key' => '',
         'name' => pht('Use Parent Background (Default)'),
         'special' => 'parent',
-        'icon' => 'fa-chevron-circle-up',
+        'icon' => 'fa-solid fa-chevron-circle-up',
         'group' => 'basic',
       ),
       array(
         'key' => 'none',
         'name' => pht('No Background'),
         'special' => 'none',
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'group' => 'basic',
       ),
       array(

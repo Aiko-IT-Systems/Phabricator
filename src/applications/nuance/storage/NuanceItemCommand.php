@@ -43,22 +43,22 @@ final class NuanceItemCommand
     return array(
       self::STATUS_ISSUED => array(
         'name' => pht('Issued'),
-        'icon' => 'fa-clock-o',
+        'icon' => 'fa-solid fa-clock',
         'color' => 'bluegrey',
       ),
       self::STATUS_EXECUTING => array(
         'name' => pht('Executing'),
-        'icon' => 'fa-play',
+        'icon' => 'fa-solid fa-play',
         'color' => 'green',
       ),
       self::STATUS_DONE => array(
         'name' => pht('Done'),
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
         'color' => 'blue',
       ),
       self::STATUS_FAILED => array(
         'name' => pht('Failed'),
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'red',
       ),
     );

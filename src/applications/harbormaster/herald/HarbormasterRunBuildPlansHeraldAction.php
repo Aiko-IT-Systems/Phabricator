@@ -49,7 +49,7 @@ final class HarbormasterRunBuildPlansHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_BUILD => array(
-        'icon' => 'fa-play',
+        'icon' => 'fa-solid fa-play',
         'color' => 'green',
         'name' => pht('Building'),
       ),

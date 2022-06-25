@@ -141,7 +141,7 @@ final class PhabricatorPasteViewController extends PhabricatorPasteController {
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('View Raw File'))
-        ->setIcon('fa-file-text-o')
+        ->setIcon('fa-file-text')
         ->setHref($raw_uri));
 
     return $curtain;

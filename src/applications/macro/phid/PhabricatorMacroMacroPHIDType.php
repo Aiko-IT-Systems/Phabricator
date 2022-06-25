@@ -13,7 +13,7 @@ final class PhabricatorMacroMacroPHIDType extends PhabricatorPHIDType {
   }
 
   public function getTypeIcon() {
-    return 'fa-meh-o';
+    return 'fa-meh';
   }
 
   public function newObject() {

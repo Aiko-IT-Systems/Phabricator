@@ -12,7 +12,7 @@ final class PhabricatorManiphestConfigOptions
   }
 
   public function getIcon() {
-    return 'fa-anchor';
+    return 'fa-solid fa-anchor';
   }
 
   public function getGroup() {
@@ -127,7 +127,7 @@ final class PhabricatorManiphestConfigOptions
       'duplicate' => array(
         'name' => pht('Duplicate'),
         'name.full' => pht('Closed, Duplicate'),
-        'transaction.icon' => 'fa-files-o',
+        'transaction.icon' => 'fa-files',
         'special' => ManiphestTaskStatus::SPECIAL_DUPLICATE,
         'closed' => true,
         'claim' => false,
@@ -136,7 +136,7 @@ final class PhabricatorManiphestConfigOptions
         'name' => pht('Spite'),
         'name.full' => pht('Closed, Spite'),
         'name.action' => pht('Spited'),
-        'transaction.icon' => 'fa-thumbs-o-down',
+        'transaction.icon' => 'fa-thumbs-down',
         'silly' => true,
         'closed' => true,
         'prefixes' => array(

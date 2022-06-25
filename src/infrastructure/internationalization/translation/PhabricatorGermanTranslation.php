@@ -1496,7 +1496,7 @@ final class PhabricatorGermanTranslation
       'Type a user, project, package, or mailing list name...' => 'Gib einen Benutzer, Projekt, Packet oder Mailing List Name ein...',
       #'' => '',
      #Icons
-      'Icon' => 'Symbol',
+      'icon' => 'fa-solid Symbol',
       'Travel' => 'Reise',
       'Health / Appointment' => 'Gesundheit / Verabredung',
       'Sabatical / Leave' => 'Forschungsurlaub / Urlaub',

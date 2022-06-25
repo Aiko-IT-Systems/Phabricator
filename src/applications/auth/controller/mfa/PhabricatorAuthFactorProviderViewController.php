@@ -116,7 +116,7 @@ final class PhabricatorAuthFactorProviderViewController
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Customize Enroll Message'))
-        ->setIcon('fa-commenting-o')
+        ->setIcon('fa-commenting')
         ->setHref($this->getApplicationURI("mfa/message/{$id}/"))
         ->setDisabled(!$can_edit)
         ->setWorkflow(true));

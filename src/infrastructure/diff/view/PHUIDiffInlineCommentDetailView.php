@@ -168,7 +168,7 @@ final class PHUIDiffInlineCommentDetailView
     if ($this->editable && !$is_preview) {
       $menu_items[] = array(
         'label' => pht('Edit Comment'),
-        'icon' => 'fa-pencil',
+        'icon' => 'fa-solid fa-pencil',
         'action' => 'edit',
         'key' => 'e',
       );
@@ -187,7 +187,7 @@ final class PHUIDiffInlineCommentDetailView
       $action_buttons[] = id(new PHUIButtonView())
         ->setTag('a')
         ->setTooltip(pht('Delete'))
-        ->setIcon('fa-trash-o')
+        ->setIcon('fa-trash')
         ->addSigil('differential-inline-delete')
         ->setMustCapture(true)
         ->setAuralLabel(pht('Delete'));
@@ -196,7 +196,7 @@ final class PHUIDiffInlineCommentDetailView
     if (!$is_preview && $this->canHide()) {
       $menu_items[] = array(
         'label' => pht('Collapse'),
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'action' => 'collapse',
         'key' => 'q',
       );
@@ -216,14 +216,14 @@ final class PHUIDiffInlineCommentDetailView
     if ($can_reply) {
       $menu_items[] = array(
         'label' => pht('Reply to Comment'),
-        'icon' => 'fa-reply',
+        'icon' => 'fa-solid fa-reply',
         'action' => 'reply',
         'key' => 'r',
       );
 
       $menu_items[] = array(
         'label' => pht('Quote Comment'),
-        'icon' => 'fa-quote-left',
+        'icon' => 'fa-solid fa-quote-left',
         'action' => 'quote',
         'key' => 'R',
       );
@@ -236,7 +236,7 @@ final class PHUIDiffInlineCommentDetailView
       if ($xaction_phid) {
         $menu_items[] = array(
           'label' => pht('View Raw Remarkup'),
-          'icon' => 'fa-code',
+          'icon' => 'fa-solid fa-code',
           'action' => 'raw',
           'uri' => $storage->getRawRemarkupURI(),
         );
@@ -246,7 +246,7 @@ final class PHUIDiffInlineCommentDetailView
     if ($this->editable && !$is_preview) {
       $menu_items[] = array(
         'label' => pht('Delete Comment'),
-        'icon' => 'fa-trash-o',
+        'icon' => 'fa-solid fa-trash',
         'action' => 'delete',
       );
     }

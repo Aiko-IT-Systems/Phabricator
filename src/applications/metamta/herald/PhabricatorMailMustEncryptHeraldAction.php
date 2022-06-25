@@ -43,7 +43,7 @@ final class PhabricatorMailMustEncryptHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_MUST_ENCRYPT => array(
-        'icon' => 'fa-shield',
+        'icon' => 'fa-solid fa-shield',
         'color' => 'blue',
         'name' => pht('Must Encrypt'),
       ),

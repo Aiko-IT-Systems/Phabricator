@@ -46,7 +46,7 @@
 }
 
 .phui-oi-disabled.phui-workcard {
-  background-color: rgba({$alphawhite},.67);
+  background-color: rgba(17, 10, 10, 0.67);
 }
 
 .phui-oi-disabled.phui-workcard .phui-oi-link {

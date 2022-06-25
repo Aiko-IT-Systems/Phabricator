@@ -8,7 +8,7 @@ final class FileTypeIcon extends Phobject {
     switch ($extension) {
       case 'psd':
       case 'ai':
-        $icon = 'fa-file-image-o';
+        $icon = 'fa-file-image';
         break;
       case 'conf':
         $icon = 'fa-wrench';
@@ -16,11 +16,11 @@ final class FileTypeIcon extends Phobject {
       case 'wav':
       case 'mp3':
       case 'aiff':
-        $icon = 'fa-file-sound-o';
+        $icon = 'fa-file-sound';
         break;
       case 'm4v':
       case 'mov':
-        $icon = 'fa-file-movie-o';
+        $icon = 'fa-file-movie';
         break;
       case 'sql':
       case 'db':
@@ -28,7 +28,7 @@ final class FileTypeIcon extends Phobject {
         break;
       case 'xls':
       case 'csv':
-        $icon = 'fa-file-excel-o';
+        $icon = 'fa-file-excel';
         break;
       case 'ics':
         $icon = 'fa-calendar';
@@ -38,26 +38,26 @@ final class FileTypeIcon extends Phobject {
       case 'bz':
       case 'tgz':
       case 'gz':
-        $icon = 'fa-file-archive-o';
+        $icon = 'fa-file-archive';
         break;
       case 'png':
       case 'jpg':
       case 'bmp':
       case 'gif':
-        $icon = 'fa-file-picture-o';
+        $icon = 'fa-file-picture';
         break;
       case 'txt':
-        $icon = 'fa-file-text-o';
+        $icon = 'fa-file-text';
         break;
       case 'doc':
       case 'docx':
-        $icon = 'fa-file-word-o';
+        $icon = 'fa-file-word';
         break;
       case 'pdf':
-        $icon = 'fa-file-pdf-o';
+        $icon = 'fa-file-pdf';
         break;
       default:
-        $icon = 'fa-file-text-o';
+        $icon = 'fa-file-text';
         break;
     }
     return $icon;

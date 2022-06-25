@@ -57,7 +57,7 @@ final class PHUITimelineExample extends PhabricatorUIExample {
     $events[] = id(new PHUITimelineEventView())
       ->setUserHandle($handle)
       ->setTitle(pht('Major Red Event'))
-      ->setIcon('fa-heart-o')
+      ->setIcon('fa-heart')
       ->appendChild(pht('This event is red!'))
       ->setColor(PhabricatorTransactions::COLOR_RED)
       ->addBadge($designer);
@@ -76,7 +76,7 @@ final class PHUITimelineExample extends PhabricatorUIExample {
 
     $events[] = id(new PHUITimelineEventView())
       ->setUserHandle($handle)
-      ->setIcon('fa-calendar-o')
+      ->setIcon('fa-calendar')
       ->setTitle(pht('Minor Red Event'))
       ->setColor(PhabricatorTransactions::COLOR_RED);
 
@@ -112,7 +112,7 @@ final class PHUITimelineExample extends PhabricatorUIExample {
 
     $events[] = id(new PHUITimelineEventView())
       ->setUserHandle($handle)
-      ->setIcon('fa-circle-o')
+      ->setIcon('fa-circle')
       ->setTitle(pht('Major Green Disagreement Action'))
       ->appendChild(pht('This event is green!'))
       ->setColor(PhabricatorTransactions::COLOR_GREEN);

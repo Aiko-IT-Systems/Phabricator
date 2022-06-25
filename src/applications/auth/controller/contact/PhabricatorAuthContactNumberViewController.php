@@ -101,7 +101,7 @@ final class PhabricatorAuthContactNumberViewController
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Send Test Message'))
-        ->setIcon('fa-envelope-o')
+        ->setIcon('fa-envelope')
         ->setHref($this->getApplicationURI("contact/test/{$id}/"))
         ->setDisabled(!$can_edit)
         ->setWorkflow(true));

@@ -77,13 +77,13 @@
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
-  color: {$darkbluetext};
+  color: rgba(156, 89, 255, 0.8);
   display: block;
 }
 
 .phui-action-panel-bigtext .phui-action-panel-subheader {
   font-size: 28px;
-  color: {$darkbluetext};
+  color: rgba(125, 125, 125, 0.8);
   text-align: center;
   padding: 0 8px;
 }
@@ -91,7 +91,7 @@
 .phui-action-panel-subheader {
   display: table-cell;
   vertical-align: middle;
-  color: {$darkbluetext};
+  color: rgba(110, 31, 117, 0.8);
   padding: 8px 8px 8px 0;
 }
 

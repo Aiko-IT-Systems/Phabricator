@@ -70,12 +70,13 @@ final class PHUICrumbsView extends AphrontView {
         $icon = null;
         if ($action->getIcon()) {
           $icon_name = $action->getIcon();
+          $is_brand = $action->getIsBrand();
           if ($action->getDisabled()) {
             $icon_name .= ' lightgreytext';
           }
 
           $icon = id(new PHUIIconView())
-            ->setIcon($icon_name);
+            ->setIcon($icon_name, $is_brand);
 
         }
 

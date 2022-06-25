@@ -159,7 +159,7 @@ final class PhabricatorEditEngineSubtype
           'name' => 'string',
           'tag' => 'optional string',
           'color' => 'optional string',
-          'icon' => 'optional string',
+          'icon' => 'fa-solid optional string',
           'children' => 'optional map<string, wild>',
           'fields' => 'optional map<string, wild>',
           'mutations' => 'optional list<string>',
@@ -268,7 +268,7 @@ final class PhabricatorEditEngineSubtype
       }
 
       $color = idx($entry, 'color', 'blue');
-      $icon = idx($entry, 'icon', 'fa-drivers-license-o');
+      $icon = idx($entry, 'icon', 'fa-drivers-license');
 
       $subtype = id(new self())
         ->setKey($key)

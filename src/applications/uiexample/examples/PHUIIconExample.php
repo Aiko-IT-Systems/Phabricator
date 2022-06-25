@@ -104,6 +104,7 @@ final class PHUIIconExample extends PhabricatorUIExample {
       'Dropbox',
       'Google',
       'Github',
+      'Discord',
     );
     $loginview = array();
     foreach ($logins as $login) {
@@ -198,10 +199,10 @@ final class PHUIIconExample extends PhabricatorUIExample {
     $fa_link = phutil_tag(
       'a',
       array(
-        'href' => 'http://fontawesome.io',
+        'href' => 'https://fontawesome.com',
       ),
-      'http://fontawesome.io');
-    $fa_text = pht('Font Awesome by Dave Gandy - %s', $fa_link);
+      'https://fontawesome.com');
+    $fa_text = pht('Font Awesome 6.0.0 - %s', $fa_link);
 
     $fontawesome = id(new PHUIObjectBoxView())
       ->setHeaderText($fa_text)

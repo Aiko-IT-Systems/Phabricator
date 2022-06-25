@@ -38,7 +38,7 @@ final class PhabricatorAuthMessageListController
       if ($message) {
         $item->addIcon('fa-circle', pht('Customized'));
       } else {
-        $item->addIcon('fa-circle-o grey', pht('Default'));
+        $item->addIcon('fa-circle grey', pht('Default'));
       }
 
       $list->addItem($item);
@@ -57,7 +57,7 @@ final class PhabricatorAuthMessageListController
     $title = pht('Auth Messages');
     $header = id(new PHUIHeaderView())
       ->setHeader($title)
-      ->setHeaderIcon('fa-commenting-o');
+      ->setHeaderIcon('fa-commenting');
 
     $view = id(new PHUITwoColumnView())
       ->setHeader($header)

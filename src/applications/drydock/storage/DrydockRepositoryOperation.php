@@ -130,7 +130,7 @@ final class DrydockRepositoryOperation extends DrydockDAO
 
   public static function getOperationStateIcon($state) {
     $map = array(
-      self::STATE_WAIT => 'fa-clock-o',
+      self::STATE_WAIT => 'fa-clock',
       self::STATE_WORK => 'fa-plane ph-spin blue',
       self::STATE_DONE => 'fa-check green',
       self::STATE_FAIL => 'fa-times red',

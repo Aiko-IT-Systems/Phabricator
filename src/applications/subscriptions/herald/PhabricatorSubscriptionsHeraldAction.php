@@ -135,22 +135,22 @@ abstract class PhabricatorSubscriptionsHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_PREVIOUSLY_UNSUBSCRIBED => array(
-        'icon' => 'fa-minus-circle',
+        'icon' => 'fa-solid fa-minus-circle',
         'color' => 'grey',
         'name' => pht('Previously Unsubscribed'),
       ),
       self::DO_AUTOSUBSCRIBED => array(
-        'icon' => 'fa-envelope',
+        'icon' => 'fa-solid fa-envelope',
         'color' => 'grey',
         'name' => pht('Automatically Subscribed'),
       ),
       self::DO_SUBSCRIBED => array(
-        'icon' => 'fa-envelope',
+        'icon' => 'fa-solid fa-envelope',
         'color' => 'green',
         'name' => pht('Added Subscribers'),
       ),
       self::DO_UNSUBSCRIBED => array(
-        'icon' => 'fa-minus-circle',
+        'icon' => 'fa-solid fa-minus-circle',
         'color' => 'green',
         'name' => pht('Removed Subscribers'),
       ),

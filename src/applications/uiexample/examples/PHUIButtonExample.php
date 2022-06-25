@@ -57,41 +57,41 @@ final class PHUIButtonExample extends PhabricatorUIExample {
     $icons = array(
       array(
         'text' => pht('Comment'),
-        'icon' => 'fa-comment',
+        'icon' => 'fa-solid fa-comment',
         'dropdown' => true,
       ),
       array(
         'text' => pht('Give Token'),
-        'icon' => 'fa-trophy',
+        'icon' => 'fa-solid fa-trophy',
         'dropdown' => true,
       ),
       array(
         'text' => pht('Reverse Time'),
-        'icon' => 'fa-clock-o',
+        'icon' => 'fa-solid fa-clock',
       ),
       array(
         'text' => pht('Implode Earth'),
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
       ),
       array(
-        'icon' => 'fa-rocket',
+        'icon' => 'fa-solid fa-rocket',
         'dropdown' => true,
       ),
       array(
-        'icon' => 'fa-clipboard',
+        'icon' => 'fa-solid fa-clipboard',
         'dropdown' => true,
       ),
       array(
-        'icon' => 'fa-upload',
+        'icon' => 'fa-solid fa-upload',
         'disabled' => true,
       ),
       array(
-        'icon' => 'fa-street-view',
+        'icon' => 'fa-solid fa-street-view',
         'selected' => true,
       ),
       array(
         'text' => pht('Copy "Quack" to Clipboard'),
-        'icon' => 'fa-clipboard',
+        'icon' => 'fa-solid fa-clipboard',
         'copy' => pht('Quack'),
       ),
     );
@@ -158,7 +158,7 @@ final class PHUIButtonExample extends PhabricatorUIExample {
     // Baby Got Back Buttons
 
     $column = array();
-    $icons = array('Asana', 'Github', 'Facebook', 'Google', 'LDAP');
+    $icons = array('Asana', 'Github', 'Facebook', 'Google', 'LDAP', 'Discord');
     foreach ($icons as $icon) {
       $image = id(new PHUIIconView())
         ->setSpriteSheet(PHUIIconView::SPRITE_LOGIN)

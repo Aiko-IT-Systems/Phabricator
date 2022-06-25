@@ -39,7 +39,7 @@ final class PhabricatorFileViewController extends PhabricatorFileController {
       ->setUser($viewer)
       ->setPolicyObject($file)
       ->setHeader($file->getName())
-      ->setHeaderIcon('fa-file-o');
+      ->setHeaderIcon('fa-file');
 
     $ttl = $file->getTTL();
     if ($ttl !== null) {
@@ -133,7 +133,7 @@ final class PhabricatorFileViewController extends PhabricatorFileController {
       $curtain->addAction(
         id(new PhabricatorActionView())
           ->setName(pht('View File'))
-          ->setIcon('fa-file-o')
+          ->setIcon('fa-file')
           ->setHref($file->getViewURI())
           ->setDisabled(!$can_download)
           ->setWorkflow(!$can_download));

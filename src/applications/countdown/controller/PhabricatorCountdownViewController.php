@@ -33,11 +33,11 @@ final class PhabricatorCountdownViewController
 
     $epoch = $countdown->getEpoch();
     if ($epoch >= PhabricatorTime::getNow()) {
-      $icon = 'fa-clock-o';
+      $icon = 'fa-clock';
       $color = '';
       $status = pht('Running');
     } else {
-      $icon = 'fa-check-square-o';
+      $icon = 'fa-check-square';
       $color = 'dark';
       $status = pht('Launched');
     }

@@ -111,7 +111,7 @@ final class DifferentialRevisionStatus extends Phobject {
       self::NEEDS_REVIEW => array(
         'name' => pht('Needs Review'),
         'legacy' => 0,
-        'icon' => 'fa-code',
+        'icon' => 'fa-solid fa-code',
         'icon.timeline' => 'fa-undo',
         'closed' => false,
         'color.icon' => 'grey',
@@ -122,7 +122,7 @@ final class DifferentialRevisionStatus extends Phobject {
       self::NEEDS_REVISION => array(
         'name' => pht('Needs Revision'),
         'legacy' => 1,
-        'icon' => 'fa-refresh',
+        'icon' => 'fa-solid fa-refresh',
         'icon.timeline' => 'fa-times',
         'closed' => false,
         'color.icon' => 'red',
@@ -133,7 +133,7 @@ final class DifferentialRevisionStatus extends Phobject {
       self::CHANGES_PLANNED => array(
         'name' => pht('Changes Planned'),
         'legacy' => 5,
-        'icon' => 'fa-headphones',
+        'icon' => 'fa-solid fa-headphones',
         'closed' => false,
         'color.icon' => 'red',
         'color.tag' => 'red',
@@ -142,7 +142,7 @@ final class DifferentialRevisionStatus extends Phobject {
       self::ACCEPTED => array(
         'name' => pht('Accepted'),
         'legacy' => 2,
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
         'icon.timeline' => 'fa-check',
         'closed' => $close_on_accept,
         'color.icon' => 'green',
@@ -153,7 +153,7 @@ final class DifferentialRevisionStatus extends Phobject {
       self::PUBLISHED => array(
         'name' => pht('Closed'),
         'legacy' => 3,
-        'icon' => 'fa-check-square-o',
+        'icon' => 'fa-solid fa-check-square',
         'closed' => true,
         'color.icon' => 'black',
         'color.tag' => 'indigo',
@@ -162,7 +162,7 @@ final class DifferentialRevisionStatus extends Phobject {
       self::ABANDONED => array(
         'name' => pht('Abandoned'),
         'legacy' => 4,
-        'icon' => 'fa-plane',
+        'icon' => 'fa-solid fa-plane',
         'closed' => true,
         'color.icon' => 'black',
         'color.tag' => 'indigo',
@@ -172,7 +172,7 @@ final class DifferentialRevisionStatus extends Phobject {
         'name' => pht('Draft'),
         // For legacy clients, treat this as though it is "Needs Review".
         'legacy' => 0,
-        'icon' => 'fa-spinner',
+        'icon' => 'fa-solid fa-spinner',
         'closed' => false,
         'color.icon' => 'pink',
         'color.tag' => 'pink',

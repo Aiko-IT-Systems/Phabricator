@@ -290,7 +290,7 @@ final class DiffusionRepositoryController extends DiffusionController {
       $ratio = $repository->loadImportProgress();
       $percentage = sprintf('%.2f%%', 100 * $ratio);
       $header->setStatus(
-        'fa-clock-o',
+        'fa-clock',
         'indigo',
         pht('Importing (%s)...', $percentage));
     } else if ($repository->isPublishingDisabled()) {

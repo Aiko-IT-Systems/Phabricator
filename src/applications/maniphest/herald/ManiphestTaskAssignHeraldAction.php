@@ -51,7 +51,7 @@ abstract class ManiphestTaskAssignHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_ASSIGN => array(
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'color' => 'green',
         'name' => pht('Assigned Task'),
       ),

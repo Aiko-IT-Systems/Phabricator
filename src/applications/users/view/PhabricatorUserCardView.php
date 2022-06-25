@@ -115,7 +115,7 @@ final class PhabricatorUserCardView extends AphrontTagView {
     if ($has_calendar) {
       if (!$user->getIsDisabled()) {
         $body[] = $this->addItem(
-          'fa-calendar-o',
+          'fa-calendar',
           id(new PHUIUserAvailabilityView())
             ->setViewer($viewer)
             ->setAvailableUser($user));

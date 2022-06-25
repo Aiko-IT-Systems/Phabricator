@@ -90,7 +90,7 @@ final class HeraldRuleResult
         'apply' => true,
         'name' => pht('Matched'),
         'description' => pht('Any condition matched.'),
-        'icon' => 'fa-check-circle',
+        'icon' => 'fa-solid fa-check-circle',
         'color.icon' => 'green',
       ),
       self::RESULT_ALL_MATCHED => array(
@@ -98,7 +98,7 @@ final class HeraldRuleResult
         'apply' => true,
         'name' => pht('Matched'),
         'description' => pht('All conditions matched.'),
-        'icon' => 'fa-check-circle',
+        'icon' => 'fa-solid fa-check-circle',
         'color.icon' => 'green',
       ),
       self::RESULT_ANY_FAILED => array(
@@ -106,7 +106,7 @@ final class HeraldRuleResult
         'apply' => false,
         'name' => pht('Failed'),
         'description' => pht('Not all conditions matched.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_ALL_FAILED => array(
@@ -114,7 +114,7 @@ final class HeraldRuleResult
         'apply' => false,
         'name' => pht('Failed'),
         'description' => pht('No conditions matched.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_LAST_MATCHED => array(
@@ -124,7 +124,7 @@ final class HeraldRuleResult
         'description' => pht(
           'This rule matched, but did not take any actions because it '.
           'is configured to act only if it did not match the last time.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_VERSION => array(
@@ -134,7 +134,7 @@ final class HeraldRuleResult
         'description' => pht(
           'Rule could not be processed because it was created with a newer '.
           'version of Herald.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_EMPTY => array(
@@ -143,7 +143,7 @@ final class HeraldRuleResult
         'name' => pht('Empty'),
         'description' => pht(
           'Rule failed automatically because it has no conditions.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_OWNER => array(
@@ -153,7 +153,7 @@ final class HeraldRuleResult
         'description' => pht(
           'Rule failed automatically because it is a personal rule and '.
           'its owner is invalid or disabled.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_VIEW_POLICY => array(
@@ -163,7 +163,7 @@ final class HeraldRuleResult
         'description' => pht(
           'Rule failed automatically because it is a personal rule and '.
           'its owner does not have permission to view the object.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_OBJECT_RULE => array(
@@ -173,7 +173,7 @@ final class HeraldRuleResult
         'description' => pht(
           'Rule failed automatically because it is an object rule which is '.
           'not relevant for this object.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_EXCEPTION => array(
@@ -182,7 +182,7 @@ final class HeraldRuleResult
         'name' => pht('Exception'),
         'description' => pht(
           'Rule failed because an exception occurred.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_EVALUATION_EXCEPTION => array(
@@ -191,7 +191,7 @@ final class HeraldRuleResult
         'name' => pht('Exception'),
         'description' => pht(
           'Rule failed because an exception occurred while evaluating it.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_UNKNOWN => array(
@@ -200,7 +200,7 @@ final class HeraldRuleResult
         'name' => pht('Unknown'),
         'description' => pht(
           'Rule evaluation result is unknown.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_ALREADY_APPLIED => array(
@@ -210,7 +210,7 @@ final class HeraldRuleResult
         'description' => pht(
           'This rule is only supposed to be repeated a single time, '.
           'and it has already been applied.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
       self::RESULT_OBJECT_STATE => array(
@@ -219,7 +219,7 @@ final class HeraldRuleResult
         'name' => pht('Forbidden'),
         'description' => pht(
           'Object state prevented rule evaluation.'),
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color.icon' => 'indigo',
       ),
       self::RESULT_RECURSION => array(
@@ -229,7 +229,7 @@ final class HeraldRuleResult
         'description' => pht(
           'This rule has a recursive dependency on itself and can not '.
           'be evaluated.'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color.icon' => 'red',
       ),
     );

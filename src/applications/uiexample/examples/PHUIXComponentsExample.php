@@ -19,10 +19,10 @@ final class PHUIXComponentsExample extends PhabricatorUIExample {
 
     $icons = array(
       array(
-        'icon' => 'fa-rocket',
+        'icon' => 'fa-solid fa-rocket',
       ),
       array(
-        'icon' => 'fa-cloud',
+        'icon' => 'fa-solid fa-cloud',
         'color' => 'indigo',
       ),
     );
@@ -61,22 +61,22 @@ final class PHUIXComponentsExample extends PhabricatorUIExample {
       ),
       array(
         'text' => pht('Activate'),
-        'icon' => 'fa-rocket',
+        'icon' => 'fa-solid fa-rocket',
       ),
       array(
         'type' => PHUIButtonView::BUTTONTYPE_SIMPLE,
         'text' => pht('3 / 5 Comments'),
-        'icon' => 'fa-comment',
+        'icon' => 'fa-solid fa-comment',
       ),
       array(
         'color' => PHUIButtonView::GREEN,
         'text' => pht('Environmental!'),
       ),
       array(
-        'icon' => 'fa-cog',
+        'icon' => 'fa-solid fa-cog',
       ),
       array(
-        'icon' => 'fa-cog',
+        'icon' => 'fa-solid fa-cog',
         'type' => PHUIButtonView::BUTTONTYPE_SIMPLE,
       ),
       array(

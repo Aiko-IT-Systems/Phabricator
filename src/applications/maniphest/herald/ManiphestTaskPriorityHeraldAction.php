@@ -72,7 +72,7 @@ final class ManiphestTaskPriorityHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_PRIORITY => array(
-        'icon' => 'fa-pencil',
+        'icon' => 'fa-solid fa-pencil',
         'color' => 'green',
         'name' => pht('Changed Task Priority'),
       ),

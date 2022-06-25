@@ -9,7 +9,7 @@ final class DrydockLeaseWaitingForResourcesLogType extends DrydockLogType {
   }
 
   public function getLogTypeIcon(array $data) {
-    return 'fa-clock-o yellow';
+    return 'fa-clock yellow';
   }
 
   public function renderLog(array $data) {

@@ -114,9 +114,9 @@ final class PhamePostSearchEngine
         ->setHref($post->getViewURI())
         ->addAttribute($blog_name);
       if ($post->isDraft()) {
-        $item->setStatusIcon('fa-star-o grey');
+        $item->setStatusIcon('fa-star grey');
         $item->setDisabled(true);
-        $item->addIcon('fa-star-o', pht('Draft Post'));
+        $item->addIcon('fa-star', pht('Draft Post'));
       } else if ($post->isArchived()) {
         $item->setStatusIcon('fa-ban grey');
         $item->setDisabled(true);

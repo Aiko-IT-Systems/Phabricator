@@ -851,7 +851,7 @@ final class PhabricatorDuoAuthFactor
     }
 
     $icon = id(new PHUIIconView())
-      ->setIcon('fa-check-circle-o', 'green');
+      ->setIcon('fa-check-circle', 'green');
 
     $view = id(new PHUIFormTimerControl())
       ->setIcon($icon)

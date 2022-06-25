@@ -8,6 +8,7 @@ final class PhabricatorProfileMenuItemView
   private $name;
   private $icon;
   private $iconImage;
+  private $isIconBrand;
   private $disabled;
   private $tooltip;
   private $actions = array();
@@ -45,8 +46,9 @@ final class PhabricatorProfileMenuItemView
     return $this->name;
   }
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->isIconBrand = $brand;
     return $this;
   }
 
@@ -153,7 +155,7 @@ final class PhabricatorProfileMenuItemView
 
     $icon = $this->getIcon();
     if ($icon) {
-      $view->setIcon($icon);
+      $view->setIcon($icon, $this->isIconBrand);
     }
 
     $icon_image = $this->getIconImage();

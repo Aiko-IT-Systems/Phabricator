@@ -25,7 +25,7 @@ JX.install('ChartFunctionLabel', {
     },
 
     getIcon: function() {
-      return this._icon || 'fa-circle';
+      return this._icon || 'fa-solid fa-circle';
     },
 
     getFillColor: function() {

@@ -47,7 +47,7 @@ abstract class PhabricatorObjectStatus
     return array(
       'key' => $status,
       'name' => pht('Unknown ("%s")', $status),
-      'icon' => 'fa-question-circle',
+      'icon' => 'fa-solid fa-question-circle',
       'color' => 'indigo',
     ) + $this->newUnknownStatusSpecification($status);
   }

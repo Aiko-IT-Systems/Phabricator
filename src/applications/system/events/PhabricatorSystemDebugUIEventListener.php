@@ -40,7 +40,7 @@ final class PhabricatorSystemDebugUIEventListener
       ->setWorkflow(true);
 
     $submenu[] = id(new PhabricatorActionView())
-      ->setIcon('fa-address-card-o')
+      ->setIcon('fa-address-card')
       ->setName(pht('View Hovercard'))
       ->setHref(urisprintf('/search/hovercard/?names=%s', $phid));
 

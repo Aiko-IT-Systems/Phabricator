@@ -114,8 +114,8 @@ final class PhabricatorWorkerBulkJob
   public function getStatusIcon() {
     $map = array(
       self::STATUS_CONFIRM => 'fa-question',
-      self::STATUS_WAITING => 'fa-clock-o',
-      self::STATUS_RUNNING => 'fa-clock-o',
+      self::STATUS_WAITING => 'fa-clock',
+      self::STATUS_RUNNING => 'fa-clock',
       self::STATUS_COMPLETE => 'fa-check grey',
     );
 

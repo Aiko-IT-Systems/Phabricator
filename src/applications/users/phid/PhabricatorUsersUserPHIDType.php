@@ -49,7 +49,7 @@ final class PhabricatorUsersUserPHIDType extends PhabricatorPHIDType {
         ->setMailStampName('@'.$username);
 
       if ($user->getIsMailingList()) {
-        $handle->setIcon('fa-envelope-o');
+        $handle->setIcon('fa-envelope');
         $handle->setSubtitle(pht('Mailing List'));
       } else if ($user->getIsGroup()) {
           $handle->setIcon('fa-users');

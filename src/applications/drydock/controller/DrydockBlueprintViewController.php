@@ -20,7 +20,7 @@ final class DrydockBlueprintViewController extends DrydockBlueprintController {
       ->setHeader($title)
       ->setUser($viewer)
       ->setPolicyObject($blueprint)
-      ->setHeaderIcon('fa-map-o');
+      ->setHeaderIcon('fa-map');
 
     if ($blueprint->getIsDisabled()) {
       $header->setStatus('fa-ban', 'red', pht('Disabled'));

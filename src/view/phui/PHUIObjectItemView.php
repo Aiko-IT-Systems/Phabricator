@@ -21,6 +21,7 @@ final class PHUIObjectItemView extends AphrontTagView {
   private $imageURI;
   private $imageHref;
   private $imageIcon;
+  private $isImageBrandIcon;
   private $titleText;
   private $badge;
   private $countdownNum;
@@ -145,10 +146,10 @@ final class PHUIObjectItemView extends AphrontTagView {
     return $this->imageURI;
   }
 
-  public function setImageIcon($image_icon) {
+  public function setImageIcon($image_icon, $brand = false) {
     if (!$image_icon instanceof PHUIIconView) {
       $image_icon = id(new PHUIIconView())
-        ->setIcon($image_icon);
+        ->setIcon($image_icon, $brand);
     }
     $this->imageIcon = $image_icon;
     return $this;
@@ -234,11 +235,11 @@ final class PHUIObjectItemView extends AphrontTagView {
    *
    * @deprecated
    */
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     phlog(
       pht('Deprecated call to setIcon(), use setImageIcon() instead.'));
 
-    return $this->setImageIcon($icon);
+    return $this->setImageIcon($icon, $brand);
   }
 
   public function setStatusIcon($icon, $label = null) {

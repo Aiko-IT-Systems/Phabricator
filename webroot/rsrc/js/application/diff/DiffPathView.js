@@ -228,7 +228,7 @@ JX.install('DiffPathView', {
     _getHiddenIcon: function() {
       if (!this._hiddenIcon) {
         this._hiddenIcon = new JX.PHUIXIconView()
-          .setIcon('fa-times-circle-o');
+          .setIcon('fa-times-circle');
       }
       return this._hiddenIcon;
     },

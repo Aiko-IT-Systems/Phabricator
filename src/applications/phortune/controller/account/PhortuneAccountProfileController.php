@@ -46,7 +46,7 @@ abstract class PhortuneAccountProfileController
     $nav->newLink('details')
       ->setName(pht('Account Details'))
       ->setHref($this->getApplicationURI("/account/{$id}/details/"))
-      ->setIcon('fa-address-card-o')
+      ->setIcon('fa-address-card')
       ->setWorkflow(!$can_edit)
       ->setDisabled(!$can_edit);
 
@@ -82,12 +82,12 @@ abstract class PhortuneAccountProfileController
       'managers',
       pht('Account Managers'),
       $this->getApplicationURI("/account/{$id}/managers/"),
-      'fa-group');
+      'fa-users');
 
     $nav->newLink('addresses')
       ->setname(pht('Email Addresses'))
       ->setHref($account->getEmailAddressesURI())
-      ->setIcon('fa-envelope-o')
+      ->setIcon('fa-envelope')
       ->setWorkflow(!$can_edit)
       ->setDisabled(!$can_edit);
 

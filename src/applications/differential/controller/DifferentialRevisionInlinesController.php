@@ -132,11 +132,11 @@ final class DifferentialRevisionInlinesController
       } else if ($inline->getReplyToCommentPHID() &&
         $inline->getAuthorPHID() == $revision->getAuthorPHID()) {
         $status_icons[] = id(new PHUIIconView())
-          ->setIcon('fa-commenting-o blue')
+          ->setIcon('fa-commenting blue')
           ->addClass('mmr');
       } else {
         $status_icons[] = id(new PHUIIconView())
-          ->setIcon('fa-circle-o grey')
+          ->setIcon('fa-circle grey')
           ->addClass('mmr');
       }
 

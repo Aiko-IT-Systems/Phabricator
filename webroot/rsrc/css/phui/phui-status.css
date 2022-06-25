@@ -25,7 +25,7 @@
 }
 
 .phui-status-item-highlighted td {
-  background-color: {$sh-yellowbackground};
+  background-color: #a7b97e;
   border-radius: 3px;
 }
 

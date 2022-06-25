@@ -14,7 +14,7 @@ final class DiffusionCommitHasTaskRelationship
   }
 
   protected function getActionIcon() {
-    return 'fa-anchor';
+    return 'fa-solid fa-anchor';
   }
 
   public function canRelateObjects($src, $dst) {

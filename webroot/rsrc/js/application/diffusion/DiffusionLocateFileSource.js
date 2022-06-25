@@ -69,7 +69,7 @@ JX.install('DiffusionLocateFileSource', {
         }
 
         var attr = {
-          className: 'visual-only phui-icon-view phui-font-fa fa-file'
+          className: 'visual-only phui-icon-view phui-font-fa fa-solid fa-file'
         };
         var icon = JX.$N('span', attr, '');
 

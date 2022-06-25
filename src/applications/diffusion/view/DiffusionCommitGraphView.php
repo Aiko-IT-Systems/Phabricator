@@ -475,7 +475,7 @@ final class DiffusionCommitGraphView
       ->setURI($uri);
 
     $menu_item->newIcon()
-      ->setIcon('fa-folder-open-o')
+      ->setIcon('fa-folder-open')
       ->setColor('bluegrey');
   }
 

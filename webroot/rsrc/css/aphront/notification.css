@@ -16,7 +16,7 @@
   font-size: 11px;
   overflow: hidden;
 
-  background: {$lightsky};
+  background: #223246;
   color: {$darkgreytext};
   border: 1px solid {$sky};
 
@@ -28,7 +28,7 @@
 }
 
 .jx-notification-alert {
-  background: {$lightyellow};
+  background: #223246;
   border: 1px solid {$yellow};
 }
 

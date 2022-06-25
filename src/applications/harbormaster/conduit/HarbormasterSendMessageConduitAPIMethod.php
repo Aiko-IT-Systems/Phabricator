@@ -101,7 +101,7 @@ EOREMARKUP
 
     return $this->newDocumentationBoxPage($viewer, $title, $content)
       ->setAnchor('sending')
-      ->setIconIcon('fa-envelope-o');
+      ->setIconIcon('fa-envelope');
   }
 
   private function newBuildsDocumentationBoxPage(PhabricatorUser $viewer) {

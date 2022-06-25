@@ -46,12 +46,12 @@ abstract class PhortuneMerchantProfileController
     $nav->newLink('overview')
       ->setName(pht('Overview'))
       ->setHref($merchant->getURI())
-      ->setIcon('fa-building-o');
+      ->setIcon('fa-building');
 
     $nav->newLink('details')
       ->setName(pht('Account Details'))
       ->setHref($merchant->getDetailsURI())
-      ->setIcon('fa-address-card-o')
+      ->setIcon('fa-address-card')
       ->setDisabled(!$can_edit)
       ->setWorkflow(!$can_edit);
 
@@ -83,7 +83,7 @@ abstract class PhortuneMerchantProfileController
     $nav->newLink('managers')
       ->setName(pht('Managers'))
       ->setHref($merchant->getManagersURI())
-      ->setIcon('fa-group');
+      ->setIcon('fa-users');
 
     $nav->selectFilter($filter);
 

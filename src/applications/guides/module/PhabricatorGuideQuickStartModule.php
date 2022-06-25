@@ -30,12 +30,12 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
       ->execute();
     $href = PhabricatorEnv::getURI('/diffusion/');
     if ($repository_check) {
-      $icon = 'fa-check';
+      $icon = 'fa-solid fa-check';
       $icon_bg = 'bg-green';
       $description = pht(
         "You've created at least one repository.");
     } else {
-      $icon = 'fa-code';
+      $icon = 'fa-solid fa-code';
       $icon_bg = 'bg-sky';
       $description =
         pht('If you are here for code review, let\'s set up your first '.
@@ -57,12 +57,12 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
       ->execute();
     $href = PhabricatorEnv::getURI('/project/');
     if ($project_check) {
-      $icon = 'fa-check';
+      $icon = 'fa-solid fa-check';
       $icon_bg = 'bg-green';
       $description = pht(
         "You've created at least one project.");
     } else {
-      $icon = 'fa-briefcase';
+      $icon = 'fa-solid fa-briefcase';
       $icon_bg = 'bg-sky';
       $description =
         pht('Project tags define everything. Create them for teams, tags, '.
@@ -84,12 +84,12 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
       ->execute();
     $href = PhabricatorEnv::getURI('/maniphest/');
     if ($task_check) {
-      $icon = 'fa-check';
+      $icon = 'fa-solid fa-check';
       $icon_bg = 'bg-green';
       $description = pht(
         "You've created at least one task.");
     } else {
-      $icon = 'fa-anchor';
+      $icon = 'fa-solid fa-anchor';
       $icon_bg = 'bg-sky';
       $description =
         pht('Create some work for the interns in Maniphest.');
@@ -107,12 +107,12 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
     $wordmark = PhabricatorEnv::getEnvConfig('ui.logo');
     $href = PhabricatorEnv::getURI('/config/edit/ui.logo/');
     if ($wordmark) {
-      $icon = 'fa-check';
+      $icon = 'fa-solid fa-check';
       $icon_bg = 'bg-green';
       $description = pht(
         'It looks amazing, good work. Home Sweet Home.');
     } else {
-      $icon = 'fa-home';
+      $icon = 'fa-solid fa-home';
       $icon_bg = 'bg-sky';
       $description =
         pht('Change the name and add your company logo, just to give it a '.
@@ -129,7 +129,7 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
 
     $title = pht('Explore Applications');
     $href = PhabricatorEnv::getURI('/applications/');
-    $icon = 'fa-globe';
+    $icon = 'fa-solid fa-globe';
     $icon_bg = 'bg-sky';
     $description =
       pht('See all the applications included in Phabricator.');
@@ -150,13 +150,13 @@ final class PhabricatorGuideQuickStartModule extends PhabricatorGuideModule {
       $users = count($users_check);
       $href = PhabricatorEnv::getURI('/users/invite/send/');
       if ($users > 1) {
-        $icon = 'fa-check';
+        $icon = 'fa-solid fa-check';
         $icon_bg = 'bg-green';
         $description = pht(
           'Your invitations have been accepted. You will not be alone on '.
           'this journey.');
       } else {
-        $icon = 'fa-group';
+        $icon = 'fa-solid fa-users';
         $icon_bg = 'bg-sky';
         $description =
           pht('Invite the rest of your team to get started on Phabricator.');

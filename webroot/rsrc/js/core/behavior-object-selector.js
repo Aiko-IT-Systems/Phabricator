@@ -122,7 +122,7 @@ JX.behavior('phabricator-object-selector', function(config) {
     var some_icon = JX.$N(
       'span',
       {className: 'phui-icon-view phui-font-fa ' +
-        'fa-external-link phabricator-object-selector-popicon'},
+        'fa-solid fa-external-link phabricatorbject-selector-popicon'},
       '');
 
     var view_object_link = JX.$N(

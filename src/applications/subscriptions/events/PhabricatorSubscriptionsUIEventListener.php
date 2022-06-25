@@ -106,7 +106,7 @@ final class PhabricatorSubscriptionsUIEventListener
     } else {
       $mute_action
         ->setName(pht('Unmute Notifications'))
-        ->setIcon('fa-volume-off')
+        ->setIcon('fa-volumeff')
         ->setColor(PhabricatorActionView::RED);
     }
 

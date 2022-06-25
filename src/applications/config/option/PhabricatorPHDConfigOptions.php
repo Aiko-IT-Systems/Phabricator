@@ -12,7 +12,7 @@ final class PhabricatorPHDConfigOptions
   }
 
   public function getIcon() {
-    return 'fa-pied-piper-alt';
+    return 'fa-monitor-waveform';
   }
 
   public function getGroup() {

@@ -82,7 +82,7 @@ final class PholioImageFileTransaction
   }
 
   public function getIcon() {
-    return 'fa-picture-o';
+    return 'fa-image';
   }
 
   public function getColor() {

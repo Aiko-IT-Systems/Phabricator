@@ -61,7 +61,7 @@ final class PhabricatorCustomFieldApplicationSearchAnyFunctionDatasource
     return $this->newFunctionResult()
       ->setName($name.' any')
       ->setDisplayName($name)
-      ->setIcon('fa-circle-o')
+      ->setIcon('fa-circle')
       ->setPHID('any()')
       ->setUnique(true)
       ->addAttribute(pht('Select results with any value.'));

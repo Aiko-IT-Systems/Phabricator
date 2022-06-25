@@ -19,7 +19,7 @@ final class PhabricatorPhrequentApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-clock-o';
+    return 'fa-clock';
   }
 
   public function getApplicationGroup() {

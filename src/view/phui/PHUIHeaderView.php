@@ -11,6 +11,7 @@ final class PHUIHeaderView extends AphrontTagView {
   private $imageEditURL = null;
   private $subheader;
   private $headerIcon;
+  private $isHeaderIconBrand;
   private $noBackground;
   private $bleedHeader;
   private $profileHeader;
@@ -75,8 +76,9 @@ final class PHUIHeaderView extends AphrontTagView {
     return $this;
   }
 
-  public function setHeaderIcon($icon) {
+  public function setHeaderIcon($icon, $brand = false) {
     $this->headerIcon = $icon;
+    $this->isHeaderIconBrand = $brand;
     return $this;
   }
 
@@ -142,7 +144,7 @@ final class PHUIHeaderView extends AphrontTagView {
       $when = pht('%s Day(s) Ago', new PhutilNumber($age));
     }
 
-    $this->setStatus('fa-clock-o bluegrey', null, pht('Updated %s', $when));
+    $this->setStatus('fa-clock bluegrey', null, pht('Updated %s', $when));
     return $this;
   }
 
@@ -312,7 +314,7 @@ final class PHUIHeaderView extends AphrontTagView {
           ->addClass('phui-header-icon');
       } else {
         $icon = id(new PHUIIconView())
-          ->setIcon($this->headerIcon)
+          ->setIcon($this->headerIcon, null, $this->isHeaderIconBrand)
           ->addClass('phui-header-icon');
       }
     }

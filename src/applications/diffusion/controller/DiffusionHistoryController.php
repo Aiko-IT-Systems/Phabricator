@@ -108,7 +108,7 @@ final class DiffusionHistoryController extends DiffusionController {
     $header = id(new PHUIHeaderView())
       ->setUser($viewer)
       ->setHeader($header_text)
-      ->setHeaderIcon('fa-clock-o');
+      ->setHeaderIcon('fa-clock');
 
     if (!$repository->isSVN()) {
       $branch_tag = $this->renderBranchTag($drequest);

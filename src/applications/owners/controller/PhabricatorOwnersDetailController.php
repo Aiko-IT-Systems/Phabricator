@@ -280,7 +280,7 @@ final class PhabricatorOwnersDetailController
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Edit Paths'))
-        ->setIcon('fa-folder-open')
+        ->setIcon('fa-folderpen')
         ->setDisabled(!$can_edit)
         ->setWorkflow(!$can_edit)
         ->setHref($paths_uri));
@@ -350,7 +350,7 @@ final class PhabricatorOwnersDetailController
 
     $header = id(new PHUIHeaderView())
       ->setHeader(pht('Paths'))
-      ->setHeaderIcon('fa-folder-open');
+      ->setHeaderIcon('fa-folderpen');
 
     $box = id(new PHUIObjectBoxView())
       ->setHeader($header)

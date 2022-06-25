@@ -15,7 +15,7 @@ final class PhabricatorManiphestApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-anchor';
+    return 'fa-solid fa-anchor';
   }
 
   public function getTitleGlyph() {

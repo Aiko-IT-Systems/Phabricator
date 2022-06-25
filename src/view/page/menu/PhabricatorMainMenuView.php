@@ -273,7 +273,7 @@ final class PhabricatorMainMenuView extends AphrontView {
       'span',
       array(
         'class' => 'phabricator-menu-button-icon phui-icon-view '.
-                   'phui-font-fa fa-search',
+                   'phui-font-fa fa-solid fa-search',
         'id' => $button_id,
       ),
       ''));
@@ -411,7 +411,7 @@ final class PhabricatorMainMenuView extends AphrontView {
         'span',
         array(
           'class' => 'phabricator-main-menu-message-icon phui-icon-view '.
-                     'phui-font-fa fa-comments',
+                     'phui-font-fa fa-solid fa-comments',
           'sigil' => 'menu-icon',
         ),
         '');
@@ -492,7 +492,7 @@ final class PhabricatorMainMenuView extends AphrontView {
         'span',
         array(
           'class' => 'phabricator-main-menu-alert-icon phui-icon-view '.
-                     'phui-font-fa fa-bell',
+                     'phui-font-fa fa-solid fa-bell',
           'sigil' => 'menu-icon',
         ),
         '');
@@ -571,7 +571,7 @@ final class PhabricatorMainMenuView extends AphrontView {
           'span',
           array(
             'class' => 'phabricator-main-menu-setup-icon phui-icon-view '.
-                       'phui-font-fa fa-exclamation-circle',
+                       'phui-font-fa fa-solid fa-exclamation-circle',
             'sigil' => 'menu-icon',
           ),
           '');
@@ -634,7 +634,7 @@ final class PhabricatorMainMenuView extends AphrontView {
           'span',
           array(
             'class' => 'phabricator-main-menu-setup-icon phui-icon-view '.
-                       'phui-font-fa fa-user',
+                       'phui-font-fa fa-solid fa-user',
             'sigil' => 'menu-icon',
           ));
 

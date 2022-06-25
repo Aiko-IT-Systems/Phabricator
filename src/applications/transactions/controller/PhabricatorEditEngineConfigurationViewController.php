@@ -157,7 +157,7 @@ final class PhabricatorEditEngineConfigurationViewController
       $curtain->addAction(
         id(new PhabricatorActionView())
           ->setName(pht('Change Form Subtype'))
-          ->setIcon('fa-drivers-license-o')
+          ->setIcon('fa-drivers-license')
           ->setHref($subtype_uri)
           ->setWorkflow(true)
           ->setDisabled(!$can_edit));

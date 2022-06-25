@@ -27,7 +27,7 @@ JX.install('Busy', {
       var self = JX.Busy;
       if (!self._depth) {
         var icon = JX.$N('span',
-          {className: 'phui-icon-view phui-font-fa fa-gear ph-spin'});
+          {className: 'phui-icon-view phui-font-fa fa-solid fa-gear ph-spin'});
         self._indicator = JX.$N('div', {className: 'busy'}, icon);
         self._indicator.style.opacity = 0;
         JX.$('phabricator-standard-page').appendChild(self._indicator);

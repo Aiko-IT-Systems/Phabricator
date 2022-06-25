@@ -190,23 +190,23 @@ final class DiffusionRepositoryURIViewController
     $is_builtin = $uri->isBuiltin();
 
     if ($is_builtin) {
-      $credential_icon = 'fa-circle-o';
+      $credential_icon = 'fa-solid fa-circle';
       $credential_color = 'grey';
       $credential_label = pht('Builtin');
       $credential_note = pht('Builtin URIs do not use credentials.');
     } else if (!$is_supported) {
-      $credential_icon = 'fa-circle-o';
+      $credential_icon = 'fa-solid fa-circle';
       $credential_color = 'grey';
       $credential_label = pht('Not Supported');
       $credential_note = pht('This protocol does not support authentication.');
     } else if (!$credential_phid) {
       if ($is_optional) {
-        $credential_icon = 'fa-circle-o';
+        $credential_icon = 'fa-solid fa-circle';
         $credential_color = 'green';
         $credential_label = pht('No Credential');
         $credential_note = pht('Configured for anonymous access.');
       } else {
-        $credential_icon = 'fa-times';
+        $credential_icon = 'fa-solid fa-times';
         $credential_color = 'red';
         $credential_label = pht('Required');
         $credential_note = pht('Credential required but not configured.');
@@ -223,14 +223,14 @@ final class DiffusionRepositoryURIViewController
         $handles = $viewer->loadHandles(array($credential_phid));
         $handle = $handles[$credential_phid];
         if ($handle->getPolicyFiltered()) {
-          $credential_icon = 'fa-lock';
+          $credential_icon = 'fa-solid fa-lock';
           $credential_color = 'grey';
           $credential_label = pht('Restricted');
           $credential_note = pht(
             'You do not have permission to view the configured '.
             'credential.');
         } else {
-          $credential_icon = 'fa-times';
+          $credential_icon = 'fa-solid fa-times';
           $credential_color = 'red';
           $credential_label = pht('Invalid');
           $credential_note = pht('Configured credential is invalid.');
@@ -239,11 +239,11 @@ final class DiffusionRepositoryURIViewController
         $provides = $credential->getProvidesType();
         $needs = $command_engine->getPassphraseProvidesCredentialType();
         if ($provides != $needs) {
-          $credential_icon = 'fa-times';
+          $credential_icon = 'fa-solid fa-times';
           $credential_color = 'red';
           $credential_label = pht('Wrong Type');
         } else {
-          $credential_icon = 'fa-check';
+          $credential_icon = 'fa-solid fa-check';
           $credential_color = 'green';
           $credential_label = $command_engine->getPassphraseCredentialLabel();
         }

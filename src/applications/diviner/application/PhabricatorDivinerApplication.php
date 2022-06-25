@@ -7,7 +7,7 @@ final class PhabricatorDivinerApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-sun-o';
+    return 'fa-sun';
   }
 
   public function getName() {

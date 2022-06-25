@@ -69,7 +69,7 @@ final class PhabricatorUsersDatasource
         ->setClosed($closed);
 
       if ($user->getIsMailingList()) {
-        $result->setIcon('fa-envelope-o');
+        $result->setIcon('fa-envelope');
       }
 
       if ($is_browse) {

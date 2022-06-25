@@ -19,7 +19,7 @@ final class DifferentialRevisionRejectTransaction
   }
 
   public function getIcon() {
-    return 'fa-times-circle-o';
+    return 'fa-times-circle';
   }
 
   public function getColor() {

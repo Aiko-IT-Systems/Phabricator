@@ -431,7 +431,7 @@ final class PhabricatorProjectBoardViewController
       ->setType(PhabricatorActionView::TYPE_DIVIDER);
 
     $items[] = id(new PhabricatorActionView())
-      ->setIcon('fa-floppy-o')
+      ->setIcon('fa-box')
       ->setName(pht('Save as Default'))
       ->setHref($save_uri)
       ->setWorkflow(true)
@@ -491,7 +491,7 @@ final class PhabricatorProjectBoardViewController
       }
 
       $item = id(new PhabricatorActionView())
-        ->setIcon('fa-search')
+        ->setIcon('fa-solid fa-search')
         ->setSelected($is_selected)
         ->setName($name);
 
@@ -534,7 +534,7 @@ final class PhabricatorProjectBoardViewController
       ->setType(PhabricatorActionView::TYPE_DIVIDER);
 
     $items[] = id(new PhabricatorActionView())
-      ->setIcon('fa-floppy-o')
+      ->setIcon('fa-box')
       ->setName(pht('Save as Default'))
       ->setHref($save_uri)
       ->setWorkflow(true)
@@ -548,7 +548,7 @@ final class PhabricatorProjectBoardViewController
 
     $filter_button = id(new PHUIListItemView())
       ->setName($active_filter)
-      ->setIcon('fa-search')
+      ->setIcon('fa-solid fa-search')
       ->setHref('#')
       ->addSigil('boards-dropdown-menu')
       ->setMetadata(
@@ -716,7 +716,7 @@ final class PhabricatorProjectBoardViewController
 
     $column_items[] = id(new PhabricatorActionView())
       ->setName(pht('View Tasks as Query'))
-      ->setIcon('fa-search')
+      ->setIcon('fa-solid fa-search')
       ->setHref($query_uri);
 
     $column_move_uri = urisprintf('bulkmove/%d/column/', $column->getID());
@@ -746,7 +746,7 @@ final class PhabricatorProjectBoardViewController
       ManiphestBulkEditCapability::CAPABILITY);
 
     $column_items[] = id(new PhabricatorActionView())
-      ->setIcon('fa-pencil-square-o')
+      ->setIcon('fa-pencil-square')
       ->setName(pht('Bulk Edit Tasks...'))
       ->setHref($bulk_edit_uri)
       ->setDisabled(!$can_bulk_edit);

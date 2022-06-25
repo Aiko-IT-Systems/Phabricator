@@ -56,31 +56,31 @@ final class HarbormasterUnitStatus
     return array(
       ArcanistUnitTestResult::RESULT_FAIL => array(
         'label' => pht('Failed'),
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'red',
         'sort' => 'A',
       ),
       ArcanistUnitTestResult::RESULT_BROKEN => array(
         'label' => pht('Broken'),
-        'icon' => 'fa-bomb',
+        'icon' => 'fa-solid fa-bomb',
         'color' => 'indigo',
         'sort' => 'B',
       ),
       ArcanistUnitTestResult::RESULT_UNSOUND => array(
         'label' => pht('Unsound'),
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
         'color' => 'yellow',
         'sort' => 'C',
       ),
       ArcanistUnitTestResult::RESULT_PASS => array(
         'label' => pht('Passed'),
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
         'color' => 'green',
         'sort' => 'D',
       ),
       ArcanistUnitTestResult::RESULT_SKIP => array(
         'label' => pht('Skipped'),
-        'icon' => 'fa-fast-forward',
+        'icon' => 'fa-solid fa-fast-forward',
         'color' => 'blue',
         'sort' => 'E',
       ),

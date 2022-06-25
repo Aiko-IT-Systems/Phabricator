@@ -77,7 +77,7 @@ final class PhrictionHistoryController
         $color = 'pink';
         $header = pht('Draft %d', $version);
       } else {
-        $icon = 'fa-file-o';
+        $icon = 'fa-file';
         $header = pht('Version %d', $version);
       }
 

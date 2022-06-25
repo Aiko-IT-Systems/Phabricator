@@ -156,7 +156,7 @@ final class HarbormasterBuildPlanBehavior
     $draft_options = array(
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::DRAFTS_ALWAYS)
-        ->setIcon('fa-check-circle-o green')
+        ->setIcon('fa-check-circle green')
         ->setName(pht('Always'))
         ->setIsDefault(true)
         ->setDescription(
@@ -165,7 +165,7 @@ final class HarbormasterBuildPlanBehavior
             'and are returned to the author for updates if the build fails.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::DRAFTS_IF_BUILDING)
-        ->setIcon('fa-pause-circle-o yellow')
+        ->setIcon('fa-pause-circle yellow')
         ->setName(pht('If Building'))
         ->setDescription(
           pht(
@@ -173,7 +173,7 @@ final class HarbormasterBuildPlanBehavior
             'but they will be sent for review even if it fails.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::DRAFTS_NEVER)
-        ->setIcon('fa-circle-o red')
+        ->setIcon('fa-circle red')
         ->setName(pht('Never'))
         ->setDescription(
           pht(
@@ -184,7 +184,7 @@ final class HarbormasterBuildPlanBehavior
     $land_options = array(
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::LANDWARNING_ALWAYS)
-        ->setIcon('fa-check-circle-o green')
+        ->setIcon('fa-check-circle green')
         ->setName(pht('Always'))
         ->setIsDefault(true)
         ->setDescription(
@@ -193,7 +193,7 @@ final class HarbormasterBuildPlanBehavior
             'failed.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::LANDWARNING_IF_BUILDING)
-        ->setIcon('fa-pause-circle-o yellow')
+        ->setIcon('fa-pause-circle yellow')
         ->setName(pht('If Building'))
         ->setDescription(
           pht(
@@ -201,7 +201,7 @@ final class HarbormasterBuildPlanBehavior
             'the build if it has failed.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::LANDWARNING_IF_COMPLETE)
-        ->setIcon('fa-dot-circle-o yellow')
+        ->setIcon('fa-dot-circle yellow')
         ->setName(pht('If Complete'))
         ->setDescription(
           pht(
@@ -209,7 +209,7 @@ final class HarbormasterBuildPlanBehavior
             'build if it is still running.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::LANDWARNING_NEVER)
-        ->setIcon('fa-circle-o red')
+        ->setIcon('fa-circle red')
         ->setName(pht('Never'))
         ->setDescription(
           pht(
@@ -220,7 +220,7 @@ final class HarbormasterBuildPlanBehavior
     $aggregate_options = array(
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::BUILDABLE_ALWAYS)
-        ->setIcon('fa-check-circle-o green')
+        ->setIcon('fa-check-circle green')
         ->setName(pht('Always'))
         ->setIsDefault(true)
         ->setDescription(
@@ -229,7 +229,7 @@ final class HarbormasterBuildPlanBehavior
             'build fails.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::BUILDABLE_IF_BUILDING)
-        ->setIcon('fa-pause-circle-o yellow')
+        ->setIcon('fa-pause-circle yellow')
         ->setName(pht('If Building'))
         ->setDescription(
           pht(
@@ -237,7 +237,7 @@ final class HarbormasterBuildPlanBehavior
             'if the build fails.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::BUILDABLE_NEVER)
-        ->setIcon('fa-circle-o red')
+        ->setIcon('fa-circle red')
         ->setName(pht('Never'))
         ->setDescription(
           pht(
@@ -254,7 +254,7 @@ final class HarbormasterBuildPlanBehavior
           pht('The build may be restarted.')),
       id(new HarbormasterBuildPlanBehaviorOption())
         ->setKey(self::RESTARTABLE_IF_FAILED)
-        ->setIcon('fa-times-circle-o yellow')
+        ->setIcon('fa-times-circle yellow')
         ->setName(pht('If Failed'))
         ->setDescription(
           pht('The build may be restarted if it has failed.')),

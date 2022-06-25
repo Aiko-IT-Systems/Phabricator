@@ -22,7 +22,7 @@ final class PhabricatorNotificationsSettingsPanel
   }
 
   public function getPanelMenuIcon() {
-    return 'fa-bell-o';
+    return 'fa-bell';
   }
 
   public function getPanelGroupKey() {
@@ -158,7 +158,7 @@ final class PhabricatorNotificationsSettingsPanel
 
     $button = id(new PHUIButtonView())
       ->setTag('a')
-      ->setIcon('fa-send-o')
+      ->setIcon('fa-send')
       ->setWorkflow(true)
       ->setText(pht('Send Test Notification'))
       ->setHref('/notification/test/')

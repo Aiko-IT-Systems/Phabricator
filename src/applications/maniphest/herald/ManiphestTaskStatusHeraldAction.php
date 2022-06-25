@@ -69,7 +69,7 @@ final class ManiphestTaskStatusHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_STATUS => array(
-        'icon' => 'fa-pencil',
+        'icon' => 'fa-solid fa-pencil',
         'color' => 'green',
         'name' => pht('Changed Task Status'),
       ),

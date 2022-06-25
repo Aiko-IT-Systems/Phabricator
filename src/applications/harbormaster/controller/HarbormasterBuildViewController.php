@@ -411,7 +411,7 @@ final class HarbormasterBuildViewController
       $prototype_view = id(new PHUIButtonView())
         ->setTag('a')
         ->setHref($log->getURI())
-        ->setIcon('fa-file-text-o')
+        ->setIcon('fa-file-text')
         ->setText(pht('New View (Prototype)'));
 
       $header = id(new PHUIHeaderView())

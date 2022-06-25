@@ -101,7 +101,7 @@ final class PhabricatorOwnersPathsController
       ->setTooltip(pht('Path Exists in Repository'));
 
     $icon_fail = id(new PHUIIconView())
-      ->setIcon('fa-question-circle-o red')
+      ->setIcon('fa-question-circle red')
       ->setTooltip(pht('Path Not Found On Default Branch'));
 
     $template = new AphrontTypeaheadTemplateView();

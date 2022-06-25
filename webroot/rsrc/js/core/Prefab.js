@@ -330,7 +330,7 @@ JX.install('Prefab', {
     _renderIcon: function(icon) {
       return JX.$N(
         'span',
-        {className: 'phui-icon-view phui-font-fa ' + icon});
+        {className: 'phui-icon-view phui-font-fa fa-solid fa-brands ' + icon});
     }
 
   }

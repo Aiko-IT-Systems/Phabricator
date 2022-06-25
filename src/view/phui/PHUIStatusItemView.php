@@ -21,8 +21,8 @@ final class PHUIStatusItemView extends AphrontTagView {
   const ICON_INFO = 'fa-info-circle';
   const ICON_ADD = 'fa-plus-circle';
   const ICON_MINUS = 'fa-minus-circle';
-  const ICON_OPEN = 'fa-circle-o';
-  const ICON_CLOCK = 'fa-clock-o';
+  const ICON_OPEN = 'fa-circle';
+  const ICON_CLOCK = 'fa-clock';
   const ICON_STAR = 'fa-star';
 
   public function setIcon($icon, $color = null, $label = null) {

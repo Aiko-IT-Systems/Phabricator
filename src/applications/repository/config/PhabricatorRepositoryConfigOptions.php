@@ -12,7 +12,7 @@ final class PhabricatorRepositoryConfigOptions
   }
 
   public function getIcon() {
-    return 'fa-hdd-o';
+    return 'fa-hdd';
   }
 
   public function getGroup() {

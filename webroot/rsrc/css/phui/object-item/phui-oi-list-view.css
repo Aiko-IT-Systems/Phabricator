@@ -442,7 +442,7 @@ ul.phui-oi-icons {
 */
 
 .phui-oi.phui-oi-highlighted {
-  background: {$sh-yellowbackground};
+  background: #e1d3b0;
 }
 
 ul.phui-oi-list-view .phui-oi-highlighted

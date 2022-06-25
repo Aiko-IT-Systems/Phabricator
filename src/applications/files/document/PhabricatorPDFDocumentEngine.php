@@ -10,7 +10,7 @@ final class PhabricatorPDFDocumentEngine
   }
 
   protected function getDocumentIconIcon(PhabricatorDocumentRef $ref) {
-    return 'fa-file-pdf-o';
+    return 'fa-file-pdf';
   }
 
   protected function canRenderDocumentType(PhabricatorDocumentRef $ref) {

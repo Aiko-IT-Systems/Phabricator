@@ -41,7 +41,7 @@ final class PhabricatorObjectHandle
 
   public function getIcon() {
     if ($this->getPolicyFiltered()) {
-      return 'fa-lock';
+      return 'fa-solid fa-lock';
     }
 
     if ($this->icon) {
@@ -360,7 +360,7 @@ final class PhabricatorObjectHandle
     $icon = null;
     if ($this->getPolicyFiltered()) {
       $icon = id(new PHUIIconView())
-        ->setIcon('fa-lock lightgreytext');
+        ->setIcon('fa-solid fa-lock lightgreytext');
     }
 
     $attributes = $attributes + array(

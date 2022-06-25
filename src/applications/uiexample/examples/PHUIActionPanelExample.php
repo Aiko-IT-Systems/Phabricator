@@ -38,7 +38,7 @@ final class PHUIActionPanelExample extends PhabricatorUIExample {
     $view->addColumn($panel2);
 
     $panel3 = id(new PHUIActionPanelView())
-      ->setIcon('fa-group')
+      ->setIcon('fa-users')
       ->setHeader(pht('Code with Friends'))
       ->setHref('#')
       ->setSubHeader(pht('Writing code is much more fun with friends!'))

@@ -15,7 +15,7 @@ final class PhabricatorFeedApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-newspaper-o';
+    return 'fa-newspaper';
   }
 
   public function getApplicationGroup() {

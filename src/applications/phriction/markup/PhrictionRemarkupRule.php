@@ -246,7 +246,7 @@ final class PhrictionRemarkupRule extends PhutilRemarkupRule {
             $this->newTag(
               'i',
               array(
-                'class' => 'phui-icon-view phui-font-fa fa-lock',
+                'class' => 'phui-icon-view phui-font-fa fa-solid fa-lock',
               ),
               ''),
             ' ',

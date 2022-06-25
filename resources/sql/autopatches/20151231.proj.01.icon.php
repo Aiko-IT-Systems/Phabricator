@@ -12,7 +12,7 @@ $icon_map = array(
   'fa-truck' => 'release',
 
   'fa-bug' => 'bugs',
-  'fa-trash-o' => 'cleanup',
+  'fa-trash' => 'cleanup',
   'fa-umbrella' => 'umbrella',
   'fa-envelope' => 'communication',
 

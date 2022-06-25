@@ -30,9 +30,9 @@ final class PhabricatorBadgesIconSet
       'fa-umbrella' => pht('Rain Defender'),
 
       'fa-graduation-cap' => pht('In Debt'),
-      'fa-empire' => pht('The Empire'),
-      'fa-first-order' => pht('First Order'),
-      'fa-rebel' => pht('Rebel'),
+      'fa-server' => pht('Server Administrator'),
+      'fa-robot' => pht('Beep Boop'),
+      'fa-user-secret' => pht('Shhh'),
       'fa-space-shuttle' => pht('Star Ship'),
 
       'fa-anchor' => pht('Anchors Away'),

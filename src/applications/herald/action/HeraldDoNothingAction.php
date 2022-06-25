@@ -32,7 +32,7 @@ final class HeraldDoNothingAction extends HeraldAction {
   protected function getActionEffectMap() {
     return array(
       self::DO_NOTHING => array(
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
         'color' => 'grey',
         'name' => pht('Did Nothing'),
       ),

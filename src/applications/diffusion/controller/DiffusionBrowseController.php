@@ -198,7 +198,7 @@ final class DiffusionBrowseController extends DiffusionController {
 
     $bar = $this->buildButtonBar($drequest, $show_editor);
     $header = $this->buildHeaderView($drequest);
-    $header->setHeaderIcon('fa-file-code-o');
+    $header->setHeaderIcon('fa-file-code');
 
     $follow  = $request->getStr('follow');
     $follow_notice = null;
@@ -288,7 +288,7 @@ final class DiffusionBrowseController extends DiffusionController {
     $details = $this->buildPropertyView($drequest);
 
     $header = $this->buildHeaderView($drequest);
-    $header->setHeaderIcon('fa-folder-open');
+    $header->setHeaderIcon('fa-folderpen');
 
     $empty_result = null;
     $browse_panel = null;
@@ -304,7 +304,7 @@ final class DiffusionBrowseController extends DiffusionController {
         ->setUser($request->getUser());
 
       $title = nonempty(basename($drequest->getPath()), '/');
-      $icon = 'fa-folder-open';
+      $icon = 'fa-folderpen';
       $browse_header = $this->buildPanelHeaderView($title, $icon);
 
       $browse_panel = id(new PHUIObjectBoxView())

@@ -239,22 +239,22 @@ final class PhabricatorDatabaseRef
   public static function getConnectionStatusMap() {
     return array(
       self::STATUS_OKAY => array(
-        'icon' => 'fa-exchange',
+        'icon' => 'fa-solid fa-exchange',
         'color' => 'green',
         'label' => pht('Okay'),
       ),
       self::STATUS_FAIL => array(
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'red',
         'label' => pht('Failed'),
       ),
       self::STATUS_AUTH => array(
-        'icon' => 'fa-key',
+        'icon' => 'fa-solid fa-key',
         'color' => 'red',
         'label' => pht('Invalid Credentials'),
       ),
       self::STATUS_REPLICATION_CLIENT => array(
-        'icon' => 'fa-eye-slash',
+        'icon' => 'fa-solid fa-eye-slash',
         'color' => 'yellow',
         'label' => pht('Missing Permission'),
       ),
@@ -264,27 +264,27 @@ final class PhabricatorDatabaseRef
   public static function getReplicaStatusMap() {
     return array(
       self::REPLICATION_OKAY => array(
-        'icon' => 'fa-download',
+        'icon' => 'fa-solid fa-download',
         'color' => 'green',
         'label' => pht('Okay'),
       ),
       self::REPLICATION_MASTER_REPLICA => array(
-        'icon' => 'fa-database',
+        'icon' => 'fa-solid fa-database',
         'color' => 'red',
         'label' => pht('Replicating Master'),
       ),
       self::REPLICATION_REPLICA_NONE => array(
-        'icon' => 'fa-download',
+        'icon' => 'fa-solid fa-download',
         'color' => 'red',
         'label' => pht('Not A Replica'),
       ),
       self::REPLICATION_SLOW => array(
-        'icon' => 'fa-hourglass',
+        'icon' => 'fa-solid fa-hourglass',
         'color' => 'red',
         'label' => pht('Slow Replication'),
       ),
       self::REPLICATION_NOT_REPLICATING => array(
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
         'color' => 'red',
         'label' => pht('Not Replicating'),
       ),

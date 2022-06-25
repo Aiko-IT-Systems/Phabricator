@@ -29,7 +29,7 @@ abstract class PhabricatorMailOutboundRoutingHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_ROUTE => array(
-        'icon' => 'fa-arrow-right',
+        'icon' => 'fa-solid fa-arrow-right',
         'color' => 'green',
         'name' => pht('Routed Message'),
       ),

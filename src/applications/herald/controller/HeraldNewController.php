@@ -175,7 +175,7 @@ final class HeraldNewController extends HeraldController {
     $specs = array(
       HeraldRuleTypeConfig::RULE_TYPE_PERSONAL => array(
         'name' => pht('Personal Rule'),
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'help' => pht(
           'Personal rules notify you about events. You own them, but they can '.
           'only affect you. Personal rules only trigger for objects you have '.
@@ -184,7 +184,7 @@ final class HeraldNewController extends HeraldController {
       ),
       HeraldRuleTypeConfig::RULE_TYPE_OBJECT => array(
         'name' => pht('Object Rule'),
-        'icon' => 'fa-cube',
+        'icon' => 'fa-solid fa-cube',
         'help' => pht(
           'Object rules notify anyone about events. They are bound to an '.
           'object (like a repository) and can only act on that object. You '.
@@ -194,7 +194,7 @@ final class HeraldNewController extends HeraldController {
       ),
       HeraldRuleTypeConfig::RULE_TYPE_GLOBAL => array(
         'name' => pht('Global Rule'),
-        'icon' => 'fa-globe',
+        'icon' => 'fa-solid fa-globe',
         'help' => array(
           pht(
             'Global rules notify anyone about events. Global rules can '.

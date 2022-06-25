@@ -44,7 +44,7 @@ final class HeraldCallWebhookAction extends HeraldAction {
   protected function getActionEffectMap() {
     return array(
       self::DO_WEBHOOK => array(
-        'icon' => 'fa-cloud-upload',
+        'icon' => 'fa-solid fa-cloud-upload',
         'color' => 'green',
         'name' => pht('Called Webhooks'),
       ),

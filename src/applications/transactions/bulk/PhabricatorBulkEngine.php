@@ -102,7 +102,7 @@ abstract class PhabricatorBulkEngine extends Phobject {
 
     $header = id(new PHUIHeaderView())
       ->setHeader(pht('Bulk Editor'))
-      ->setHeaderIcon('fa-pencil-square-o');
+      ->setHeaderIcon('fa-pencil-square');
 
     $list_box = id(new PHUIObjectBoxView())
       ->setHeaderText(pht('Working Set'))

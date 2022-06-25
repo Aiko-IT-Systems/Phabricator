@@ -29,7 +29,7 @@ abstract class AlmanacController
         ));
 
     $icon_custom = id(new PHUIIconView())
-      ->setIcon('fa-circle-o grey')
+      ->setIcon('fa-circle grey')
       ->addSigil('has-tooltip')
       ->setMetadata(
         array(

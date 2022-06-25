@@ -65,7 +65,7 @@ final class PhabricatorCalendarExport extends PhabricatorCalendarDAO
   private static function getPolicyModeMap() {
     return array(
       self::MODE_PUBLIC => array(
-        'icon' => 'fa-globe',
+        'icon' => 'fa-solid fa-globe',
         'name' => pht('Public'),
         'color' => 'bluegrey',
         'summary' => pht(
@@ -74,7 +74,7 @@ final class PhabricatorCalendarExport extends PhabricatorCalendarDAO
           'Only publicly available data is exported.'),
       ),
       self::MODE_PRIVILEGED => array(
-        'icon' => 'fa-unlock-alt',
+        'icon' => 'fa-solid fa-unlock-alt',
         'name' => pht('Privileged'),
         'color' => 'red',
         'summary' => pht(

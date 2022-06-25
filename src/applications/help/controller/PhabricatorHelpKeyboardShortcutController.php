@@ -29,27 +29,27 @@ final class PhabricatorHelpKeyboardShortcutController
     $groups = array(
       'default' => array(
         'name' => pht('Page Shortcuts'),
-        'icon' => 'fa-keyboard-o',
+        'icon' => 'fa-solid fa-keyboard',
       ),
       'diff-nav' => array(
         'name' => pht('Diff Navigation'),
-        'icon' => 'fa-arrows',
+        'icon' => 'fa-solid fa-arrows',
       ),
       'diff-vis' => array(
         'name' => pht('Hiding Content'),
-        'icon' => 'fa-eye-slash',
+        'icon' => 'fa-solid fa-eye-slash',
       ),
       'inline' => array(
         'name' => pht('Editing Inline Comments'),
-        'icon' => 'fa-pencil',
+        'icon' => 'fa-solid fa-pencil',
       ),
       'xactions' => array(
         'name' => pht('Comments'),
-        'icon' => 'fa-comments-o',
+        'icon' => 'fa-solid fa-comments',
       ),
       'global' => array(
         'name' => pht('Global Shortcuts'),
-        'icon' => 'fa-globe',
+        'icon' => 'fa-solid fa-globe',
       ),
     );
 

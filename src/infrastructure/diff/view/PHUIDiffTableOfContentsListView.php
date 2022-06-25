@@ -124,7 +124,7 @@ final class PHUIDiffTableOfContentsListView extends AphrontView {
       } else {
         $changeset = null;
         $icon = id(new PHUIIconView())
-          ->setIcon('fa-folder-open-o grey');
+          ->setIcon('fa-folder-open grey');
       }
 
       if ($node->getChildren()) {

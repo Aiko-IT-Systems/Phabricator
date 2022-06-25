@@ -42,7 +42,7 @@ abstract class PhabricatorAuthProviderController
         ->setName(pht('Customize Messages'))
         ->setType(PHUIListItemView::TYPE_LINK)
         ->setHref($this->getApplicationURI('message/'))
-        ->setIcon('fa-commenting-o'));
+        ->setIcon('fa-commenting'));
 
 
     $nav->selectFilter(null);

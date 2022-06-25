@@ -172,7 +172,7 @@ final class AphrontFormPolicyControl extends AphrontFormControl {
 
     $placeholder = id(new PhabricatorPolicy())
       ->setName(pht('Other Project...'))
-      ->setIcon('fa-search');
+      ->setIcon('fa-solid fa-search');
 
     $options[$type_project][$this->getSelectProjectKey()] = array(
       'name' => $placeholder->getName(),

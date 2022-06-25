@@ -325,7 +325,7 @@ abstract class PhabricatorAuthFactor extends Phobject {
     $icon = $result->getIcon();
     if (!$icon) {
       $icon = id(new PHUIIconView())
-        ->setIcon('fa-clock-o', 'red');
+        ->setIcon('fa-clock', 'red');
     }
 
     return id(new PHUIFormTimerControl())
@@ -340,7 +340,7 @@ abstract class PhabricatorAuthFactor extends Phobject {
     $icon = $result->getIcon();
     if (!$icon) {
       $icon = id(new PHUIIconView())
-        ->setIcon('fa-check-circle-o', 'green');
+        ->setIcon('fa-check-circle', 'green');
     }
 
     return id(new PHUIFormTimerControl())

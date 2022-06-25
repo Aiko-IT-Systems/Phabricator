@@ -1,19 +1,20 @@
 <?php
 
-final class CelerityDarkModePostprocessor
+final class CelerityWhiteModePostprocessor
   extends CelerityPostprocessor {
 
+  const POSTPROCESSOR_KEY = 'whitemode';
+
   public function getPostprocessorKey() {
-    return 'darkmode';
+    return self::POSTPROCESSOR_KEY;
   }
 
   public function getPostprocessorName() {
-    return pht('AITSYS Darkmode');
+    return pht('White Mode');
   }
 
   public function buildVariables() {
     return array(
-
       // Fonts
       'basefont' => "13px 'Segoe UI', 'Segoe UI Emoji', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
@@ -28,19 +29,26 @@ final class CelerityDarkModePostprocessor
       'whitetextshadow' => '0 1px 0 rgba(255, 255, 255, 1)',
 
       // Anchors
-      'anchor' => '#3498db',
+      'anchor' => '#136CB2',
+
+      // Font Sizes
+      'biggestfontsize' => '15px',
+      'biggerfontsize' => '14px',
+      'normalfontsize' => '13px',
+      'smallerfontsize' => '12px',
+      'smallestfontsize' => '11px',
 
       // Base Colors
       'red'           => '#c0392b',
-      'lightred'      => '#7f261c',
+      'lightred'      => '#f4dddb',
       'orange'        => '#e67e22',
       'lightorange'   => '#f7e2d4',
       'yellow'        => '#f1c40f',
-      'lightyellow'   => '#a4850a',
+      'lightyellow'   => '#fdf5d4',
       'green'         => '#139543',
-      'lightgreen'    => '#0e7032',
+      'lightgreen'    => '#d7eddf',
       'blue'          => '#2980b9',
-      'lightblue'     => '#1d5981',
+      'lightblue'     => '#daeaf3',
       'sky'           => '#3498db',
       'lightsky'      => '#ddeef9',
       'fire'          => '#e62f17',
@@ -49,48 +57,49 @@ final class CelerityDarkModePostprocessor
       'pink'          => '#da49be',
       'lightpink'     => '#fbeaf8',
       'violet'        => '#8e44ad',
-      'lightviolet'   => '#622f78',
+      'lightviolet'   => '#ecdff1',
       'charcoal'      => '#4b4d51',
       'backdrop'      => '#c4cde0',
       'hoverwhite'    => 'rgba(255,255,255,.6)',
       'hovergrey'     => '#c5cbcf',
-      'hoverblue'     => '#2a425f',
+      'hoverblue'     => '#eceff5',
       'hoverborder'   => '#dfe1e9',
       'hoverselectedgrey' => '#bbc4ca',
       'hoverselectedblue' => '#e6e9ee',
       'borderinset' => 'inset 0 0 0 1px rgba(55,55,55,.15)',
-      'timeline'    => '#4e6078',
-      'timeline.icon.background' => '#416086',
-      'bluepropertybackground' => '#2d435f',
+      'timeline'    => '#d5d8e1',
+      'timeline.icon.background' => '#E6E9F1',
+      'bluepropertybackground' => '#eff3fc',
 
       // Alphas
       'alphawhite'          => '255,255,255',
-      'alphagrey'           => '255,255,255',
-      'alphablue'           => '255,255,255',
+      'alphagrey'           => '55,55,55',
+      'alphablue'           => '71,87,120',
       'alphablack'          => '0,0,0',
 
       // Base Greys
-      'lightgreyborder'     => 'rgba(255,255,255,.3)',
-      'greyborder'          => 'rgba(255,255,255,.6)',
-      'darkgreyborder'      => 'rgba(255,255,255,.9)',
-      'lightgreytext'       => 'rgba(255,255,255,.3)',
-      'greytext'            => 'rgba(255,255,255,.6)',
-      'darkgreytext'        => 'rgba(255,255,255,.9)',
-      'lightgreybackground' => '#2a425f',
-      'greybackground'      => '#304a6d',
-      'darkgreybackground'  => '#8C98B8',
+      'thingreyborder'     => '#dadee8',
+      'lightgreyborder'     => '#C7CCD9',
+      'greyborder'          => '#A1A6B0',
+      'darkgreyborder'      => '#676A70',
+      'lightgreytext'       => '#92969D',
+      'greytext'            => '#74777D',
+      'darkgreytext'        => '#4B4D51',
+      'lightgreybackground' => '#F7F7F7',
+      'greybackground'      => '#EBECEE',
+      'darkgreybackground'  => '#DFE0E2',
 
       // Base Blues
-      'thinblueborder'      => '#2c405a',
-      'lightblueborder'     => '#39506d',
+      'thinblueborder'      => '#DDE8EF',
+      'lightblueborder'     => '#BFCFDA',
       'blueborder'          => '#8C98B8',
       'darkblueborder'      => '#626E82',
-      'lightbluebackground' => 'rgba(255,255,255,.05)',
-      'bluebackground'      => 'rgba(255,255,255,.1)',
-      'lightbluetext'       => 'rgba(255,255,255,.3)',
-      'bluetext'            => 'rgba(255,255,255,.6)',
-      'darkbluetext'        => 'rgba(255,255,255,.8)',
-      'blacktext'           => 'rgba(255,255,255,.9)',
+      'lightbluebackground' => '#F8F9FC',
+      'bluebackground'      => '#ECEEF4',
+      'lightbluetext'       => '#8C98B8',
+      'bluetext'            => '#6B748C',
+      'darkbluetext'        => '#464C5C',
+      'blacktext'           => '#000',
 
       // Base Greens
       'lightgreenborder'      => '#bfdac1',
@@ -184,39 +193,56 @@ final class CelerityDarkModePostprocessor
       'sh-disabledbackground'   => '#f3f3f3',
 
       // Diffs
-      'diff.background' => '#121b27',
-      'new-background' => 'rgba(101, 125, 71, 0.55)',
-      'new-bright' => 'rgba(151, 234, 151, .75)',
-      'old-background' => 'rgba(191, 89, 89, 0.58)',
-      'old-bright' => 'rgba(251, 175, 175, .8)',
-      'move-background' => '#faca00',
+      'diff.background' => '#fff',
+      'new-background' => 'rgba(151, 234, 151, .3)',
+      'new-bright' => 'rgba(151, 234, 151, .6)',
+      'old-background' => 'rgba(251, 175, 175, .3)',
+      'old-bright' => 'rgba(251, 175, 175, .7)',
+      'move-background' => '#fdf5d4',
       'copy-background' => '#f1c40f',
 
       // Usually light yellow
-      'gentle.highlight' => '#26c1c9',
-      'gentle.highlight.border' => '#21a9b0',
+      'gentle.highlight' => '#fdf3da',
+      'gentle.highlight.border' => '#c9b8a8',
+      'gentle.highlight.background' => '#fffdf6',
 
-      'paste.content' => '#222222',
-      'paste.border' => '#000000',
-      'paste.highlight' => '#121212',
+      'highlight.bright' => '#fdf320',
+
+      'paste.content' => '#fffef5',
+      'paste.border' => '#e9dbcd',
+      'paste.highlight' => '#fdf3da',
 
       // Background color for "most" themes.
-      'page.background' => '#223246',
-      'page.sidenav' => '#1c293b',
-      'page.content' => '#26374c',
+      'page.background' => '#f3f5f7',
+      'page.sidenav' => '#eaedf1',
+      'page.content' => '#fff',
 
       'menu.profile.text' => 'rgba(255,255,255,.8)',
       'menu.profile.text.selected' => 'rgba(255,255,255,1)',
       'menu.profile.icon.disabled' => 'rgba(255,255,255,.4)',
 
+      'menu.main.height' => '44px',
+      'menu.profile.width' => '240px',
+
       // Buttons
       'blue.button.color' => '#2980b9',
       'blue.button.gradient' => 'linear-gradient(to bottom, #3498db, #2980b9)',
+      'blue.button.hover' => 'linear-gradient(to bottom, #3498db, #1b6ba0)',
       'green.button.color' => '#139543',
       'green.button.gradient' => 'linear-gradient(to bottom, #23BB5B, #139543)',
-      'grey.button.color' => '#223246',
-      'grey.button.gradient' => 'linear-gradient(to bottom, #223246, #223246)',
-      'grey.button.hover' => 'linear-gradient(to bottom, #1c293b, #1c293b)',
+      'green.button.hover' => 'linear-gradient(to bottom, #23BB5B, #178841)',
+      'red.button.color' => '#b33225',
+      'red.button.gradient' => 'linear-gradient(to bottom, #d25454, #b33225)',
+      'red.button.hover' => 'linear-gradient(to bottom, #d25454, #982115)',
+      'grey.button.color' => '#F7F7F9',
+      'grey.button.gradient' => 'linear-gradient(to bottom, #ffffff, #f1f0f1)',
+      'grey.button.hover' => 'linear-gradient(to bottom, #ffffff, #eeebec)',
+
+      'document.border' => '#dedee1',
+
+      'delete-color' => '#c0392b',
+      'create-color' => '#139543',
+
     );
   }
 

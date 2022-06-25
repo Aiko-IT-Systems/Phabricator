@@ -108,7 +108,7 @@ final class PhragmentSnapshotViewController extends PhragmentController {
         ->setName(pht('Download Snapshot as ZIP'))
         ->setHref($this->isCorrectlyConfigured() ? $zip_uri : null)
         ->setDisabled(!$this->isCorrectlyConfigured())
-        ->setIcon('fa-floppy-o'));
+        ->setIcon('fa-box'));
     $actions->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Delete Snapshot'))

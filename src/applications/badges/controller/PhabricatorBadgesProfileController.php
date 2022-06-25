@@ -78,7 +78,7 @@ abstract class PhabricatorBadgesProfileController
       'recipients',
       pht('View Recipients'),
       $this->getApplicationURI("/recipients/{$id}/"),
-      'fa-group');
+      'fa-users');
 
     $nav->selectFilter($filter);
 

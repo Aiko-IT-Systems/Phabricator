@@ -47,7 +47,7 @@ final class PhabricatorProjectMembersProfileMenuItem
     $id = $project->getID();
 
     $name = $this->getDisplayName($config);
-    $icon = 'fa-group';
+    $icon = 'fa-users';
     $uri = "/project/members/{$id}/";
 
     $item = $this->newItemView()

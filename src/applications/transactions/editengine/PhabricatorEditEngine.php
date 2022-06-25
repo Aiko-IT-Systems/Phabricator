@@ -1516,7 +1516,7 @@ abstract class PhabricatorEditEngine
 
     $dropdown = null;
     if (count($specs) > 1) {
-      $menu_icon = 'fa-caret-square-o-down';
+      $menu_icon = 'fa-caret-square-down';
       $menu_name = $this->getObjectCreateShortText();
       $workflow = false;
       $disabled = false;
@@ -1610,7 +1610,7 @@ abstract class PhabricatorEditEngine
         $specs[] = array(
           'name' => $config->getDisplayName(),
           'uri' => $config_uri,
-          'icon' => 'fa-plus',
+          'icon' => 'fa-solid fa-plus',
           'disabled' => false,
           'workflow' => false,
         );

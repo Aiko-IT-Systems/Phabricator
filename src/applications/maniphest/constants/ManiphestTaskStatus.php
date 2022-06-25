@@ -89,11 +89,11 @@ final class ManiphestTaskStatus extends ManiphestConstants {
     if (self::isOpenStatus($status)) {
       $name = pht('%s, %s', self::getTaskStatusFullName($status), $priority);
       $color = 'grey';
-      $icon = 'fa-square-o';
+      $icon = 'fa-square';
     } else {
       $name = self::getTaskStatusFullName($status);
       $color = 'indigo';
-      $icon = 'fa-check-square-o';
+      $icon = 'fa-check-square';
     }
 
     $tag = id(new PHUITagView())
@@ -193,7 +193,7 @@ final class ManiphestTaskStatus extends ManiphestConstants {
     if (self::isOpenStatus($status)) {
       return 'fa-exclamation-circle';
     } else {
-      return 'fa-check-square-o';
+      return 'fa-check-square';
     }
   }
 

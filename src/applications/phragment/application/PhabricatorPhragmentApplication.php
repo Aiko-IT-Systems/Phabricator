@@ -15,7 +15,7 @@ final class PhabricatorPhragmentApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-floppy-o';
+    return 'fa-box';
   }
 
   public function getTitleGlyph() {

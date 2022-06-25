@@ -123,7 +123,7 @@ final class DiffusionCommitAuditStatus extends Phobject {
       self::NONE => array(
         'name' => pht('No Audits'),
         'legacy' => 0,
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
         'color' => 'bluegrey',
         'closed' => true,
         'color.ansi' => null,
@@ -131,7 +131,7 @@ final class DiffusionCommitAuditStatus extends Phobject {
       self::NEEDS_AUDIT => array(
         'name' => pht('Audit Required'),
         'legacy' => 1,
-        'icon' => 'fa-exclamation-circle',
+        'icon' => 'fa-solid fa-exclamation-circle',
         'color' => 'orange',
         'closed' => false,
         'color.ansi' => 'magenta',
@@ -139,7 +139,7 @@ final class DiffusionCommitAuditStatus extends Phobject {
       self::CONCERN_RAISED => array(
         'name' => pht('Concern Raised'),
         'legacy' => 2,
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color' => 'red',
         'closed' => false,
         'color.ansi' => 'red',
@@ -147,7 +147,7 @@ final class DiffusionCommitAuditStatus extends Phobject {
       self::PARTIALLY_AUDITED => array(
         'name' => pht('Partially Audited'),
         'legacy' => 3,
-        'icon' => 'fa-check-circle-o',
+        'icon' => 'fa-solid fa-check-circle',
         'color' => 'yellow',
         'closed' => false,
         'color.ansi' => 'yellow',
@@ -155,7 +155,7 @@ final class DiffusionCommitAuditStatus extends Phobject {
       self::AUDITED => array(
         'name' => pht('Audited'),
         'legacy' => 4,
-        'icon' => 'fa-check-circle',
+        'icon' => 'fa-solid fa-check-circle',
         'color' => 'green',
         'closed' => true,
         'color.ansi' => 'green',
@@ -163,7 +163,7 @@ final class DiffusionCommitAuditStatus extends Phobject {
       self::NEEDS_VERIFICATION => array(
         'name' => pht('Needs Verification'),
         'legacy' => 5,
-        'icon' => 'fa-refresh',
+        'icon' => 'fa-solid fa-refresh',
         'color' => 'indigo',
         'closed' => false,
         'color.ansi' => 'magenta',

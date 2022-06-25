@@ -89,37 +89,37 @@ final class PhabricatorFilesConfigOptions
     // largely lifted from http://en.wikipedia.org/wiki/Internet_media_type
     $icon_default = array(
       // audio file icon
-      'audio/basic' => 'fa-file-audio-o',
-      'audio/L24' => 'fa-file-audio-o',
-      'audio/mp4' => 'fa-file-audio-o',
-      'audio/mpeg' => 'fa-file-audio-o',
-      'audio/ogg' => 'fa-file-audio-o',
-      'audio/vorbis' => 'fa-file-audio-o',
-      'audio/vnd.rn-realaudio' => 'fa-file-audio-o',
-      'audio/vnd.wave' => 'fa-file-audio-o',
-      'audio/webm' => 'fa-file-audio-o',
+      'audio/basic' => 'fa-file-audio',
+      'audio/L24' => 'fa-file-audio',
+      'audio/mp4' => 'fa-file-audio',
+      'audio/mpeg' => 'fa-file-audio',
+      'audio/ogg' => 'fa-file-audio',
+      'audio/vorbis' => 'fa-file-audio',
+      'audio/vnd.rn-realaudio' => 'fa-file-audio',
+      'audio/vnd.wave' => 'fa-file-audio',
+      'audio/webm' => 'fa-file-audio',
       // movie file icon
-      'video/mpeg' => 'fa-file-movie-o',
-      'video/mp4' => 'fa-file-movie-o',
-      'application/ogg' => 'fa-file-movie-o',
-      'video/ogg' => 'fa-file-movie-o',
-      'video/quicktime' => 'fa-file-movie-o',
-      'video/webm' => 'fa-file-movie-o',
-      'video/x-matroska' => 'fa-file-movie-o',
-      'video/x-ms-wmv' => 'fa-file-movie-o',
-      'video/x-flv' => 'fa-file-movie-o',
+      'video/mpeg' => 'fa-file-movie',
+      'video/mp4' => 'fa-file-movie',
+      'application/ogg' => 'fa-file-movie',
+      'video/ogg' => 'fa-file-movie',
+      'video/quicktime' => 'fa-file-movie',
+      'video/webm' => 'fa-file-movie',
+      'video/x-matroska' => 'fa-file-movie',
+      'video/x-ms-wmv' => 'fa-file-movie',
+      'video/x-flv' => 'fa-file-movie',
       // pdf file icon
-      'application/pdf' => 'fa-file-pdf-o',
+      'application/pdf' => 'fa-file-pdf',
       // zip file icon
-      'application/zip' => 'fa-file-zip-o',
+      'application/zip' => 'fa-file-zip',
       // msword icon
-      'application/msword' => 'fa-file-word-o',
+      'application/msword' => 'fa-file-word',
       // msexcel
-      'application/vnd.ms-excel' => 'fa-file-excel-o',
+      'application/vnd.ms-excel' => 'fa-file-excel',
       // mspowerpoint
-      'application/vnd.ms-powerpoint' => 'fa-file-powerpoint-o',
+      'application/vnd.ms-powerpoint' => 'fa-file-powerpoint',
 
-    ) + array_fill_keys(array_keys($image_default), 'fa-file-image-o');
+    ) + array_fill_keys(array_keys($image_default), 'fa-file-image');
 
     // NOTE: These options are locked primarily because adding "text/plain"
     // as an image MIME type increases SSRF vulnerability by allowing users

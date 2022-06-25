@@ -9,7 +9,7 @@ final class PhabricatorLegalpadDocumentPHIDType extends PhabricatorPHIDType {
   }
 
   public function getTypeIcon() {
-    return 'fa-file-text-o';
+    return 'fa-file-text';
   }
 
   public function newObject() {

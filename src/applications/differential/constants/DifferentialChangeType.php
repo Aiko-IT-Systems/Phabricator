@@ -24,14 +24,14 @@ final class DifferentialChangeType extends Phobject {
 
   public static function getIconForFileType($type) {
     static $icons = array(
-      self::FILE_TEXT => 'fa-file-text-o',
-      self::FILE_IMAGE => 'fa-file-image-o',
+      self::FILE_TEXT => 'fa-file-text',
+      self::FILE_IMAGE => 'fa-file-image',
       self::FILE_BINARY => 'fa-file',
       self::FILE_DIRECTORY => 'fa-folder',
       self::FILE_SYMLINK => 'fa-link',
       self::FILE_DELETED => 'fa-file',
-      self::FILE_NORMAL => 'fa-file-text-o',
-      self::FILE_SUBMODULE => 'fa-folder-open-o',
+      self::FILE_NORMAL => 'fa-file-text',
+      self::FILE_SUBMODULE => 'fa-folder-open',
     );
 
     return idx($icons, $type, 'fa-file');

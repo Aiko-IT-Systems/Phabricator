@@ -389,27 +389,27 @@ final class DifferentialChangeset
   private function getPathIconDetails() {
     $change_icons = array(
       DifferentialChangeType::TYPE_DELETE => array(
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'delete-color',
       ),
       DifferentialChangeType::TYPE_ADD => array(
-        'icon' => 'fa-plus',
+        'icon' => 'fa-solid fa-plus',
         'color' => 'create-color',
       ),
       DifferentialChangeType::TYPE_MOVE_AWAY => array(
-        'icon' => 'fa-circle-o',
+        'icon' => 'fa-solid fa-circle',
         'color' => 'grey',
       ),
       DifferentialChangeType::TYPE_MULTICOPY => array(
-        'icon' => 'fa-circle-o',
+        'icon' => 'fa-solid fa-circle',
         'color' => 'grey',
       ),
       DifferentialChangeType::TYPE_MOVE_HERE => array(
-        'icon' => 'fa-plus-circle',
+        'icon' => 'fa-solid fa-plus-circle',
         'color' => 'create-color',
       ),
       DifferentialChangeType::TYPE_COPY_HERE => array(
-        'icon' => 'fa-plus-circle',
+        'icon' => 'fa-solid fa-plus-circle',
         'color' => 'create-color',
       ),
     );
@@ -421,7 +421,7 @@ final class DifferentialChangeset
 
     if ($this->isGeneratedChangeset()) {
       return array(
-        'icon' => 'fa-cogs',
+        'icon' => 'fa-solid fa-cogs',
         'color' => 'grey',
       );
     }
@@ -430,7 +430,7 @@ final class DifferentialChangeset
     $icon = DifferentialChangeType::getIconForFileType($file_type);
 
     return array(
-      'icon' => $icon,
+      'icon' => 'fa-solid '.$icon,
       'color' => 'bluetext',
     );
   }

@@ -153,7 +153,7 @@ final class PhrictionDocumentController
             id(new PHUIButtonView())
               ->setTag('a')
               ->setColor('grey')
-              ->setIcon('fa-file-o')
+              ->setIcon('fa-file')
               ->setDisabled(!$current_uri)
               ->setHref($current_uri)
               ->setText(pht('Published')))

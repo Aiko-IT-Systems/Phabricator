@@ -10,7 +10,7 @@ final class PhabricatorProjectColumnCreatedOrder
   }
 
   protected function newMenuIconIcon() {
-    return 'fa-clock-o';
+    return 'fa-clock';
   }
 
   public function getHasHeaders() {

@@ -37,7 +37,7 @@ abstract class PhabricatorWorkerBulkJobType extends Phobject {
 
     $continue = id(new PhabricatorActionView())
       ->setHref($continue_uri)
-      ->setIcon('fa-arrow-circle-o-right')
+      ->setIcon('fa-arrow-circle-right')
       ->setName(pht('Continue'));
 
     return array(

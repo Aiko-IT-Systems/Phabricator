@@ -165,7 +165,7 @@ final class HarbormasterBuildStatus extends Phobject {
     return array(
       self::STATUS_INACTIVE => array(
         'name' => pht('Inactive'),
-        'icon' => 'fa-circle-o',
+        'icon' => 'fa-solid fa-circle',
         'color' => 'dark',
         'color.ansi' => 'yellow',
         'isBuilding' => false,
@@ -173,7 +173,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_PENDING => array(
         'name' => pht('Pending'),
-        'icon' => 'fa-circle-o',
+        'icon' => 'fa-solid fa-circle',
         'color' => 'blue',
         'color.ansi' => 'yellow',
         'isBuilding' => true,
@@ -181,7 +181,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_BUILDING => array(
         'name' => pht('Building'),
-        'icon' => 'fa-chevron-circle-right',
+        'icon' => 'fa-solid fa-chevron-circle-right',
         'color' => 'blue',
         'color.ansi' => 'yellow',
         'isBuilding' => true,
@@ -189,7 +189,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_PASSED => array(
         'name' => pht('Passed'),
-        'icon' => 'fa-check-circle',
+        'icon' => 'fa-solid fa-check-circle',
         'color' => 'green',
         'color.ansi' => 'green',
         'isBuilding' => false,
@@ -197,7 +197,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_FAILED => array(
         'name' => pht('Failed'),
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -205,7 +205,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_ABORTED => array(
         'name' => pht('Aborted'),
-        'icon' => 'fa-minus-circle',
+        'icon' => 'fa-solid fa-minus-circle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -213,7 +213,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_ERROR => array(
         'name' => pht('Unexpected Error'),
-        'icon' => 'fa-minus-circle',
+        'icon' => 'fa-solid fa-minus-circle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -221,7 +221,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_PAUSED => array(
         'name' => pht('Paused'),
-        'icon' => 'fa-pause',
+        'icon' => 'fa-solid fa-pause',
         'color' => 'yellow',
         'color.ansi' => 'yellow',
         'isBuilding' => false,
@@ -229,7 +229,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::STATUS_DEADLOCKED => array(
         'name' => pht('Deadlocked'),
-        'icon' => 'fa-exclamation-circle',
+        'icon' => 'fa-solid fa-exclamation-circle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -237,7 +237,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::PENDING_PAUSING => array(
         'name' => pht('Pausing'),
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -245,7 +245,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::PENDING_RESUMING => array(
         'name' => pht('Resuming'),
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -253,7 +253,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::PENDING_RESTARTING => array(
         'name' => pht('Restarting'),
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -261,7 +261,7 @@ final class HarbormasterBuildStatus extends Phobject {
       ),
       self::PENDING_ABORTING => array(
         'name' => pht('Aborting'),
-        'icon' => 'fa-exclamation-triangle',
+        'icon' => 'fa-solid fa-exclamation-triangle',
         'color' => 'red',
         'color.ansi' => 'red',
         'isBuilding' => false,
@@ -278,7 +278,7 @@ final class HarbormasterBuildStatus extends Phobject {
 
     return array(
       'name' => pht('Unknown ("%s")', $status),
-      'icon' => 'fa-question-circle',
+      'icon' => 'fa-solid fa-question-circle',
       'color' => 'bluegrey',
       'color.ansi' => 'magenta',
       'isBuilding' => false,

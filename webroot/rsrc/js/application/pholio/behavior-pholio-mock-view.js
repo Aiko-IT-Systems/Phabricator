@@ -274,7 +274,7 @@ JX.behavior('pholio-mock-view', function(config, statics) {
       }
 
       var inline_selection = render_reticle(classes,
-        'pholio-mock-comment-icon phui-font-fa fa-comment');
+        'pholio-mock-comment-icon phui-font-fa fa-solid fa-comment');
       statics.stage.addReticle(inline_selection, inline.id);
       position_inline_rectangle(inline, inline_selection);
     }

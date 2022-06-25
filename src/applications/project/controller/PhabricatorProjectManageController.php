@@ -102,7 +102,7 @@ final class PhabricatorProjectManageController
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName(pht('Edit Picture'))
-        ->setIcon('fa-picture-o')
+        ->setIcon('fa-image')
         ->setHref($this->getApplicationURI("picture/{$id}/"))
         ->setDisabled(!$can_edit)
         ->setWorkflow(!$can_edit));

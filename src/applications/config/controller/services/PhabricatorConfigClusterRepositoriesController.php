@@ -92,7 +92,7 @@ final class PhabricatorConfigClusterRepositoriesController
         $status_icon = 'fa-folder';
         $status_tip = pht('Closed');
       } else {
-        $status_icon = 'fa-folder-open green';
+        $status_icon = 'fa-folderpen green';
         $status_tip = pht('Open');
       }
 

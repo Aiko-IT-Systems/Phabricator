@@ -10,7 +10,7 @@ final class PhabricatorSearchSettingsPanel
   }
 
   public function getPanelMenuIcon() {
-    return 'fa-search';
+    return 'fa-solid fa-search';
   }
 
   public function getPanelGroupKey() {

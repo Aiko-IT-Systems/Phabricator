@@ -265,7 +265,7 @@ final class PhabricatorCommitSearchEngine
   protected function getNewUserBody() {
 
     $view = id(new PHUIBigInfoView())
-      ->setIcon('fa-check-circle-o')
+      ->setIcon('fa-check-circle')
       ->setTitle(pht('Welcome to Audit'))
       ->setDescription(
         pht('Post-commit code review and auditing. Audits you are assigned '.

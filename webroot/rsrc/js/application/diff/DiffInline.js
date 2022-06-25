@@ -738,7 +738,7 @@ JX.install('DiffInline', {
     _getSuggestionButton: function() {
       if (!this._suggestionButton) {
         var button = new JX.PHUIXButtonView()
-          .setIcon('fa-pencil-square-o')
+          .setIcon('fa-pencil-square')
           .setColor('grey');
 
         var node = button.getNode();

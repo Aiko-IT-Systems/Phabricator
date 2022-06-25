@@ -208,7 +208,7 @@ final class PHUIObjectBoxView extends AphrontTagView {
         ->addSigil('reveal-content')
         ->setID($hide_action_id)
         ->setStyle($hide_style)
-        ->setIcon('fa-search')
+        ->setIcon('fa-solid fa-search')
         ->setHref($this->showHideHref)
         ->setMetaData(
           array(
@@ -221,7 +221,7 @@ final class PHUIObjectBoxView extends AphrontTagView {
         ->setTag('a')
         ->addSigil('reveal-content')
         ->setStyle($show_style)
-        ->setIcon('fa-search')
+        ->setIcon('fa-solid fa-search')
         ->setHref('#')
         ->setID($show_action_id)
         ->setMetaData(

@@ -9,7 +9,7 @@ final class DrydockBlueprintPHIDType extends PhabricatorPHIDType {
   }
 
   public function getTypeIcon() {
-    return 'fa-map-o';
+    return 'fa-map';
   }
 
   public function newObject() {

@@ -54,7 +54,7 @@ final class PholioMockEmbedView extends AphrontView {
       ->setImageURI($thumbnail)
       ->setImageSize($x, $y)
       ->setDisabled($mock->isClosed())
-      ->addIconCount('fa-picture-o', count($mock->getActiveImages()))
+      ->addIconCount('fa-image', count($mock->getActiveImages()))
       ->addIconCount('fa-trophy', $mock->getTokenCount());
 
     return $item;

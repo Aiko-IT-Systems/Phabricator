@@ -46,7 +46,7 @@ final class AphrontFormRecaptchaControl extends AphrontFormControl {
       ->addContentSecurityPolicyURI('script-src', $js)
       ->addContentSecurityPolicyURI('script-src', 'https://www.gstatic.com/')
       ->addContentSecurityPolicyURI('frame-src', 'https://www.google.com/');
-
+      
     return array(
       phutil_tag(
         'div',

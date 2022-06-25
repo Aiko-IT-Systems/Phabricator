@@ -1023,7 +1023,7 @@ JX.install('DiffChangesetList', {
       list.addItem(encoding_item);
 
       var highlight_item = new JX.PHUIXActionView()
-        .setIcon('fa-sun-o')
+        .setIcon('fa-sun')
         .setName(pht('Highlight As...'))
         .setHandler(function(e) {
           var params = {
@@ -1042,7 +1042,7 @@ JX.install('DiffChangesetList', {
       list.addItem(highlight_item);
 
       var engine_item = new JX.PHUIXActionView()
-        .setIcon('fa-file-image-o')
+        .setIcon('fa-file-image')
         .setName(pht('View As Document Type...'))
         .setHandler(function(e) {
           var options = changeset.getAvailableDocumentEngineKeys() || [];
@@ -1074,13 +1074,13 @@ JX.install('DiffChangesetList', {
       add_link('fa-arrow-right', pht('Show Raw File (Right)'), data.rightURI);
 
       add_link(
-        'fa-folder-open-o',
+        'fa-folder-open',
         pht('Show Directory in Repository'),
         changeset.getShowDirectoryURI())
         .setKeyCommand('D');
 
       add_link(
-        'fa-file-text-o',
+        'fa-file-text',
         pht('Show Path in Repository'),
         changeset.getShowPathURI())
         .setKeyCommand('d');
@@ -2066,7 +2066,7 @@ JX.install('DiffChangesetList', {
     _getUnsavedButton: function() {
       if (!this._unsavedButton) {
         var button = new JX.PHUIXButtonView()
-          .setIcon('fa-commenting-o')
+          .setIcon('fa-commenting')
           .setButtonType(JX.PHUIXButtonView.BUTTONTYPE_SIMPLE);
 
         var node = button.getNode();
@@ -2083,7 +2083,7 @@ JX.install('DiffChangesetList', {
     _getUnsubmittedButton: function() {
       if (!this._unsubmittedButton) {
         var button = new JX.PHUIXButtonView()
-          .setIcon('fa-comment-o')
+          .setIcon('fa-comment')
           .setButtonType(JX.PHUIXButtonView.BUTTONTYPE_SIMPLE);
 
         var node = button.getNode();
@@ -2592,7 +2592,7 @@ JX.install('DiffChangesetList', {
       var oncreate = JX.bind(this, this._onSourceSelectionMenuAction, 'create');
 
       var comment_item = new JX.PHUIXActionView()
-        .setIcon('fa-comment-o')
+        .setIcon('fa-comment')
         .setName(pht('New Inline Comment'))
         .setKeyCommand('c')
         .setHandler(oncreate);

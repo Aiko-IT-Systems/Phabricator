@@ -27,7 +27,7 @@ final class PhabricatorDashboardIconSet
       'fa-credit-card' => pht('Plastic Debt'),
       'fa-code' => pht('PHP is Life'),
       'fa-sticky-note' => pht('To Self'),
-      'fa-newspaper-o' => pht('Stay Woke'),
+      'fa-newspaper' => pht('Stay Woke'),
 
       'fa-server' => pht('Metallica'),
       'fa-hashtag' => pht('Corned Beef'),
@@ -35,7 +35,7 @@ final class PhabricatorDashboardIconSet
       'fa-calendar' => pht('Calendar'),
       'fa-compass' => pht('Wayfinding'),
 
-      'fa-futbol-o' => pht('Sports'),
+      'fa-futbol' => pht('Sports'),
       'fa-flag' => pht('Flag'),
       'fa-ship' => pht('Water Vessel'),
       'fa-feed' => pht('Wireless'),

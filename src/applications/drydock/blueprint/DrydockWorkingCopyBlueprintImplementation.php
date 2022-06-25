@@ -16,7 +16,7 @@ final class DrydockWorkingCopyBlueprintImplementation
   }
 
   public function getBlueprintIcon() {
-    return 'fa-folder-open';
+    return 'fa-folderpen';
   }
 
   public function getDescription() {

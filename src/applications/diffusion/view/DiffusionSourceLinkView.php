@@ -159,7 +159,7 @@ final class DiffusionSourceLinkView
     $uri = $this->getURI();
 
     $color = 'blue';
-    $icon = 'fa-file-text-o';
+    $icon = 'fa-file-text';
 
     $text = $this->getText();
     if (!strlen($text)) {

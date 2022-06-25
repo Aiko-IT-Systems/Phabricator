@@ -102,7 +102,7 @@ final class PhragmentVersionController extends PhragmentController {
       $patch_uri = $this->getApplicationURI(
         'patch/'.$previous_version->getID().'/'.$version->getID());
       $item->addAction(id(new PHUIListItemView())
-        ->setIcon('fa-file-o')
+        ->setIcon('fa-file')
         ->setName(pht('Get Patch'))
         ->setHref($this->isCorrectlyConfigured() ? $patch_uri : null)
         ->setDisabled(!$this->isCorrectlyConfigured()));
@@ -113,7 +113,7 @@ final class PhragmentVersionController extends PhragmentController {
     $item->setHeader(pht('Prior to Version 0'));
     $item->addAttribute(pht('Prior to any content (empty file)'));
     $item->addAction(id(new PHUIListItemView())
-      ->setIcon('fa-file-o')
+      ->setIcon('fa-file')
       ->setName(pht('Get Patch'))
       ->setHref($this->getApplicationURI(
         'patch/x/'.$version->getID())));

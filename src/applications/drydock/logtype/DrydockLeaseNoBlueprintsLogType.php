@@ -9,7 +9,7 @@ final class DrydockLeaseNoBlueprintsLogType extends DrydockLogType {
   }
 
   public function getLogTypeIcon(array $data) {
-    return 'fa-map-o red';
+    return 'fa-map red';
   }
 
   public function renderLog(array $data) {

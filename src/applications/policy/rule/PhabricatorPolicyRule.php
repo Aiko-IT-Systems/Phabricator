@@ -211,7 +211,7 @@ abstract class PhabricatorPolicyRule extends Phobject {
   }
 
   public function getObjectPolicyIcon() {
-    return 'fa-cube';
+    return 'fa-solid fa-cube';
   }
 
   public function getPolicyExplanation() {

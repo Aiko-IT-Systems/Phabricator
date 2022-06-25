@@ -318,7 +318,7 @@ final class PhabricatorRemarkupControl extends AphrontFormTextAreaControl {
           'div',
           array(
             'class' =>
-              'remarkup-assist phui-icon-view phui-font-fa bluegrey '.$action,
+              'remarkup-assist phui-icon-view phui-font-fa bluegrey fa-solid fa-brands '.$action,
           ),
           $content));
     }

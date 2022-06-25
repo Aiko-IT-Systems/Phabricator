@@ -150,7 +150,7 @@ abstract class AphrontResponse extends Phobject {
 
     $csp[] = "default-src {$default}";
 
-    $csp[] = "font-src 'self' {$default} {$base_uri} https://npm.fontawesome.com https://cdn.fontawesome.com https://fontawesome.com https://fonts.gstatic.com https://themes.googleusercontent.com";
+    $csp[] = "font-src 'self' {$default} {$base_uri} https://site-assets.fontawesome.com https://cdnjs.cloudflare.com https://pro.fontawesome.com https://ka-f.fontawesome.com https://npm.fontawesome.com https://cdn.fontawesome.com https://fontawesome.com https://kit.fontawesome.com https://fonts.gstatic.com https://themes.googleusercontent.com";
 
     // We use "data:" URIs to inline small images into CSS. This policy allows
     // "data:" URIs to be used anywhere, but there doesn't appear to be a way
@@ -160,15 +160,15 @@ abstract class AphrontResponse extends Phobject {
     // We use inline style="..." attributes in various places, many of which
     // are legitimate. We also currently use a <style> tag to implement the
     // "Monospaced Font Preference" setting.
-    $csp[] = "style-src {$default} 'unsafe-inline' https://assets.zendesk.com data:";
+    $csp[] = "style-src {$default} 'unsafe-inline' https://site-assets.fontawesome.com https://kit.fontawesome.com https://assets.zendesk.com data:";
 
     // On a small number of pages, including the Stripe workflow and the
     // ReCAPTCHA challenge, we embed external Javascript directly.
-    $csp[] = "script-src 'self' {$default} {$base_uri} 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://google.com https://ajax.googleapis.com  https://ssl.google-analytics.com https://assets.zendesk.com https://connect.facebook.net";
+    $csp[] = "script-src 'self' {$default} {$base_uri} 'unsafe-inline' 'unsafe-eval' https://site-assets.fontawesome.com https://kit.fontawesome.com https://static.cloudflareinsights.com https://google.com https://ajax.googleapis.com  https://ssl.google-analytics.com https://assets.zendesk.com https://connect.facebook.net";
 
     // We need to specify that we can connect to ourself in order for AJAX
     // requests to work.
-    $csp[] = $this->newContentSecurityPolicy('connect-src', "'self'");
+    $csp[] = $this->newContentSecurityPolicy('connect-src', "'self' https://site-assets.fontawesome.com https://ka-f.fontawesome.com");
 
     // DarkConsole and PHPAST both use frames to render some content.
     $csp[] = $this->newContentSecurityPolicy('frame-src', "'self' https://player.vimeo.com https://assets.zendesk.com https://www.facebook.com https://s-static.ak.facebook.com https://tautt.zendesk.com");

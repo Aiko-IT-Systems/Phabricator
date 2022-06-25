@@ -28,7 +28,7 @@ final class PhabricatorCalendarImportTriggerLogType
   public function getDisplayIcon(
     PhabricatorUser $viewer,
     PhabricatorCalendarImportLog $log) {
-    return 'fa-clock-o';
+    return 'fa-clock';
   }
 
   public function getDisplayColor(

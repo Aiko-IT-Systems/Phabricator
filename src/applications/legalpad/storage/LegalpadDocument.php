@@ -153,7 +153,7 @@ final class LegalpadDocument extends LegalpadDAO
     $map = array(
       self::SIGNATURE_TYPE_NONE => '',
       self::SIGNATURE_TYPE_INDIVIDUAL => 'fa-user grey',
-      self::SIGNATURE_TYPE_CORPORATION => 'fa-building-o grey',
+      self::SIGNATURE_TYPE_CORPORATION => 'fa-building grey',
     );
 
     return idx($map, $type, 'fa-user grey');

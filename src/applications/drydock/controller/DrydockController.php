@@ -41,7 +41,7 @@ abstract class DrydockController extends PhabricatorController {
     $consumed_yes = id(new PHUIIconView())
       ->setIcon('fa-check green');
     $consumed_no = id(new PHUIIconView())
-      ->setIcon('fa-clock-o grey');
+      ->setIcon('fa-clock grey');
 
     $rows = array();
     foreach ($commands as $command) {

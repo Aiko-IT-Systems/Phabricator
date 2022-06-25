@@ -42,7 +42,7 @@ final class PhabricatorMacroViewController
       ->setUser($viewer)
       ->setPolicyObject($macro)
       ->setHeader($macro->getName())
-      ->setHeaderIcon('fa-file-image-o');
+      ->setHeaderIcon('fa-file-image');
 
     if (!$macro->getIsDisabled()) {
       $header->setStatus('fa-check', 'bluegrey', pht('Active'));

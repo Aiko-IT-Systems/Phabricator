@@ -409,9 +409,9 @@ final class DifferentialTransaction
           case DifferentialAction::ACTION_CLOSE:
             return 'fa-check';
           case DifferentialAction::ACTION_ACCEPT:
-            return 'fa-check-circle-o';
+            return 'fa-check-circle';
           case DifferentialAction::ACTION_REJECT:
-            return 'fa-times-circle-o';
+            return 'fa-times-circle';
           case DifferentialAction::ACTION_ABANDON:
             return 'fa-plane';
           case DifferentialAction::ACTION_RETHINK:

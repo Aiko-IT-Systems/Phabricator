@@ -34,7 +34,7 @@ JX.install('PHUIXIconView', {
     getNode: function() {
       if (!this._node) {
         var attrs = {
-          className: 'phui-icon-view phui-font-fa'
+          className: 'phui-icon-view phui-font-fa fa-solid fa-brands'
         };
 
         this._node = JX.$N('span', attrs);

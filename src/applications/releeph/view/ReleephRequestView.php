@@ -145,8 +145,8 @@ final class ReleephRequestView extends AphrontView {
     } else {
       $yes_text = pht('Support Pull');
       $no_text = pht('Discourage Pull');
-      $yes_icon = 'fa-thumbs-o-up';
-      $no_icon = 'fa-thumbs-o-down';
+      $yes_icon = 'fa-thumbs-up';
+      $no_icon = 'fa-thumbs-down';
     }
 
     $yes_href = '/releeph/request/action/want/'.$id.'/';

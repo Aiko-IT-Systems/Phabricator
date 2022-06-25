@@ -40,7 +40,7 @@ final class DiffusionBlockHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_BLOCK => array(
-        'icon' => 'fa-stop',
+        'icon' => 'fa-solid fa-stop',
         'color' => 'red',
         'name' => pht('Blocked Push'),
       ),

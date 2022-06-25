@@ -108,17 +108,17 @@ abstract class DifferentialReviewersHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_AUTHORS => array(
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'color' => 'grey',
         'name' => pht('Revision Author'),
       ),
       self::DO_ADD_REVIEWERS => array(
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'color' => 'green',
         'name' => pht('Added Reviewers'),
       ),
       self::DO_ADD_BLOCKING_REVIEWERS => array(
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'color' => 'green',
         'name' => pht('Added Blocking Reviewers'),
       ),

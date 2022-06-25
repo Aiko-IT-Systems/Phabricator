@@ -124,7 +124,7 @@ final class DiffusionRepositoryIdentitySearchEngine
         ->setHref($identity->getURI())
         ->setObject($identity);
 
-      $status_icon = 'fa-circle-o grey';
+      $status_icon = 'fa-circle grey';
 
       $effective_phid = $identity->getCurrentEffectiveUserPHID();
       if ($effective_phid) {

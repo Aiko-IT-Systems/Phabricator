@@ -128,7 +128,7 @@ final class DiffusionRepositoryStorageManagementPanel
       foreach ($bindings as $binding_group) {
         $any_binding = head($binding_group);
 
-        $binding_icon = 'fa-folder-open green';
+        $binding_icon = 'fa-folderpen green';
         $binding_tip = pht('Active');
 
         $binding_icon = id(new PHUIIconView())

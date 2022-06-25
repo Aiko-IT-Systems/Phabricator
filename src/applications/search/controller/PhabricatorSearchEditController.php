@@ -119,7 +119,7 @@ final class PhabricatorSearchEditController
       $header_icon = 'fa-pencil';
     } else {
       $title = pht('Save Query');
-      $header_icon = 'fa-search';
+      $header_icon = 'fa-solid fa-search';
     }
 
     $form_box = id(new PHUIObjectBoxView())

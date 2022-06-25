@@ -69,12 +69,12 @@ abstract class DiffusionAuditorsHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_AUTHORS => array(
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'color' => 'grey',
         'name' => pht('Commit Author'),
       ),
       self::DO_ADD_AUDITORS => array(
-        'icon' => 'fa-user',
+        'icon' => 'fa-solid fa-user',
         'color' => 'green',
         'name' => pht('Added Auditors'),
       ),

@@ -195,7 +195,7 @@ final class PhabricatorConduitConsoleController
     $nav->newLink('examples')
       ->setHref('#examples')
       ->setName(pht('Examples'))
-      ->setIcon('fa-folder-open-o');
+      ->setIcon('fa-folder-open');
 
     return $nav;
   }

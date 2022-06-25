@@ -68,12 +68,12 @@ abstract class PhabricatorMetaMTAEmailHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_SEND => array(
-        'icon' => 'fa-envelope',
+        'icon' => 'fa-solid fa-envelope',
         'color' => 'green',
         'name' => pht('Sent Mail'),
       ),
       self::DO_FORCE => array(
-        'icon' => 'fa-envelope',
+        'icon' => 'fa-solid fa-envelope',
         'color' => 'blue',
         'name' => pht('Forced Mail'),
       ),

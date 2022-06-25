@@ -382,7 +382,7 @@ final class HeraldTranscriptController extends HeraldController {
         } else if (!is_array($log)) {
           $action_list->addItem(
             id(new PHUIStatusItemView())
-              ->setIcon('fa-clock-o', 'grey')
+              ->setIcon('fa-clock', 'grey')
               ->setTarget(pht('Old Transcript'))
               ->setNote(
                 pht(
@@ -715,7 +715,7 @@ final class HeraldTranscriptController extends HeraldController {
 
     $nav->newLink('fields')
       ->setName(pht('Field Values'))
-      ->setIcon('fa-file-text-o');
+      ->setIcon('fa-file-text');
 
     $xaction_phids = $this->getTranscriptTransactionPHIDs($xscript);
     $has_xactions = (bool)$xaction_phids;

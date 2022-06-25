@@ -127,7 +127,7 @@ final class PhabricatorFactObjectController
       ->setTooltip(pht('Consistent Fact'));
 
     $icon_nodata = id(new PHUIIconView())
-      ->setIcon('fa-question-circle-o violet')
+      ->setIcon('fa-question-circle violet')
       ->setTooltip(pht('No Stored Datapoints'));
 
     $icon_new = id(new PHUIIconView())

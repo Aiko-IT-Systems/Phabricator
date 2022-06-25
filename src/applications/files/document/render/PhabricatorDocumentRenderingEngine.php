@@ -135,19 +135,19 @@ abstract class PhabricatorDocumentRenderingEngine
       'viewKey' => $engine->getDocumentEngineKey(),
       'views' => $views,
       'encode' => array(
-        'icon' => 'fa-font',
+        'icon' => 'fa-solid fa-font',
         'name' => pht('Change Text Encoding...'),
         'uri' => '/services/encoding/',
         'value' => $encode_setting,
       ),
       'highlight' => array(
-        'icon' => 'fa-lightbulb-o',
+        'icon' => 'fa-solid fa-lightbulb',
         'name' => pht('Highlight As...'),
         'uri' => '/services/highlight/',
         'value' => $highlight_setting,
       ),
       'blame' => array(
-        'icon' => 'fa-backward',
+        'icon' => 'fa-solid fa-backward',
         'hide' => pht('Hide Blame'),
         'show' => pht('Show Blame'),
         'uri' => $ref->getBlameURI(),
@@ -170,7 +170,7 @@ abstract class PhabricatorDocumentRenderingEngine
     $view_button = id(new PHUIButtonView())
       ->setTag('a')
       ->setText(pht('View Options'))
-      ->setIcon('fa-file-image-o')
+      ->setIcon('fa-file-image')
       ->setColor(PHUIButtonView::GREY)
       ->setID($control_id)
       ->setMetadata($meta)

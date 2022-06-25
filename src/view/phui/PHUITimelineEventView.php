@@ -719,7 +719,7 @@ final class PHUITimelineEventView extends AphrontView {
         $source_id = $content_source->getContentSourceParameter('id');
         if ($source_id) {
           $items[] = id(new PhabricatorActionView())
-            ->setIcon('fa-envelope-o')
+            ->setIcon('fa-envelope')
             ->setHref('/transactions/raw/'.$xaction_phid.'/?email')
             ->setName(pht('View Email Body'))
             ->addSigil('transaction-raw')
@@ -744,7 +744,7 @@ final class PHUITimelineEventView extends AphrontView {
         ->setType(PhabricatorActionView::TYPE_DIVIDER);
 
       $remove_item = id(new PhabricatorActionView())
-        ->setIcon('fa-trash-o')
+        ->setIcon('fa-trash')
         ->setHref('/transactions/remove/'.$xaction_phid.'/')
         ->setName(pht('Remove Comment'))
         ->addSigil('transaction-remove')

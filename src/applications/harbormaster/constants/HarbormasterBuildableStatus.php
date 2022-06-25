@@ -68,25 +68,25 @@ final class HarbormasterBuildableStatus extends Phobject {
       self::STATUS_PREPARING => array(
         'name' => pht('Preparing'),
         'color' => 'blue',
-        'icon' => 'fa-hourglass-o',
+        'icon' => 'fa-solid fa-hourglass',
         'name.action' => pht('Build Preparing'),
       ),
       self::STATUS_BUILDING => array(
         'name' => pht('Building'),
         'color' => 'blue',
-        'icon' => 'fa-chevron-circle-right',
+        'icon' => 'fa-solid fa-chevron-circle-right',
         'name.action' => pht('Build Started'),
       ),
       self::STATUS_PASSED => array(
         'name' => pht('Passed'),
         'color' => 'green',
-        'icon' => 'fa-check-circle',
+        'icon' => 'fa-solid fa-check-circle',
         'name.action' => pht('Build Passed'),
       ),
       self::STATUS_FAILED => array(
         'name' => pht('Failed'),
         'color' => 'red',
-        'icon' => 'fa-times-circle',
+        'icon' => 'fa-solid fa-times-circle',
         'name.action' => pht('Build Failed'),
       ),
     );
@@ -100,7 +100,7 @@ final class HarbormasterBuildableStatus extends Phobject {
 
     return array(
       'name' => pht('Unknown ("%s")', $status),
-      'icon' => 'fa-question-circle',
+      'icon' => 'fa-solid fa-question-circle',
       'color' => 'bluegrey',
       'name.action' => pht('Build Status'),
     );

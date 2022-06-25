@@ -10,7 +10,7 @@ final class PhabricatorConpherencePreferencesSettingsPanel
   }
 
   public function getPanelMenuIcon() {
-    return 'fa-comment-o';
+    return 'fa-comment';
   }
 
   public function getPanelGroupKey() {

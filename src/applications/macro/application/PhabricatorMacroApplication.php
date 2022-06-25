@@ -15,7 +15,7 @@ final class PhabricatorMacroApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-file-image-o';
+    return 'fa-file-image';
   }
 
   public function getTitleGlyph() {

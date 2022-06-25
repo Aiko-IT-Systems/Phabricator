@@ -12,7 +12,7 @@ final class PhabricatorEmailPreferencesSettingsPanel
   }
 
   public function getPanelMenuIcon() {
-    return 'fa-envelope-open-o';
+    return 'fa-envelope-open';
   }
 
   public function getPanelGroupKey() {

@@ -192,7 +192,7 @@ final class PhameBlogManageController extends PhameBlogController {
 
     $curtain->addAction(
       id(new PhabricatorActionView())
-        ->setIcon('fa-picture-o')
+        ->setIcon('fa-image')
         ->setHref($this->getApplicationURI('blog/picture/'.$blog->getID().'/'))
         ->setName(pht('Edit Blog Picture'))
         ->setDisabled(!$can_edit)

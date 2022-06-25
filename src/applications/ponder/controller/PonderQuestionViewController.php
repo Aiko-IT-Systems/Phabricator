@@ -34,7 +34,7 @@ final class PonderQuestionViewController extends PonderController {
     $header->setHeaderIcon('fa-university');
 
     if ($question->getStatus() == PonderQuestionStatus::STATUS_OPEN) {
-      $header->setStatus('fa-square-o', 'bluegrey', pht('Open'));
+      $header->setStatus('fa-square', 'bluegrey', pht('Open'));
     } else {
       $text = PonderQuestionStatus::getQuestionStatusFullName(
         $question->getStatus());
@@ -146,10 +146,10 @@ final class PonderQuestionViewController extends PonderController {
 
     if ($question->getStatus() == PonderQuestionStatus::STATUS_OPEN) {
       $name = pht('Close Question');
-      $icon = 'fa-check-square-o';
+      $icon = 'fa-check-square';
     } else {
       $name = pht('Reopen Question');
-      $icon = 'fa-square-o';
+      $icon = 'fa-square';
     }
 
     $curtain->addAction(

@@ -19,7 +19,7 @@ final class PhabricatorSearchApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-search';
+    return 'fa-solid fa-search';
   }
 
   public function isLaunchable() {

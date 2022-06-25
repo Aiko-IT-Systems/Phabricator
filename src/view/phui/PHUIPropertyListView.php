@@ -11,7 +11,7 @@ final class PHUIPropertyListView extends AphrontView {
   private $stacked;
 
   const ICON_SUMMARY = 'fa-align-left';
-  const ICON_TESTPLAN = 'fa-file-text-o';
+  const ICON_TESTPLAN = 'fa-file-text';
 
   protected function canAppendChild() {
     return false;
@@ -72,7 +72,7 @@ final class PHUIPropertyListView extends AphrontView {
     $this->parts[] = array(
       'type' => 'section',
       'name' => $name,
-      'icon' => $icon,
+      'icon' => 'fa-solid '.$icon,
     );
     return $this;
   }

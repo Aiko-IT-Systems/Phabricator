@@ -38,7 +38,7 @@ abstract class PhabricatorConfigServicesController
 
     $nav->newLink('notification-servers')
       ->setName(pht('Notification Servers'))
-      ->setIcon('fa-bell-o')
+      ->setIcon('fa-bell')
       ->setHref(urisprintf('%s%s/', $services_uri, 'cluster/notifications'));
 
     $nav->newLink('repository-servers')

@@ -44,7 +44,7 @@ final class PholioMockViewController extends PholioController {
       $header_name = pht('Closed');
       $header_color = 'dark';
     } else {
-      $header_icon = 'fa-square-o';
+      $header_icon = 'fa-square';
       $header_name = pht('Open');
       $header_color = 'bluegrey';
     }

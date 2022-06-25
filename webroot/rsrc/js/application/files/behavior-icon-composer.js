@@ -41,7 +41,7 @@ JX.behavior('icon-composer', function(config) {
     nodes.colorInput.value = selected.color;
     nodes.iconInput.value = selected.icon;
 
-    var classes = ['phui-icon-view', 'phui-font-fa', 'compose-icon-bg'];
+    var classes = ['phui-icon-view', 'phui-font-fa', 'fa-solid', 'compose-icon-bg'];
     classes.push('compose-background-' + selected.color);
     classes.push(selected.icon);
 

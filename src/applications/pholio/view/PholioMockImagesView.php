@@ -124,7 +124,7 @@ final class PholioMockImagesView extends AphrontView {
 
     $full_icon = array(
       javelin_tag('span', array('aural' => true), pht('View Raw File')),
-      id(new PHUIIconView())->setIcon('fa-file-image-o'),
+      id(new PHUIIconView())->setIcon('fa-file-image'),
     );
 
     $download_icon = array(

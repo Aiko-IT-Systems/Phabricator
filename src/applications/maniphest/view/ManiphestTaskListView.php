@@ -88,7 +88,7 @@ final class ManiphestTaskListView extends ManiphestView {
         }
 
         $item->addIcon(
-          'fa-check-square-o grey',
+          'fa-check-square grey',
           phabricator_datetime($closed_epoch, $this->getUser()));
       } else {
         $item->addIcon(

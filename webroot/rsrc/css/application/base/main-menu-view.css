@@ -238,7 +238,7 @@
 button.phabricator-main-menu-search-dropdown .caret:before,
 a.phabricator-core-user-menu .caret:before {
   content: "\f107";
-  font-family: FontAwesome;
+  font-family: "Font Awesome 6 Pro";
 }
 
 .phabricator-main-menu-search button.phabricator-main-menu-search-dropdown

@@ -17,7 +17,7 @@ final class DrydockTextLogType extends DrydockLogType {
   }
 
   public function getLogTypeIcon(array $data) {
-    return 'fa-file-text-o grey';
+    return 'fa-file-text grey';
   }
 
   public function renderLog(array $data) {

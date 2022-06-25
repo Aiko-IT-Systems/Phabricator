@@ -229,7 +229,7 @@ final class DifferentialRevisionListView extends AphrontView {
           break;
         default:
           $size[] = id(new PHUIIconView())
-            ->setIcon('fa-square-o invisible');
+            ->setIcon('fa-square invisible');
           break;
       }
     }

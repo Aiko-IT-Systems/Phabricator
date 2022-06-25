@@ -88,10 +88,10 @@ final class DifferentialRequiredSignaturesField
       // If the viewer is the author, we show exactly what they need to sign.
 
       if (!$viewer_is_author) {
-        $item->setIcon('fa-file-text-o bluegrey');
+        $item->setIcon('fa-file-text bluegrey');
       } else {
         if (idx($this->getValue(), $handle->getPHID())) {
-          $item->setIcon('fa-check-square-o green');
+          $item->setIcon('fa-check-square green');
         } else {
           $item->setIcon('fa-times red');
         }

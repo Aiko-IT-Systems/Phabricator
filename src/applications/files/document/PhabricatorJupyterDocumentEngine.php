@@ -10,7 +10,7 @@ final class PhabricatorJupyterDocumentEngine
   }
 
   protected function getDocumentIconIcon(PhabricatorDocumentRef $ref) {
-    return 'fa-sun-o';
+    return 'fa-sun';
   }
 
   protected function getDocumentRenderingText(PhabricatorDocumentRef $ref) {

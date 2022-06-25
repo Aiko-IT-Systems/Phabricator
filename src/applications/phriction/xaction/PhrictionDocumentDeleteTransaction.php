@@ -75,7 +75,7 @@ final class PhrictionDocumentDeleteTransaction
   }
 
   public function getIcon() {
-    return 'fa-trash-o';
+    return 'fa-trash';
   }
 
   public function getColor() {

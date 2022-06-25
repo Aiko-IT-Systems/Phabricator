@@ -85,7 +85,7 @@ final class PhabricatorNotificationSearchEngine
     $viewer = $this->requireViewer();
 
     $image = id(new PHUIIconView())
-      ->setIcon('fa-bell-o');
+      ->setIcon('fa-bell');
 
     $button = id(new PHUIButtonView())
       ->setTag('a')

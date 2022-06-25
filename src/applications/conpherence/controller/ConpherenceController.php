@@ -119,7 +119,7 @@ abstract class ConpherenceController extends PhabricatorController {
       $header->addActionItem(
         id(new PHUIIconCircleView())
           ->addSigil('conpherence-widget-toggle')
-          ->setIcon('fa-group')
+          ->setIcon('fa-users')
           ->setHref('#')
           ->addClass('conpherence-participant-toggle'));
 

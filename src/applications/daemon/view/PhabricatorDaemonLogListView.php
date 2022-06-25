@@ -52,7 +52,7 @@ final class PhabricatorDaemonLogListView extends AphrontView {
           $status_tip = pht('This daemon exited cleanly.');
           break;
         case PhabricatorDaemonLog::STATUS_WAIT:
-          $status_icon = 'fa-clock-o blue';
+          $status_icon = 'fa-clock blue';
           $status_label = pht('Waiting');
           $status_tip = pht(
             'This daemon encountered an error recently and is waiting a '.

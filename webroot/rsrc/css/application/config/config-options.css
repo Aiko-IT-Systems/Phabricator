@@ -54,5 +54,5 @@
 
 .config-options-effective-value,
 .config-option-table .config-options-effective-value th {
-  background: {$gentle.highlight};
+  background: #446f42;
 }

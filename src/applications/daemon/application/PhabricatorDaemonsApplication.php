@@ -19,7 +19,7 @@ final class PhabricatorDaemonsApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-pied-piper-alt';
+    return 'fa-monitor-waveform';
   }
 
   public function getApplicationGroup() {

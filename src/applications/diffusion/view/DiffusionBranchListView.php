@@ -123,7 +123,7 @@ final class DiffusionBranchListView extends DiffusionView {
           $item->setStatusIcon('fa-code-fork', pht('Permanent Ref'));
         } else {
           $item->setStatusIcon(
-            'fa-folder-open-o grey', pht('Not a Permanent Ref'));
+            'fa-folder-open grey', pht('Not a Permanent Ref'));
         }
       }
 

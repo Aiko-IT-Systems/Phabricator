@@ -428,7 +428,7 @@ a.phui-tag-view:hover.phui-tag-checkered .phui-tag-core,
 /* - Disabled --------------------------------------------------------------- */
 
 .phui-tag-disabled .phui-tag-core {
-  background-color: {$sh-disabledbackground};
+  /*background-color: {$sh-disabledbackground};*/
   border-color: {$sh-lightdisabledborder};
   color: {$sh-disabledtext};
 }
@@ -459,7 +459,7 @@ a.phui-tag-view:hover.phui-tag-disabled .phui-tag-core {
 }
 
 .phui-tag-view.phui-tag-type-outline .phui-tag-core {
-  background: #fff;
+  /*background: #fff;*/
   padding: 0 6px 1px 6px;
 }
 

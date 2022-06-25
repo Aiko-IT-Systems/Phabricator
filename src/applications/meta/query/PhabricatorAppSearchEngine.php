@@ -210,8 +210,12 @@ final class PhabricatorAppSearchEngine
 
       foreach ($applications as $application) {
         $icon = $application->getIcon();
+        $isBrand = $application->isBrandIcon();
         if (!$icon) {
           $icon = 'application';
+        }
+        if (!isset($isBrand)) {
+          $isBrand = false;
         }
 
         $description = $application->getShortDescription();
@@ -227,7 +231,7 @@ final class PhabricatorAppSearchEngine
 
         $item = id(new PHUIObjectItemView())
           ->setHeader($name)
-          ->setImageIcon($icon)
+          ->setImageIcon($icon, $isBrand)
           ->setSideColumn($configure);
 
         if (!$application->isFirstParty()) {

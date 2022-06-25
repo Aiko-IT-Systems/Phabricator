@@ -34,7 +34,7 @@ final class PhabricatorApplicationDatasource
         continue;
       }
       $name = $application->getName().' '.$application->getShortDescription();
-      $img = 'phui-font-fa phui-icon-view '.$application->getIcon();
+      $img = 'phui-font-fa phui-icon-view fa-solid fa-brands'.$application->getIcon();
       $results[] = id(new PhabricatorTypeaheadResult())
         ->setName($name)
         ->setURI($uri)

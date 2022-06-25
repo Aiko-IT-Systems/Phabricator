@@ -3,6 +3,7 @@
 final class PHUITabView extends AphrontTagView {
 
   private $icon;
+  private $isBrand;
   private $name;
   private $key;
   private $keyLocked;
@@ -54,11 +55,16 @@ final class PHUITabView extends AphrontTagView {
 
   public function setIcon(PHUIIconView $icon) {
     $this->icon = $icon;
+    $this->isBrand = $icon->getIsBrand();
     return $this;
   }
 
   public function getIcon() {
     return $this->icon;
+  }
+
+  public function getIsBrand() {
+    return $this->isBrand;
   }
 
   public function getContentID() {
@@ -92,7 +98,7 @@ final class PHUITabView extends AphrontTagView {
 
     $icon = $this->getIcon();
     if ($icon) {
-      $item->setIcon($icon->getIconName());
+      $item->setIcon($icon->getIconName(), $this->isBrand);
     }
 
     $color = $this->getColor();

@@ -73,12 +73,12 @@ class PhabricatorSearchService
   public static function getConnectionStatusMap() {
     return array(
       self::STATUS_OKAY => array(
-        'icon' => 'fa-exchange',
+        'icon' => 'fa-solid fa-exchange',
         'color' => 'green',
         'label' => pht('Okay'),
       ),
       self::STATUS_FAIL => array(
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'red',
         'label' => pht('Failed'),
       ),

@@ -31,7 +31,7 @@ final class PhabricatorInlineSummaryView extends AphrontView {
       }
 
       $icon = id(new PHUIIconView())
-        ->setIcon('fa-file-code-o darkbluetext mmr');
+        ->setIcon('fa-file-code darkbluetext mmr');
       $header = phutil_tag(
         'th',
         array(

@@ -43,12 +43,12 @@ final class PhabricatorFlagRemoveFlagHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_IGNORE_UNFLAG => array(
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'grey',
         'name' => pht('Did Not Remove Flag'),
       ),
       self::DO_UNFLAG => array(
-        'icon' => 'fa-flag',
+        'icon' => 'fa-solid fa-flag',
         'name' => pht('Removed Flag'),
       ),
     );

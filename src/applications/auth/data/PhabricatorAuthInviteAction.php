@@ -74,7 +74,7 @@ final class PhabricatorAuthInviteAction extends Phobject {
   public function getIconForAction($action) {
     switch ($action) {
       case self::ACTION_SEND:
-        $icon = 'fa-envelope-o';
+        $icon = 'fa-envelope';
         $color = 'green';
         break;
       case self::ACTION_IGNORE:

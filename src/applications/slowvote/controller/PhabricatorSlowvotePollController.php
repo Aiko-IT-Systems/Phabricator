@@ -35,7 +35,7 @@ final class PhabricatorSlowvotePollController
           ));
     }
 
-    $header_icon = $poll->getIsClosed() ? 'fa-ban' : 'fa-square-o';
+    $header_icon = $poll->getIsClosed() ? 'fa-ban' : 'fa-square';
     $header_name = $poll->getIsClosed() ? pht('Closed') : pht('Open');
     $header_color = $poll->getIsClosed() ? 'indigo' : 'bluegrey';
 

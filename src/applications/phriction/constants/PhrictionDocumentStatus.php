@@ -37,25 +37,25 @@ final class PhrictionDocumentStatus
       array(
         'key' => self::STATUS_EXISTS,
         'name' => pht('Active'),
-        'icon' => 'fa-file-text-o',
+        'icon' => 'fa-solid fa-file-text',
         'color' => 'bluegrey',
       ),
       array(
         'key' => self::STATUS_DELETED,
         'name' => pht('Deleted'),
-        'icon' => 'fa-file-text-o',
+        'icon' => 'fa-solid fa-file-text',
         'color' => 'grey',
       ),
       array(
         'key' => self::STATUS_MOVED,
         'name' => pht('Moved'),
-        'icon' => 'fa-arrow-right',
+        'icon' => 'fa-solid fa-arrow-right',
         'color' => 'grey',
       ),
       array(
         'key' => self::STATUS_STUB,
         'name' => pht('Stub'),
-        'icon' => 'fa-file-text-o',
+        'icon' => 'fa-solid fa-file-text',
         'color' => 'grey',
       ),
     );

@@ -15,7 +15,7 @@ final class DiffusionCommitConcernTransaction
   }
 
   public function getIcon() {
-    return 'fa-times-circle-o';
+    return 'fa-times-circle';
   }
 
   public function getColor() {

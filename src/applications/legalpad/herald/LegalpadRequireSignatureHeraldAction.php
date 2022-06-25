@@ -78,12 +78,12 @@ final class LegalpadRequireSignatureHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_SIGNED => array(
-        'icon' => 'fa-terminal',
+        'icon' => 'fa-solid fa-terminal',
         'color' => 'green',
         'name' => pht('Already Signed'),
       ),
       self::DO_REQUIRED => array(
-        'icon' => 'fa-terminal',
+        'icon' => 'fa-solid fa-terminal',
         'color' => 'green',
         'name' => pht('Required Signature'),
       ),

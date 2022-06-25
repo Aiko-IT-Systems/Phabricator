@@ -310,42 +310,42 @@ abstract class HeraldAction extends Phobject {
   protected function getStandardEffectMap() {
     return array(
       self::DO_STANDARD_EMPTY => array(
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color' => 'grey',
         'name' => pht('No Targets'),
       ),
       self::DO_STANDARD_NO_EFFECT => array(
-        'icon' => 'fa-circle-o',
+        'icon' => 'fa-solid fa-circle',
         'color' => 'grey',
         'name' => pht('No Effect'),
       ),
       self::DO_STANDARD_INVALID => array(
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color' => 'red',
         'name' => pht('Invalid Targets'),
       ),
       self::DO_STANDARD_UNLOADABLE => array(
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color' => 'red',
         'name' => pht('Unloadable Targets'),
       ),
       self::DO_STANDARD_PERMISSION => array(
-        'icon' => 'fa-lock',
+        'icon' => 'fa-solid fa-lock',
         'color' => 'red',
         'name' => pht('No Permission'),
       ),
       self::DO_STANDARD_INVALID_ACTION => array(
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color' => 'red',
         'name' => pht('Invalid Action'),
       ),
       self::DO_STANDARD_WRONG_RULE_TYPE => array(
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color' => 'red',
         'name' => pht('Wrong Rule Type'),
       ),
       self::DO_STANDARD_FORBIDDEN => array(
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
         'color' => 'violet',
         'name' => pht('Forbidden'),
       ),

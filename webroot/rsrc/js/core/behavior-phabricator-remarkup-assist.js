@@ -212,8 +212,8 @@ JX.behavior('phabricator-remarkup-assist', function(config) {
         update(area, '`', sel || pht('monospaced text'), '`');
         break;
       case 'fa-list-ul':
-      case 'fa-list-ol':
-        ch = (action == 'fa-list-ol') ? '  # ' : '  - ';
+      case 'fa-listl':
+        ch = (action == 'fa-listl') ? '  # ' : '  - ';
         sel = prepend_char_to_lines(ch, sel, pht('List Item'));
         update(area, ((r.start === 0) ? '' : '\n\n') + ch, sel, '\n\n');
         break;
@@ -231,7 +231,7 @@ JX.behavior('phabricator-remarkup-assist', function(config) {
         var table_prefix = (r.start === 0 ? '' : '\n\n');
         update(area, table_prefix + '| ', sel || pht('data'), ' |');
         break;
-      case 'fa-meh-o':
+      case 'fa-meh':
         new JX.Workflow('/macro/meme/create/')
           .setHandler(function(response) {
             update(

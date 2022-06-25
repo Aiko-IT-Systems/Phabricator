@@ -67,19 +67,19 @@ final class HeraldWebhook
         'key' => self::HOOKSTATUS_FIREHOSE,
         'name' => pht('Firehose'),
         'color' => 'orange',
-        'icon' => 'fa-star-o',
+        'icon' => 'fa-solid fa-star',
       ),
       array(
         'key' => self::HOOKSTATUS_ENABLED,
         'name' => pht('Enabled'),
         'color' => 'bluegrey',
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
       ),
       array(
         'key' => self::HOOKSTATUS_DISABLED,
         'name' => pht('Disabled'),
         'color' => 'dark',
-        'icon' => 'fa-ban',
+        'icon' => 'fa-solid fa-ban',
       ),
     );
 
@@ -97,7 +97,7 @@ final class HeraldWebhook
     return array(
       'key' => $status,
       'name' => pht('Unknown ("%s")', $status),
-      'icon' => 'fa-question',
+      'icon' => 'fa-solid fa-question',
       'color' => 'indigo',
     );
   }

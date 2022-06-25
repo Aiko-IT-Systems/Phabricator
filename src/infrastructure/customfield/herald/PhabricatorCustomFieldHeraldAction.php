@@ -87,7 +87,7 @@ final class PhabricatorCustomFieldHeraldAction extends HeraldAction {
   protected function getActionEffectMap() {
     return array(
       self::DO_SET_FIELD => array(
-        'icon' => 'fa-pencil',
+        'icon' => 'fa-solid fa-pencil',
         'color' => 'green',
         'name' => pht('Set Field Value'),
       ),

@@ -22,7 +22,7 @@ final class PhabricatorMailOutboundStatus
 
   public static function getStatusIcon($status_code) {
     $icons = array(
-      self::STATUS_QUEUE => 'fa-clock-o',
+      self::STATUS_QUEUE => 'fa-clock',
       self::STATUS_FAIL  => 'fa-warning',
       self::STATUS_SENT  => 'fa-envelope',
       self::STATUS_VOID  => 'fa-trash',

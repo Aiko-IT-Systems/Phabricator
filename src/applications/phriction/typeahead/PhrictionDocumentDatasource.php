@@ -43,7 +43,7 @@ final class PhrictionDocumentDatasource
       $slug = $document->getSlug();
       $title = $content->getTitle();
 
-      $sprite = 'phabricator-search-icon phui-font-fa phui-icon-view fa-book';
+      $sprite = 'phabricator-search-icon phui-font-fa phui-icon-view fa-solid fa-book';
       $autocomplete = '[[ '.$slug.' ]]';
 
       $result = id(new PhabricatorTypeaheadResult())

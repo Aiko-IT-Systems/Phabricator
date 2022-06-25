@@ -45,12 +45,12 @@ final class PhabricatorFlagAddFlagHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_IGNORE => array(
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'grey',
         'name' => pht('Already Marked'),
       ),
       self::DO_FLAG => array(
-        'icon' => 'fa-flag',
+        'icon' => 'fa-solid fa-flag',
         'name' => pht('Flagged'),
       ),
     );

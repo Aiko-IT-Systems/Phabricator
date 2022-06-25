@@ -14,7 +14,7 @@ final class PhabricatorProjectDetailsProfileMenuItem
   }
 
   public function getMenuItemTypeIcon() {
-    return 'fa-file-text-o';
+    return 'fa-file-text';
   }
 
   public function canHideMenuItem(

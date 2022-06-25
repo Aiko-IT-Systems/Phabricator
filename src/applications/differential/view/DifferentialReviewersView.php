@@ -82,7 +82,7 @@ final class DifferentialReviewersView extends AphrontView {
               $color = 'blue';
               $label = pht('Commented');
             } else {
-              $icon = 'fa-comment-o';
+              $icon = 'fa-comment';
               $color = 'bluegrey';
               $label = pht('Commented Previously');
             }
@@ -103,7 +103,7 @@ final class DifferentialReviewersView extends AphrontView {
               $label = pht('Accepted');
             }
           } else {
-            $icon = 'fa-check-circle-o';
+            $icon = 'fa-check-circle';
             $color = 'bluegrey';
 
             if (!$is_current_action && $is_voided) {
@@ -128,7 +128,7 @@ final class DifferentialReviewersView extends AphrontView {
               $label = pht('Requested Changes');
             }
           } else {
-            $icon = 'fa-times-circle-o';
+            $icon = 'fa-times-circle';
             $color = 'red';
             if ($authority_name !== null) {
               $label = pht(

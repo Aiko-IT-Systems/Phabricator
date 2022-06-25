@@ -202,7 +202,7 @@ final class PhabricatorUsersInviteSendController
 
     $header = id(new PHUIHeaderView())
       ->setHeader($title)
-      ->setHeaderIcon('fa-group');
+      ->setHeaderIcon('fa-users');
 
     $box = id(new PHUIObjectBoxView())
       ->setHeaderText(

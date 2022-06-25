@@ -9,7 +9,7 @@ final class DrydockResourceActivationYieldLogType extends DrydockLogType {
   }
 
   public function getLogTypeIcon(array $data) {
-    return 'fa-clock-o green';
+    return 'fa-clock green';
   }
 
   public function renderLog(array $data) {

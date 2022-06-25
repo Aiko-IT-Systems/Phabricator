@@ -142,7 +142,7 @@ abstract class PhabricatorDocumentEngine
     PhabricatorDocumentRef $ref);
 
   protected function getDocumentIconIcon(PhabricatorDocumentRef $ref) {
-    return 'fa-file-o';
+    return 'fa-file';
   }
 
   protected function getDocumentRenderingText(PhabricatorDocumentRef $ref) {

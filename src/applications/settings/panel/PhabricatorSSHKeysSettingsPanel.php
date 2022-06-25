@@ -19,7 +19,7 @@ final class PhabricatorSSHKeysSettingsPanel extends PhabricatorSettingsPanel {
   }
 
   public function getPanelMenuIcon() {
-    return 'fa-file-text-o';
+    return 'fa-file-text';
   }
 
   public function getPanelGroupKey() {

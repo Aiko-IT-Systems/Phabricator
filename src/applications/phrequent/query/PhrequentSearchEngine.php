@@ -183,7 +183,7 @@ final class PhrequentSearchEngine extends PhabricatorApplicationSearchEngine {
                 '/phrequent/track/stop/'.
                 $usertime->getObjectPHID().'/'));
         }
-        $item->setStatusIcon('fa-clock-o green');
+        $item->setStatusIcon('fa-clock green');
       }
 
       $view->addItem($item);

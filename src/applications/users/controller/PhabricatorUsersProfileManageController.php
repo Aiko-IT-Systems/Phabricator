@@ -124,7 +124,7 @@ final class PhabricatorUsersProfileManageController
 
     $curtain->addAction(
       id(new PhabricatorActionView())
-        ->setIcon('fa-picture-o')
+        ->setIcon('fa-image')
         ->setName(pht('Edit Profile Picture'))
         ->setHref($this->getApplicationURI('picture/'.$id.'/'))
         ->setDisabled(!$can_edit)
@@ -139,10 +139,10 @@ final class PhabricatorUsersProfileManageController
         ->setHref('/settings/user/'.$user->getUsername().'/'));
 
     if ($user->getIsAdmin()) {
-      $empower_icon = 'fa-arrow-circle-o-down';
+      $empower_icon = 'fa-arrow-circle-down';
       $empower_name = pht('Remove Administrator');
     } else {
-      $empower_icon = 'fa-arrow-circle-o-up';
+      $empower_icon = 'fa-arrow-circle-up';
       $empower_name = pht('Make Administrator');
     }
 
@@ -163,7 +163,7 @@ final class PhabricatorUsersProfileManageController
         ->setHref($this->getApplicationURI('rename/'.$id.'/')));
 
     if ($user->getIsDisabled()) {
-      $disable_icon = 'fa-check-circle-o';
+      $disable_icon = 'fa-check-circle';
       $disable_name = pht('Enable User');
     } else {
       $disable_icon = 'fa-ban';

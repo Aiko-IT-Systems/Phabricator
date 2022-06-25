@@ -12,7 +12,7 @@ final class PhabricatorDashboardQueryPanelType
   }
 
   public function getIcon() {
-    return 'fa-search';
+    return 'fa-solid fa-search';
   }
 
   public function getPanelTypeDescription() {
@@ -223,7 +223,7 @@ final class PhabricatorDashboardQueryPanelType
       $context_phid);
 
     $actions[] = id(new PhabricatorActionView())
-      ->setIcon('fa-pencil-square-o')
+      ->setIcon('fa-pencil-square')
       ->setName(pht('Customize Query'))
       ->setWorkflow(true)
       ->setHref($customize_uri);

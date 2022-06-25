@@ -19,6 +19,7 @@ final class PHUIListItemView extends AphrontTagView {
   private $isExternal;
   private $key;
   private $icon;
+  private $isBrand;
   private $selected;
   private $disabled;
   private $renderNameAsTooltip;
@@ -119,8 +120,9 @@ final class PHUIListItemView extends AphrontTagView {
     return $this->selected;
   }
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->isBrand = $brand;
     return $this;
   }
 
@@ -131,6 +133,10 @@ final class PHUIListItemView extends AphrontTagView {
 
   public function getIcon() {
     return $this->icon;
+  }
+
+  public function getIsBrand() {
+    return $this->isBrand;
   }
 
   public function setCount($count) {

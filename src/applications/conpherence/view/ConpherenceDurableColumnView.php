@@ -357,21 +357,21 @@ final class ConpherenceDurableColumnView extends AphrontTagView {
         'name' => pht('Add Participants'),
         'disabled' => !$can_edit,
         'href' => '/conpherence/update/'.$conpherence->getID().'/',
-        'icon' => 'fa-plus',
+        'icon' => 'fa-solid fa-plus',
         'key' => ConpherenceUpdateActions::ADD_PERSON,
       );
       $actions[] = array(
         'name' => pht('Edit Room'),
         'disabled' => !$can_edit,
         'href' => '/conpherence/edit/'.$conpherence->getID().'/',
-        'icon' => 'fa-pencil',
+        'icon' => 'fa-solid fa-pencil',
         'key' => 'go_edit',
       );
       $actions[] = array(
         'name' => pht('View in Conpherence'),
         'disabled' => false,
         'href' => '/'.$conpherence->getMonogram(),
-        'icon' => 'fa-comments',
+        'icon' => 'fa-solid fa-comments',
         'key' => 'go_conpherence',
       );
     }
@@ -380,7 +380,7 @@ final class ConpherenceDurableColumnView extends AphrontTagView {
       'name' => pht('Hide Window'),
       'disabled' => false,
       'href' => '#',
-      'icon' => 'fa-times',
+      'icon' => 'fa-solid fa-times',
       'key' => 'hide_column',
     );
 

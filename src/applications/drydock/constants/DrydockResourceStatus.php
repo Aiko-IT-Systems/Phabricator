@@ -44,7 +44,7 @@ final class DrydockResourceStatus
       array(
         'key' => self::STATUS_PENDING,
         'name' => pht('Pending'),
-        'icon' => 'fa-clock-o',
+        'icon' => 'fa-solid fa-clock',
         'color' => 'blue',
         'isReleasable' => true,
         'isCommandable' => true,
@@ -52,7 +52,7 @@ final class DrydockResourceStatus
       array(
         'key' => self::STATUS_ACTIVE,
         'name' => pht('Active'),
-        'icon' => 'fa-check',
+        'icon' => 'fa-solid fa-check',
         'color' => 'green',
         'isReleasable' => true,
         'isCommandable' => true,
@@ -60,7 +60,7 @@ final class DrydockResourceStatus
       array(
         'key' => self::STATUS_RELEASED,
         'name' => pht('Released'),
-        'icon' => 'fa-circle-o',
+        'icon' => 'fa-solid fa-circle',
         'color' => 'blue',
         'isReleasable' => false,
         'isCommandable' => false,
@@ -68,7 +68,7 @@ final class DrydockResourceStatus
       array(
         'key' => self::STATUS_BROKEN,
         'name' => pht('Broken'),
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'indigo',
         'isReleasable' => true,
         'isCommandable' => false,
@@ -76,7 +76,7 @@ final class DrydockResourceStatus
       array(
         'key' => self::STATUS_DESTROYED,
         'name' => pht('Destroyed'),
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'grey',
         'isReleasable' => false,
         'isCommandable' => false,

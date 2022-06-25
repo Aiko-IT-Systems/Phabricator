@@ -497,7 +497,7 @@ final class PhabricatorRepositoryURI
         'short' => pht('Use default behavior.'),
       ),
       self::IO_OBSERVE => array(
-        'icon' => 'fa-download',
+        'icon' => 'fa-solid fa-download',
         'color' => 'green',
         'label' => pht('Observe'),
         'note' => pht(
@@ -505,7 +505,7 @@ final class PhabricatorRepositoryURI
         'short' => pht('Copy from a remote.'),
       ),
       self::IO_MIRROR => array(
-        'icon' => 'fa-upload',
+        'icon' => 'fa-solid fa-upload',
         'color' => 'green',
         'label' => pht('Mirror'),
         'note' => pht(
@@ -513,7 +513,7 @@ final class PhabricatorRepositoryURI
         'short' => pht('Push a copy to a remote.'),
       ),
       self::IO_NONE => array(
-        'icon' => 'fa-times',
+        'icon' => 'fa-solid fa-times',
         'color' => 'grey',
         'label' => pht('No I/O'),
         'note' => pht(
@@ -521,7 +521,7 @@ final class PhabricatorRepositoryURI
         'short' => pht('Do not perform any I/O.'),
       ),
       self::IO_READ => array(
-        'icon' => 'fa-folder',
+        'icon' => 'fa-solid fa-folder',
         'color' => 'blue',
         'label' => pht('Read Only'),
         'note' => pht(
@@ -530,7 +530,7 @@ final class PhabricatorRepositoryURI
         'short' => pht('Serve repository in read-only mode.'),
       ),
       self::IO_READWRITE => array(
-        'icon' => 'fa-folder-open',
+        'icon' => 'fa-solid fa-folderpen',
         'color' => 'blue',
         'label' => pht('Read/Write'),
         'note' => pht(
@@ -548,14 +548,14 @@ final class PhabricatorRepositoryURI
         'short' => pht('Use default behavior.'),
       ),
       self::DISPLAY_ALWAYS => array(
-        'icon' => 'fa-eye',
+        'icon' => 'fa-solid fa-eye',
         'color' => 'green',
         'label' => pht('Visible'),
         'note' => pht('This URI will be shown to users as a clone URI.'),
         'short' => pht('Show as a clone URI.'),
       ),
       self::DISPLAY_NEVER => array(
-        'icon' => 'fa-eye-slash',
+        'icon' => 'fa-solid fa-eye-slash',
         'color' => 'grey',
         'label' => pht('Hidden'),
         'note' => pht(

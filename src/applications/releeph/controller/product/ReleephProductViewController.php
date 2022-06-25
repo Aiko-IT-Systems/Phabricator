@@ -111,7 +111,7 @@ final class ReleephProductViewController extends ReleephProductController {
     } else {
       $status_name = pht('Reactivate Product');
       $status_href = "product/{$id}/action/activate/";
-      $status_icon = 'fa-plus-circle-o';
+      $status_icon = 'fa-plus-circle';
     }
 
     $actions->addAction(

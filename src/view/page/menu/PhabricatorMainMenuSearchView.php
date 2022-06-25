@@ -2,7 +2,7 @@
 
 final class PhabricatorMainMenuSearchView extends AphrontView {
 
-  const DEFAULT_APPLICATION_ICON = 'fa-dot-circle-o';
+  const DEFAULT_APPLICATION_ICON = 'fa-solid fa-dot-circle';
 
   private $id;
   private $application;
@@ -105,7 +105,7 @@ final class PhabricatorMainMenuSearchView extends AphrontView {
             'button',
             array(
               'id' => $button_id,
-              'class' => 'phui-icon-view phui-font-fa fa-search',
+              'class' => 'phui-icon-view phui-font-fa fa-solid fa-search',
             ),
             $search_text),
           $selector,
@@ -127,7 +127,7 @@ final class PhabricatorMainMenuSearchView extends AphrontView {
     );
 
     $items[] = array(
-      'icon' => 'fa-globe',
+      'icon' => 'fa-solid fa-globe',
       'name' => pht('All Documents'),
       'value' => 'all',
     );
@@ -174,7 +174,7 @@ final class PhabricatorMainMenuSearchView extends AphrontView {
       $query_name = $query->getQueryName();
 
       $items[] = array(
-        'icon' => 'fa-certificate',
+        'icon' => 'fa-solid fa-certificate',
         'name' => $query_name,
         'value' => $query_key,
       );
@@ -185,13 +185,13 @@ final class PhabricatorMainMenuSearchView extends AphrontView {
     );
 
     $items[] = array(
-      'icon' => 'fa-search-plus',
+      'icon' => 'fa-solid fa-search-plus',
       'name' => pht('Advanced Search'),
       'href' => '/search/query/advanced/',
     );
 
     $items[] = array(
-      'icon' => 'fa-book',
+      'icon' => 'fa-solid fa-book',
       'name' => pht('User Guide: Search'),
       'href' => PhabricatorEnv::getDoclink('Search User Guide'),
     );

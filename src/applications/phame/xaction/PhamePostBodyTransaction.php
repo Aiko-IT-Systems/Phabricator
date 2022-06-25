@@ -54,7 +54,7 @@ final class PhamePostBodyTransaction
   }
 
   public function getIcon() {
-    return 'fa-file-text-o';
+    return 'fa-file-text';
   }
 
 }

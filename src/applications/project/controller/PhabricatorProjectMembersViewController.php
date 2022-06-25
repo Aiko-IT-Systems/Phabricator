@@ -46,7 +46,7 @@ final class PhabricatorProjectMembersViewController
 
     $header = id(new PHUIHeaderView())
       ->setHeader($title)
-      ->setHeaderIcon('fa-group');
+      ->setHeaderIcon('fa-users');
 
     require_celerity_resource('project-view-css');
 
@@ -137,7 +137,7 @@ final class PhabricatorProjectMembersViewController
     $curtain->addAction(
       id(new PhabricatorActionView())
         ->setName($silence_text)
-        ->setIcon('fa-envelope-o')
+        ->setIcon('fa-envelope')
         ->setHref("/project/silence/{$id}/")
         ->setWorkflow(true)
         ->setDisabled(!$can_silence));

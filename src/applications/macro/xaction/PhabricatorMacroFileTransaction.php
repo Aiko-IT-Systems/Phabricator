@@ -98,7 +98,7 @@ final class PhabricatorMacroFileTransaction
   }
 
   public function getIcon() {
-    return 'fa-file-image-o';
+    return 'fa-file-image';
   }
 
 }

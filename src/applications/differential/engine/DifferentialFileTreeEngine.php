@@ -83,7 +83,7 @@ final class DifferentialFileTreeEngine
     if ($viewer->isLoggedIn()) {
       $tail_view->addMenuItem(
         id(new PHUIListItemView())
-          ->setIcon('fa-comment-o')
+          ->setIcon('fa-comment')
           ->setName(pht('Add Comment'))
           ->setKeyCommand('x')
           ->setHref('#'));
@@ -98,7 +98,7 @@ final class DifferentialFileTreeEngine
           ->setHref('#'))
       ->addMenuItem(
         id(new PHUIListItemView())
-          ->setIcon('fa-keyboard-o')
+          ->setIcon('fa-keyboard')
           ->setName(pht('Keyboard Reference'))
           ->setKeyCommand('?')
           ->setHref('#'));

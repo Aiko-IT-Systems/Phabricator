@@ -635,6 +635,25 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         'property' => 'twitter:title',
         'content' => $this->getTitle(),
       ));
+
+      /*
+    $fontawesome_kit = phutil_tag(
+      'script',
+      array(
+        'type' => 'text/javascript',
+        'crossorigin' => 'anonymous',
+        'src' => 'https://kit.fontawesome.com/b3ebf1f186.js',
+      ));*/
+
+      $fontawesome_kit = phutil_tag(
+        'link',
+        array(
+          'rel' => 'stylesheet',
+          'crossorigin' => 'anonymous',
+          'href' => 'https://site-assets.fontawesome.com/releases/v6.0.0/css/all.css',
+          /*'integrity' => 'sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==',
+          'referrerpolicy' => 'no-referrer',*/
+        ));
 /*
 og:type article
 
@@ -647,9 +666,10 @@ og:type article
 */
 
     return hsprintf(
-      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
+      '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s',
       parent::getHead(),
       $font_css,
+      $fontawesome_kit,
       $siteName,
       $description,
       $ogTitle,

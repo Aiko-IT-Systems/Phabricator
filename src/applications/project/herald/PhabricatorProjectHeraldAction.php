@@ -95,12 +95,12 @@ abstract class PhabricatorProjectHeraldAction
   protected function getActionEffectMap() {
     return array(
       self::DO_ADD_PROJECTS => array(
-        'icon' => 'fa-briefcase',
+        'icon' => 'fa-solid fa-briefcase',
         'color' => 'green',
         'name' => pht('Added Projects'),
       ),
       self::DO_REMOVE_PROJECTS => array(
-        'icon' => 'fa-minus-circle',
+        'icon' => 'fa-solid fa-minus-circle',
         'color' => 'green',
         'name' => pht('Removed Projects'),
       ),

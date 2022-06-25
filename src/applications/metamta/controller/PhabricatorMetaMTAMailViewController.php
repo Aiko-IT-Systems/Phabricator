@@ -291,7 +291,7 @@ final class PhabricatorMetaMTAMailViewController
     }
 
     $properties->addSectionHeader(
-      pht('Routing Rules'), 'fa-paper-plane-o');
+      pht('Routing Rules'), 'fa-paper-plane');
 
     $map = $mail->getDeliveredRoutingMap();
     $routing_detail = null;

@@ -167,7 +167,7 @@ final class PHUIObjectItemListExample extends PhabricatorUIExample {
       id(new PHUIObjectItemView())
         ->setHeader(pht('You Have The Power'))
         ->setHref('#')
-        ->setStatusIcon('fa-circle-o blue')
+        ->setStatusIcon('fa-circle blue')
         ->addAction(
           id(new PHUIListItemView())
             ->setHref('#')
@@ -178,7 +178,7 @@ final class PHUIObjectItemListExample extends PhabricatorUIExample {
       id(new PHUIObjectItemView())
         ->setHeader(pht('Believe In Yourself'))
         ->setHref('#')
-        ->setStatusIcon('fa-circle-o violet')
+        ->setStatusIcon('fa-circle violet')
         ->addAction(
           id(new PHUIListItemView())
             ->setHref('#')

@@ -178,21 +178,21 @@ final class PhabricatorPolicy
     switch ($this->getType()) {
       case PhabricatorPolicyType::TYPE_GLOBAL:
         static $map = array(
-          PhabricatorPolicies::POLICY_PUBLIC  => 'fa-globe',
-          PhabricatorPolicies::POLICY_USER    => 'fa-users',
-          PhabricatorPolicies::POLICY_ADMIN   => 'fa-eye',
-          PhabricatorPolicies::POLICY_NOONE   => 'fa-ban',
+          PhabricatorPolicies::POLICY_PUBLIC  => 'fa-solid fa-globe',
+          PhabricatorPolicies::POLICY_USER    => 'fa-solid fa-users',
+          PhabricatorPolicies::POLICY_ADMIN   => 'fa-solid fa-eye',
+          PhabricatorPolicies::POLICY_NOONE   => 'fa-solid fa-ban',
         );
-        return idx($map, $this->getPHID(), 'fa-question-circle');
+        return idx($map, $this->getPHID(), 'fa-solid fa-question-circle');
       case PhabricatorPolicyType::TYPE_USER:
-        return 'fa-user';
+        return 'fa-solid fa-user';
       case PhabricatorPolicyType::TYPE_PROJECT:
-        return 'fa-briefcase';
+        return 'fa-solid fa-briefcase';
       case PhabricatorPolicyType::TYPE_CUSTOM:
       case PhabricatorPolicyType::TYPE_MASKED:
-        return 'fa-certificate';
+        return 'fa-solid fa-certificate';
       default:
-        return 'fa-question-circle';
+        return 'fa-solid fa-question-circle';
     }
   }
 
