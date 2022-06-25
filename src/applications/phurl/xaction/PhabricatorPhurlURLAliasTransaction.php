@@ -71,7 +71,7 @@ final class PhabricatorPhurlURLAliasTransaction
   }
 
   public function getIcon() {
-    return 'fa-compress';
+    return 'fa-link-horizontal';
   }
 
 }
