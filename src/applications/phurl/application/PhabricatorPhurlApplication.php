@@ -19,7 +19,7 @@ final class PhabricatorPhurlApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'link-horizontal';
+    return 'fa-link-horizontal';
   }
 
   public function isPrototype() {
