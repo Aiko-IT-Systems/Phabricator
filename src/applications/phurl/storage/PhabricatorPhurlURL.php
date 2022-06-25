@@ -100,14 +100,18 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
   }
 
   public function getRedirectURI() {
-    if (strlen($this->getAlias())) {
-      $path = '/u/'.$this->getAlias();
-    } else {
-      $path = '/u/'.$this->getID();
-    }
     $domain = PhabricatorEnv::getEnvConfig('phurl.short-uri');
+    $base_path = '/';
     if (!$domain) {
       $domain = PhabricatorEnv::getEnvConfig('phabricator.base-uri');
+      $base_path = '/u/';
+    }
+    
+
+    if (strlen($this->getAlias())) {
+      $path = $base_path.$this->getAlias();
+    } else {
+      $path = $base_path.$this->getID();
     }
 
     $uri = new PhutilURI($domain);

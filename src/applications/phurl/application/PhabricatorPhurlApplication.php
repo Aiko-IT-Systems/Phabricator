@@ -59,6 +59,7 @@ final class PhabricatorPhurlApplication extends PhabricatorApplication {
       '/favicon.ico' => 'PhabricatorFaviconController',
       '/robots.txt' => 'PhabricatorRobotsShortController',
 
+      '/(?P<append>[^/]+)' => 'PhabricatorPhurlShortURLController',
       '/u/(?P<append>[^/]+)' => 'PhabricatorPhurlShortURLController',
       '.*' => 'PhabricatorPhurlShortURLDefaultController',
     );
