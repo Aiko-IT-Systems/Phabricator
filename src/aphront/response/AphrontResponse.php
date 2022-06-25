@@ -136,6 +136,8 @@ abstract class AphrontResponse extends Phobject {
       return null;
     }
 
+    $base_uri = $this->newContentSecurityPolicySource($base_uri);
+
     $csp = array();
     if ($cdn) {
       $default = $this->newContentSecurityPolicySource($cdn);
@@ -143,12 +145,12 @@ abstract class AphrontResponse extends Phobject {
       // If an alternate file domain is not configured and the user is viewing
       // a Phame blog on a custom domain or some other custom site, we'll still
       // serve resources from the main site. Include the main site explicitly.
-      $base_uri = $this->newContentSecurityPolicySource($base_uri);
-
       $default = "'self' {$base_uri}";
     }
 
     $csp[] = "default-src {$default}";
+
+    $csp[] = "font-src 'self' {$default} {$base_uri} https://npm.fontawesome.com https://cdn.fontawesome.com https://fontawesome.com https://fonts.gstatic.com https://themes.googleusercontent.com";
 
     // We use "data:" URIs to inline small images into CSS. This policy allows
     // "data:" URIs to be used anywhere, but there doesn't appear to be a way
@@ -158,18 +160,18 @@ abstract class AphrontResponse extends Phobject {
     // We use inline style="..." attributes in various places, many of which
     // are legitimate. We also currently use a <style> tag to implement the
     // "Monospaced Font Preference" setting.
-    $csp[] = "style-src {$default} 'unsafe-inline'";
+    $csp[] = "style-src {$default} 'unsafe-inline' https://assets.zendesk.com data:";
 
     // On a small number of pages, including the Stripe workflow and the
     // ReCAPTCHA challenge, we embed external Javascript directly.
-    $csp[] = $this->newContentSecurityPolicy('script-src', $default);
+    $csp[] = "script-src 'self' {$default} {$base_uri} 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://google.com https://ajax.googleapis.com  https://ssl.google-analytics.com https://assets.zendesk.com https://connect.facebook.net";
 
     // We need to specify that we can connect to ourself in order for AJAX
     // requests to work.
     $csp[] = $this->newContentSecurityPolicy('connect-src', "'self'");
 
     // DarkConsole and PHPAST both use frames to render some content.
-    $csp[] = $this->newContentSecurityPolicy('frame-src', "'self'");
+    $csp[] = $this->newContentSecurityPolicy('frame-src', "'self' https://player.vimeo.com https://assets.zendesk.com https://www.facebook.com https://s-static.ak.facebook.com https://tautt.zendesk.com");
 
     // This is a more modern flavor of of "X-Frame-Options" and prevents
     // clickjacking attacks where the page is included in a tiny iframe and
