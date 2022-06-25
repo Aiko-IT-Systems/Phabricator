@@ -19,11 +19,11 @@ final class PhabricatorPhurlApplication extends PhabricatorApplication {
   }
 
   public function getIcon() {
-    return 'fa-compress';
+    return 'link-horizontal';
   }
 
   public function isPrototype() {
-    return true;
+    return false;
   }
 
   public function getApplicationGroup() {
