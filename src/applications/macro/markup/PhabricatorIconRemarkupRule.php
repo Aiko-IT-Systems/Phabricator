@@ -31,6 +31,8 @@ final class PhabricatorIconRemarkupRule extends PhutilRemarkupRule {
     //   {icon,camera}
     //   {icon camera color=red}
     //   {icon, camera, color=red}
+    //   {icon brand-icon color=red brand}
+    //   {icon, brand-icon, color=red, brand}
 
     $extra = ltrim($extra, ", \n");
     $extra = preg_split('/[\s,]+/', $extra, 2);
@@ -79,8 +81,14 @@ final class PhabricatorIconRemarkupRule extends PhutilRemarkupRule {
       $classes[] = 'ph-spin';
     }
 
+    $brand = $options['brand'];
+    $is_brand = false;
+    if ($brand) {
+      $is_brand = true;
+    }
+
     $icon_view = id(new PHUIIconView())
-      ->setIcon('fa-'.$icon, implode(' ', $classes));
+      ->setIcon('fa-'.$icon, implode(' ', $classes), $is_brand);
 
     return $this->getEngine()->storeText($icon_view);
   }
