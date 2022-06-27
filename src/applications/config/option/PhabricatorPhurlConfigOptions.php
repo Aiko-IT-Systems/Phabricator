@@ -20,7 +20,11 @@ final class PhabricatorPhurlConfigOptions
   }
 
   public function getOptions() {
-    $phurlDomainsHelp = pht('Set the URI that Phurl will use to share shortened URLs.');
+    $phurlDomainsHelp = $this->deformat(pht(<<<EOTEXT
+Set the domains that Phurl will use to share shortened URLs.
+
+You may have to configure the domains in your DNS server to point to %s
+EOTEXT), PhabricatorEnv::getProductionURI('/'));
     $phurlDomainsExample = array('https://s.phurl.io', 'https://s.phurl.dev');
     $phurlDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);
 
