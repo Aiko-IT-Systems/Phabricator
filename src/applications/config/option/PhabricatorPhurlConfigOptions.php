@@ -29,14 +29,14 @@ Set the domains that Phurl will use to share shortened URLs.
 You may have to configure the domains in your DNS server to point to **%s**.
 EOTEXT, $domain));
 
-    $phurlDomainsExample = array('https://s.$domain');
+    $phurlDomainsExample = array('https://s'.$domain);
     $phurlDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);
 
-    $phurlMultiDomainsExample = array('https://s1.$domain', 'https://s2.$domain');
+    $phurlMultiDomainsExample = array('https://s1'.$domain, 'https://s2'.$domain);
     $phurlMultiDomainsExample = id(new PhutilJSON())->encodeAsList($phurlMultiDomainsExample);
 
     return array(
-      $this->newOption('phurl.short-uri', 'wild', array())
+      $this->newOption('phurl.short-uris', 'wild', array())
         ->setLocked(false)
         ->setSummary(pht('Domains that Phurl will use to shorten URLs.'))
         ->setDescription($phurlDomainsHelp)
