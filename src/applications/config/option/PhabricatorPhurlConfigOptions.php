@@ -24,7 +24,7 @@ final class PhabricatorPhurlConfigOptions
 Set the domains that Phurl will use to share shortened URLs.
 
 You may have to configure the domains in your DNS server to point to %s
-EOTEXT, PhabricatorEnv::getProductionURI('/')));
+EOTEXT, PhabricatorEnv::getEnvConfig('phabricator.base-uri')));
     $phurlDomainsExample = array('https://s.phurl.io', 'https://s.phurl.dev');
     $phurlDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);
 
