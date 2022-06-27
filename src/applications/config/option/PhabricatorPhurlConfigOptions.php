@@ -33,7 +33,7 @@ EOTEXT, $domain));
     $phurlDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);
 
     $phurlMultiDomainsExample = array('https://s.phurl.io', 'https://s.phurl.dev');
-    $phurlMultiDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);
+    $phurlMultiDomainsExample = id(new PhutilJSON())->encodeAsList($phurlMultiDomainsExample);
 
     return array(
       $this->newOption('phurl.short-uri', 'wild', array())
