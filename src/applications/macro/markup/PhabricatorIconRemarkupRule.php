@@ -35,7 +35,7 @@ final class PhabricatorIconRemarkupRule extends PhutilRemarkupRule {
     //   {icon, brand-icon, color=red, brand}
 
     $extra = ltrim($extra, ", \n");
-    $extra = preg_split('/[\s,]+/', $extra, 2);
+    $extra = preg_split('/[\s,]+/', $extra, 3);
 
     // Choose some arbitrary default icon so that previews render in a mostly
     // reasonable way as you're typing the syntax.
@@ -44,6 +44,7 @@ final class PhabricatorIconRemarkupRule extends PhutilRemarkupRule {
     $defaults = array(
       'color' => null,
       'spin' => false,
+      'brand' => false,
     );
 
     $options = idx($extra, 1, '');
@@ -58,6 +59,8 @@ final class PhabricatorIconRemarkupRule extends PhutilRemarkupRule {
     if (!$icon_names) {
       $icon_names = array_fuse(PHUIIconView::getIcons());
     }
+
+    $brand = $options['brand'];
 
     static $color_names;
     if (!$color_names) {
@@ -81,14 +84,8 @@ final class PhabricatorIconRemarkupRule extends PhutilRemarkupRule {
       $classes[] = 'ph-spin';
     }
 
-    $brand = $options['brand'];
-    $is_brand = false;
-    if ($brand) {
-      $is_brand = true;
-    }
-
     $icon_view = id(new PHUIIconView())
-      ->setIcon('fa-'.$icon, implode(' ', $classes), $is_brand);
+      ->setIcon('fa-'.$icon, implode(' ', $classes), $brand);
 
     return $this->getEngine()->storeText($icon_view);
   }

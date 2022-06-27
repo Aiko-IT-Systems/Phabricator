@@ -898,7 +898,6 @@ final class PHUIIconView extends AphrontTagView {
       'fa-superpowers',
       'fa-wpexplorer',
       'fa-meetup',
-
     );
   }
 
