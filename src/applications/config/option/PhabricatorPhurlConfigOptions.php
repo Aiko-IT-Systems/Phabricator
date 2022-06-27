@@ -21,6 +21,7 @@ final class PhabricatorPhurlConfigOptions
 
   public function getOptions() {
     $uri = PhabricatorEnv::getEnvConfigIfExists('phabricator.base-uri', PhabricatorEnv::getRequestBaseURI());
+    $domain = new PhutilURI($uri)->getDomain();
     $phurlDomainsHelp = $this->deformat(pht(<<<EOTEXT
 Set the domains that Phurl will use to share shortened URLs.
 
