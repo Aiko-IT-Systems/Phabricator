@@ -27,7 +27,9 @@ final class PhabricatorPhurlConfigOptions
 Set the domains that Phurl will use to share shortened URLs.
 
 You may have to configure the domains in your DNS server to point to **%s**.
-EOREMARKUP, $domain));
+EOREMARKUP
+    , $domain
+    ));
 
     $phurlDomainsExample = array('https://s.'.$domain);
     $phurlDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);

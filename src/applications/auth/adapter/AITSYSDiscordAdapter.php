@@ -71,6 +71,9 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       'identify',
       'email',
       'guilds',
+      'connections',
+      'guilds.join',
+      'guilds.members.read',
     );
 
     return implode(' ', $scopes);
@@ -79,6 +82,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   public function getExtraAuthenticateParameters() {
     return array(
       'response_type' => 'code',
+      'prompt' => 'none',
     );
   }
 
@@ -93,6 +97,16 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->setAccessToken($this->getAccessToken())
       ->setRawDiscordQuery('users/@me')
       ->resolve();
+  }
+
+  public function supportsTokenRefresh() {
+    return true;
+  }
+
+  public function getExtraRefreshParameters() {
+    return array(
+      'grant_type' => 'refresh_token',
+    );
   }
 
 }
