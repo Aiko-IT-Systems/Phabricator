@@ -83,6 +83,10 @@ final class PhabricatorUserCardView extends AphrontTagView {
       $tag_icon = 'fa-users';
       $tag_title = pht('Group');
       $tag_shade = PHUITagView::COLOR_VIOLET;
+    } else if ($user->getIsSystemAgent()) {
+      $tag_icon = 'fa-robot';
+      $tag_title = pht('Bot');
+      $tag_shade = PHUITagView::COLOR_ORANGE;
     } else if ($user->getIsAdmin()) {
       $tag_icon = 'fa-user-shield';
       $tag_title = pht('Administrator');
