@@ -162,11 +162,11 @@ final class PhabricatorUsersProfileManageController
         ->setWorkflow(true)
         ->setHref($this->getApplicationURI('rename/'.$id.'/')));
 
-    if ($user->getIsDisabled()) {
-      $disable_icon = 'fa-check-circle';
+    if (!$user->getIsDisabled()) {
+      $disable_icon = 'fa-user-unlock';
       $disable_name = pht('Enable User');
     } else {
-      $disable_icon = 'fa-ban';
+      $disable_icon = 'fa-user-lock';
       $disable_name = pht('Disable User');
     }
 
