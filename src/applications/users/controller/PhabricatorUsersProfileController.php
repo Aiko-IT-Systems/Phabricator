@@ -63,6 +63,7 @@ abstract class PhabricatorUsersProfileController
 
     if ($user->getIsSystemAgent()) {
       $tags[] = id(clone $tag)
+        ->setIcon('fa-robot')
         ->setName(pht('Bot'))
         ->setColor('orange');
     }
