@@ -6,7 +6,7 @@ final class PhrictionHovercardEngineExtension
   const EXTENSIONKEY = 'wiki';
 
   public function isExtensionEnabled() {
-    return true;
+    return false;
   }
 
   public function getExtensionName() {
