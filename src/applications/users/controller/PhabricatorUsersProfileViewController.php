@@ -117,7 +117,7 @@ Description:
     ->withAccountTypes(array('discord'))
     ->execute();
 
-    JX.Notification('show', 'Discord: '.$externalAccounts[0]->getAccountURI());
+    phlog($externalAccounts);
 
     if (!$view->hasAnyProperties()) {
       return null;
