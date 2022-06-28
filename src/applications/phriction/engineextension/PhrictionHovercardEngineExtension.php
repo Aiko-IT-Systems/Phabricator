@@ -18,6 +18,7 @@ final class PhrictionHovercardEngineExtension
   }
 
   public function willRenderHovercards(array $objects) {
+    $viewer = $this->getViewer();
     $phids = mpull($objects, 'getPHID');
 
     $wikis = id(new PhrictionDocumentQuery())
