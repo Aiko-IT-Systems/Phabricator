@@ -54,7 +54,7 @@ final class AITSYSDiscordFuture extends FutureProxy {
       $future = new HTTPSFuture($uri);
       $future->setData($this->params);
       $future->addHeader('Authorization', 'Bearer '.$this->accessToken);
-      $future->addHeader('User-Agent', "AITSYS Bugs - {$this->version})");
+      $future->addHeader('User-Agent', "Phabricator OAuth (https://github.com/Aiko-IT-Systems/Phabricator, {$this->version})");
       $future->setMethod($this->method);
 
       $this->future = $future;
