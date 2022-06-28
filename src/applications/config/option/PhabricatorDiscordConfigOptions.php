@@ -26,7 +26,8 @@ final class PhabricatorDiscordConfigOptions
   public function getOptions() {
     return array(
       $this->newOption('discord.bot', 'string', null)
-        ->setLocked(false)
+        ->setLocked(true)
+        ->setHidden(true)
         ->setSummary(pht('Discord configuration'))
         ->setDescription(pht('Discord bot token')),
     );
