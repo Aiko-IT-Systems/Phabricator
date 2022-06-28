@@ -114,7 +114,7 @@ Description:
     $externalAccounts = id(new PhabricatorExternalAccountQuery())
     ->setViewer($viewer)
     ->withUserPHIDs(array($user->getPHID()))
-    ->withProviderConfigPHIDs(array(AITSYSDiscordAuthProvider::getPHID()))
+    ->withAccountTypes(array('discord'))
     ->execute();
 
     JX.Notification('show', 'Discord: '.$externalAccounts[0]->getAccountURI());
