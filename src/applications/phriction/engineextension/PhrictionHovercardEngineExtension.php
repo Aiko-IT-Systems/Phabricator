@@ -18,20 +18,15 @@ final class PhrictionHovercardEngineExtension
   }
 
   public function willRenderHovercards(array $objects) {
-    $viewer = $this->getViewer();
     $phids = mpull($objects, 'getPHID');
 
-    $users = id(new PhabricatorUsersQuery())
-      ->setViewer($viewer)
+    $wikis = id(new PhrictionDocumentQuery())
       ->withPHIDs($phids)
-      ->needAvailability(true)
-      ->needProfileImage(true)
-      ->needProfile(true)
       ->execute();
-    $users = mpull($users, null, 'getPHID');
+    $wikis = mpull($users, null, 'getPHID');
 
     return array(
-      'users' => $users,
+      'wikis' => $wikis,
     );
   }
 
@@ -42,19 +37,19 @@ final class PhrictionHovercardEngineExtension
     $data) {
     $viewer = $this->getViewer();
 
-    $user = idx($data['users'], $object->getPHID());
-    if (!$user) {
+    $wiki = idx($data['wikis'], $object->getPHID());
+    if (!$wiki) {
       return;
     }
 
     $is_exiled = $hovercard->getIsExiled();
 
-    $user_card = id(new PhabricatorUserCardView())
-      ->setProfile($user)
+    $wiki_card = id(new PhabricatorPhrictionCardView())
+      ->setWiki($wiki)
       ->setViewer($viewer)
       ->setIsExiled($is_exiled);
 
-    $hovercard->appendChild($user_card);
+    $hovercard->appendChild($wiki_card);
   }
 
 }
