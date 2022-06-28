@@ -118,7 +118,7 @@ Description:
     ->needAccountIdentifiers(true)
     ->execute();
 
-    phlog($externalAccounts[1]->getAccountIdentifiers()->identifierRaw);
+    phlog($externalAccounts[1]->getAccountIdentifiers());
 
     if (!$view->hasAnyProperties()) {
       return null;
