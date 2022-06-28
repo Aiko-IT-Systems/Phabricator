@@ -48,8 +48,9 @@ abstract class PhabricatorUsersProfileController
     $tags = array();
     if ($user->getIsAdmin()) {
       $tags[] = id(clone $tag)
+        ->setIcon('user-shield')
         ->setName(pht('Administrator'))
-        ->setColor('blue');
+        ->setColor('red');
     }
 
     // "Disabled" gets a stronger status tag below.

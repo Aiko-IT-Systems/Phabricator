@@ -101,7 +101,7 @@ final class PhabricatorUsersIconSet
       ),
       array(
         'key' => 'administration',
-        'icon' => 'fa-solid fa-fax',
+        'icon' => 'fa-solid fa-user-shield',
         'name' => pht('Administration'),
       ),
       array(
