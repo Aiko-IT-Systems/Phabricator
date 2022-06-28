@@ -115,6 +115,7 @@ Description:
     ->setViewer($viewer)
     ->withUserPHIDs(array($user->getPHID()))
     ->withAccountTypes(array('discord'))
+    ->needAccountIdentifiers(true)
     ->execute();
 
     phlog($externalAccounts[1]->getAccountIdentifiers());
