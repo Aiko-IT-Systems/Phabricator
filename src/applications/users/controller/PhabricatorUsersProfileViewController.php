@@ -111,13 +111,13 @@ Description:
       PhabricatorCustomField::ROLE_VIEW);
     $field_list->appendFieldsToPropertyList($user, $viewer, $view);
 
-    $externalAccounts = id(new PhabricatorExternalAccountQuery())
+    $externalAccounts = idx(new PhabricatorExternalAccountQuery())
     ->setViewer($viewer)
     ->withUserPHIDs(array($user->getPHID()))
     ->withAccountTypes(array('discord'))
     ->execute();
 
-    phlog($externalAccounts[0]->getAccountURI());
+    phlog($externalAccounts->getAccountURI());
 
     if (!$view->hasAnyProperties()) {
       return null;
