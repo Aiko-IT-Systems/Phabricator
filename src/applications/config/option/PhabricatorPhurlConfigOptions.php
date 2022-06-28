@@ -23,11 +23,11 @@ final class PhabricatorPhurlConfigOptions
     $uri = PhabricatorEnv::getEnvConfigIfExists('phabricator.base-uri', PhabricatorEnv::getRequestBaseURI());
     $domain = new PhutilURI($uri);
     $domain = phutil_utf8_strtolower($domain->getDomain());
-    $phurlDomainsHelp = $this->deformat(pht(<<<EOTEXT
+    $phurlDomainsHelp = $this->deformat(pht(<<<EOREMARKUP
 Set the domains that Phurl will use to share shortened URLs.
 
 You may have to configure the domains in your DNS server to point to **%s**.
-EOTEXT, $domain));
+EOREMARKUP, $domain));
 
     $phurlDomainsExample = array('https://s.'.$domain);
     $phurlDomainsExample = id(new PhutilJSON())->encodeAsList($phurlDomainsExample);
@@ -41,7 +41,7 @@ EOTEXT, $domain));
         ->setSummary(pht('Domains that Phurl will use to shorten URLs.'))
         ->setDescription($phurlDomainsHelp)
         ->addExample($phurlDomainsExample, pht('Single Domain Example'))
-        ->addExample($phurlMultiDomainsExample, pht('Multi Domain Example')),
+        ->addExample($phurlMultiDomainsExample, pht('Multi Domain Example'))
     );
   }
 }
