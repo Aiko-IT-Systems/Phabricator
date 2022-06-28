@@ -69,12 +69,12 @@ final class PhabricatorUserCardView extends AphrontTagView {
     if ($user->getIsDisabled()) {
       $tag_icon = 'fa-ban';
       $tag_title = pht('Disabled');
-      $tag_shade = PHUITagView::COLOR_RED;
+      $tag_shade = PHUITagView::COLOR_DISABLED;
       $classes[] = 'phui-image-disabled';
     } else if (!$user->getIsApproved()) {
       $tag_icon = 'fa-ban';
       $tag_title = pht('Unapproved Account');
-      $tag_shade = PHUITagView::COLOR_RED;
+      $tag_shade = PHUITagView::COLOR_ORANGE;
     } else if (!$user->getIsEmailVerified()) {
       $tag_icon = 'fa-envelope';
       $tag_title = pht('Email Not Verified');
@@ -84,9 +84,9 @@ final class PhabricatorUserCardView extends AphrontTagView {
       $tag_title = pht('Group');
       $tag_shade = PHUITagView::COLOR_VIOLET;
     } else if ($user->getIsAdmin()) {
-      $tag_icon = 'fa-star';
+      $tag_icon = 'fa-user-shield';
       $tag_title = pht('Administrator');
-      $tag_shade = PHUITagView::COLOR_INDIGO;
+      $tag_shade = PHUITagView::COLOR_RED;
     } else {
       $tag_icon = PhabricatorUsersIconSet::getIconIcon($profile->getIcon());
       $tag_title = $profile->getDisplayTitle();
