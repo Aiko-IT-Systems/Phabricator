@@ -4,7 +4,7 @@ final class PhabricatorUsersListController
   extends PhabricatorUsersController {
 
   public function shouldAllowPublic() {
-    return true;
+    return false;
   }
 
   public function shouldRequireAdmin() {

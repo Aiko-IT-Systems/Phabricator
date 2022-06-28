@@ -443,12 +443,12 @@ final class PhabricatorAuthRegisterController
               $content_source = PhabricatorContentSource::newFromRequest(
                 $request);
 
-              $users_application_phid = id(new PhabricatorUsersApplication())
+              $system_application_phid = id(new PhabricatorSystemApplication())
                 ->getPHID();
 
               $transaction_editor = id(new PhabricatorUserTransactionEditor())
                 ->setActor($actor)
-                ->setActingAsPHID($users_application_phid)
+                ->setActingAsPHID($system_application_phid)
                 ->setContentSource($content_source)
                 ->setContinueOnMissingFields(true);
 

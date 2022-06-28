@@ -48,8 +48,8 @@ abstract class PhabricatorUsersProfileController
     $tags = array();
     if ($user->getIsAdmin()) {
       $tags[] = id(clone $tag)
-        ->setIcon('user-shield')
-        ->setName(pht('Administrator'))
+        ->setIcon('fa-user-shield')
+        ->setName(pht('Admin'))
         ->setColor('red');
     }
 
@@ -63,6 +63,7 @@ abstract class PhabricatorUsersProfileController
 
     if ($user->getIsSystemAgent()) {
       $tags[] = id(clone $tag)
+        ->setIcon('fa-robot')
         ->setName(pht('Bot'))
         ->setColor('orange');
     }
@@ -75,6 +76,7 @@ abstract class PhabricatorUsersProfileController
 
     if ($user->getIsGroup()) {
       $tags[] = id(clone $tag)
+        ->setIcon('fa-users')
         ->setName(pht('Group'))
         ->setColor('orange');
     }
