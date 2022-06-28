@@ -49,7 +49,7 @@ abstract class PhabricatorUsersProfileController
     if ($user->getIsAdmin()) {
       $tags[] = id(clone $tag)
         ->setIcon('fa-user-shield')
-        ->setName(pht('Administrator'))
+        ->setName(pht('Admin'))
         ->setColor('red');
     }
 
