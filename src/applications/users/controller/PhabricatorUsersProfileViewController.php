@@ -117,7 +117,7 @@ Description:
     ->withAccountTypes(array('discord'))
     ->execute();
 
-    phlog($externalAccounts);
+    phlog($externalAccounts[1]->accountURI);
 
     if (!$view->hasAnyProperties()) {
       return null;
