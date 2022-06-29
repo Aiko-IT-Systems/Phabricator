@@ -167,7 +167,7 @@ final class PhabricatorUserBirthdayField
         '%s set %s to %s on %s.',
         $xaction->renderHandleLink($author_phid),
         $this->getFieldName(),
-        phabricator_datetime($new, $viewer),
+        phabricator_date($new, $viewer),
         $xaction->renderHandleLink($object_phid));
     } else if (!$new) {
       return pht(
@@ -180,8 +180,8 @@ final class PhabricatorUserBirthdayField
         '%s changed %s from %s to %s on %s.',
         $xaction->renderHandleLink($author_phid),
         $this->getFieldName(),
-        phabricator_datetime($old, $viewer),
-        phabricator_datetime($new, $viewer),
+        phabricator_date($old, $viewer),
+        phabricator_date($new, $viewer),
         $xaction->renderHandleLink($object_phid));
     }
   }
