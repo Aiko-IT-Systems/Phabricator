@@ -98,6 +98,21 @@ Description:
         ));
   }
 
+  private function loadExternalAccounts(PhabricatorUser $user, PhabricatorUser $viewer) {
+    $accs = id(new PhabricatorExternalAccountQuery())
+    ->setViewer($viewer)
+    ->withUserPHIDs(array($user->getPHID()))
+    ->withoutAccountTypes(array('password'))
+    ->needAccountIdentifiers(true)
+    ->execute();
+
+    usort($accs, function($a, $b) {
+      return strcmp($a->getProviderConfig()->getDisplayName(), $b->getProviderConfig()->getDisplayName());
+    });
+
+    return $accs;
+  }
+
   private function buildPropertyView(
     PhabricatorUser $user) {
 
@@ -111,14 +126,26 @@ Description:
       PhabricatorCustomField::ROLE_VIEW);
     $field_list->appendFieldsToPropertyList($user, $viewer, $view);
 
-    $externalAccounts = id(new PhabricatorExternalAccountQuery())
-    ->setViewer($viewer)
-    ->withUserPHIDs(array($user->getPHID()))
-    ->withAccountTypes(array('discord'))
-    ->needAccountIdentifiers(true)
-    ->execute();
+    $view->addSectionHeader("Linked Accounts");
 
-    phlog($externalAccounts[1]->getAccountIdentifiers());
+    $externalAccounts = $this->loadExternalAccounts($viewer, $user);
+
+    foreach($externalAccounts as $externalAccount) {
+      $uri = $externalAccount->getAccountUri();
+      $name = $externalAccount->getUsername();
+      $providerConfig = $externalAccount->getProviderConfig();
+      $providerName = $providerConfig->getDisplayName();
+      $providerIcon = strtolower($providerName);
+      
+      $icon = id(new PHUIIconView())
+        ->setIcon('fa-'.$providerIcon, null, true);
+
+      $link_view = id(new PHUILinkView())
+        ->setURI($uri)
+        ->setTarget('_blank')
+        ->setText($name);
+      $view->addProperty($icon, $link_view);
+    }
 
     if (!$view->hasAnyProperties()) {
       return null;

@@ -30,7 +30,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountName() {
-    $user = $this->getOAuthAccountData('username');
+    $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
     return $user;
   }
 

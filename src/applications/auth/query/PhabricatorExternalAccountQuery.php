@@ -20,6 +20,7 @@ final class PhabricatorExternalAccountQuery
   private $accountSecrets;
   private $providerConfigPHIDs;
   private $accountTypes;
+  private $negateAccountTypes;
   private $needAccountIdentifiers;
   private $rawAccountIdentifiers;
 
@@ -45,6 +46,11 @@ final class PhabricatorExternalAccountQuery
 
   public function withAccountTypes(array $types) {
     $this->accountTypes = $types;
+    return $this;
+  }
+
+  public function withoutAccountTypes(array $types) {
+    $this->negateAccountTypes = $types;
     return $this;
   }
 
@@ -174,6 +180,13 @@ final class PhabricatorExternalAccountQuery
         $conn,
         'account.accountType IN (%Ls)',
         $this->accountTypes);
+    }
+
+    if ($this->negateAccountTypes !== null) {
+      $where[] = qsprintf(
+        $conn,
+        'account.accountType NOT IN (%Ls)',
+        $this->negateAccountTypes);
     }
 
     if ($this->userPHIDs !== null) {
