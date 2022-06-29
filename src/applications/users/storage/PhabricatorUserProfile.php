@@ -4,6 +4,7 @@ final class PhabricatorUserProfile extends PhabricatorUserDAO {
 
   protected $userPHID;
   protected $title;
+  protected $birthday;
   protected $blurb;
   protected $profileImagePHID;
   protected $icon;
@@ -15,7 +16,8 @@ final class PhabricatorUserProfile extends PhabricatorUserDAO {
       ->setUserPHID($user->getPHID())
       ->setIcon($default_icon)
       ->setTitle('')
-      ->setBlurb('');
+      ->setBlurb('')
+      ->setBirthday(null);
   }
 
   protected function getConfiguration() {
@@ -25,6 +27,7 @@ final class PhabricatorUserProfile extends PhabricatorUserDAO {
         'blurb' => 'text',
         'profileImagePHID' => 'phid?',
         'icon' => 'text32',
+        'birthday' => 'epoch?',
       ),
       self::CONFIG_KEY_SCHEMA => array(
         'userPHID' => array(

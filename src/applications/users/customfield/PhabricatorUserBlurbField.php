@@ -18,7 +18,7 @@ final class PhabricatorUserBlurbField
   }
 
   public function getFieldName() {
-    return pht('Blurb');
+    return pht('About Me');
   }
 
   public function getFieldDescription() {
@@ -77,11 +77,11 @@ final class PhabricatorUserBlurbField
       $xaction->getNewValue(),
     );
   }
-
+/*
   public function renderPropertyViewLabel() {
     return null;
   }
-
+*/
   public function renderPropertyViewValue(array $handles) {
     $blurb = $this->getObject()->loadUserProfile()->getBlurb();
     if (!strlen($blurb)) {

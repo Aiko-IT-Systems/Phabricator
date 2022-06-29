@@ -1,0 +1,2 @@
+ALTER TABLE {$NAMESPACE}_user.user_profile
+  ADD COLUMN IF NOT EXISTS birthday INT UNSIGNED;
