@@ -59,7 +59,7 @@ final class AITSYSSteamAdapter extends PhutilOAuthAuthAdapter {
   }
 
   protected function getAuthenticateBaseURI() {
-    return 'https://discord.com/oauth2/authorize';
+    return 'https://steamcommunity.com/oauth/login';
   }
 
   protected function getTokenBaseURI() {
@@ -93,9 +93,9 @@ final class AITSYSSteamAdapter extends PhutilOAuthAuthAdapter {
   }
 
   protected function loadOAuthAccountData() {
-    return id(new AITSYSDiscordFuture())
+    return id(new AITSYSSteamFuture())
       ->setAccessToken($this->getAccessToken())
-      ->setRawDiscordQuery('users/@me')
+      ->setRawDiscordQuery('https://api.steampowered.com/ISteamUserOAuth/GetTokenDetails/v1/?access_token='.$this->getAccessToken())
       ->resolve();
   }
 

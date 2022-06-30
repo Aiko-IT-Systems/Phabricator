@@ -25,7 +25,7 @@ final class AITSYSSteamFuture extends FutureProxy {
     return $this;
   }
 
-  public function setRawDiscordQuery($action, array $params = array()) {
+  public function setRawSteamQuery($action, array $params = array()) {
     $this->action = $action;
     $this->params = $params;
     return $this;
@@ -41,15 +41,15 @@ final class AITSYSSteamFuture extends FutureProxy {
       $params = $this->params;
 
       if (!$this->action) {
-        throw new Exception(pht('You must %s!', 'setRawDiscordQuery()'));
+        throw new Exception(pht('You must %s!', 'setRawSteamQuery()'));
       }
 
       if (!$this->accessToken) {
         throw new Exception(pht('You must %s!', 'setAccessToken()'));
       }
 
-      $uri = new PhutilURI('https://discord.com/');
-      $uri->setPath('/api/v9/'.$this->action);
+      $uri = new PhutilURI('https://api.steampowered.com/');
+      $uri->setPath($this->action);
 
       $future = new HTTPSFuture($uri);
       $future->setData($this->params);
@@ -87,7 +87,7 @@ final class AITSYSSteamFuture extends FutureProxy {
       }
     } catch (PhutilJSONParserException $ex) {
       throw new PhutilProxyException(
-        pht('Expected JSON response from Discord.'),
+        pht('Expected JSON response from Steam.'),
         $ex);
     }
 
@@ -95,7 +95,7 @@ final class AITSYSSteamFuture extends FutureProxy {
       $errors = print_r($data['errors'], true);
       throw new Exception(
         pht(
-          'Received errors from Discord: %s',
+          'Received errors from Steam: %s',
           $errors));
     }
 
