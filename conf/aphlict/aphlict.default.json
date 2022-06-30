@@ -4,17 +4,11 @@
       "type": "client",
       "port": 22280,
       "listen": "0.0.0.0",
-      "ssl.key": "/etc/letsencrypt/live/aitsys.dev/privkey.pem",
-      "ssl.cert": "/etc/letsencrypt/live/aitsys.dev/cert.pem",
-      "ssl.chain": "/etc/letsencrypt/live/aitsys.dev/fullchain.pem"
     },
     {
       "type": "admin",
       "port": 22281,
       "listen": "127.0.0.1",
-      "ssl.key": null,
-      "ssl.cert": null,
-      "ssl.chain": null
     }
   ],
   "logs": [
