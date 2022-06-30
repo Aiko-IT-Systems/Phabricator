@@ -5,7 +5,7 @@
   "preface": "Technical reference material for Phabricator developers.",
   "root": "../../../",
   "uri.source":
-    "https://secure.phabricator.com/diffusion/P/browse/master/%f$%l",
+    "https://github.com/Aiko-IT-Systems/Phabricator/blob/main/%f#L%l",
   "rules": {
     "(\\.diviner$)": "DivinerArticleAtomizer",
     "(\\.php$)": "DivinerPHPAtomizer"
