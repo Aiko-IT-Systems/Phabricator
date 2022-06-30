@@ -10,8 +10,6 @@ Phabricator is highly modular, and many parts of it can be extended by adding
 new classes. This document explains how to write new classes to change or
 expand the behavior of Phabricator.
 
-IMPORTANT: The upstream does not offer support with extension development.
-
 Fundamentals
 ============
 
@@ -252,5 +250,5 @@ Next Steps
 
 Continue by:
 
-  - visiting the [[ https://secure.phabricator.com/w/community_resources/ |
+  - visiting the [[ https://aitsys.dev/w/community_resources/ |
     Community Resources ]] page to find or share extensions and libraries.

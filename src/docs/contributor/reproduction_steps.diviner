@@ -135,7 +135,7 @@ We provide some resources which can make it easier to start building steps, or
 to simplify steps.
 
 **Test Repositories**: There are several test repositories on
-`secure.phabricator.com` which you can push commits to if you need to build
+`aitsys.dev` which you can push commits to if you need to build
 an example to demonstrate a problem.
 
 For example, if you're seeing an issue with a certain filename but the commit
@@ -229,10 +229,6 @@ only reproduces in your environment, or which you don't want to narrow down
 to a minimal reproduction case, we can't accept it as a bug report. These
 issues are tremendously time consuming for us to pursue and rarely benefit
 more than one install.
-
-If the issue is important but falls outside the scope of permissible bug
-reports, we're happy to provide more tailored support at consulting rates. See
-[[ https://secure.phabricator.com/w/consulting/ | Consulting ]] for details.
 
 
 Next Steps

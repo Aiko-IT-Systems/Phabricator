@@ -4,7 +4,7 @@ set -e
 set -x
 
 # This is an example script for updating Phabricator, similar to the one used to
-# update <https://secure.phabricator.com/>. It might not work perfectly on your
+# update <https://aitsys.dev/>. It might not work perfectly on your
 # system, but hopefully it should be easy to adapt. This script is not intended
 # to work without modifications.
 

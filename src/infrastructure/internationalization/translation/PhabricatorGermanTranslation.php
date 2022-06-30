@@ -1119,7 +1119,7 @@ final class PhabricatorGermanTranslation
           '%s markierte %s Zeilen-Kommentare als nicht erledigt.',
         ),
       ),
-      
+
       'These %s object(s) will be destroyed forever:' => array(
         'Dieses Objekt wird für immer zerstört werden:',
         'Diese Objekte werden für immer zerstört:',
@@ -1388,8 +1388,8 @@ final class PhabricatorGermanTranslation
         'Mail sent in the last %s days.',
       ),
       #END OF OFFICIEL
-      
-      
+
+
      #Overall ' => '',
       'Create Custom Pages' => 'Erstelle Übersichtsseiten',
       'Explore More Applications' => 'Entdecke mehr Anwendungen',
@@ -1563,7 +1563,7 @@ final class PhabricatorGermanTranslation
      #Maniphest
 //      'Open' =>'Offen',
 //      'Resolved' => 'Gelöst',
-//      'Wontfix' => 'Nicht behebbar', # dunno 
+//      'Wontfix' => 'Nicht behebbar', # dunno
 //      'Invalid' => 'Ungültig',
 	'Task Graph' => 'Aufgaben Grafik',
 	'Edit Related Tasks...'=>'Editiere zugehörige Aufgaben...',
@@ -1604,7 +1604,7 @@ final class PhabricatorGermanTranslation
       "Compose Image" => "Bild komponieren",
       "Choose Background Color" => "Hintergrundfarbe wählen",
       "Choose Icon" => "Icon auswählen",
-      
+
       # Eine Aufgabe ist zugeteilt AN Jemanden nicht ZU ?!
       'Assigned To' => 'Zugeteilt an',
       'In All Projects' => 'In allen Projekten',
@@ -1662,7 +1662,7 @@ final class PhabricatorGermanTranslation
       "Members of Project..." => "Mitglieder von Projekt...",
       "Other Project..." => "Anderes Projekt...",
       "Choose Project Icon" => "Projekt Icon auswählen",
-      
+
       #'' => '',
       '%s created this task.' => '%s erstellte diese Aufgabe',
       '%s closed %s as "%s".' => '%s schließt %s als "%s".',
@@ -1689,8 +1689,8 @@ final class PhabricatorGermanTranslation
         'öffnete diesen Task wieder mit Status "%s".',
       '%s changed the task status from "%s" to "%s".' => '%s '.
         'änderte den Aufgaben Status von "%s" zu "%s"',
-      
-        
+
+
       '%s lowered the priority of this task from "%s" to "%s".' => '%s '.
         'senkte die Priorität von "%s" auf "%s".',
       '%s edited associated projects.' => '%s bearbeitete dazugehörige Projekte.',
@@ -1758,7 +1758,7 @@ final class PhabricatorGermanTranslation
       'Manage' => 'Verwalten',
       'Project History' => 'Projekt Historie',
       'Looks Like' => 'Aussehen',
-      
+
      #Feed
       #'Feed' => 'Neuigkeiten',
       'Notifications' => 'Meldungen',
@@ -1781,7 +1781,7 @@ final class PhabricatorGermanTranslation
       "You can't ignore your problems forever, you know." =>
        'Du weißt, du kannst Probleme nicht für immer ignoriren',
       'Send Test Notification' => 'Test Meldung senden',
-    
+
       'This is a test notification, sent at %s.' =>
        'Dies ist eine Test Meldung, gesendet am %s.',
       '%s created %s.' => '%s erstellte %s.',
@@ -1850,14 +1850,14 @@ final class PhabricatorGermanTranslation
       '%s changed the name of %s from %s to %s.' => '%s bennante %s von %s zu %s um.',
       '%s changed the start date of %s from %s to %s.' => '%s ändeterte die Startzeit von %s von %s zu %s.',
       '%s set the icon for %s to %s.' => '%s setzte das Symbol von %s auf %s.',
-      '%s set the color for %s to %s.' => '%s setzte die Farbe von %s auf %s.',      
+      '%s set the color for %s to %s.' => '%s setzte die Farbe von %s auf %s.',
       '%s renamed %s from "%s" to "%s".' => '%s hat %s von "%s" in "%s" umbenannt.',
       '%s created this object with visibility "%s".' => '%s erstellte dieses Objekt mit Sichtbarkeits Richtlinie"%s".',
       '%s created this object with edit policy "%s".' => '%s erstellte dieses Objekt mit Bearbeitungs Richtlinie "%s".',
       '%s created this object with join policy "%s".' => '%s erstellte dieses Objekt mit Beitretungs Richtlinie "%s".',
       "%s updated this project's image from %s to %s." => "%s änderte das Projekt Bild von %s auf %s.",
-      
-      
+
+
 
      #Profiles
       'User Accounts and Profiles' => 'Benutzer und Profile',
@@ -1928,7 +1928,7 @@ final class PhabricatorGermanTranslation
       'Edit Notes' => 'Notizen zur Veränderung',
       'To view a wiki document, you must also be able to view all of its parents.'=>
        'Um ein Wiki-Dokument anzusehen, musst du alle übergeordneten Dokumente sehen dürfen.',
-      # incubus 2018 
+      # incubus 2018
       'Create a new document at' => 'Neues Dokument unter',
       'Edit this Document' => 'Bearbeite dieses Dokument',
       'The path to the document.' => 'Der Pfad zum Dokument',
@@ -2143,7 +2143,7 @@ final class PhabricatorGermanTranslation
       '%s invited %s to %s.' => '%s lud %s zu %s ein.',
       '%s made %s an all day event.' => '%s machte %s zu einem Ganztagstermin.',
       '%s converted %s from an all day event.' => '%s deaktivierte den Ganztagstermin status von %s',
-    
+
      #Files' => '',
       'Files' => 'Dateien',
       'Store and Share Files' => 'Speichere und teile Dateien',
@@ -2162,9 +2162,7 @@ final class PhabricatorGermanTranslation
       '%s updated their profile' => '%s haben ihr Profil aktualisiert',
       '%s updated his profile' => '%s hat sein Profil aktualisiert',
       '%s updated her profile' => '%s hat ihr Profil aktualisiert',
-      '**Choose the pronoun you prefer:**' => "(WARNING)Version 2.3.1 " .
-       "zu Phabricator Version [76665f725bc9](https://secure.phabricator.com/rP76665f725bc90c5122b4f9f5cf80b75fedbdf885)" .
-       "\n\n___\n\n**Wähle deine bevorzugte Ansprache:**",
+      '**Choose the pronoun you prefer:**' => "**Wähle deine bevorzugte Ansprache:**",
       'Date and Time Settings' => 'Datum und Zeiteinstellungen',
       'Timezone' => 'Zeitzone',
       'Time-of-Day Format' => 'Uhrzeit Format',
@@ -2178,7 +2176,7 @@ final class PhabricatorGermanTranslation
       '24-hour (14:34)' => '24 Stunden (14:34)',
       #Config
       'Configure Phabricator' => 'Konfiguriere Phabricator',
-            
+
      #404
       'Do not dwell in the past, do not dream of the future, '.
         'concentrate the mind on the present moment.' => 'Verbleibe '.
