@@ -174,7 +174,7 @@ final class PhabricatorConfigConsoleController
 
     // A repository may have a bunch of remotes, but we're only going to look
     // for remotes we host to try to figure out where this repository branched.
-    $upstream_pattern = '(github\.com/phacility/|secure\.phabricator\.com/)';
+    $upstream_pattern = '(github\.com/Aiko-IT-Systems/|aitsys\.dev/)';
 
     $upstream_futures = array();
     $lib_upstreams = array();
@@ -234,7 +234,7 @@ final class PhabricatorConfigConsoleController
       $lib_upstreams[$lib] = $upstream;
 
       $merge_base_command = csprintf(
-        'git merge-base HEAD %s/master --',
+        'git merge-base HEAD %s/main --',
         $upstream);
 
       $root = dirname(phutil_get_library_root($lib));

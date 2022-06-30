@@ -15,11 +15,11 @@ final class AphrontStackTraceView extends AphrontView {
     $libraries = PhutilBootloader::getInstance()->getAllLibraries();
 
     // TODO: Make this configurable?
-    $path = 'https://secure.phabricator.com/diffusion/%s/browse/master/src/';
+    $path = 'https://github.com/Aiko-IT-Systems/%s/tree/main/src/';
 
     $callsigns = array(
-      'arcanist' => 'ARC',
-      'phabricator' => 'P',
+      'arcanist' => 'Arcanist',
+      'phabricator' => 'Phabricator',
     );
 
     $rows = array();
@@ -51,7 +51,7 @@ final class AphrontStackTraceView extends AphrontView {
           if (empty($attrs['href'])) {
             $attrs['href'] = sprintf($path, $callsigns[$lib]).
               str_replace(DIRECTORY_SEPARATOR, '/', $relative).
-              '$'.$part['line'];
+              '#L'.$part['line'];
             $attrs['target'] = '_blank';
           }
           $file_name = phutil_tag(

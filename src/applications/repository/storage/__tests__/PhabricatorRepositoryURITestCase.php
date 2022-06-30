@@ -17,7 +17,7 @@ final class PhabricatorRepositoryURITestCase
     $tests = array(
       '/diffusion/123' => '/diffusion/123/',
       '/diffusion/123/' => '/diffusion/123/',
-      '/diffusion/123/browse/master/' => '/diffusion/123/browse/master/',
+      '/diffusion/123/browse/main/' => '/diffusion/123/browse/main/',
       '/kangaroo/' => null,
     );
 
@@ -33,10 +33,10 @@ final class PhabricatorRepositoryURITestCase
     $tests = array(
       '/diffusion/123' => '/diffusion/XYZ/',
       '/diffusion/123/' => '/diffusion/XYZ/',
-      '/diffusion/123/browse/master/' => '/diffusion/XYZ/browse/master/',
+      '/diffusion/123/browse/main/' => '/diffusion/XYZ/browse/main/',
       '/diffusion/XYZ' => '/diffusion/XYZ/',
       '/diffusion/XYZ/' => '/diffusion/XYZ/',
-      '/diffusion/XYZ/browse/master/' => '/diffusion/XYZ/browse/master/',
+      '/diffusion/XYZ/browse/main/' => '/diffusion/XYZ/browse/main/',
       '/diffusion/ABC/' => '/diffusion/XYZ/',
       '/kangaroo/' => null,
       '/R1:abcdef' => '/rXYZabcdef',

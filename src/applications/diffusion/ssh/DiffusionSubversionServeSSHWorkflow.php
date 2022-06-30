@@ -401,7 +401,7 @@ final class DiffusionSubversionServeSSHWorkflow
     $external_base = $this->getBaseRequestPath();
 
     // Replace "/diffusion/X" in the request with the repository local path,
-    // so "/diffusion/X/master/" becomes "/path/to/repository/X/master/".
+    // so "/diffusion/X/main/" becomes "/path/to/repository/X/main/".
     $local_path = rtrim($repository->getLocalPath(), '/');
     $path = $local_path.substr($path, strlen($external_base));
 

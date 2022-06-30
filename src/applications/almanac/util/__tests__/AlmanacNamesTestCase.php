@@ -32,7 +32,7 @@ final class AlmanacNamesTestCase extends PhabricatorTestCase {
       'a.b' => true,
       'db.companyname.instance' => true,
       'web002.useast.example.com' => true,
-      'master.example-corp.com' => true,
+      'main.example-corp.com' => true,
 
       // Maximum length is 100.
       str_repeat('a', 100) => true,

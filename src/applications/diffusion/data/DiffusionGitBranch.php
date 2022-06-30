@@ -9,14 +9,14 @@ final class DiffusionGitBranch extends Phobject {
    * a map. For instance:
    *
    *   array(
-   *     'origin/master' => '99a9c082f9a1b68c7264e26b9e552484a5ae5f25',
+   *     'origin/main' => '99a9c082f9a1b68c7264e26b9e552484a5ae5f25',
    *   );
    *
    * If you specify $only_this_remote, branches will be filtered to only those
    * on the given remote, **and the remote name will be stripped**. For example:
    *
    *   array(
-   *     'master' => '99a9c082f9a1b68c7264e26b9e552484a5ae5f25',
+   *     'main' => '99a9c082f9a1b68c7264e26b9e552484a5ae5f25',
    *   );
    *
    * @param string stdout of git branch command.
@@ -34,7 +34,7 @@ final class DiffusionGitBranch extends Phobject {
       if (preg_match('/^  (\S+)\s+-> (\S+)$/', $line, $matches)) {
           // This is a line like:
           //
-          //   origin/HEAD          -> origin/master
+          //   origin/HEAD          -> origin/main
           //
           // ...which we don't currently do anything interesting with, although
           // in theory we could use it to automatically choose the default

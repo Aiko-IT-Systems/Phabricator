@@ -37,10 +37,10 @@ final class PhabricatorRepositoryTestCase
       $repo->shouldTrackBranch('imaginary'),
       pht('Track all branches by default.'));
 
-    $repo->setTrackOnlyRules(array('master'));
+    $repo->setTrackOnlyRules(array('main'));
 
     $this->assertTrue(
-      $repo->shouldTrackBranch('master'),
+      $repo->shouldTrackBranch('main'),
       pht('Track listed branches.'));
 
     $this->assertFalse(

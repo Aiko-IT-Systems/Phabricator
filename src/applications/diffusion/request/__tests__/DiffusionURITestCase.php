@@ -121,9 +121,9 @@ final class DiffusionURITestCase extends PhutilTestCase {
           'view' => 'things',
         ),
       ),
-      '/diffusion/A/repository/master/' => array(
+      '/diffusion/A/repository/main/' => array(
         'action'    => 'branch',
-        'branch'    => 'master',
+        'branch'    => 'main',
       ),
       'path/to/file.ext;abc' => array(
         'action'    => 'rendering-ref',

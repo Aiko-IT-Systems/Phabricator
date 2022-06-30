@@ -86,7 +86,7 @@ final class PhabricatorNotificationBuilder extends Phobject {
       $agg_key  = last_key($aggregation_map);
       unset($aggregation_map[$agg_key]);
 
-      // Select all the stories it aggregates, and remove them from the master
+      // Select all the stories it aggregates, and remove them from the main
       // list of stories and from all other possible aggregations.
 
       $sub_stories = array();

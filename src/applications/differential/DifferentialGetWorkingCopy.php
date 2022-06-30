@@ -34,9 +34,9 @@ final class DifferentialGetWorkingCopy extends Phobject {
 
     $workspace = new ArcanistGitAPI($path);
     $workspace->execxLocal('clean -f -d');
-    $workspace->execxLocal('checkout master');
+    $workspace->execxLocal('checkout main');
     $workspace->execxLocal('fetch');
-    $workspace->execxLocal('reset --hard origin/master');
+    $workspace->execxLocal('reset --hard origin/main');
     $workspace->reloadWorkingCopy();
 
     return $workspace;

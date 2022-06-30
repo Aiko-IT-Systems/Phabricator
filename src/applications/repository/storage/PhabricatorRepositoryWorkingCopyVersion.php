@@ -44,7 +44,7 @@ final class PhabricatorRepositoryWorkingCopyVersion
     $conn_w = $version->establishConnection('w');
     $table = $version->getTableName();
 
-    // This is a normal read, but force it to come from the master.
+    // This is a normal read, but force it to come from the main.
     $rows = queryfx_all(
       $conn_w,
       'SELECT * FROM %T WHERE repositoryPHID = %s',
@@ -59,7 +59,7 @@ final class PhabricatorRepositoryWorkingCopyVersion
     $conn_w = $version->establishConnection('w');
     $table = $version->getTableName();
 
-    // We're forcing this read to go to the master.
+    // We're forcing this read to go to the main.
     $row = queryfx_one(
       $conn_w,
       'SELECT * FROM %T WHERE repositoryPHID = %s AND isWriting = 1

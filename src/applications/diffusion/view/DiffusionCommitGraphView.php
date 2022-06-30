@@ -293,7 +293,7 @@ final class DiffusionCommitGraphView
     // If we're filtering parents, remove relationships which point to
     // commits that are not part of the visible graph. Otherwise, we get
     // a big tree of nonsense when viewing release branches like "stable"
-    // versus "master".
+    // versus "main".
     if ($this->getFilterParents()) {
       foreach ($parents as $key => $nodes) {
         foreach ($nodes as $nkey => $node) {

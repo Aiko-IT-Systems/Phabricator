@@ -148,7 +148,7 @@ final class PhabricatorCommitSearchEngine
         ->setDescription(
           pht(
             'Find commits which are ancestors of a particular ref, '.
-            'like "master".')),
+            'like "main".')),
       id(new PhabricatorSearchStringListField())
         ->setLabel(pht('Identifiers'))
         ->setKey('identifiers')
