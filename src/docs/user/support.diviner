@@ -2,4 +2,50 @@
 @short Support
 @group intro
 
-Effective June 1, 2021: Phabricator is no longer actively supported.
+Resources for reporting bugs, requesting features, and getting support.
+
+Overview
+========
+
+This document describes available support resources.
+
+The upstream provides free support for a narrow range of problems (primarily,
+security issues and reproducible bugs).
+
+
+Reporting Security Vulnerabilities
+==================================
+
+The upstream accepts, fixes, and awards bounties for reports of material
+security issues with the software.
+
+To report security issues, see @{article:Reporting Security Vulnerabilities}.
+
+
+Reporting Bugs
+==============
+
+The upstream will accept **reproducible** bug reports in modern, first-party
+production code running in reasonable environments.  Before submitting a bug
+report you **must update** to the latest version of Phabricator.
+
+To report bugs, see @{article:Contributing Bug Reports}.
+
+
+
+Contributing
+============
+
+Phabricator is a very difficult project to contribute to. New contributors
+will face a high barrier to entry.
+
+If you'd like to contribute to Phabricator, start with
+@{article:Contributor Introduction}.
+
+
+
+Installation and Setup Help
+===========================
+
+You may be able to get free help with these issues from the
+[[ https://phurl.io/u/discourse | community ]].
