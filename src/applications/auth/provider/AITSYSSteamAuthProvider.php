@@ -42,7 +42,7 @@ final class AITSYSSteamAuthProvider
   }
 
   protected function getLoginIcon() {
-    return null;//'Steam';
+    return 'Steam';
   }
 
   protected function getWebapiKey() {

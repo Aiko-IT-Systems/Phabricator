@@ -76,10 +76,14 @@ only screen and (min-resolution: 1.5dppx) {
 }
 
 .login-Phabricator {
-  background-position: 0px -87px;
+  background-position: -116px -58px;
 }
 
 .login-Slack {
+  background-position: 0px -87px;
+}
+
+.login-Steam {
   background-position: -29px -87px;
 }
 
