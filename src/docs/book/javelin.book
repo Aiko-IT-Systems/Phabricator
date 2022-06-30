@@ -1,0 +1,22 @@
+{
+  "name" : "javelin",
+  "title" : "Javelin Technical Documentation",
+  "short" : "Javelin Tech Docs",
+  "preface" : "Technical documentation for developers using Javelin.",
+  "root" : "../../../",
+  "uri.source" :
+    "https://github.com/Aiko-IT-Systems/javelin/tree/main/%f#L%l",
+  "rules" : {
+    "(\\.diviner$)" : "DivinerArticleAtomizer"
+  },
+  "exclude" : [
+    "(^example/)",
+    "(^externals/)",
+    "(^pkg/)",
+    "(^scripts/)",
+    "(^specs/)",
+    "(^support/)"
+  ],
+  "groups" : {
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "arcanist",
+  "title": "Arcanist Technical Documentation",
+  "short": "Arcanist Tech Docs",
+  "preface": "Technical documentation for developing Arcanist.",
+  "root": "../../../../arcanist/",
+  "uri.source":
+    "https://github.com/Aiko-IT-Systems/Arcanist/tree/main/%f#L%l",
+  "rules": {
+    "(\\.diviner$)": "DivinerArticleAtomizer",
+    "(\\.php$)": "DivinerPHPAtomizer"
+  },
+  "exclude": [
+    "(^externals/)",
+    "(^resources/)",
+    "(^scripts/)",
+    "(^support/)"
+  ],
+  "groups": {
+    "lint": {
+      "name": "Lint",
+      "include": "(^src/lint/)"
+    },
+    "unit": {
+      "name": "Unit Testing",
+      "include": "(^src/unit/)"
+    },
+    "workflow": {
+      "name": "Workflows",
+      "include": "(^src/workflow/)"
+    }
+  }
+}

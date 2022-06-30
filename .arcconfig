@@ -1,5 +1,9 @@
 {
   "phabricator.uri": "https://aitsys.dev/",
-  "load": ["src/"],
+  "load": [
+    "src/",
+    "../arcanist/src/",
+    "../translatewiki/src/"
+  ],
   "history.immutable": false
 }
