@@ -1,5 +1,7 @@
 {
     "files.watcherExclude": {
         "**/.divinercache/**": true
-    }
+    },
+    "search.useParentIgnoreFiles": true,
+    "search.useGlobalIgnoreFiles": true
 }

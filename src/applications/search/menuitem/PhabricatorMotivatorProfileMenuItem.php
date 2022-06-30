@@ -1,24 +1,58 @@
 <?php
-
+/**
+ * Motivator provider
+ *
+ * @author  AITSYS
+ * @license MIT
+ */
 final class PhabricatorMotivatorProfileMenuItem
   extends PhabricatorProfileMenuItem {
 
+  /**
+   * The menu item key.
+   *
+   * @var const
+   */
   const MENUITEMKEY = 'motivator';
 
-  public function getMenuItemTypeIcon() {
+  /**
+   * Gets the menu item type icon.
+   *
+   * @return string The menu item type icon.
+   */
+  public function getMenuItemTypeIcon() : string {
     return 'fa-coffee';
   }
 
-  public function getMenuItemTypeName() {
+  /**
+   * Gets the menu item type name.
+   *
+   * @return string The menu item type name.
+   */
+  public function getMenuItemTypeName() : string {
     return pht('Motivator');
   }
 
-  public function canAddToObject($object) {
+  /**
+   * Checks whether this menu item can be added to the application.
+   *
+   * @param mixed $object The object to check.
+   *
+   * @return bool True if the menu can be added to the application.
+   */
+  public function canAddToObject($object) : bool {
     return ($object instanceof PhabricatorHomeApplication);
   }
 
+  /**
+   * Gets the display name.
+   *
+   * @param  PhabricatorProfileMenuItemConfiguration $config The menu item config.
+   *
+   * @return string The display name.
+   */
   public function getDisplayName(
-    PhabricatorProfileMenuItemConfiguration $config) {
+    PhabricatorProfileMenuItemConfiguration $config) : string {
 
     $options = $this->getOptions();
     $name = idx($options, $config->getMenuItemProperty('source'));
@@ -29,8 +63,15 @@ final class PhabricatorMotivatorProfileMenuItem
     }
   }
 
+  /**
+   * Builds the edit engine fields.
+   *
+   * @param  PhabricatorProfileMenuItemConfiguration $config The menu item config.
+   *
+   * @return array<mixed> Created edit fields.
+   */
   public function buildEditEngineFields(
-    PhabricatorProfileMenuItemConfiguration $config) {
+    PhabricatorProfileMenuItemConfiguration $config) : array {
     return array(
       id(new PhabricatorInstructionsEditField())
         ->setValue(
@@ -44,27 +85,47 @@ final class PhabricatorMotivatorProfileMenuItem
     );
   }
 
-  private function getOptions() {
+  /**
+   * Gets the available motivator options.
+   *
+   * @return array<string> Available motivator options.
+   */
+  private function getOptions() : array {
     return array(
       'catfacts' => pht('Cat Facts'),
+      'dogfacts' => pht('Dog Facts'),
     );
   }
 
+  /**
+   * Creates a new menu item.
+   *
+   * @param  PhabricatorProfileMenuItemConfiguration $config The menu item config.
+   *
+   * @return array<PhabricatorProfileMenuItemView> Created menu item
+   */
   protected function newMenuItemViewList(
-    PhabricatorProfileMenuItemConfiguration $config) {
+    PhabricatorProfileMenuItemConfiguration $config) : array {
 
     $source = $config->getMenuItemProperty('source');
 
     switch ($source) {
       case 'catfacts':
-      default:
-        //$facts = $this->getCatFacts();
         $fact_name = pht('Cat Facts');
-        $fact_icon = 'fa-paw';
+        $fact_icon = 'fa-cat';
+        $fact_text = $this->getRandomCatFact();
+        break;
+      case 'dogfacts':
+        $fact_name = pht('Dog Facts');
+        $fact_icon = 'fa-dog';
+        $fact_text = $this->getRandomDogFact();
+        break;
+      default:
+      $fact_name = pht('Unknown');
+      $fact_icon = 'fa-question';
+      $fact_text = pht('Something went wrong.');
         break;
     }
-
-    $fact_text = $this->getRandomCatFact();//$this->selectFact($facts);
 
     $item = $this->newItemView()
       ->setName($fact_name)
@@ -77,7 +138,13 @@ final class PhabricatorMotivatorProfileMenuItem
     );
   }
 
-  private function getRandomCatFact() {
+  /**
+   * Queries the API `catfact.ninja` for a random cat fact
+   *
+   * @return string Cat fact
+   * @throws \PhutilProxyException
+   */
+  private function getRandomCatFact() : string {
     $uri = new PhutilURI('https://catfact.ninja/fact');
     $uri = (string)$uri;
 
@@ -90,89 +157,32 @@ final class PhabricatorMotivatorProfileMenuItem
       return $data['fact'];
     } catch (PhutilJSONParserException $ex) {
       throw new PhutilProxyException(
-        pht('Expected valid JSON response from Disqus account data request.'),
+        pht('Expected valid JSON response from cat fact api.'),
         $ex);
     }
   }
 
-  private function getCatFacts() {
-    return array(
-      pht('Cats purr when they are happy, upset, or asleep.'),
-      pht('The first cats evolved on the savannah about 8,000 years ago.'),
-      pht(
-        'Cats have a tail, two feet, between one and three ears, and two '.
-        'other feet.'),
-      pht('Cats use their keen sense of smell to avoid feeling empathy.'),
-      pht('The first cats evolved in swamps about 65 years ago.'),
-      pht(
-        'You can tell how warm a cat is by examining the coloration: cooler '.
-        'areas are darker.'),
-      pht(
-        'Cat tails are flexible because they contain thousands of tiny '.
-        'bones.'),
-      pht(
-        'A cattail is a wetland plant with an appearance that resembles '.
-        'the tail of a cat.'),
-      pht(
-        'Cats must eat a diet rich in fish to replace the tiny bones in '.
-        'their tails.'),
-      pht('Cats are stealthy predators and nearly invisible to radar.'),
-      pht(
-        'Cats use a special type of magnetism to help them land on their '.
-        'feet.'),
-      pht(
-        'A cat can run seven times faster than a human, but only for a '.
-        'short distance.'),
-      pht(
-        'The largest recorded cat was nearly 11 inches long from nose to '.
-        'tail.'),
-      pht(
-        'Not all cats can retract their claws, but most of them can.'),
-      pht(
-        'In the wild, cats and raccoons sometimes hunt together in packs.'),
-      pht(
-        'The Spanish word for cat is "cato". The biggest cat is called '.
-        '"el cato".'),
-      pht(
-        'The Japanese word for cat is "kome", which is also the word for '.
-        'rice. Japanese cats love to eat rice, so the two are synonymous.'),
-      pht('Cats have five pointy ends.'),
-      pht('cat -A can find mice hiding in files.'),
-      pht('A cat\'s visual, olfactory, and auditory senses, '.
-        'Contribute to their hunting skills and natural defenses.'),
-      pht(
-        'Cats with high self-esteem seek out high perches '.
-        'to launch their attacks. Watch out!'),
-      pht('Cats prefer vanilla ice cream.'),
-      pht('Taco cat spelled backwards is taco cat.'),
-      pht(
-        'Cats will often bring you their prey because they feel sorry '.
-        'for your inability to hunt.'),
-      pht('Cats spend most of their time plotting to kill their owner.'),
-      pht('Outside of the CAT scan, cats have made almost no contributions '.
-        'to modern medicine.'),
-      pht('In ancient Egypt, the cat-god Horus watched over all cats.'),
-      pht('The word "catastrophe" has no etymological relationship to the '.
-          'word "cat".'),
-      pht('Many cats appear black in low light, suffering a -2 modifier to '.
-          'luck rolls.'),
-      pht('The popular trivia game "World of Warcraft" features a race of '.
-          'cat users called the Khajiit.'),
-    );
-  }
+  /**
+   * Queries the API `dog-api.kinduff.com` for a random dog fact
+   *
+   * @return string Dog fact
+   * @throws \PhutilProxyException
+   */
+  private function getRandomDogFact() : string {
+    $uri = new PhutilURI('https://dog-api.kinduff.com/api/facts');
+    $uri = (string)$uri;
 
-  private function selectFact(array $facts) {
-    // This is a simple pseudorandom number generator that avoids touching
-    // srand(), because it would seed it to a highly predictable value. It
-    // selects a new fact every day.
+    $future = new HTTPSFuture($uri);
+    $future->setMethod('GET');
+    list($body) = $future->resolvex();
 
-    $seed = ((int)date('Y') * 366) + (int)date('z');
-    for ($ii = 0; $ii < 32; $ii++) {
-      $seed = ((1664525 * $seed) + 1013904223) % (1 << 31);
+    try {
+      $data = phutil_json_decode($body);
+      return $data['facts'][0];
+    } catch (PhutilJSONParserException $ex) {
+      throw new PhutilProxyException(
+        pht('Expected valid JSON response from dog fact api.'),
+        $ex);
     }
-
-    return $facts[$seed % count($facts)];
   }
-
-
 }
