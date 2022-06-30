@@ -35,7 +35,7 @@ look like this:
     "title" : "Example Documentation",
     "short" : "Example Docs",
     "root" : ".",
-    "uri.source" : "http://example.com/diffusion/X/browse/master/%f$%l",
+    "uri.source" : "http://example.com/diffusion/X/browse/main/%f$%l",
     "rules" : {
       "(\\.diviner$)" : "DivinerArticleAtomizer"
     },
