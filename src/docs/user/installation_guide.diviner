@@ -120,8 +120,8 @@ Now that you have all that stuff installed, grab Phabricator and its
 dependencies:
 
   $ cd somewhere/ # pick some install directory
-  somewhere/ $ git clone https://github.com/phacility/arcanist.git
-  somewhere/ $ git clone https://github.com/phacility/phabricator.git
+  somewhere/ $ git clone https://github.com/Aiko-IT-Systems/arcanist.git
+  somewhere/ $ git clone https://github.com/Aiko-IT-Systems/phabricator.git
 
 Next Steps
 ==========

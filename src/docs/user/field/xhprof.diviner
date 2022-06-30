@@ -18,7 +18,7 @@ Installing XHProf
 
 You are likely to have the most luck building XHProf from source:
 
-  $ git clone https://github.com/phacility/xhprof.git
+  $ git clone https://github.com/Aiko-IT-Systems/xhprof.git
 
 From any source distribution of the extension, build and install it like this:
 

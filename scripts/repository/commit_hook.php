@@ -123,7 +123,7 @@ if ($is_svnrevprop) {
     throw new Exception(
       pht(
         'No Direct Pushes: You are pushing directly to a repository hosted '.
-        'by Phabricator. This will not work. See "No Direct Pushes" in the '.
+        'by AITSYS. This will not work. See "No Direct Pushes" in the '.
         'documentation for more information.'));
   }
 

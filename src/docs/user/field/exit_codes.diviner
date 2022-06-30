@@ -56,7 +56,7 @@ operations environment faces different forces than the interactive shell did
 in the 1970s, particularly at scale.
 
 We consider correctness to be very important to modern operations environments.
-In particular, we manage a Phabricator cluster (Phacility) and believe that
+In particular, we manage a Phabricator cluster (AITSYS) and believe that
 having reliable, repeatable processes for provisioning, configuration and
 deployment is critical to maintaining and scaling our operations. Our use of
 exit codes makes it easier to implement processes that are correct and reliable

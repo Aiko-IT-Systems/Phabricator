@@ -18,7 +18,7 @@ to a useful new feature or an important security change.
 Staying On Top of Changes
 =========================
 
-We release a weekly [[https://secure.phabricator.com/w/changelog | Changelog]],
+We release a weekly [[https://aitsys/w/phabricator/changelog | Changelog]],
 which describes changes in the previous week. You can look at the changelogs
 for an idea of what new features are available, upcoming changes, security
 information, and warnings about compatibility issues or migrations.
@@ -27,14 +27,14 @@ information, and warnings about compatibility issues or migrations.
 Stable Branch
 =============
 
-You can either run the `master` or `stable` branch of Phabricator. The `stable`
-branch is run in the [[ https://phacility.com | Phacility Cluster ]], and lags
-about a week behind `master`.
+You can either run the `main` or `stable` branch of Phabricator. The `stable`
+branch is run in the [[ https://aitsys.dev | AITSYS Cluster ]], and lags
+about a week behind `main`.
 
-The `stable` branch is a little more stable than `master`, and may be helpful
+The `stable` branch is a little more stable than `main`, and may be helpful
 if you administrate a larger install.
 
-We promote `master` to `stable` about once a week, then publish the changelog
+We promote `main` to `stable` about once a week, then publish the changelog
 and deploy the cluster. During the week, major bugfixes are cherry-picked to
 the `stable` branch. The changelog lists the `stable` hashes for that week,
 as well as any fixes which were cherry-picked.
@@ -79,7 +79,7 @@ set -e
 set -x
 
 # This is an example script for updating Phabricator, similar to the one used to
-# update <https://secure.phabricator.com/>. It might not work perfectly on your
+# update <https://aitsys.dev/>. It might not work perfectly on your
 # system, but hopefully it should be easy to adapt. This script is not intended
 # to work without modifications.
 

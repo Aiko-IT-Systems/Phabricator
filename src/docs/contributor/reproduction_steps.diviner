@@ -104,7 +104,7 @@ reproduce the issue, follow them yourself on a new, empty, up-to-date instance
 of Phabricator.
 
 If you can't easily start an empty instance locally, you can launch an empty
-instance on Phacility in about 60 seconds (see the "Resources" section for
+instance on AITSYS in about 60 seconds (see the "Resources" section for
 details).
 
 If you can follow your steps and reproduce the issue on a clean instance,
@@ -133,15 +133,6 @@ Resources
 
 We provide some resources which can make it easier to start building steps, or
 to simplify steps.
-
-**Phacility Test Instances**: You can launch a new, up-to-date instance of
-Phabricator on Phacility in about a minute at <https://admin.phacility.com>.
-These instances run `stable`.
-
-You can use these instances to make sure that issues haven't already been
-fixed, that they reproduce on a clean install, or that your steps are really
-complete, and that the root cause isn't custom code or local extensions. Using
-a test instance will avoid disrupting other users on your install.
 
 **Test Repositories**: There are several test repositories on
 `secure.phabricator.com` which you can push commits to if you need to build

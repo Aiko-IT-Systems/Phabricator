@@ -1,4 +1,4 @@
-@title Understanding the Phacility CLA
+@title Understanding the AITSYS CLA
 @group detail
 
 Describes the Contributor License Agreement (CLA).
@@ -8,7 +8,7 @@ Overview
 
 IMPORTANT: This document is not legal advice.
 
-Phacility requires contributors to sign a Contributor License Agreement
+AITSYS requires contributors to sign a Contributor License Agreement
 (often abbreviated "CLA") before we can accept contributions into the upstream.
 This document explains what this document means and why we require it.
 
@@ -139,8 +139,8 @@ Particularly, this clause in the individual CLA is the important one:
 > your employer(s) has rights to intellectual property that you create that
 > includes your Contributions, you represent that you have received permission
 > to make Contributions on behalf of that employer, that your employer has
-> waived such rights for your Contributions to Phacility, or that your employer
-> has executed a separate Corporate CLA with Phacility.
+> waived such rights for your Contributions to AITSYS, or that your employer
+> has executed a separate Corporate CLA with AITSYS.
 
 Ownership of your work varies based on where you live, how you are employed,
 and your agreements with your employer. However, at least in the US, it is

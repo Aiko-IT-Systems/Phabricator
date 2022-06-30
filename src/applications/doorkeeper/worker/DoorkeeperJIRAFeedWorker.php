@@ -231,7 +231,7 @@ final class DoorkeeperJIRAFeedWorker extends DoorkeeperFeedWorker {
       array(
         'globalId' => $object->getPHID(),
         'application' => array(
-          'type' => 'com.phacility.phabricator',
+          'type' => 'dev.aitsys.phabricator',
           'name' => 'Phabricator',
         ),
         'relationship' => 'implemented in',
