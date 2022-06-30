@@ -1,1 +1,2 @@
-arc liberate ./src/ && ./applytheme
+#!/bin/bash
+arc liberate ./src/ && bin/celerity map && bin/phd restart && service apache2 restart
