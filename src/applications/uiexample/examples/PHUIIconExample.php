@@ -105,6 +105,7 @@ final class PHUIIconExample extends PhabricatorUIExample {
       'Google',
       'Github',
       'Discord',
+      'Steam',
     );
     $loginview = array();
     foreach ($logins as $login) {

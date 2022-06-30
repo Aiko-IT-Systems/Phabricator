@@ -158,7 +158,7 @@ final class PHUIButtonExample extends PhabricatorUIExample {
     // Baby Got Back Buttons
 
     $column = array();
-    $icons = array('Asana', 'Github', 'Facebook', 'Google', 'LDAP', 'Discord');
+    $icons = array('Asana', 'Github', 'Facebook', 'Google', 'LDAP', 'Discord', 'Steam');
     foreach ($icons as $icon) {
       $image = id(new PHUIIconView())
         ->setSpriteSheet(PHUIIconView::SPRITE_LOGIN)
