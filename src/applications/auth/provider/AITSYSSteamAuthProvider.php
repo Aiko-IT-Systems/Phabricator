@@ -18,7 +18,7 @@ final class AITSYSSteamAuthProvider
     return pht(
       "To configure Steam OAuth, create a new application here:".
       "\n\n".
-      "https://partner.steamgames.com/home".
+      "https://partner.steamgames.com/apps/".
       "\n\n".
       "When creating your application, use these settings:".
       "\n\n".
