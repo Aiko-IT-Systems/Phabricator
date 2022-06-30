@@ -108,6 +108,14 @@ final class PhabricatorPhurlURLEditEngine
         ->setTransactionType(
           PhabricatorPhurlURLDescriptionTransaction::TRANSACTIONTYPE)
         ->setValue($object->getDescription()),
+      id(new PhabricatorRemarkupEditField())
+        ->setKey('domain')
+        ->setLabel(pht('Domain'))
+        ->setDescription(pht('Access only via selected domain.'))
+        ->setConduitTypeDescription(pht('New domain.'))
+        ->setTransactionType(
+          PhabricatorPhurlURLDomainTransaction::TRANSACTIONTYPE)
+        ->setValue($object->getDomain()),
     );
   }
 

@@ -29,6 +29,7 @@ final class PhabricatorPhurlURLTransaction
       case PhabricatorPhurlURLLongURLTransaction::TRANSACTIONTYPE:
       case PhabricatorPhurlURLAliasTransaction::TRANSACTIONTYPE:
       case PhabricatorPhurlURLDescriptionTransaction::TRANSACTIONTYPE:
+      case PhabricatorPhurlURLDomainTransaction::TRANSACTIONTYPE:
         $phids[] = $this->getObjectPHID();
         break;
     }
@@ -43,6 +44,7 @@ final class PhabricatorPhurlURLTransaction
       case PhabricatorPhurlURLLongURLTransaction::TRANSACTIONTYPE:
       case PhabricatorPhurlURLAliasTransaction::TRANSACTIONTYPE:
       case PhabricatorPhurlURLDescriptionTransaction::TRANSACTIONTYPE:
+      case PhabricatorPhurlURLDomainTransaction::TRANSACTIONTYPE:
         $tags[] = self::MAILTAG_DETAILS;
         break;
     }

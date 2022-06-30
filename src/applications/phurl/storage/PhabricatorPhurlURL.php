@@ -17,6 +17,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
   protected $alias;
   protected $longURL;
   protected $description;
+  protected $domain;
 
   protected $viewPolicy;
   protected $editPolicy;
@@ -26,7 +27,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
 
   protected $mailKey;
 
-  const DEFAULT_ICON = 'fa-compress';
+  const DEFAULT_ICON = 'fa-link-horizontal';
 
   public static function initializeNewPhurlURL(PhabricatorUser $actor) {
     $app = id(new PhabricatorApplicationQuery())
@@ -50,6 +51,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
         'longURL' => 'text',
         'description' => 'text',
         'mailKey' => 'bytes20',
+        'domain' => 'text?',
       ),
       self::CONFIG_KEY_SCHEMA => array(
         'key_instance' => array(
@@ -99,14 +101,34 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
     }
   }
 
-  public function getRedirectURI() {
-    $domain = PhabricatorEnv::getEnvConfig('phurl.short-uri');
+  public function getAllowedDomains() {
+    $domains = PhabricatorEnv::getEnvConfig('phurl.short-uris');
+    if (!$domains) {
+      return PhabricatorEnv::getEnvConfig('phabricator.base-uri');
+    }
+
+    $domains = array_unique($domains);
+    return $domains;
+  }
+
+  public function isAllowedDomain($domain) {
+    return isset($this->getAllowedDomains()[$domain]);
+  }
+
+  public function getRedirectURI($base_domain) {
+    $allowed = $this->isAllowedDomain($base_domain);
+    if (!$allowed) {
+      return null;
+    }
+
+    $domain = $base_domain;
+
+    $domains = PhabricatorEnv::getEnvConfig('phurl.short-uris');
     $base_path = '/';
-    if (!$domain) {
-      $domain = PhabricatorEnv::getEnvConfig('phabricator.base-uri');
+    if (!$domains) {
       $base_path = '/u/';
     }
-    
+
 
     if (strlen($this->getAlias())) {
       $path = $base_path.$this->getAlias();
@@ -114,7 +136,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
       $path = $base_path.$this->getID();
     }
 
-    $uri = new PhutilURI($domain);
+    $uri = new PhutilURI($base_domain);
     $uri->setPath($path);
     return (string)$uri;
   }
@@ -220,6 +242,10 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
         ->setKey('description')
         ->setType('string')
         ->setDescription(pht('A description of the URL.')),
+      id(new PhabricatorConduitSearchFieldSpecification())
+        ->setKey('domain')
+        ->setType('string')
+        ->setDescription(pht('Domain to use.')),
     );
   }
 
@@ -232,6 +258,7 @@ final class PhabricatorPhurlURL extends PhabricatorPhurlDAO
         'long' => $this->getLongURL(),
         'short' => $this->getRedirectURI(),
       ),
+      'domains' => $this->getDomain(),
     );
   }
 

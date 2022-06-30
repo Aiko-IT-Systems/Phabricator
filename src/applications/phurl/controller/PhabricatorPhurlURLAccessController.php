@@ -11,6 +11,7 @@ final class PhabricatorPhurlURLAccessController
     $viewer = $this->getViewer();
     $id = $request->getURIData('id');
     $alias = $request->getURIData('alias');
+    $host = $request->getHost();
 
     if ($id) {
       $url = id(new PhabricatorPhurlURLQuery())
