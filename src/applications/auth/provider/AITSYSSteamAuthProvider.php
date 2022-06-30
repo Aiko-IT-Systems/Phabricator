@@ -51,14 +51,12 @@ final class AITSYSSteamAuthProvider
 
   public function readFormValuesFromProvider() {
     $config = $this->getProviderConfig();
-    $id = $config->getProperty($this->getIDKey());
-    $secret = $config->getProperty($this->getSecretKey());
     $note = $config->getProperty(self::PROPERTY_NOTE);
     $webapi_key = $config->getProperty($this->getWebapiKey());
 
     return array(
-      $this->getIDKey()     => $id,
-      $this->getSecretKey() => $secret,
+      $this->getIDKey()     => "Unused",
+      $this->getSecretKey() => "Unused",
       self::PROPERTY_NOTE   => $note,
       $this->getWebapiKey() => $webapi_key,
     );
@@ -66,8 +64,8 @@ final class AITSYSSteamAuthProvider
 
   public function readFormValuesFromRequest(AphrontRequest $request) {
     return array(
-      $this->getIDKey()     => $request->getStr($this->getIDKey()),
-      $this->getSecretKey() => $request->getStr($this->getSecretKey()),
+      $this->getIDKey()     => "Unused",
+      $this->getSecretKey() => "Unused",
       self::PROPERTY_NOTE   => $request->getStr(self::PROPERTY_NOTE),
       $this->getWebapiKey() => $request->getStr($this->getWebapiKey()),
     );
@@ -80,8 +78,8 @@ final class AITSYSSteamAuthProvider
     return $this->processOAuthEditForm(
       $request,
       $values,
-      pht('Application ID is required.'),
-      pht('Application secret is required.'),
+      pht('Application ID is not required.'),
+      pht('Application secret is not required.'),
       pht('Application web api key is required.'));
   }
 
@@ -94,9 +92,6 @@ final class AITSYSSteamAuthProvider
     $webapi_key = $this->getWebapiKey();
 
     $v_webapi_key = $values[$webapi_key];
-    if ($v_webapi_key) {
-      $v_webapi_key = str_repeat('*', strlen($v_webapi_key));
-    }
 
     $e_webapi_key = idx($issues, $webapi_key, $request->isFormPost() ? null : true);
 
@@ -109,13 +104,21 @@ final class AITSYSSteamAuthProvider
         ->setValue($v_webapi_key)
         ->setError($e_webapi_key));
 
+
+    $key_id = $this->getIDKey();
+    $key_secret = $this->getSecretKey();
+    $key_note = self::PROPERTY_NOTE;
+
+    $values[$key_id] = "Unused";
+    $values[$key_secret] = "Unused";
+
     return $this->extendOAuthEditForm(
       $request,
       $form,
       $values,
       $issues,
-      pht('OAuth App ID'),
-      pht('OAuth App Secret'));
+      pht('OAuth App ID (Unused)'),
+      pht('OAuth App Secret (Unused)'));
   }
 
   public function renderConfigPropertyTransactionTitle(
@@ -128,39 +131,14 @@ final class AITSYSSteamAuthProvider
       PhabricatorAuthProviderConfigTransaction::PROPERTY_KEY);
 
     switch ($key) {
-      case self::PROPERTY_APP_ID:
-        if (strlen($old)) {
-          return pht(
-            '%s updated the OAuth application ID for this provider from '.
-            '"%s" to "%s".',
-            $xaction->renderHandleLink($author_phid),
-            $old,
-            $new);
-        } else {
-          return pht(
-            '%s set the OAuth application ID for this provider to '.
-            '"%s".',
-            $xaction->renderHandleLink($author_phid),
-            $new);
-        }
-      case self::PROPERTY_APP_SECRET:
-        if (strlen($old)) {
-          return pht(
-            '%s updated the OAuth application secret for this provider.',
-            $xaction->renderHandleLink($author_phid));
-        } else {
-          return pht(
-            '%s set the OAuth application secret for this provider.',
-            $xaction->renderHandleLink($author_phid));
-        }
       case self::PROPERTY_APP_WEBAPI_KEY:
         if (strlen($old)) {
           return pht(
-            '%s updated the OAuth application webapi key for this provider.',
+            '%s updated the Steam Web API Key for this provider.',
             $xaction->renderHandleLink($author_phid));
         } else {
           return pht(
-            '%s set the OAuth application webapi key for this provider.',
+            '%s set the OAuth Steam Web API Key for this provider.',
             $xaction->renderHandleLink($author_phid));
         }
       case self::PROPERTY_NOTE:
