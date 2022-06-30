@@ -20,6 +20,7 @@ final class AphrontStackTraceView extends AphrontView {
     $callsigns = array(
       'arcanist' => 'Arcanist',
       'phabricator' => 'Phabricator',
+      'translatewiki' => 'translatewiki',
     );
 
     $rows = array();
