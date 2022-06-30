@@ -140,7 +140,7 @@ final class PhabricatorConfigConsoleController
     $specs = array(
       'phabricator',
       'arcanist',
-      'translatewiki',
+      //'translatewiki',
     );
 
     $all_libraries = PhutilBootloader::getInstance()->getAllLibraries();
