@@ -4,7 +4,7 @@
     "login-Amazon": {
       "name": "login-Amazon",
       "rule": ".login-Amazon",
-      "hash": "e915cc22543027da014126a956a2b3a1"
+      "hash": "f2a38172728c980d52fbef6c0319e96f"
     },
     "login-Asana": {
       "name": "login-Asana",
@@ -14,27 +14,27 @@
     "login-Bitbucket": {
       "name": "login-Bitbucket",
       "rule": ".login-Bitbucket",
-      "hash": "32f7cf08badb1181f883c211eddd89f5"
+      "hash": "408c32849062de033825fc27bffe9323"
     },
     "login-Discord": {
       "name": "login-Discord",
       "rule": ".login-Discord",
-      "hash": "0392b19a21be6ec05e53e8bcd9a22fe7"
+      "hash": "be1d5f2812a3160a606d5cecbb23caf2"
     },
     "login-Disqus": {
       "name": "login-Disqus",
       "rule": ".login-Disqus",
-      "hash": "77b29d56329a3c30b79d6b6673b0e39b"
+      "hash": "d24f0428ca75360d8588149464828c55"
     },
     "login-Facebook": {
       "name": "login-Facebook",
       "rule": ".login-Facebook",
-      "hash": "1b12a5a5cfe103d4d96213cf7d1ce18a"
+      "hash": "051f0c7f7d88d0d39171327d9032bb04"
     },
     "login-Generic": {
       "name": "login-Generic",
       "rule": ".login-Generic",
-      "hash": "c8a57930d9b2bca35adbd8e87b1d4a2f"
+      "hash": "b78bc85f2d9d460a1400e7bbbb0f0590"
     },
     "login-Github": {
       "name": "login-Github",
@@ -49,17 +49,17 @@
     "login-HTTP": {
       "name": "login-HTTP",
       "rule": ".login-HTTP",
-      "hash": "4b2150566fd6c43c530ea56aa3c7feb4"
+      "hash": "e9aba25e88cce273f8bf228268e26ee9"
     },
     "login-Jira": {
       "name": "login-Jira",
       "rule": ".login-Jira",
-      "hash": "454fab6635fbc3782380dbb1842a794c"
+      "hash": "1b8bc11d25968edb4710970677dba04b"
     },
     "login-LDAP": {
       "name": "login-LDAP",
       "rule": ".login-LDAP",
-      "hash": "e31df2e9faf8ca0925ef93128a82fa7a"
+      "hash": "ebbdf6dac6320e0ee453b1791116dcd7"
     },
     "login-MediaWiki": {
       "name": "login-MediaWiki",
@@ -69,7 +69,7 @@
     "login-PayPal": {
       "name": "login-PayPal",
       "rule": ".login-PayPal",
-      "hash": "dfa09f45369c93bb0fd82a333b0fe927"
+      "hash": "5c10da72750f36b91d0228ce40201fd3"
     },
     "login-Phabricator": {
       "name": "login-Phabricator",
@@ -79,27 +79,27 @@
     "login-Slack": {
       "name": "login-Slack",
       "rule": ".login-Slack",
-      "hash": "fe0df2df040032b949aa05948b6bd986"
+      "hash": "80e087066e42a105171826861f705bd5"
     },
     "login-Steam": {
       "name": "login-Steam",
       "rule": ".login-Steam",
-      "hash": "029c8f21f890be66010012d332709d2d"
+      "hash": "af0bbfdb131af4fa12eb81a2ee48a671"
     },
     "login-Stripe": {
       "name": "login-Stripe",
       "rule": ".login-Stripe",
-      "hash": "26a00cf2d548bbb9f57d1a6362e996f5"
+      "hash": "ffc88e7d5fe91f96bcec08b137e3ab49"
     },
     "login-TestPayment": {
       "name": "login-TestPayment",
       "rule": ".login-TestPayment",
-      "hash": "7a8b41cbac5edcde63aa64959fe30b7b"
+      "hash": "277965814eba388caa7db5a29f898250"
     },
     "login-TwitchTV": {
       "name": "login-TwitchTV",
       "rule": ".login-TwitchTV",
-      "hash": "02320cb010a226fb6505d5b31f1f0246"
+      "hash": "a30510e72138e9e902fafbc462ce9b13"
     },
     "login-Twitter": {
       "name": "login-Twitter",
@@ -114,7 +114,7 @@
     "login-WordPressCOM": {
       "name": "login-WordPressCOM",
       "rule": ".login-WordPressCOM",
-      "hash": "9eae4205dbed0c42a18ee4f8e0fa151b"
+      "hash": "b3ead7a7684fcb677f60adcf493984c5"
     }
   },
   "scales": [

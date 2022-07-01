@@ -493,4 +493,8 @@ final class PhabricatorLDAPAuthProvider extends PhabricatorAuthProvider {
     return null;
   }
 
+  protected function getLoginIcon() {
+    return 'LDAP';
+  }
+
 }
