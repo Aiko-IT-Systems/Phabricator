@@ -503,6 +503,7 @@ final class PhabricatorMarkupEngine extends Phobject {
     }
 
     $rules = array();
+
     $rules[] = new PhutilRemarkupEscapeRemarkupRule();
     $rules[] = new PhutilRemarkupEvalRule();
     $rules[] = new PhutilRemarkupMonospaceRule();
@@ -528,6 +529,7 @@ final class PhabricatorMarkupEngine extends Phobject {
       }
     }
 
+    $rules[] = new PhutilRemarkupImageHyperlinkRule();
     $rules[] = new PhutilRemarkupHyperlinkRule();
 
     if ($options['macros']) {

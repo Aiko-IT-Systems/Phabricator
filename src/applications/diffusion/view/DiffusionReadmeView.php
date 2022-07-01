@@ -63,7 +63,8 @@ final class DiffusionReadmeView extends DiffusionView {
         // TODO: This is sketchy, but make sure we hit the markup cache.
         $markup_object = id(new PhabricatorMarkupOneOff())
           ->setEngineRuleset('diffusion-readme')
-          ->setContent($content);
+          ->setContent($content)
+          ->setDisableCache(true);
         $markup_field = 'default';
 
         $content = id(new PhabricatorMarkupEngine())
