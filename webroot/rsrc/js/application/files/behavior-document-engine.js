@@ -392,9 +392,9 @@ JX.behavior('document-engine', function(config, statics) {
       case 5: r = v, g = p, b = q; break;
     }
 
-    r = Math.round(r * 100);
-    g = Math.round(g * 100);
-    b = Math.round(b * 100);
+    r = Math.round(r * 120);
+    g = Math.round(g * 120);
+    b = Math.round(b * 120);
 
 
     return 'rgb(' + r + ', ' + g + ', ' + b + ')';

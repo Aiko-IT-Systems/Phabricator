@@ -403,7 +403,7 @@ return array(
     'rsrc/js/application/fact/Chart.js' => '52e3ff03',
     'rsrc/js/application/fact/ChartCurtainView.js' => '86954222',
     'rsrc/js/application/fact/ChartFunctionLabel.js' => 'da5deaba',
-    'rsrc/js/application/files/behavior-document-engine.js' => '54582bbc',
+    'rsrc/js/application/files/behavior-document-engine.js' => '12896178',
     'rsrc/js/application/files/behavior-icon-composer.js' => 'd4f894af',
     'rsrc/js/application/files/behavior-launch-icon-composer.js' => 'a17b84f1',
     'rsrc/js/application/harbormaster/behavior-harbormaster-log.js' => 'b347a301',
@@ -628,7 +628,7 @@ return array(
     'javelin-behavior-diffusion-commit-graph' => 'ac10c917',
     'javelin-behavior-diffusion-locate-file' => '87428eb2',
     'javelin-behavior-diffusion-pull-lastmodified' => 'c715c123',
-    'javelin-behavior-document-engine' => '54582bbc',
+    'javelin-behavior-document-engine' => '12896178',
     'javelin-behavior-doorkeeper-tag' => '6a85bc5a',
     'javelin-behavior-drydock-live-operation-status' => '47a0728b',
     'javelin-behavior-durable-column' => 'fa6f30b2',
@@ -1032,6 +1032,11 @@ return array(
     ),
     '111bfd2d' => array(
       'javelin-install',
+    ),
+    12896178 => array(
+      'javelin-behavior',
+      'javelin-dom',
+      'javelin-stratcom',
     ),
     '1325b731' => array(
       'javelin-behavior',
@@ -1459,11 +1464,6 @@ return array(
     ),
     '541f81c3' => array(
       'javelin-install',
-    ),
-    '54582bbc' => array(
-      'javelin-behavior',
-      'javelin-dom',
-      'javelin-stratcom',
     ),
     '55a24e84' => array(
       'javelin-install',
