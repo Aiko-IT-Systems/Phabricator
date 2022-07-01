@@ -158,6 +158,7 @@ JX.install('PHUIXActionView', {
           className: [
             'phui-icon-view',
             'phabricator-action-view-icon',
+            'fa-solid',
             'phui-font-fa'
           ].join(' ')
         };

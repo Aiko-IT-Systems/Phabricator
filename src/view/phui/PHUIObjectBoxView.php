@@ -250,7 +250,7 @@ final class PHUIObjectBoxView extends AphrontTagView {
     if ($this->actionListID) {
       $icon_id = celerity_generate_unique_node_id();
       $icon = id(new PHUIIconView())
-        ->setIcon('fa-bars');
+        ->setIcon('fa-solid fa-bars');
       $meta = array(
         'map' => array(
           $this->actionListID => 'phabricator-action-list-toggle',
