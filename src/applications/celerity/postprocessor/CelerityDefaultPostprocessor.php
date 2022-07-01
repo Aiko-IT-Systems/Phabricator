@@ -21,11 +21,11 @@ final class CelerityDefaultPostprocessor
     return array(
 
       // Fonts
-      'basefont' => "13px 'Segoe UI', 'Segoe UI Emoji', ".
+      'basefont' => "13px 'Comic Sans MS', 'Segoe UI', 'Segoe UI Emoji', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
         "Helvetica, Arial, sans-serif",
 
-      'fontfamily' => "'Segoe UI', 'Segoe UI Emoji', ".
+      'fontfamily' => "'Comic Sans MS', 'Segoe UI', 'Segoe UI Emoji', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
         "Helvetica, Arial, sans-serif",
 
@@ -212,7 +212,7 @@ final class CelerityDefaultPostprocessor
       'gentle.highlight.background' => '#fffdf6',
 
       'highlight.bright' => '#fdf320',
-      
+
       'paste.content' => '#222222',
       'paste.border' => '#000000',
       'paste.highlight' => '#121212',
