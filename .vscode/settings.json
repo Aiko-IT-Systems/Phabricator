@@ -4,13 +4,4 @@
     },
     "search.useParentIgnoreFiles": true,
     "search.useGlobalIgnoreFiles": true,
-    "cSpell.words": [
-        "hsprintf",
-        "imagehyperlinks",
-        "parentheticals",
-        "phlog",
-        "puncutation",
-        "ungreedily",
-        "Ungreedy"
-    ]
 }
