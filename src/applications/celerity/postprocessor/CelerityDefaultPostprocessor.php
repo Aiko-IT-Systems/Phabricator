@@ -21,12 +21,11 @@ final class CelerityDefaultPostprocessor
     return array(
 
       // Fonts
-      'basefont' => "13px 'Comic Sans MS', 'Segoe UI', 'Segoe UI Emoji', ".
+      'basefont' => "13px 'Segoe UI', 'Segoe UI Emoji', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
         "Helvetica, Arial, sans-serif",
 
-      'fontfamily' => "'Comic Sans MS', ".
-      "'Segoe UI', 'Segoe UI Emoji', ".
+      'fontfamily' => "'Segoe UI', 'Segoe UI Emoji', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
         "Helvetica, Arial, sans-serif",
 
