@@ -9,6 +9,7 @@ abstract class PhabricatorRemarkupHyperlinkEngineExtension
     $allowed_protocols = array(
       'http' => true,
       'https' => true,
+      'mailto' => true,
     );
 
     $results = array();

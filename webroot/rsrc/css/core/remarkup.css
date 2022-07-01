@@ -97,6 +97,13 @@
 .phabricator-remarkup .remarkup-header tt.remarkup-monospaced {
   font-weight: normal;
 }
+.phabricator-remarkup .remarkup-header {
+  display: block ruby;
+}
+
+.phabricator-remarkup > p {
+  display: block ruby;
+}
 
 .phabricator-remarkup ul.remarkup-list {
   list-style: disc;

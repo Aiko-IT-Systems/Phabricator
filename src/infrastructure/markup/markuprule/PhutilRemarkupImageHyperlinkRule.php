@@ -6,7 +6,7 @@ final class PhutilRemarkupImageHyperlinkRule extends PhutilRemarkupRule {
   const IMAGE_SINGLE_MARKDOWN_REGEX = '((?<starttag>!\[(?<description>[\w ]+)\]\()(?<url>https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))(?<endtag>\)))';
   const IMAGE_MULTI_MARKDOWN_REGEX = '((?<imgwithurlmarkdown>(?<linkstartag>\[)(?<imgstarttag>!\[(?<imgalt>[\w ]+)\]\()(?<imgurl>https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))(?<imgendtag>\)\]))(?<linkmiddletag>\()(?<linkurl>https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))(?<linkendtag>\)))';
   public function getPriority() {
-    return 1.0;
+    return 50.0;
   }
 
   public function apply($text) {

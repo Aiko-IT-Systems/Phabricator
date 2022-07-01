@@ -124,7 +124,7 @@
 }
 
 .dark-console .aphront-table-view tr.alt {
-  background: {$greytext};
+  background: rgba(64, 35, 35, 0.6);
 }
 
 .dark-console .aphront-table-view tr.highlight {
