@@ -25,7 +25,8 @@ final class CelerityDefaultPostprocessor
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
         "Helvetica, Arial, sans-serif",
 
-      'fontfamily' => "'Comic Sans MS', 'Segoe UI', 'Segoe UI Emoji', ".
+      'fontfamily' => "'Comic Sans MS', ".
+      "'Segoe UI', 'Segoe UI Emoji', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', ".
         "Helvetica, Arial, sans-serif",
 
