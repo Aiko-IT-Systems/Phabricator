@@ -122,7 +122,7 @@ final class PhabricatorMarkupOneOff
     return phutil_tag(
       'div',
       array(
-        'class' => 'phabricator-remarkup',
+        'class' => 'phabricator-remarkup phabricator-remarkup-readme',
       ),
       $output);
   }

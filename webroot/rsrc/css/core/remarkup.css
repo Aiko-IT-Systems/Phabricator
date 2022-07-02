@@ -97,11 +97,11 @@
 .phabricator-remarkup .remarkup-header tt.remarkup-monospaced {
   font-weight: normal;
 }
-.phabricator-remarkup .remarkup-header {
+.phabricator-remarkup-readme .remarkup-header {
   display: block ruby;
 }
 
-.phabricator-remarkup > p {
+.phabricator-remarkup-readme > p {
   display: block ruby;
 }
 

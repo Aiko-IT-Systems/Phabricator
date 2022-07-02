@@ -65,7 +65,7 @@ final class PhabricatorRepositoryURI
 
   public static function initializeNewURI() {
     return id(new self())
-      ->setIoType(self::IO_DEFAULT)
+      ->setIoType(self::IO_READ)
       ->setDisplayType(self::DISPLAY_DEFAULT)
       ->setIsDisabled(0);
   }
