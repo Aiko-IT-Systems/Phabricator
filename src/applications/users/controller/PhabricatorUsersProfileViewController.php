@@ -130,21 +130,30 @@ Description:
 
     $externalAccounts = $this->loadExternalAccounts($viewer, $user);
 
-    foreach($externalAccounts as $externalAccount) {
-      $uri = $externalAccount->getAccountUri();
-      $name = $externalAccount->getUsername();
-      $providerConfig = $externalAccount->getProviderConfig();
-      $providerName = $providerConfig->getDisplayName();
-      $providerIcon = strtolower($providerName);
+    if ($externalAccounts) {
+      foreach($externalAccounts as $externalAccount) {
+        $uri = $externalAccount->getAccountUri();
+        $name = $externalAccount->getUsername();
+        $providerConfig = $externalAccount->getProviderConfig();
+        $providerName = $providerConfig->getDisplayName();
+        $providerIcon = strtolower($providerName);
 
-      $icon = id(new PHUIIconView())
-        ->setIcon('fa-'.$providerIcon, null, true);
+        $icon = id(new PHUIIconView())
+          ->setIcon('fa-'.$providerIcon, null, true);
 
-      $link_view = id(new PHUILinkView())
-        ->setURI($uri)
-        ->setTarget('_blank')
-        ->setText($name);
-      $view->addProperty($icon, $link_view);
+        $link_view = id(new PHUILinkView())
+          ->setURI($uri)
+          ->setTarget('_blank')
+          ->setText($name);
+        $view->addProperty($icon, $link_view);
+      }
+    } else {
+      $view->addProperty(
+        null,
+        phutil_tag(
+          'em',
+          array(),
+          pht('No linked accounts.')));
     }
 
     if (!$view->hasAnyProperties()) {
