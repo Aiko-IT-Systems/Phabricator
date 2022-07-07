@@ -98,7 +98,7 @@ Description:
         ));
   }
 
-  private function loadExternalAccounts(PhabricatorUser $user, PhabricatorUser $viewer) {
+  private function loadExternalAccounts(PhabricatorUser $viewer, PhabricatorUser $user) {
     $accs = id(new PhabricatorExternalAccountQuery())
     ->setViewer($viewer)
     ->withUserPHIDs(array($user->getPHID()))
@@ -136,7 +136,7 @@ Description:
       $providerConfig = $externalAccount->getProviderConfig();
       $providerName = $providerConfig->getDisplayName();
       $providerIcon = strtolower($providerName);
-      
+
       $icon = id(new PHUIIconView())
         ->setIcon('fa-'.$providerIcon, null, true);
 
