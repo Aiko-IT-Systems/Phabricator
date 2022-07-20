@@ -9,7 +9,7 @@ final class DiscordAntiRaidRaiderListPHIDType extends PhabricatorPHIDType {
   }
 
   public function newObject() {
-    return new PhabricatorFile();
+    return new RaiderList();
   }
 
   public function getPHIDTypeApplicationClass() {

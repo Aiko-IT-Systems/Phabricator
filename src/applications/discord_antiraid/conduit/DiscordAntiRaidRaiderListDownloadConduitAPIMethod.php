@@ -3,7 +3,7 @@
 final class DiscordAntiRaidRaiderListDownloadConduitAPIMethod extends DiscordAntiRaidConduitAPIMethod {
 
   public function getAPIMethodName() {
-    return 'discord.antiraid.raiderlist.download';
+    return 'discord.anti-raid.raider-list.download';
   }
 
   public function getMethodDescription() {
@@ -29,10 +29,12 @@ final class DiscordAntiRaidRaiderListDownloadConduitAPIMethod extends DiscordAnt
 
   protected function execute(ConduitAPIRequest $request) {
     $phid = $request->getValue('phid');
+    $rid = $request->getValue('guild_raid_id');
 
     return array(
       'raiderlist' => $phid,
-      'guilds' => 1263726137681223,
+      'raid_id'=> $rid,
+      'guild' => 881207955029110855,
       'raiders' => array(
         271432891647862184,
         478216748261836892,
