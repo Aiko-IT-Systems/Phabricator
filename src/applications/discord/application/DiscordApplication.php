@@ -3,7 +3,7 @@
 final class DiscordApplication extends PhabricatorApplication {
 
   public function getShortDescription() {
-    return pht('Discord Module');
+    return pht('Discord Base Module');
   }
 
   public function getName() {
