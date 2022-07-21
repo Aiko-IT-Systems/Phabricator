@@ -143,7 +143,7 @@ JX.install('Prefab', {
         }
 
         if (icon) {
-          icon = JX.Prefab._renderIcon(icon);
+          icon = JX.Prefab._renderIcon(icon, iconBrand);
         }
 
         type = type || 'object';
