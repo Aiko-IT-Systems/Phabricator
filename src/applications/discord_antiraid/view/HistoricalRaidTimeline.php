@@ -90,6 +90,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
     $timeline->addEvent($event);
     $timeline->addEvent($event2);
     $timeline->addEvent($event3);
+    $timeline->shouldTerminate(true);
 
     return $timeline;
   }
