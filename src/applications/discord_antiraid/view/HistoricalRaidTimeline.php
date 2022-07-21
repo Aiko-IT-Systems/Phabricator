@@ -76,14 +76,15 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
 
     $event->setUser($user);
     $event->setDateCreated(1658154600);
-    $event->setAnchor("PycordRaid");
+    $event->setAnchor("PycordRaid-".$event->getDateCreated().'-'.$event->getTransactionPHID());
 
     $event2->setUser($user);
     $event2->setDateCreated(1658154600 + 60);
+    $event2->setAnchor("PycordRaid-".$event->getDateCreated().'-'.$event->getTransactionPHID()."-handled");
 
     $event3->setUser($user);
     $event3->setDateCreated(1658154600 + 60 * 60 * 48);
-    $event3->setAnchor("DisCatSharpRaid");
+    $event3->setAnchor("DcsRaid-".$event3->getDateCreated().'-'.$event3->getTransactionPHID());
 
     $timeline = id(new PHUITimelineView());
     $timeline->setUser($user);
