@@ -42,8 +42,6 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       ->addEventToGroup(
         id(new PHUITimelineEventView())
           ->setUser($user)
-          ->setIsNormalComment(true)
-          ->setIsEditable(true)
           ->setCanInteract(true)
           ->setUserHandle($handleReporter)
           ->setAuthorPHID($handleReporter->getPHID())
