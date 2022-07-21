@@ -8,6 +8,7 @@ final class DiscordAntiRaidRenderUIController extends PhabricatorController {
 
   public function handleRequest(AphrontRequest $request) {
     $id = $request->getURIData('class');
+    $user = $request->getUser();
 
     $classes = id(new PhutilClassMapQuery())
       ->setAncestorClass('DiscordAntiRaidUI')
