@@ -42,16 +42,15 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       ->addEventToGroup(
         id(new PHUITimelineEventView())
           ->setUser($user)
-          ->setCanInteract(true)
           ->setUserHandle($handleReporter)
-          ->setAuthorPHID($handleReporter->getPHID())
+          ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
           ->setTitle(pht('Comment on Raid'))
           ->appendChild(pht('Users spammed in dms with crypto scam.')))
       ->addEventToGroup(
         id(new PHUITimelineEventView())
           ->setUser($user)
           ->setUserHandle($handlerActor)
-          ->setAuthorPHID($handlerActor->getPHID())
+          ->setAuthorPHID('PHID-USER-gp4tppid6f65mnunhb53')
           ->setIcon('fa-hammer-crash')
           ->setTitle(pht('Handled Raid.'))
       );
