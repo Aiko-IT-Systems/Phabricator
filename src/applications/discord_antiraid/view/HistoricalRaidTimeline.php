@@ -44,30 +44,23 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
           ->setUserHandle($handleReporter)
           ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
           ->setTitle(pht('Comment on Raid'))
-          ->appendChild(pht('Users spammed in dms with crypto scam.')))
-          ->setAnchor(1)
-      ->addEventToGroup(
-        id(new PHUITimelineEventView())
-          ->setUser($user)
-          ->setUserHandle($handlerActor)
-          ->setAuthorPHID('PHID-USER-gp4tppid6f65mnunhb53')
-          ->setIcon('fa-hammer-crash')
-          ->setTitle(pht('Handled Raid.'))
-          ->setAnchor(2)
-          ->addEventToGroup(
-            id(new PHUITimelineEventView())
-              ->setUser($user)
-              ->setUserHandle($handleReporter)
-              ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
-              ->setTitle(pht('Comment on Raid'))
-              ->appendChild(pht('Users spammed in dms with crypto scam.'))
-              ->setAnchor(2)
-          )
-        );
+          ->appendChild(pht('Users spammed in dms with crypto scam.'))
+      );
+
+    $event2 = id(new PHUITimelineEventView())
+      ->setUser($user)
+      ->setUserHandle($handlerActor)
+      ->setAuthorPHID('PHID-USER-gp4tppid6f65mnunhb53')
+      ->setIcon('fa-hammer-crash')
+      ->setTitle(pht('Handled Raid.'));
 
     $event->setUser($user);
     $event->setDateCreated(1658154600);
     $event->setAnchor(0);
+
+    $event2->setUser($user);
+    $event2->setDateCreated(1658154600 + 60 * 60 * 24);
+    $event2->setAnchor(1);
 
     $timeline = id(new PHUITimelineView());
     $timeline->setUser($user);
