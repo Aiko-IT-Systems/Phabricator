@@ -36,14 +36,7 @@ final class DiscordApplication extends PhabricatorApplication {
 
   public function getRoutes() {
     return array(
-      '/discord/anti-raid/' => array(
-        '' => 'DiscordAntiRaidRenderController',
-        'history/' => 'DiscordAntiRaidRenderUIController',
-        'download/' => array(
-          '' => 'DiscordAntiRaidDownloadController',
-          'raiderlist/' => 'DiscordAntiRaidDownloadRaidersController',
-        ),
-      ),
+      '/discord/' => 'DiscordApplicationController'
     );
   }
 
