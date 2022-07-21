@@ -1,6 +1,6 @@
 <?php
 
-final class DiscordApplication extends PhabricatorApplication {
+class DiscordApplication extends PhabricatorApplication {
 
   public function getShortDescription() {
     return pht('Discord Base Module');
