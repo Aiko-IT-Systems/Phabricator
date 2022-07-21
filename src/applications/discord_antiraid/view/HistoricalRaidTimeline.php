@@ -65,6 +65,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
     $timeline = id(new PHUITimelineView());
     $timeline->setUser($user);
     $timeline->addEvent($event);
+    $timeline->addEvent($event2);
 
     return $timeline;
   }
