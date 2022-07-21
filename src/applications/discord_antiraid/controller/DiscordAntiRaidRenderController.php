@@ -10,7 +10,7 @@ final class DiscordAntiRaidRenderController extends PhabricatorController {
     $user = $request->getUser();
 
     $app = id(new PhabricatorApplicationQuery())
-      ->setViewer($actor)
+      ->setViewer($user)
       ->withClasses(array('DiscordApplication'))
       ->executeOne();
 
