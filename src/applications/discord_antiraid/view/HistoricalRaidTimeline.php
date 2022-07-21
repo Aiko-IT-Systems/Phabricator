@@ -34,10 +34,10 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
 
     $event = id(new PHUITimelineEventView())
       ->setUserHandle($handleReporter)
-      ->setTitle(pht('Raid Report'))
+      ->setTitle(pht('Raid Report on %s', 'Pycord'))
       ->addBadge($admin)
       ->addBadge($verified)
-      ->appendChild(pht('Server: %s', 'Pycord'))
+      ->setReallyMajorEvent(true)
       ->setTransactionPHID("PHID-RALI-dpwkupqrhtcolyeg5whj")
       ->addEventToGroup(
         id(new PHUITimelineEventView())
@@ -49,7 +49,6 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       );
 
     $event2 = id(new PHUITimelineEventView())
-      ->setUser($user)
       ->setUserHandle($handlerActor)
       ->setAuthorPHID('PHID-USER-gp4tppid6f65mnunhb53')
       ->setIcon('fa-hammer-crash')
@@ -61,7 +60,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
 
     $event2->setUser($user);
     $event2->setDateCreated(1658154600 + 60);
-    $event2->setAnchor(1);
+    $event2->setAnchor(0);
 
     $timeline = id(new PHUITimelineView());
     $timeline->setUser($user);
