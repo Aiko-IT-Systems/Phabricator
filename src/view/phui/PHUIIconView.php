@@ -169,7 +169,6 @@ final class PHUIIconView extends AphrontTagView {
 
   public static function getIcons() {
     return array(
-      'fa-discord',
       'fa-glass',
       'fa-music',
       'fa-search',

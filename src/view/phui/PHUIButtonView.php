@@ -136,7 +136,7 @@ final class PHUIButtonView extends AphrontTagView {
   public function setIcon($icon, $first = true) {
     if (!($icon instanceof PHUIIconView)) {
       $icon = id(new PHUIIconView())
-        ->setIcon('fa-brands '.$icon);
+        ->setIcon('fa-solid '.$icon);
     }
     $this->icon = $icon;
     $this->iconFirst = $first;
