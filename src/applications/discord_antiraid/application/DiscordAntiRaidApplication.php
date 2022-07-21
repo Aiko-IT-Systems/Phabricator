@@ -19,7 +19,7 @@ final class DiscordAntiRaidApplication extends PhabricatorApplication {
   }
 
   public function isBrandIcon() {
-    return true;
+    return false;
   }
 
   public function getFlavorText() {

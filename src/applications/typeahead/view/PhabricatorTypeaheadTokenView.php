@@ -19,8 +19,6 @@ final class PhabricatorTypeaheadTokenView
 
   public static function newFromTypeaheadResult(
     PhabricatorTypeaheadResult $result) {
-    phlog($result->getIcon());
-    phlog($result->getIconBrand());
     return id(new PhabricatorTypeaheadTokenView())
       ->setKey($result->getPHID())
       ->setIcon($result->getIcon(), $result->getIconBrand())
@@ -36,8 +34,6 @@ final class PhabricatorTypeaheadTokenView
       ->setKey($handle->getPHID())
       ->setValue($handle->getFullName())
       ->setIcon($handle->getTokenIcon(), $handle->getIconBrand());
-    phlog($handle->getTokenIcon());
-    phlog($handle->getIconBrand());
     if ($handle->isDisabled() ||
         $handle->getStatus() == PhabricatorObjectHandle::STATUS_CLOSED) {
       $token->setTokenType(self::TYPE_DISABLED);
@@ -104,8 +100,6 @@ final class PhabricatorTypeaheadTokenView
     }
     $this->icon = $icon;
     $this->iconBrand = $brand;
-    phlog($icon);
-    phlog($brand);
     return $this;
   }
 

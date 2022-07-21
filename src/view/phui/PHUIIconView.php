@@ -111,9 +111,6 @@ final class PHUIIconView extends AphrontTagView {
     } else if ($this->iconFont) {
       require_celerity_resource('phui-font-icon-base-css');
       //require_celerity_resource('font-fontawesome');
-      phlog($this->iconFont);
-      phlog($this->iconColor);
-      phlog($this->isIconBrand);
       if ($this->isIconBrand) {
         $classes[] = 'fa-brands';
       } else {
