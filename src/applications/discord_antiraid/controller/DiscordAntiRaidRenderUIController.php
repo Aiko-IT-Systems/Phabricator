@@ -19,7 +19,7 @@ final class DiscordAntiRaidRenderUIController extends PhabricatorController {
     ->setBaseUri(new PhutilURI($this->getApplicationURI('/')));
     $nav->addLabel(pht('Public'));
     $nav->addFilter('main', pht('Main'), $this->getApplicationURI('/'), 'fa-shield', false);
-    $nav->addButton('history', pht('History'), $this->getApplicationURI('/history'), 'fa-clock-rotate-left', false);
+    $nav->addFilter('history', pht('History'), $this->getApplicationURI('/history'), 'fa-clock-rotate-left', false);
     $selected = $nav->selectFilter(pht('History'));
 
     $example = $classes["HistoricalRaidTimeline"];
