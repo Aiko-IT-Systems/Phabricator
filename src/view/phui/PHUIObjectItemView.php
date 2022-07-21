@@ -152,6 +152,7 @@ final class PHUIObjectItemView extends AphrontTagView {
         ->setIcon($image_icon, $brand);
     }
     $this->imageIcon = $image_icon;
+    $this->isImageBrandIcon = $brand;
     return $this;
   }
 
@@ -206,11 +207,12 @@ final class PHUIObjectItemView extends AphrontTagView {
     return $this;
   }
 
-  public function addIcon($icon, $label = null, $attributes = array()) {
+  public function addIcon($icon, $label = null, $attributes = array(), $brand = false) {
     $this->icons[] = array(
       'icon'  => $icon,
       'label' => $label,
       'attributes' => $attributes,
+      'brand' => $brand,
     );
     return $this;
   }
@@ -458,8 +460,9 @@ final class PHUIObjectItemView extends AphrontTagView {
       $icon_list = array();
       foreach ($this->icons as $spec) {
         $icon = $spec['icon'];
+        $brand = $spec['brand'];
         $icon = id(new PHUIIconView())
-          ->setIcon($icon)
+          ->setIcon($icon, null, $brand)
           ->addClass('phui-oi-icon-image');
 
         if (isset($spec['attributes']['tip'])) {

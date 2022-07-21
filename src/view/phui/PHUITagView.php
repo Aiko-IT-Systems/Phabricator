@@ -41,6 +41,7 @@ final class PHUITagView extends AphrontTagView {
   private $closed;
   private $external;
   private $icon;
+  private $iconBrand;
   private $shade;
   private $slimShady;
   private $border;
@@ -115,8 +116,9 @@ final class PHUITagView extends AphrontTagView {
     return $this;
   }
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->iconBrand = $brand;
     return $this;
   }
 
@@ -238,7 +240,7 @@ final class PHUITagView extends AphrontTagView {
 
     if ($this->icon) {
       $icon = id(new PHUIIconView())
-        ->setIcon($this->icon);
+        ->setIcon($this->icon, null, $this->iconBrand);
     } else {
       $icon = null;
     }
