@@ -10,6 +10,7 @@ JX.install('PHUIXIconView', {
     _node: null,
     _icon: null,
     _color: null,
+    _brand: false,
 
     setIcon: function(icon) {
       var node = this.getNode();
@@ -31,10 +32,24 @@ JX.install('PHUIXIconView', {
       return this;
     },
 
+    setBrand: function(brand) {
+      var node = this.getNode();
+      if (this._brand) {
+        JX.DOM.alterClass(node, this._brand, false);
+      }
+      this._brand = brand;
+      JX.DOM.alterClass(node, this._brand, true);
+      return this;
+    },
+
     getNode: function() {
       if (!this._node) {
+        var brand = 'fa-solid';
+        if (this._brand) {
+          brand = 'fa-brands';
+        }
         var attrs = {
-          className: 'phui-icon-view phui-font-fa fa-solid fa-brands'
+          className: 'phui-icon-view phui-font-fa ' + brand
         };
 
         this._node = JX.$N('span', attrs);

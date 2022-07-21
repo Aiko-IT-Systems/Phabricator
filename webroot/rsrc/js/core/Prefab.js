@@ -123,17 +123,20 @@ JX.install('Prefab', {
         }
 
         var icon;
+        var iconBrand;
         var type;
         var color;
         var availability_color;
         if (result) {
           icon = result.icon;
+          iconBrand = result.iconBrand;
           value = result.displayName;
           type = result.tokenType;
           color = result.color;
           availability_color = result.availabilityColor;
         } else {
           icon = (config.icons || {})[key];
+          iconBrand = false;
           type = (config.types || {})[key];
           color = (config.colors || {})[key];
           availability_color = (config.availabilityColors || {})[key];
@@ -282,9 +285,10 @@ JX.install('Prefab', {
       }
 
       var icon = fields[8];
+      var brand = fields[15] || false;
       var icon_ui;
       if (icon) {
-        icon_ui = JX.Prefab._renderIcon(icon);
+        icon_ui = JX.Prefab._renderIcon(icon, brand);
       }
 
       var availability_ui;
@@ -315,6 +319,7 @@ JX.install('Prefab', {
         priorityType: fields[7],
         imageURI: fields[6],
         icon: icon,
+        iconBrand: brand,
         closed: closed,
         type: fields[5],
         sprite: fields[10],
@@ -327,10 +332,14 @@ JX.install('Prefab', {
       };
     },
 
-    _renderIcon: function(icon) {
+    _renderIcon: function(icon, isBrand) {
+      var brand = 'fa-solid';
+      if (isBrand) {
+        brand = 'fa-brands';
+      }
       return JX.$N(
         'span',
-        {className: 'phui-icon-view phui-font-fa fa-solid fa-brands ' + icon});
+        {className: 'phui-icon-view phui-font-fa ' + brand + ' ' + icon});
     }
 
   }
