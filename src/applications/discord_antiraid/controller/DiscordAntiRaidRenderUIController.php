@@ -32,6 +32,10 @@ final class DiscordAntiRaidRenderUIController extends PhabricatorController {
 
     require_celerity_resource('phabricator-ui-example-css');
 
+    $app = id(new PhabricatorApplicationQuery())
+      ->setViewer($user)
+      ->withClasses(array('DiscordApplication'))
+      ->executeOne();
     $crumbs = new PHUICrumbsView();
     $crumbs->addCrumb(id(new PHUICrumbView())
       ->setName($app->getName())
