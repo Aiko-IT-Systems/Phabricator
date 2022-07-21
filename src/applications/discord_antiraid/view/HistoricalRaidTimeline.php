@@ -32,44 +32,40 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       ->setHeader(pht('Verified'))
       ->setQuality(PhabricatorBadgesQuality::EPIC);
 
-    $events = array();
-
-    $events[] = id(new PHUITimelineEventView())
+    $event = id(new PHUITimelineEventView())
       ->setUserHandle($handleReporter)
       ->setTitle(pht('Raid Report'))
-      ->appendChild(pht('Raid happened suddenly, users spammed in dms with crypto scam.'))
+      ->appendChild(pht('Server: %s', 'Pycord'))
       ->addBadge($admin)
       ->addBadge($verified)
-      ->addPinboardItem(
-        id(new PHUIPinboardItemView())
-          ->setUser($user)
-          ->setImageSize(128, 128)
-          ->setHeader("Guild: Pycord")
-          ->setURI("https://discord.gg/pycord")
-          ->setImageURI("https://cdn.discordapp.com/icons/881207955029110855/a_4fe704fc022c0ebaa8077c0c89f59840.jpg")
-      )
       ->setTransactionPHID("PHID-RALI-dpwkupqrhtcolyeg5whj");
 
-    $events[] = id(new PHUITimelineEventView())
+
+    id(new PHUITimelineEventView())
+      ->setIsNormalComment(true)
+      ->setIsEditable(true)
+      ->setCanInteract(true)
+      ->setUserHandle($handleReporter)
+      ->setTitle(pht('Comment on Raid'))
+      ->appendChild(pht('Users spammed in dms with crypto scam.'))
+      ->addEventToGroup($event);
+
+    id(new PHUITimelineEventView())
       ->setUserHandle($handlerActor)
       ->setIcon('fa-hammer-crash')
-      ->setTitle(pht('Handled Raid.'));
+      ->setTitle(pht('Handled Raid.'))
+      ->addEventToGroup($event);
 
 
     $anchor = 0;
-    foreach ($events as $group) {
-      foreach ($group->getEventGroup() as $event) {
-        $event->setUser($user);
-        $event->setDateCreated(1658154600 + ($anchor * 60 * 8));
-        $event->setAnchor(++$anchor);
-      }
-    }
+
+    $event->setUser($user);
+    $event->setDateCreated(1658154600);
+    $event->setAnchor(++$anchor);
 
     $timeline = id(new PHUITimelineView());
     $timeline->setUser($user);
-    foreach ($events as $event) {
-      $timeline->addEvent($event);
-    }
+    $timeline->addEvent($event);
 
     return $timeline;
   }
