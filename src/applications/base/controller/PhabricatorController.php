@@ -340,9 +340,6 @@ abstract class PhabricatorController extends AphrontController {
         ->setIcon($icon, $brand);
     }
 
-    phlog("Logging PhabricatorController");
-    phlog($crumbs);
-
     $view = new PHUICrumbsView();
     foreach ($crumbs as $crumb) {
       $view->addCrumb($crumb);
