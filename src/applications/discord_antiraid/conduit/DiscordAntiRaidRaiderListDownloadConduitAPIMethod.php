@@ -12,8 +12,7 @@ final class DiscordAntiRaidRaiderListDownloadConduitAPIMethod extends DiscordAnt
 
   protected function defineParamTypes() {
     return array(
-      'phid' => 'optional phid',
-      'guild_raid_id' => 'optional wild',
+      'phid' => 'required phid',
     );
   }
 
@@ -29,16 +28,25 @@ final class DiscordAntiRaidRaiderListDownloadConduitAPIMethod extends DiscordAnt
 
   protected function execute(ConduitAPIRequest $request) {
     $phid = $request->getValue('phid');
-    $rid = $request->getValue('guild_raid_id');
 
-    return array(
-      'raiderlist' => $phid,
-      'raid_id'=> $rid,
+    return array (
+      'actors' => array (
+        856780995629154305,
+        822242444070092860,
+      ),
       'guild' => 881207955029110855,
-      'raiders' => array(
-        271432891647862184,
-        478216748261836892,
-      )
+      'notes' => array (
+        856780995629154305 => 'Raid happened suddenly, users spammed in dms with crypto scam',
+      ),
+      'phid' => $phid,
+      'raiders' => array (
+        42183821907487860,
+        43214890218324216,
+        59838384934395990,
+      ),
+      'timestamp' => 1658154600,
+      'type' => 2,
+      'uri' => 'https://aitsys.dev/RL1',
     );
   }
 

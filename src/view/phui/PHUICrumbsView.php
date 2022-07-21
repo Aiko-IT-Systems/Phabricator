@@ -76,7 +76,7 @@ final class PHUICrumbsView extends AphrontView {
           }
 
           $icon = id(new PHUIIconView())
-            ->setIcon($icon_name, $is_brand);
+            ->setIcon($icon_name, null, $is_brand);
 
         }
 

@@ -4,6 +4,7 @@ final class PhabricatorActionView extends AphrontView {
 
   private $name;
   private $icon;
+  private $brand;
   private $href;
   private $disabled;
   private $label;
@@ -73,8 +74,9 @@ final class PhabricatorActionView extends AphrontView {
     return $this->href;
   }
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->brand = $brand;
     return $this;
   }
 
@@ -206,7 +208,7 @@ final class PhabricatorActionView extends AphrontView {
       }
       $icon = id(new PHUIIconView())
         ->addClass('phabricator-action-view-icon')
-        ->setIcon($this->icon.$color);
+        ->setIcon($this->icon, $color, $this->brand);
     }
 
     $sigils = array();

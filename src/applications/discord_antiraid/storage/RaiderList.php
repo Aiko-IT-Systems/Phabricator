@@ -7,28 +7,20 @@ final class RaiderList extends RaiderListDAO
     PhabricatorPolicyInterface,
     PhabricatorDestructibleInterface,
     PhabricatorApplicationTransactionInterface,
-    PhabricatorSpacesInterface,
     PhabricatorConduitResultInterface {
 
-  protected $title;
+  protected $actors;
   protected $authorPHID;
-  protected $filePHID;
-  protected $language;
-  protected $parentPHID;
+  protected $raliPHID;
+  protected $raiders;
+  protected $notes;
   protected $viewPolicy;
   protected $editPolicy;
-  protected $mailKey;
-  protected $status;
+  protected $type;
+  protected $timestamp;
   protected $spacePHID;
 
-  const STATUS_ACTIVE = 'active';
-  const STATUS_ARCHIVED = 'archived';
-
-  private $content = self::ATTACHABLE;
-  private $rawContent = self::ATTACHABLE;
-  private $snippet = self::ATTACHABLE;
-
-  public static function initializeNewPaste(PhabricatorUser $actor) {
+  public static function initializeNewRaiderList(PhabricatorUser $actor) {
     $app = id(new PhabricatorApplicationQuery())
       ->setViewer($actor)
       ->withClasses(array('DiscordAntiRaidApplication'))
@@ -38,20 +30,10 @@ final class RaiderList extends RaiderListDAO
     $edit_policy = $app->getPolicy(DiscordAntiRaidDefaultEditCapability::CAPABILITY);
 
     return id(new RaiderList())
-      ->setTitle('')
-      ->setStatus(self::STATUS_ACTIVE)
       ->setAuthorPHID($actor->getPHID())
       ->setViewPolicy($view_policy)
       ->setEditPolicy($edit_policy)
-      ->setSpacePHID($actor->getDefaultSpacePHID())
-      ->attachRawContent(null);
-  }
-
-  public static function getStatusNameMap() {
-    return array(
-      self::STATUS_ACTIVE => pht('Active'),
-      self::STATUS_ARCHIVED => pht('Archived'),
-    );
+      ->setSpacePHID($actor->getDefaultSpacePHID());
   }
 
   public function getURI() {
@@ -59,35 +41,28 @@ final class RaiderList extends RaiderListDAO
   }
 
   public function getMonogram() {
-    return 'P'.$this->getID();
+    return 'RL'.$this->getID();
   }
 
   protected function getConfiguration() {
     return array(
       self::CONFIG_AUX_PHID => true,
       self::CONFIG_COLUMN_SCHEMA => array(
-        'status' => 'text32',
-        'title' => 'text255',
-        'language' => 'text64?',
-        'mailKey' => 'bytes20',
+        'actors' => 'text255',
+        'guild' => 'text255',
+        'notes' => 'text512?',
+        'raiders' => 'text512',
+        'type' => 'uint32',
+        'timestamp' => 'uint32',
         'parentPHID' => 'phid?',
-
-        // T6203/NULLABILITY
-        // Pastes should always have a view policy.
-        'viewPolicy' => 'policy?',
+        'viewPolicy' => 'policy',
       ),
       self::CONFIG_KEY_SCHEMA => array(
-        'parentPHID' => array(
-          'columns' => array('parentPHID'),
-        ),
         'authorPHID' => array(
           'columns' => array('authorPHID'),
         ),
         'key_dateCreated' => array(
           'columns' => array('dateCreated'),
-        ),
-        'key_language' => array(
-          'columns' => array('language'),
         ),
       ),
     ) + parent::getConfiguration();
@@ -95,26 +70,11 @@ final class RaiderList extends RaiderListDAO
 
   public function generatePHID() {
     return PhabricatorPHID::generateNewPHID(
-      PhabricatorPastePastePHIDType::TYPECONST);
-  }
-
-  public function isArchived() {
-    return ($this->getStatus() == self::STATUS_ARCHIVED);
-  }
-
-  public function save() {
-    if (!$this->getMailKey()) {
-      $this->setMailKey(Filesystem::readRandomCharacters(20));
-    }
-    return parent::save();
+      DiscordAntiRaidRaiderListPHIDType::TYPECONST);
   }
 
   public function getFullName() {
-    $title = $this->getTitle();
-    if (!$title) {
-      $title = pht('(An Untitled Masterwork)');
-    }
-    return 'P'.$this->getID().' '.$title;
+    return 'RL'.$this->getID();
   }
 
   public function getContent() {

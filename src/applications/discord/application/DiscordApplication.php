@@ -1,41 +1,37 @@
 <?php
 
-final class DiscordAntiRaidApplication extends PhabricatorApplication {
-
-  public function getBaseURI() {
-    return '/discord/anti-raid/';
-  }
+final class DiscordApplication extends PhabricatorApplication {
 
   public function getShortDescription() {
-    return pht('Discord Anti-Raid Module');
+    return pht('Discord Module');
   }
 
   public function getName() {
-    return pht('Discord Anti-Raid');
+    return pht('Discord');
   }
 
   public function getIcon() {
-    return 'fa-shield';
+    return 'fa-discord';
   }
 
   public function isBrandIcon() {
     return true;
   }
 
-  public function getFlavorText() {
-    return pht('Anti-Raid Security for Discord.');
+  public function getApplicationGroup() {
+    return self::GROUP_CORE;
   }
 
-  public function getApplicationGroup() {
-    return self::GROUP_UTILITIES;
+  public function isLaunchable() {
+    return false;
+  }
+
+  public function canUninstall() {
+    return false;
   }
 
   public function isPrototype() {
     return true;
-  }
-
-  public function getApplicationOrder() {
-    return 0.1;
   }
 
   public function getRoutes() {
