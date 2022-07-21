@@ -56,18 +56,40 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       ->setTitle(pht('Handled Raid.'))
       ->setTransactionPHID("PHID-RALI-dpwkupqrhtcolyeg5whj");
 
+
+    $event3 = id(new PHUITimelineEventView())
+      ->setUserHandle($handleReporter)
+      ->setTitle(pht('Raid Report on %s', 'DisCatSharp'))
+      ->addBadge($admin)
+      ->addBadge($verified)
+      ->setReallyMajorEvent(true)
+      ->setTransactionPHID("PHID-RALI-dsadspaod9usa9odqwq")
+      ->addEventToGroup(
+        id(new PHUITimelineEventView())
+          ->setUser($user)
+          ->setUserHandle($handleReporter)
+          ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
+          ->setTitle(pht('Comment on Raid'))
+          ->setTransactionPHID("PHID-RALI-dsadspaod9usa9odqwq")
+          ->appendChild(pht('User mass-pinged.'))
+      );
+
     $event->setUser($user);
     $event->setDateCreated(1658154600);
     $event->setAnchor("PycordRaid");
 
     $event2->setUser($user);
     $event2->setDateCreated(1658154600 + 60);
-    $event->setAnchor("PycordRaid");
+
+    $event3->setUser($user);
+    $event3->setDateCreated(1658154600 + 60 * 60 * 48);
+    $event3->setAnchor("DisCatSharpRaid");
 
     $timeline = id(new PHUITimelineView());
     $timeline->setUser($user);
     $timeline->addEvent($event);
     $timeline->addEvent($event2);
+    $timeline->addEvent($event3);
 
     return $timeline;
   }
