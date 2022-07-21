@@ -149,7 +149,7 @@ final class PHUIObjectItemView extends AphrontTagView {
   public function setImageIcon($image_icon, $brand = false) {
     if (!$image_icon instanceof PHUIIconView) {
       $image_icon = id(new PHUIIconView())
-        ->setIcon($image_icon, $brand);
+        ->setIcon($image_icon,null,  $brand);
     }
     $this->imageIcon = $image_icon;
     $this->isImageBrandIcon = $brand;
