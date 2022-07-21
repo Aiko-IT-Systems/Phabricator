@@ -40,7 +40,7 @@ final class PhabricatorApplicationApplicationPHIDType
       $handle
         ->setName($application->getName())
         ->setURI($application->getApplicationURI())
-        ->setIcon($application->getIcon());
+        ->setIcon($application->getIcon(), $application->isBrandIcon());
     }
   }
 

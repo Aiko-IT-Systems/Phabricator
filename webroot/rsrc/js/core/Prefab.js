@@ -285,7 +285,7 @@ JX.install('Prefab', {
       }
 
       var icon = fields[8];
-      var brand = fields[15] || false;
+      var brand = fields[17] || false;
       var icon_ui;
       if (icon) {
         icon_ui = JX.Prefab._renderIcon(icon, brand);

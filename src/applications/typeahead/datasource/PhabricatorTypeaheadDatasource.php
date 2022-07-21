@@ -595,7 +595,7 @@ abstract class PhabricatorTypeaheadDatasource extends Phobject {
     foreach ($rendered as $key => $render) {
       $tokens[$key] = id(new PhabricatorTypeaheadResult())
         ->setPHID($render->getKey())
-        ->setIcon($render->getIcon())
+        ->setIcon($render->getIcon(), $render->getIconBrand())
         ->setColor($render->getColor())
         ->setDisplayName($render->getValue())
         ->setTokenType($render->getTokenType());

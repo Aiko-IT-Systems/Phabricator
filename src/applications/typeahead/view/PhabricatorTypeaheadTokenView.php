@@ -10,6 +10,7 @@ final class PhabricatorTypeaheadTokenView
 
   private $key;
   private $icon;
+  private $iconBrand;
   private $color;
   private $inputName;
   private $value;
@@ -18,10 +19,11 @@ final class PhabricatorTypeaheadTokenView
 
   public static function newFromTypeaheadResult(
     PhabricatorTypeaheadResult $result) {
-
+    phlog($result->getIcon());
+    phlog($result->getIconBrand());
     return id(new PhabricatorTypeaheadTokenView())
       ->setKey($result->getPHID())
-      ->setIcon($result->getIcon())
+      ->setIcon($result->getIcon(), $result->getIconBrand())
       ->setColor($result->getColor())
       ->setValue($result->getDisplayName())
       ->setTokenType($result->getTokenType());
@@ -33,8 +35,9 @@ final class PhabricatorTypeaheadTokenView
     $token = id(new PhabricatorTypeaheadTokenView())
       ->setKey($handle->getPHID())
       ->setValue($handle->getFullName())
-      ->setIcon($handle->getTokenIcon());
-
+      ->setIcon($handle->getTokenIcon(), $handle->getIconBrand());
+    phlog($handle->getTokenIcon());
+    phlog($handle->getIconBrand());
     if ($handle->isDisabled() ||
         $handle->getStatus() == PhabricatorObjectHandle::STATUS_CLOSED) {
       $token->setTokenType(self::TYPE_DISABLED);
@@ -91,11 +94,18 @@ final class PhabricatorTypeaheadTokenView
     return $this->inputName;
   }
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
+    $branding = 'fa-solid';
+    if ($brand) {
+      $branding = 'fa-brands';
+    }
     if($this->startsWith($icon, 'fa-')) {
-      $icon = "fa-solid {$icon}";
+      $icon = "{$branding} {$icon}";
     }
     $this->icon = $icon;
+    $this->iconBrand = $brand;
+    phlog($icon);
+    phlog($brand);
     return $this;
   }
 
@@ -106,6 +116,10 @@ final class PhabricatorTypeaheadTokenView
 
   public function getIcon() {
     return $this->icon;
+  }
+
+  public function getIconBrand() {
+    return $this->iconBrand;
   }
 
   public function setColor($color) {
@@ -185,10 +199,15 @@ final class PhabricatorTypeaheadTokenView
     $icon_view = null;
     $icon = $this->getIcon();
     if ($icon) {
+      $brand = $this->getIconBrand();
+      $branding = 'fa-solid';
+      if ($brand) {
+        $branding = 'fa-brands';
+      }
       $icon_view = phutil_tag(
         'span',
         array(
-          'class' => 'phui-icon-view phui-font-fa fa-solid fa-brands'.$icon,
+          'class' => 'phui-icon-view phui-font-fa '.$branding.' '.$icon,
         ));
     }
 

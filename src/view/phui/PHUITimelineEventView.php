@@ -7,6 +7,7 @@ final class PHUITimelineEventView extends AphrontView {
   private $userHandle;
   private $title;
   private $icon;
+  private $iconBrand;
   private $color;
   private $classes = array();
   private $contentSource;
@@ -180,8 +181,9 @@ final class PHUITimelineEventView extends AphrontView {
     return $this;
   }
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->iconBrand = $brand;
     return $this;
   }
 
@@ -283,7 +285,7 @@ final class PHUITimelineEventView extends AphrontView {
       }
 
       $icon = id(new PHUIIconView())
-        ->setIcon($this->icon)
+        ->setIcon($this->icon, null, $this->iconBrand)
         ->addClass('phui-timeline-icon');
 
       $icon = phutil_tag(

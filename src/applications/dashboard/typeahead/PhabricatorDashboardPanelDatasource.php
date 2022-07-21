@@ -48,9 +48,11 @@ final class PhabricatorDashboardPanelDatasource
       if ($impl) {
         $type_text = $impl->getPanelTypeName();
         $icon = $impl->getIcon();
+        $brand = $impl->getIconBrand();
       } else {
         $type_text = nonempty($panel->getPanelType(), pht('Unknown Type'));
         $icon = 'fa-question';
+        $brand = false;
       }
       $phid = $panel->getPHID();
       $monogram = $panel->getMonogram();
@@ -59,7 +61,7 @@ final class PhabricatorDashboardPanelDatasource
       $result = id(new PhabricatorTypeaheadResult())
         ->setName($monogram.' '.$panel->getName())
         ->setPHID($phid)
-        ->setIcon($icon)
+        ->setIcon($icon, $brand)
         ->addAttribute($type_text);
 
       if (!empty($properties['class'])) {
