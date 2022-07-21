@@ -9,11 +9,10 @@ final class DiscordAntiRaidRenderController extends PhabricatorController {
   public function handleRequest(AphrontRequest $request) {
     $user = $request->getUser();
 
-    $apps = id(new PhutilClassMapQuery())
-      ->setAncestorClass('DiscordApplication')
-      ->setSortMethod('getName')
-      ->execute();
-    $app = idx($apps, 'DiscordApplication');
+    $app = id(new PhabricatorApplicationQuery())
+      ->setViewer($actor)
+      ->withClasses(array('DiscordApplication'))
+      ->executeOne();
 
     $crumbs = new PHUICrumbsView();
     $crumbs->addCrumb(id(new PHUICrumbView())
