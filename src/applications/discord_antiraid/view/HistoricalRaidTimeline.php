@@ -45,6 +45,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
           ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
           ->setTitle(pht('Comment on Raid'))
           ->appendChild(pht('Users spammed in dms with crypto scam.')))
+          ->setAnchor(1)
       ->addEventToGroup(
         id(new PHUITimelineEventView())
           ->setUser($user)
@@ -52,6 +53,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
           ->setAuthorPHID('PHID-USER-gp4tppid6f65mnunhb53')
           ->setIcon('fa-hammer-crash')
           ->setTitle(pht('Handled Raid.'))
+          ->setAnchor(2)
           ->addEventToGroup(
             id(new PHUITimelineEventView())
               ->setUser($user)
@@ -59,6 +61,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
               ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
               ->setTitle(pht('Comment on Raid'))
               ->appendChild(pht('Users spammed in dms with crypto scam.'))
+              ->setAnchor(2)
           )
         );
 
