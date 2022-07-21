@@ -18,9 +18,9 @@ final class DiscordAntiRaidRenderUIController extends PhabricatorController {
     $nav = id(new AphrontSideNavFilterView())
     ->setBaseUri(new PhutilURI($this->getApplicationURI('/')));
     $nav->addLabel(pht('Public'));
-    $nav->addButton('/', pht('Main'));
-    $nav->addButton('/history/', pht('History'));
-    $selected = $nav->selectFilter('History', head_key($classes));
+    $nav->addFilter('main', pht('Main'), $this->getApplicationURI('/'), 'fa-shield', false);
+    $nav->addButton('history', pht('History'), $this->getApplicationURI('/history'), 'fa-clock', false);
+    $selected = $nav->selectFilter(pht('History'), head_key($classes));
 
     $example = $classes[$selected];
     $example->setRequest($this->getRequest());
