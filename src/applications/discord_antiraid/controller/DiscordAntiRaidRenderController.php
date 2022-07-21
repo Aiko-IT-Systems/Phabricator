@@ -10,6 +10,10 @@ final class DiscordAntiRaidRenderController extends PhabricatorController {
     $user = $request->getUser();
 
     $crumbs = $this->buildApplicationCrumbs();
+    $crumbs->addCrumb(id(new PHUICrumbView())
+      ->setName($this->getCurrentApplication()->getName())
+      ->setIcon($this->getCurrentApplication()->getIcon(), $this->getCurrentApplication()->isBrandIcon())
+      ->setHref($this->getApplicationURI('/')));
     $crumbs->addTextCrumb('Main');
 
     $header = id(new PHUIHeaderView())
