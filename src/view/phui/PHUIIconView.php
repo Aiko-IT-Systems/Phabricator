@@ -114,7 +114,7 @@ final class PHUIIconView extends AphrontTagView {
       if ($this->isIconBrand) {
         $classes[] = 'fa-brands';
       } else {
-        $classes[] = 'fa-solid';
+        $classes[] = 'fa-brands';
       }
       $classes[] = $this->iconFont;
       if ($this->iconColor) {
