@@ -58,9 +58,9 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
               ->setUserHandle($handleReporter)
               ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
               ->setTitle(pht('Comment on Raid'))
-              ->appendChild(pht('Users spammed in dms with crypto scam.')))
+              ->appendChild(pht('Users spammed in dms with crypto scam.'))
           )
-      );
+        );
 
     $event->setUser($user);
     $event->setDateCreated(1658154600);
