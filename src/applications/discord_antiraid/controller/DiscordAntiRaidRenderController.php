@@ -40,8 +40,9 @@ final class DiscordAntiRaidRenderController extends PhabricatorController {
       ->setCrumbs($crumbs);
 
     $nav->addLabel(pht('Public'));
-    $nav->addButton('/', pht('Main'));
-    $nav->selectFilter('/', '/');
+    $nav->addFilter('main', pht('Main'), $this->getApplicationURI('/'), 'fa-shield', false);
+    $nav->addFilter('history', pht('History'), $this->getApplicationURI('/history'), 'fa-clock-rotate-left', false);
+    $nav->selectFilter('main', 'main');
 
     $curtain = id(new PHUICurtainView());
 

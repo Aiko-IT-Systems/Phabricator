@@ -2,7 +2,7 @@
 final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
 
   public function getName() {
-    return pht('Historical Raid Timeline');
+    return pht('History');
   }
 
   public function getDescription() {
