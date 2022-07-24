@@ -38,16 +38,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       ->addBadge($admin)
       ->addBadge($verified)
       ->setReallyMajorEvent(true)
-      ->setTransactionPHID("PHID-RALI-dpwkupqrhtcolyeg5whj")
-      ->addEventToGroup(
-        id(new PHUITimelineEventView())
-          ->setUser($user)
-          ->setUserHandle($handleReporter)
-          ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
-          ->setTitle(pht('Comment on Raid'))
-          ->setTransactionPHID("PHID-RALI-dpwkupqrhtcolyeg5whj")
-          ->appendChild(pht('Users spammed in dms with crypto scam.'))
-      );
+      ->setTransactionPHID("PHID-RALI-dpwkupqrhtcolyeg5whj");
 
     $event2 = id(new PHUITimelineEventView())
       ->setUserHandle($handlerActor)
@@ -63,16 +54,7 @@ final class HistoricalRaidTimeline extends DiscordAntiRaidUI {
       ->addBadge($admin)
       ->addBadge($verified)
       ->setReallyMajorEvent(true)
-      ->setTransactionPHID("PHID-RALI-dsadspaod9usa9odqwq")
-      ->addEventToGroup(
-        id(new PHUITimelineEventView())
-          ->setUser($user)
-          ->setUserHandle($handleReporter)
-          ->setAuthorPHID('PHID-USER-vjy7oaqj5fp5eqiehnbn')
-          ->setTitle(pht('Comment on Raid'))
-          ->setTransactionPHID("PHID-RALI-dsadspaod9usa9odqwq")
-          ->appendChild(pht('User mass-pinged.'))
-      );
+      ->setTransactionPHID("PHID-RALI-dsadspaod9usa9odqwq");
 
     $event->setUser($user);
     $event->setDateCreated(1658154600);
