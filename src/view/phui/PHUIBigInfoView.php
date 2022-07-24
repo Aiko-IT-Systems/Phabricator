@@ -3,13 +3,15 @@
 final class PHUIBigInfoView extends AphrontTagView {
 
   private $icon;
+  private $iconBrand;
   private $title;
   private $description;
   private $image;
   private $actions = array();
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->iconBrand = $brand;
     return $this;
   }
 
@@ -52,7 +54,7 @@ final class PHUIBigInfoView extends AphrontTagView {
     $icon = null;
     if ($this->icon) {
       $icon = id(new PHUIIconView())
-        ->setIcon($this->icon)
+        ->setIcon($this->icon, null, $this->iconBrand)
         ->addClass('phui-big-info-icon');
 
       $icon = phutil_tag(

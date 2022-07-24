@@ -83,7 +83,7 @@
 
 .phui-action-panel-bigtext .phui-action-panel-subheader {
   font-size: 28px;
-  color: rgba(125, 125, 125, 0.8);
+  color: rgba(30, 26, 30, 0.8);
   text-align: center;
   padding: 0 8px;
 }
@@ -91,7 +91,7 @@
 .phui-action-panel-subheader {
   display: table-cell;
   vertical-align: middle;
-  color: rgba(110, 31, 117, 0.8);
+  /*color: rgba(30, 26, 30, 0.8);*/
   padding: 8px 8px 8px 0;
 }
 
@@ -114,7 +114,7 @@
 /* - Red -------------------------------------------------------------------- */
 
 .phui-action-panel-red {
-  background-color: {$sh-redbackground};
+  background-color: #dd3d3dad;
   border-color: {$sh-redborder};
 }
 

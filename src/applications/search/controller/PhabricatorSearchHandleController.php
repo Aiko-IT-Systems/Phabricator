@@ -39,7 +39,7 @@ final class PhabricatorSearchHandleController
     $icon = $handle->getIcon();
     if ($icon !== null) {
       $icon = id(new PHUIIconView())
-        ->setIcon($handle->getIcon());
+        ->setIcon($handle->getIcon(), null, $handle->getIconBrand());
     }
 
     $rows[] = array(

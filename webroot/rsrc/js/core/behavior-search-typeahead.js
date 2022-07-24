@@ -31,6 +31,7 @@ JX.behavior('phabricator-search-typeahead', function(config) {
       icon = new JX.PHUIXIconView()
         .setIcon(object.icon)
         .setColor('lightgreytext')
+        .setBrand(object.iconBrand)
         .getNode();
       icon = [icon, ' '];
     }

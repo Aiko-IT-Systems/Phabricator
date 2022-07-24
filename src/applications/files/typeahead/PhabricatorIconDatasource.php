@@ -34,7 +34,7 @@ final class PhabricatorIconDatasource extends PhabricatorTypeaheadDatasource {
       $result = id(new PhabricatorTypeaheadResult())
         ->setPHID($icon)
         ->setName($icon)
-        ->setIcon($icon)
+        ->setIcon($icon, false)
         ->setDisplayname($display_name)
         ->addAttribute($icon);
 

@@ -12,6 +12,7 @@ JX.install('PHUIXActionView', {
     _node: null,
     _name: null,
     _icon: 'none',
+    _iconBrand: false,
     _iconColor: null,
     _disabled: false,
     _label: false,
@@ -93,6 +94,12 @@ JX.install('PHUIXActionView', {
       return this;
     },
 
+    setIconBrand: function(brand) {
+      this._iconBrand = brand;
+      this._buildIconNode(true);
+      return this;
+    },
+
     setIconColor: function(color) {
       this._iconColor = color;
       this._buildIconNode(true);
@@ -154,11 +161,15 @@ JX.install('PHUIXActionView', {
 
     _buildIconNode: function(dirty) {
       if (!this._iconNode || dirty) {
+        var brand = 'fa-solid';
+        if (this._iconBrand) {
+          brand = 'fa-brands';
+        }
         var attr = {
           className: [
             'phui-icon-view',
             'phabricator-action-view-icon',
-            'fa-solid',
+            brand,
             'phui-font-fa'
           ].join(' ')
         };

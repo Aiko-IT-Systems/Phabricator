@@ -429,7 +429,7 @@ class PhabricatorApplicationTransactionView extends AphrontView {
       ->setAuthorPHID($xaction->getAuthorPHID())
       ->setTransactionPHID($xaction->getPHID())
       ->setUserHandle($xaction->getHandle($xaction->getAuthorPHID()))
-      ->setIcon($xaction->getIcon())
+      ->setIcon($xaction->getIcon(), $xaction->getIconBrand())
       ->setColor($xaction->getColor())
       ->setHideCommentOptions($this->getHideCommentOptions())
       ->setIsSilent($xaction->getIsSilentTransaction())

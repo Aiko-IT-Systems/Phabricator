@@ -424,7 +424,8 @@ final class PhabricatorTypeaheadModularDatasourceController
       $result->getDisplayName());
 
     $icon = $result->getIcon();
-    $icon = id(new PHUIIconView())->setIcon($icon);
+    $brand = $result->getIconBrand();
+    $icon = id(new PHUIIconView())->setIcon($icon, null, $brand);
 
     $attributes = $result->getAttributes();
     $attributes = phutil_implode_html($separator, $attributes);

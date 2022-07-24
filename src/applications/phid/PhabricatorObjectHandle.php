@@ -21,6 +21,7 @@ final class PhabricatorObjectHandle
   private $title;
   private $imageURI;
   private $icon;
+  private $iconBrand;
   private $tagColor;
   private $timestamp;
   private $status = self::STATUS_OPEN;
@@ -34,8 +35,9 @@ final class PhabricatorObjectHandle
   private $mailStampName;
   private $capabilities = array();
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->iconBrand = $brand;
     return $this;
   }
 
@@ -48,6 +50,10 @@ final class PhabricatorObjectHandle
       return $this->icon;
     }
     return $this->getTypeIcon();
+  }
+
+  public function getIconBrand() {
+    return $this->iconBrand;
   }
 
   public function setSubtitle($subtitle) {
@@ -109,6 +115,13 @@ final class PhabricatorObjectHandle
       return $this->getPHIDType()->getTypeIcon();
     }
     return null;
+  }
+
+  public function getTypeIconIsBrand() {
+    if ($this->getPHIDType()) {
+      return $this->getPHIDType()->getTypeIconIsBrand();
+    }
+    return false;
   }
 
   public function setPolicyFiltered($policy_filered) {
@@ -379,7 +392,7 @@ final class PhabricatorObjectHandle
     return id(new PHUITagView())
       ->setType(PHUITagView::TYPE_SHADE)
       ->setColor($this->getTagColor())
-      ->setIcon($this->getIcon())
+      ->setIcon($this->getIcon(), $this->getIconBrand())
       ->setHref($this->getURI())
       ->setName($this->getLinkName());
   }

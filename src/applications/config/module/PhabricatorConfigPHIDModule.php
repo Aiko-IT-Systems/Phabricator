@@ -24,8 +24,9 @@ final class PhabricatorConfigPHIDModule extends PhabricatorConfigModule {
         $app_name = $app->getName();
 
         $icon = $app->getIcon();
+        $brand = $app->isBrandIcon();
         if ($icon) {
-          $app_icon = id(new PHUIIconView())->setIcon($icon);
+          $app_icon = id(new PHUIIconView())->setIcon($icon, null, $brand);
         } else {
           $app_icon = null;
         }
@@ -36,11 +37,12 @@ final class PhabricatorConfigPHIDModule extends PhabricatorConfigModule {
 
       $icon = $type->getTypeIcon();
       if ($icon) {
-        $type_icon = id(new PHUIIconView())->setIcon($icon);
+        $type_icon = id(new PHUIIconView())->setIcon($icon, null, $type->getTypeIconIsBrand());
       } else {
         $type_icon = null;
       }
-
+      phlog($type_icon);
+      phlog($app_icon);
       $rows[] = array(
         $type->getTypeConstant(),
         get_class($type),

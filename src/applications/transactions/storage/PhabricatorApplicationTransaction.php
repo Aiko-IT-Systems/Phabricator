@@ -454,6 +454,10 @@ abstract class PhabricatorApplicationTransaction
     return $output;
   }
 
+  public function getIconBrand() {
+    return false;
+  }
+
   public function getIcon() {
     switch ($this->getTransactionType()) {
       case PhabricatorTransactions::TYPE_COMMENT:

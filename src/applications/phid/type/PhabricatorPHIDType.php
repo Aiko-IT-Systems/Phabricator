@@ -31,6 +31,17 @@ abstract class PhabricatorPHIDType extends Phobject {
     return null;
   }
 
+  public function getTypeIconIsBrand() {
+    // Default to the application icon if the type doesn't specify one.
+    $application_class = $this->getPHIDTypeApplicationClass();
+    if ($application_class) {
+      $application = newv($application_class, array());
+      return $application->isBrandIcon();
+    }
+
+    return false;
+  }
+
   public function newObject() {
     return null;
   }
