@@ -1688,6 +1688,10 @@ final class PhabricatorFile extends PhabricatorFileDAO
     return $out;
   }
 
+  public function getOwnerPHID() {
+    return $this->getAuthorPHID();
+  }
+
 
 /* -(  PhabricatorSubscribableInterface Implementation  )-------------------- */
 
