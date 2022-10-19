@@ -36,7 +36,7 @@ final class FileDeleteConduitAPIMethod extends FileConduitAPIMethod {
     if ($id) {
       $file = id(new PhabricatorFileQuery())
       ->setViewer($viewer)
-      ->withIds($id)
+      ->withIds(array($id))
       ->executeOne();
       if (!$file) {
         throw new ConduitException('ERR_NOT_FOUND');
