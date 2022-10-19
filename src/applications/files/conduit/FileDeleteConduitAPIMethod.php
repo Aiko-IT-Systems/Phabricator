@@ -44,7 +44,7 @@ final class FileDeleteConduitAPIMethod extends FileConduitAPIMethod {
       if ($file->getOwnerPHID() != $viewer->getPHID()) {
         throw new ConduitException('ERR_WRONG_USER');
       }
-    } else if ($object) {
+    } else if ($phid) {
       $file = $this->loadFileByPHID($viewer, $phid);
       if (!$file) {
         return false;
