@@ -18,7 +18,7 @@ final class FileDeleteConduitAPIMethod extends FileConduitAPIMethod {
   }
 
   protected function defineReturnType() {
-    return 'bool | null';
+    return 'bool';
   }
 
   protected function defineErrorTypes() {
