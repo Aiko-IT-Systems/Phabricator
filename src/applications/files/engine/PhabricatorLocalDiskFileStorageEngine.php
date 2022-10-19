@@ -29,6 +29,10 @@ final class PhabricatorLocalDiskFileStorageEngine
     return (bool)strlen($path);
   }
 
+  public function hasFilesizeLimit() {
+    return false;
+  }
+
 
 /* -(  Managing File Data  )------------------------------------------------- */
 
