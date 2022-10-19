@@ -25,7 +25,7 @@ final class FileDeleteConduitAPIMethod extends FileConduitAPIMethod {
     return array(
       'ERR_NOT_FOUND'  => pht('Bad file ID.'),
       'ERR_WRONG_USER' => pht('You are not the owner of this file.'),
-      'ERR_NEED_PARAM' => pht('Must pass an id or an objectPHID.'),
+      'ERR_NEED_PARAM' => pht('Must pass an id or an phid.'),
     );
   }
 
