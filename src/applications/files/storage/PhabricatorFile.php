@@ -1470,6 +1470,7 @@ final class PhabricatorFile extends PhabricatorFileDAO
         'builtin' => 'optional string',
         'storageEngines' => 'optional list<PhabricatorFileStorageEngine>',
         'chunk' => 'optional bool',
+        'alt' => 'optional string',
       ));
 
     $file_name = idx($params, 'name');
@@ -1521,6 +1522,11 @@ final class PhabricatorFile extends PhabricatorFileDAO
     $view_policy = idx($params, 'viewPolicy');
     if ($view_policy) {
       $this->setViewPolicy($params['viewPolicy']);
+    }
+
+    $alt = idx($params, 'alt');
+    if ($alt) {
+      $this->setCustomAltText($alt);
     }
 
     $is_explicit = (idx($params, 'isExplicitUpload') ? 1 : 0);
