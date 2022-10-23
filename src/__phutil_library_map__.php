@@ -9,6 +9,9 @@
 phutil_register_library_map(array(
   '__library_version__' => 2,
   'class' => array(
+    'AITSYSBattleNetAdapter' => 'applications/auth/adapter/AITSYSBattleNetAdapter.php',
+    'AITSYSBattleNetAuthProvider' => 'applications/auth/provider/AITSYSBattleNetAuthProvider.php',
+    'AITSYSBattleNetFuture' => 'applications/auth/future/AITSYSBattleNetFuture.php',
     'AITSYSDiscordAdapter' => 'applications/auth/adapter/AITSYSDiscordAdapter.php',
     'AITSYSDiscordAuthProvider' => 'applications/auth/provider/AITSYSDiscordAuthProvider.php',
     'AITSYSDiscordFuture' => 'applications/auth/future/AITSYSDiscordFuture.php',
@@ -6081,6 +6084,9 @@ phutil_register_library_map(array(
     'xsprintf_query' => 'infrastructure/storage/xsprintf/qsprintf.php',
   ),
   'xmap' => array(
+    'AITSYSBattleNetAdapter' => 'PhutilOAuthAuthAdapter',
+    'AITSYSBattleNetAuthProvider' => 'PhabricatorOAuth2AuthProvider',
+    'AITSYSBattleNetFuture' => 'FutureProxy',
     'AITSYSDiscordAdapter' => 'PhutilOAuthAuthAdapter',
     'AITSYSDiscordAuthProvider' => 'PhabricatorOAuth2AuthProvider',
     'AITSYSDiscordFuture' => 'FutureProxy',
