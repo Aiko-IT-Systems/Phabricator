@@ -64,7 +64,6 @@ final class AITSYSBattleNetFuture extends FutureProxy {
       $future = new HTTPSFuture($uri);
       $future->setData($this->params);
       $future->addHeader('Authorization', 'Bearer '.$this->accessToken);
-      //$future->addHeader(':region', $this->region);
       $future->addHeader('User-Agent', "Phabricator OAuth (https://github.com/Aiko-IT-Systems/Phabricator, {$this->version})");
       $future->setMethod($this->method);
 

@@ -19,12 +19,11 @@ final class AITSYSBattleNetAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountEmail() {
-    $user = $this->getOAuthAccountData('email');
-    return $user;
+    return null;
   }
 
   public function getAccountName() {
-    $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
+    $user = $this->getOAuthAccountData('battletag');
     return $user;
   }
 
@@ -37,7 +36,7 @@ final class AITSYSBattleNetAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountRealName() {
-    return $this->getOAuthAccountData('name');
+    return null;
   }
 
   protected function getAuthenticateBaseURI() {
