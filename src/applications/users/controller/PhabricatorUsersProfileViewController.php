@@ -136,7 +136,7 @@ Description:
         $name = $externalAccount->getUsername();
         $providerConfig = $externalAccount->getProviderConfig();
         $providerName = $providerConfig->getDisplayName();
-        $providerIcon = strtolower($providerName);
+        $providerIcon = str_replace('.', '-', strtolower($providerName));
 
         $icon = id(new PHUIIconView())
           ->setIcon('fa-'.$providerIcon, null, true);
