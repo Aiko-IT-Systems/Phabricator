@@ -32,7 +32,7 @@ final class AITSYSBattleNetAuthProvider
   }
 
   protected function getLoginIcon() {
-    return 'Discord';
+    return 'BNet';
   }
 
 }

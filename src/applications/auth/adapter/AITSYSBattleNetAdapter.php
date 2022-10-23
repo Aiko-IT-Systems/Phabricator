@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Authentication adapter for Discord OAuth2.
+ * Authentication adapter for Battle.net OAuth2.
  */
 final class AITSYSBattleNetAdapter extends PhutilOAuthAuthAdapter {
 
@@ -71,7 +71,7 @@ final class AITSYSBattleNetAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function supportsTokenRefresh() {
-    return true;
+    return false;
   }
 
   public function getExtraRefreshParameters() {
