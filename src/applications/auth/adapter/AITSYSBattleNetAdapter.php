@@ -40,25 +40,20 @@ final class AITSYSBattleNetAdapter extends PhutilOAuthAuthAdapter {
   }
 
   protected function getAuthenticateBaseURI() {
-    return ' https://oauth.battle.net/oauth/authorize ';
+    return 'https://oauth.battle.net/oauth/authorize';
   }
 
   protected function getTokenBaseURI() {
-    return ' https://oauth.battle.net/oauth/token';
+    return 'https://oauth.battle.net/oauth/token';
   }
 
   public function getScope() {
-    $scopes = array(
-      'openid',
-    );
-
-    return implode(' ', $scopes);
+    return 'openid';
   }
 
   public function getExtraAuthenticateParameters() {
     return array(
       'response_type' => 'code',
-      'prompt' => 'none',
     );
   }
 
