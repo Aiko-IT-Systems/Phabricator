@@ -140,17 +140,12 @@ Description:
 
         $icon = id(new PHUIIconView())
           ->setIcon('fa-'.$providerIcon, null, true);
-        if ($uri != null) {
-          $link_view = id(new PHUILinkView())
-            ->setURI($uri)
-            ->setTarget('_blank')
-            ->setText($name);
-          $view->addProperty($icon, $link_view);
-        } else {
-          $tag_view = id(new PHUITagView())
-            ->setName($name);
-          $view->addProperty($icon, $tag_view);
-        }
+
+        $link_view = id(new PHUILinkView())
+          ->setURI($uri)
+          ->setTarget('_blank')
+          ->setText($name);
+        $view->addProperty($icon, $link_view);
       }
     } else {
       $view->addProperty(
