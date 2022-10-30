@@ -81,6 +81,10 @@ final class PhutilTwitterAuthAdapter extends PhutilOAuthAuthAdapter {
     return implode(' ', $scopes);
   }
 
+  public function useBasicAuthHeader() {
+    return true;
+  }
+
   public function getExtraAuthenticateParameters() {
     return array(
       'response_type' => 'code',
