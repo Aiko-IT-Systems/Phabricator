@@ -39,6 +39,7 @@ final class PhutilTwitterAuthAdapter extends PhutilOAuthAuthAdapter {
       $this->extendedUserInfo = $data;
     }
     return $this->extendedUserInfo;*/
+    return null;
   }
 
   public function getAccountName() {
@@ -61,11 +62,11 @@ final class PhutilTwitterAuthAdapter extends PhutilOAuthAuthAdapter {
     return $user;
   }
 
-  protected function getTokenBaseURI() {
+  protected function getAuthenticateBaseURI() {
     return 'https://twitter.com/i/oauth2/authorize';
   }
 
-  protected function getRequestTokenURI() {
+  protected function getTokenBaseURI() {
     return 'https://api.twitter.com/2/oauth2/token';
   }
 
