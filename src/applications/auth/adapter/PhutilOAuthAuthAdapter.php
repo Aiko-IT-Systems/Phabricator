@@ -189,6 +189,7 @@ abstract class PhutilOAuthAuthAdapter extends PhutilAuthAdapter {
     } else if($this->useBasicAuthHeader()) {
       $enc = base64_encode($this->getClientID().':'.$this->getClientSecret());
       $future->addHeader('Authorization', 'Basic '.$enc);
+      $future->addHeader('Content-Type ', 'application/x-www-form-urlencoded  ');
     }
     list($body) = $future->resolvex();
 
