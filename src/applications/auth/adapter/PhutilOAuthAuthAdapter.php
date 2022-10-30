@@ -184,9 +184,7 @@ abstract class PhutilOAuthAuthAdapter extends PhutilAuthAdapter {
 
     $future = new HTTPSFuture($uri, $query_data);
     $future->setMethod('POST');
-    if ($this->header != null) {
-      $future->addHeader('Authorization', $this->header);
-    } else if($this->useBasicAuthHeader()) {
+    if($this->useBasicAuthHeader()) {
       $enc = base64_encode($this->getClientID().':'.$this->getClientSecret());
       $future->addHeader('Authorization', 'Basic '.$enc);
       $future->addHeader('Content-Type ', 'application/x-www-form-urlencoded  ');
