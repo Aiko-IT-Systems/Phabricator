@@ -92,7 +92,7 @@ final class PhutilTwitterAuthAdapter extends PhutilOAuthAuthAdapter {
   public function getExtraTokenParameters() {
     return array(
       'grant_type' => 'authorization_code',
-      'code_verifies' => 'challenge',
+      'code_verifier' => 'challenge',
     );
   }
 
