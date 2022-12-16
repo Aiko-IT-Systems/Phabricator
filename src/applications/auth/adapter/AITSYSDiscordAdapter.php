@@ -31,6 +31,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function getAccountName() {
     $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
+    $this->PushAccountMetadata();
     return $user;
   }
 
@@ -98,6 +99,43 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->setAccessToken($this->getAccessToken())
       ->setRawDiscordQuery('users/@me')
       ->resolve();
+  }
+
+  public function getPhabricatorAccountUsername() {
+    $user = null;
+    try {
+      $res = id(new PhabricatorUsersQuery())
+      ->setViewer(PhabricatorUser::getOmnipotentUser())
+      ->withEmails($this->getOAuthAccountData('email'))
+      ->executeOne();
+      $user = $res->getUsername();
+    }
+    catch (Exception $ex) {
+      return null;
+    }
+
+  }
+
+  public function PushAccountMetadata() {
+    $discord = id(new AITSYSDiscordFuture());
+    $username = $this->getPhabricatorAccountUsername();
+
+    if ($username != null) {
+      return $discord
+        ->setMethod('PUT')
+        ->setAccessToken($this->getAccessToken())
+        ->setRawDiscordQuery('users/@me/applications/'.$discord->getClientID().'/role-connection', $this->generateMetadata($username))
+        ->resolve();
+    }
+    return null;
+  }
+
+  public function generateMetadata($username) {
+    return array(
+      'platform_name' => 'AITSYS',
+      'platform_username' => $username,
+      'metadata' => array(),
+    );
   }
 
   public function supportsTokenRefresh() {

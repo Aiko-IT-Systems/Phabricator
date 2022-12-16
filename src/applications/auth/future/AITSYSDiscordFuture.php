@@ -25,6 +25,10 @@ final class AITSYSDiscordFuture extends FutureProxy {
     return $this;
   }
 
+  public function getClientID() {
+    return $this->clientID;
+  }
+
   public function setRawDiscordQuery($action, array $params = array()) {
     $this->action = $action;
     $this->params = $params;
@@ -49,7 +53,7 @@ final class AITSYSDiscordFuture extends FutureProxy {
       }
 
       $uri = new PhutilURI('https://discord.com/');
-      $uri->setPath('/api/v9/'.$this->action);
+      $uri->setPath('/api/v10/'.$this->action);
 
       $future = new HTTPSFuture($uri);
       $future->setData($this->params);
