@@ -117,8 +117,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function PushAccountMetadata($email) {
     $username = $this->getPhabricatorAccountUsername($email);
-    $metadata = $this->generateMetadata($username);
-    die($metadata);
+    $metadata = phutil_json_encode($this->generateMetadata($username));
 
     if ($username != null) {
         $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
