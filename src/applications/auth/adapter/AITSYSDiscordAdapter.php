@@ -129,7 +129,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
           die($res);
           return $res;
         } catch (Exception $ex) {
-          phlog($ex);
+          die($ex);
           return null;
         }
     } else {
