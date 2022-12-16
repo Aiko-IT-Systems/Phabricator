@@ -5,6 +5,9 @@
  */
 final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
+  private $isAdmin = false;
+  private $userSince;
+
   public function getAdapterType() {
     return 'discord';
   }
@@ -103,14 +106,19 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function getPhabricatorAccountUsername($email) {
     try {
+      $fakeViewer = PhabricatorUser::getOmnipotentUser();
       $res = id(new PhabricatorUsersQuery())
-      ->setViewer(PhabricatorUser::getOmnipotentUser())
-      ->withEmails(array($email, ))
+      ->setViewer($fakeViewer)
+      ->withEmails(array($email,))
       ->executeOne();
       if ($res == null)
       {
         return null;
       }
+      $created = $res->getDateCreated();
+      $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
+      $this->userSince = $datetime->format(DateTime::ATOM);
+      $this->isAdmin = $res->getIsAdmin();
       return $res->getUsername();
     }
     catch (Exception $ex) {
@@ -142,6 +150,10 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     return array(
       'platform_name' => 'AITSYS',
       'platform_username' => $username,
+      'metadata' => array(
+        'admin' => (int)$this->isAdmin,
+        'user_since' => $this->userSince,
+      )
     );
   }
 
