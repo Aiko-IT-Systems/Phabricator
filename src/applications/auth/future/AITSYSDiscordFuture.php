@@ -27,7 +27,8 @@ final class AITSYSDiscordFuture extends FutureProxy {
   }
 
   public function setIsJson($state) {
-    return $this->isAppJson = $state;
+    $this->isAppJson = $state;
+    return $this;
   }
 
   public function setRawDiscordQuery($action, array $params = array()) {
