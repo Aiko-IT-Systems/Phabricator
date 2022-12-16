@@ -134,6 +134,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
           return null;
         }
     }
+    die("Username is ".$username);
     return null;
   }
 
