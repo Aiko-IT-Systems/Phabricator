@@ -119,7 +119,6 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     $username = $this->getPhabricatorAccountUsername($email);
     if ($username != null) {
         $metadata = phutil_json_encode($this->generateMetadata($username));
-        die($metadata);
         $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
         try {
           $res = id(new AITSYSDiscordFuture())
@@ -129,10 +128,8 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
             ->setRawDiscordQuery($url)
             ->setJson($metadata)
             ->resolve();
-          die($res);
         } catch (Exception $ex) {
           phlog($ex);
-          die($ex);
         }
     }
   }
