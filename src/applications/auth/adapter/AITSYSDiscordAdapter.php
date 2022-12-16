@@ -4,7 +4,7 @@
  * Authentication adapter for Discord OAuth2.
  */
 final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
-  
+
   public function getAdapterType() {
     return 'discord';
   }
@@ -41,7 +41,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.gif";
     }
     else {
-      $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.png"; 
+      $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.png";
     }
     return $avatar;
   }
@@ -74,6 +74,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       'connections',
       'guilds.join',
       'guilds.members.read',
+      'role_connections.write',
     );
 
     return implode(' ', $scopes);
