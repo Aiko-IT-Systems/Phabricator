@@ -141,7 +141,6 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     return array(
       'platform_name' => 'AITSYS',
       'platform_username' => $username,
-      'metadata' => array(),
     );
   }
 
