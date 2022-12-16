@@ -127,10 +127,10 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
             ->setAccessToken($this->getAccessToken())
             ->setRawDiscordQuery('users/@me/applications/'.$discord->getClientID().'/role-connection', $this->generateMetadata($username))
             ->resolve();
-          phlog($res);
+          die($res);
           return $res;
         } catch (Exception $ex) {
-          phlog($ex);
+          die($ex);
           return null;
         }
     }
