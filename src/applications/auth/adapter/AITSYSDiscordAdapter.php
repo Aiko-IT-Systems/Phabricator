@@ -4,7 +4,7 @@
  * Authentication adapter for Discord OAuth2.
  */
 final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
-  
+
   public function getAdapterType() {
     return 'discord';
   }
@@ -19,10 +19,11 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountEmail() {
-    $user = $this->getOAuthAccountData('email');
+    $email = $this->getOAuthAccountData('email');
     $verified = $this->getOAuthAccountData('verified');
     if ($verified) {
-      return $user;
+      $this->PushAccountMetadata($email);
+      return $email;
     }
     else {
       return null;
@@ -41,7 +42,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.gif";
     }
     else {
-      $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.png"; 
+      $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.png";
     }
     return $avatar;
   }
@@ -74,6 +75,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       'connections',
       'guilds.join',
       'guilds.members.read',
+      'role_connections.write',
     );
 
     return implode(' ', $scopes);
@@ -97,6 +99,46 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->setAccessToken($this->getAccessToken())
       ->setRawDiscordQuery('users/@me')
       ->resolve();
+  }
+
+  public function getPhabricatorAccountUsername($email) {
+    try {
+      $res = id(new PhabricatorUsersQuery())
+      ->setViewer(PhabricatorUser::getOmnipotentUser())
+      ->withEmails(array($email, ))
+      ->executeOne();
+      return $res->getUsername();
+    }
+    catch (Exception $ex) {
+      return null;
+    }
+
+  }
+
+  public function PushAccountMetadata($email) {
+    $username = $this->getPhabricatorAccountUsername($email);
+    if ($username != null) {
+        $metadata = phutil_json_encode($this->generateMetadata($username));
+        $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
+        try {
+          $res = id(new AITSYSDiscordFuture())
+            ->setMethod('PUT')
+            ->setIsJson(true)
+            ->setAccessToken($this->getAccessToken())
+            ->setRawDiscordQuery($url)
+            ->setJson($metadata)
+            ->resolve();
+        } catch (Exception $ex) {
+          phlog($ex);
+        }
+    }
+  }
+
+  public function generateMetadata($username) {
+    return array(
+      'platform_name' => 'AITSYS',
+      'platform_username' => $username,
+    );
   }
 
   public function supportsTokenRefresh() {
