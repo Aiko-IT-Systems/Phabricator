@@ -107,7 +107,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withEmails(array($email, ))
       ->executeOne();
-      return $res;
+      return $res->getUsername();
     }
     catch (Exception $ex) {
       return null;
@@ -117,9 +117,9 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function PushAccountMetadata($email) {
     $username = $this->getPhabricatorAccountUsername($email);
-    $metadata = phutil_json_encode($this->generateMetadata($username));
-    die($metadata);
     if ($username != null) {
+        $metadata = phutil_json_encode($this->generateMetadata($username));
+        die($metadata);
         $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
         try {
           $res = id(new AITSYSDiscordFuture())
