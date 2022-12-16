@@ -120,7 +120,6 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
     if ($username != null) {
         $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
-        die($url);
         try {
           $res = id(new AITSYSDiscordFuture())
             ->setMethod('PUT')
@@ -130,12 +129,12 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
           die($res);
           return $res;
         } catch (Exception $ex) {
-          die($ex);
+          phlog($ex);
           return null;
         }
+    } else {
+      return null;
     }
-    die("Username is ".$username);
-    return null;
   }
 
   public function generateMetadata($username) {
