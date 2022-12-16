@@ -9,6 +9,7 @@ final class AITSYSDiscordFuture extends FutureProxy {
   private $params;
   private $method = 'GET';
   private $isAppJson = false;
+  private $json;
 
   public $version = '1.0.0';
 
@@ -28,6 +29,11 @@ final class AITSYSDiscordFuture extends FutureProxy {
 
   public function setIsJson($state) {
     $this->isAppJson = $state;
+    return $this;
+  }
+
+  public function setJson($json) {
+    $this->json = $json;
     return $this;
   }
 
@@ -58,10 +64,14 @@ final class AITSYSDiscordFuture extends FutureProxy {
       $uri->setPath('/api/v10/'.$this->action);
 
       $future = new HTTPSFuture($uri);
-      $future->setData($this->params);
       if ($this->isAppJson)
       {
         $future->addHeader('Content-Type', 'application/json');
+        $future->setData($this->json);
+      }
+      else
+      {
+        $future->setData($this->params);
       }
       $future->addHeader('Authorization', 'Bearer '.$this->accessToken);
       $future->addHeader('User-Agent', "DiscordBot (https://github.com/Aiko-IT-Systems/Phabricator, Phabricator OAuth {$this->version})");

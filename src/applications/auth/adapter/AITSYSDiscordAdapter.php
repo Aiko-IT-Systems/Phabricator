@@ -126,7 +126,8 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
             ->setMethod('PUT')
             ->setIsJson(true)
             ->setAccessToken($this->getAccessToken())
-            ->setRawDiscordQuery($url, $metadata)
+            ->setRawDiscordQuery($url)
+            ->setJson($metadata)
             ->resolve();
           die($res);
         } catch (Exception $ex) {
