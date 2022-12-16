@@ -123,6 +123,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
         try {
           $res = id(new AITSYSDiscordFuture())
             ->setMethod('PUT')
+            ->setIsJson(true)
             ->setAccessToken($this->getAccessToken())
             ->setRawDiscordQuery($url, $this->generateMetadata($username))
             ->resolve();
