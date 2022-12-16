@@ -19,10 +19,11 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountEmail() {
-    $user = $this->getOAuthAccountData('email');
+    $email = $this->getOAuthAccountData('email');
     $verified = $this->getOAuthAccountData('verified');
     if ($verified) {
-      return $user;
+      $this->PushAccountMetadata($email);
+      return $email;
     }
     else {
       return null;
@@ -31,7 +32,6 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function getAccountName() {
     $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
-    $this->PushAccountMetadata();
     return $user;
   }
 
@@ -101,13 +101,14 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->resolve();
   }
 
-  public function getPhabricatorAccountUsername() {
+  public function getPhabricatorAccountUsername($email) {
     $user = null;
     try {
       $res = id(new PhabricatorUsersQuery())
       ->setViewer(PhabricatorUser::getOmnipotentUser())
-      ->withEmails(array($this->getOAuthAccountData('email'), ))
+      ->withEmails(array($email, ))
       ->executeOne();
+      die($res);
       $user = $res->getUsername();
     }
     catch (Exception $ex) {
@@ -116,9 +117,9 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   }
 
-  public function PushAccountMetadata() {
+  public function PushAccountMetadata($email) {
     $discord = id(new AITSYSDiscordFuture());
-    $username = $this->getPhabricatorAccountUsername();
+    $username = $this->getPhabricatorAccountUsername($email);
 
     if ($username != null) {
         try {
