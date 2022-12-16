@@ -7,6 +7,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   private $isAdmin = false;
   private $userSince;
+  private $username;
 
   public function getAdapterType() {
     return 'discord';
@@ -25,7 +26,28 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     $email = $this->getOAuthAccountData('email');
     $verified = $this->getOAuthAccountData('verified');
     if ($verified) {
-      $this->PushAccountMetadata($email);
+      if (PhabricatorEnv::getEnvConfig('discord.oauth2.bot.linked_roles')) {
+        $this->PushAccountMetadata($email);
+      }
+      if ($this->username != null && PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add')) {
+        if ($this->isAdmin) {
+          $guilds = PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add.admin_guilds');
+          if ($guilds != null) {
+            foreach($guilds as $guild) {
+              $this->addToDiscordGuild($guild);
+            }
+          }
+        }
+        else
+        {
+          $guilds = PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add.user_guilds');
+          if ($guilds != null) {
+            foreach($guilds as $guild) {
+              $this->addToDiscordGuild($guild);
+            }
+          }
+        }
+      }
       return $email;
     }
     else {
@@ -99,12 +121,12 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   protected function loadOAuthAccountData() {
     return id(new AITSYSDiscordFuture())
-      ->setAccessToken($this->getAccessToken())
+      ->setAccessToken('Bearer '.$this->getAccessToken())
       ->setRawDiscordQuery('users/@me')
       ->resolve();
   }
 
-  public function getPhabricatorAccountUsername($email) {
+  public function getPhabricatorAccountUsername(string $email) {
     try {
       $fakeViewer = PhabricatorUser::getOmnipotentUser();
       $res = id(new PhabricatorUsersQuery())
@@ -119,7 +141,8 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
       $this->userSince = $datetime->format(DateTime::ATOM);
       $this->isAdmin = $res->getIsAdmin();
-      return $res->getUsername();
+      $this->username = $res->getUsername();
+      return $this->username;
     }
     catch (Exception $ex) {
       return null;
@@ -127,16 +150,16 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   }
 
-  public function PushAccountMetadata($email) {
+  public function PushAccountMetadata(string $email) {
     $username = $this->getPhabricatorAccountUsername($email);
     if ($username != null) {
         $metadata = phutil_json_encode($this->generateMetadata($username));
         $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
         try {
-          $res = id(new AITSYSDiscordFuture())
+          id(new AITSYSDiscordFuture())
             ->setMethod('PUT')
             ->setIsJson(true)
-            ->setAccessToken($this->getAccessToken())
+            ->setAccessToken('Bearer '.$this->getAccessToken())
             ->setRawDiscordQuery($url)
             ->setJson($metadata)
             ->resolve();
@@ -146,7 +169,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     }
   }
 
-  public function generateMetadata($username) {
+  public function generateMetadata(string $username) {
     return array(
       'platform_name' => 'AITSYS',
       'platform_username' => $username,
@@ -165,6 +188,25 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     return array(
       'grant_type' => 'refresh_token',
     );
+  }
+
+  public function addToDiscordGuild(string $guild) {
+    try {
+      $url = '/guilds/'.$guild.'/members/'.$this->getAccountID();
+      $metadata = phutil_json_encode(array(
+        'access_token' => $this->getAccessToken(),
+      ));
+      $token = PhabricatorEnv::getEnvConfig('discord.bot.token');
+      id(new AITSYSDiscordFuture())
+        ->setMethod('PUT')
+        ->setIsJson(true)
+        ->setAccessToken('Bot '.$token)
+        ->setRawDiscordQuery($url)
+        ->setJson($metadata)
+        ->resolve();
+    } catch (Exception $ex) {
+      phlog($ex);
+    }
   }
 
 }

@@ -73,7 +73,7 @@ final class AITSYSDiscordFuture extends FutureProxy {
       {
         $future->setData($this->params);
       }
-      $future->addHeader('Authorization', 'Bearer '.$this->accessToken);
+      $future->addHeader('Authorization', $this->accessToken);
       $future->addHeader('User-Agent', "DiscordBot (https://github.com/Aiko-IT-Systems/Phabricator, Phabricator OAuth {$this->version})");
       $future->setMethod($this->method);
 
