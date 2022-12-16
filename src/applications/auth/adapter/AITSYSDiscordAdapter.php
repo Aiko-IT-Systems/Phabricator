@@ -108,7 +108,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->setViewer(PhabricatorUser::getOmnipotentUser())
       ->withEmails(array($email, ))
       ->executeOne();
-      $user = $res->getUsername();
+      $user = $res;
     }
     catch (Exception $ex) {
       return null;
