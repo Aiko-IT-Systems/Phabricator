@@ -121,12 +121,14 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     $username = $this->getPhabricatorAccountUsername();
 
     if ($username != null) {
-      return $discord
+      $discord
         ->setMethod('PUT')
         ->setAccessToken($this->getAccessToken())
         ->setRawDiscordQuery('users/@me/applications/'.$discord->getClientID().'/role-connection', $this->generateMetadata($username))
         ->resolve();
+        die();
     }
+    die();
     return null;
   }
 
