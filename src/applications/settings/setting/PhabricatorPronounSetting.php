@@ -41,7 +41,7 @@ final class PhabricatorPronounSetting
       PhutilPerson::GENDER_UNKNOWN => $label_unknown,
       PhutilPerson::GENDER_MASCULINE => $label_his,
       PhutilPerson::GENDER_FEMININE => $label_her,
-      PhutilPeron::GENDER_OTHER => $label_other,
+      PhutilPerson::GENDER_OTHER => $label_other,
     );
   }
 
