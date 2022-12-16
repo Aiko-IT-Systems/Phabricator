@@ -35,13 +35,11 @@ final class PhabricatorPronounSetting
     $label_unknown = pht('%s updated their profile', $username);
     $label_her = pht('%s updated her profile', $username);
     $label_his = pht('%s updated his profile', $username);
-    $label_other = pht('%s updated their profile', $username);
 
     return array(
       PhutilPerson::GENDER_UNKNOWN => $label_unknown,
       PhutilPerson::GENDER_MASCULINE => $label_his,
       PhutilPerson::GENDER_FEMININE => $label_her,
-      PhutilPerson::GENDER_OTHER => $label_other,
     );
   }
 
