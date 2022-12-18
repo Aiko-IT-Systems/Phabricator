@@ -133,7 +133,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       ->setViewer($fakeViewer)
       ->withEmails(array($email,))
       ->executeOne();
-      die($res);
+
       if ($res == null)
       {
         return null;
