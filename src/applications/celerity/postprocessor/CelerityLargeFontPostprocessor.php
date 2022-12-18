@@ -14,7 +14,7 @@ final class CelerityLargeFontPostprocessor
   public function buildVariables() {
     return array(
 
-      'basefont' => "14px 'Segoe UI', 'Segoe UI Web Regular', ".
+      'basefont' => "14px 'gg-sans', 'Segoe UI', 'Segoe UI Web Regular', ".
         "'Segoe UI Symbol', 'Lato', 'Helvetica Neue', Helvetica, ".
         "Arial, sans-serif",
 
