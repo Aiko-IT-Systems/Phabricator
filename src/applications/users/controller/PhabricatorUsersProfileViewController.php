@@ -99,8 +99,9 @@ Description:
   }
 
   private function loadExternalAccounts(PhabricatorUser $viewer, PhabricatorUser $user) {
+    $anonymousViewer = PhabricatorUser::getOmnipotentUser();
     $accs = id(new PhabricatorExternalAccountQuery())
-    ->setViewer($viewer)
+    ->setViewer($anonymousViewer)
     ->withUserPHIDs(array($user->getPHID()))
     ->withoutAccountTypes(array('password'))
     ->needAccountIdentifiers(true)
