@@ -117,13 +117,18 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->setViewer($fakeViewer)
       ->withAccountTypes(array('discord'))
       ->needAccountIdentifiers(true);
-      $account = $acc->executeOne();
-    $data = array();
-    $data['username'] = $account->getUsername();
-    $data['id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
-    $data['email'] = $account->getEmail();
-    $data['access_token'] = $account->getProperties()['oauth.token.access'];
-    return $data;
+      $accounts = $acc->execute();
+    $accArray = array();
+    foreach($accounts as $account) {
+      $data = array();
+      $data['username'] = $account->getUsername();
+      $data['id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
+      $data['email'] = $account->getEmail();
+      $data['access_token'] = $account->getProperties()['oauth.token.access'];
+      $accArray[] = $data;
+    }
+
+    return $accArray;
   }
 
   private function getDiscordData(array $data) : array {
