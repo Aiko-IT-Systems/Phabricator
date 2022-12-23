@@ -48,11 +48,9 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $view = id(new AphrontMultiColumnView())
       ->setFluidLayout(true);
 
-    $actionPanel1 = id(new PHUIActionPanelView())
-    //->setIcon('fa-users')
-    ->setBigText(true)
-    ->setHeader(pht('Users'))
-    ->setSubHeader(pht('1'));
+    $actionPanel1 = id(new PHUIBigInfoView())
+    ->setDescription(pht('This is a module to control the linked roles metadata for users.'))
+    ->setHeader(pht('About'));
 
     $view->addColumn($actionPanel1);
 
