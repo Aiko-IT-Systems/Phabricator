@@ -66,8 +66,9 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $overview->addColumn($headerPanel);
 
     $data = $this->getData($user);
+    $userData = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($data, JSON_PRETTY_PRINT), false));
     $paste = id(new PhabricatorPaste())
-      ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $data))
+      ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $userData))
       ->setTitle('user_data.json')
       ->setLanguage('json');
     $lines = phutil_split_lines($paste->getContent());
@@ -75,6 +76,10 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
         ->setLines($lines)
         ->disableHighlightOnClick();
     $overview->addColumn($preview);
+    $testData = $this->getDiscordData($data);
+    $test = id(new PHUIBigInfoView())
+    ->setDescription(pht('Data: %s', $testData));
+    $overview->addColumn($test);
 
     $panel2 = $curtain->newPanel();
     $panel2->appendChild($view);
@@ -91,7 +96,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->setDisableConsole(false);
   }
 
-  private function getData(PhabricatorUser $user) : string {
+  private function getData(PhabricatorUser $user) : array {
     $fakeViewer = PhabricatorUser::getOmnipotentUser();
     $acc = id(new PhabricatorExternalAccountQuery())
       ->setViewer($fakeViewer)
@@ -104,6 +109,18 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $data['id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
     $data['email'] = $account->getEmail();
     $data['access_token'] = $account->getProperties()['oauth.token.access'];
-    return id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($data, JSON_PRETTY_PRINT), false));
+    return $data;
+  }
+
+  private function getDiscordData(array $data) : string {
+    $id = PhabricatorEnv::getEnvConfig('discord.client.id');
+    $url = 'users/@me/applications/'.$id.'/role-connection';
+
+    $future = id(new AITSYSDiscordFuture())
+      ->setAccessToken('Bearer '.$data['access_token'])
+      ->setMethod('GET')
+      ->setIsJson(true)
+      ->setRawDiscordQuery($url);
+    return $future->resolve();
   }
 }
