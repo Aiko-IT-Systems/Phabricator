@@ -59,17 +59,20 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $panel->appendChild($info);
 
     $overview = id(new AphrontMultiColumnView())
-    ->setFluidLayout(false);
+    ->setFluidLayout(true);
 
     $headerPanel = id(new PHUICurtainPanelView())
     ->setHeaderText(pht('Current Data'));
     $overview->addColumn($headerPanel);
 
     $data = $this->getData($user);
-    $lines = phutil_split_lines($data);
+    $paste = id(new PhabricatorPaste())
+      ->attachRawContent($data)
+      ->setTitle('')
+      ->setLanguage('json');
+    $lines = phutil_split_lines($paste->getContent());
     $preview = id(new PhabricatorSourceCodeView())
-        ->setLines($lines)
-        ->setHighlights(array('json'));
+        ->setLines($lines);
     $overview->addColumn($preview);
 
     $panel2 = $curtain->newPanel();
