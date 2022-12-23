@@ -126,7 +126,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $dataPanel = id(new AphrontMultiColumnView())
       ->setFluidLayout(true);
     $filteredData = $data;
-    unset($filteredData['access_token']);
+    unset($filteredData['access_token'], $filteredData['email']);
     $userData = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($filteredData, JSON_PRETTY_PRINT), false));
     $paste = id(new PhabricatorPaste())
       ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $userData))
