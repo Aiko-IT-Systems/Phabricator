@@ -71,6 +71,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $panel3->appendChild($overview);
 
     $datas = $this->getData();
+    die(var_dump($datas));
     foreach($datas as $data)
       $dataPanel = id(new AphrontMultiColumnView())
         ->setFluidLayout(true);{
