@@ -51,32 +51,10 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $actionPanel1 = id(new PHUIActionPanelView())
     //->setIcon('fa-users')
     ->setBigText(true)
-    ->setHeader(pht('Current Participants'))
+    ->setHeader(pht('Users'))
     ->setSubHeader(pht('1'));
-
-    $actionPanel2 = id(new PHUIActionPanelView())
-    //->setIcon('fa-server')
-    ->setBigText(true)
-    ->setHeader(pht('Servers'))
-    ->setSubHeader(pht('2'));
-
-    $actionPanel3 = id(new PHUIActionPanelView())
-    //->setIcon('fa-user-robot')
-    ->setBigText(true)
-    ->setHeader(pht('Bots'))
-    ->setSubHeader(pht('1'));
-
-    $actionPanel4 = id(new PHUIActionPanelView())
-    ->setIcon('fa-cloud-download')
-    ->setHeader(pht('Download Raider List'))
-    ->setHref($this->getApplicationURI('download/raiderlist/'))
-    ->setSubHeader(pht('Need an offline version of the raider ids?'));
-
 
     $view->addColumn($actionPanel1);
-    $view->addColumn($actionPanel2);
-    $view->addColumn($actionPanel3);
-    $view->addColumn($actionPanel4);
 
     $panel = $curtain->newPanel();
     $panel->appendChild($header);
@@ -87,7 +65,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $panel2->appendChild($view);
 
     return $this->newPage()
-      ->setTitle("Discord - Anti-Raid")
+      ->setTitle("Discord - Linked Roles")
       ->setCrumbs($crumbs)
       ->setNavigation($nav)
       ->setShowFooter(true)
