@@ -99,6 +99,6 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $data['id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
     $data['email'] = $account->getEmail();
     $data['access_token'] = $account->getProperties()['oauth.token.access'];
-    return json_encode($data);
+    return "```lang=json\n".json_encode($data, JSON_PRETTY_PRINT)."\n```";
   }
 }
