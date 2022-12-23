@@ -3,7 +3,7 @@
 final class DiscordLinkedRolesRenderController extends PhabricatorController {
 
   public function shouldAllowPublic() {
-    return true;
+    return false;
   }
 
   public function handleRequest(AphrontRequest $request) {
