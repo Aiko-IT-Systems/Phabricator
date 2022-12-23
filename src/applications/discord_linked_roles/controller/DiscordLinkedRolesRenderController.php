@@ -106,7 +106,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     return $accArray;
   }
 
-  private function getDiscordData(array $data) : array {
+  private function getDiscordData(array $data) : array | null {
     try {
       $id = PhabricatorEnv::getEnvConfig('discord.client.id');
       $url = 'users/@me/applications/'.$id.'/role-connection';
@@ -118,7 +118,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       return $future->resolve();
     } catch (Exception $e) {
       phlog($e);
-      return array();
+      return null;
     }
   }
 
@@ -138,16 +138,22 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
         ->disableHighlightOnClick();
     $dataPanel->addColumn($preview);
     $testData = $this->getDiscordData($data);
-    $tD = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($testData, JSON_PRETTY_PRINT), false));
-    $paste2 = id(new PhabricatorPaste())
-      ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $tD))
-      ->setTitle('api_data.json')
-      ->setLanguage('json');
-    $lines2 = phutil_split_lines($paste2->getContent());
-    $preview2 = id(new PhabricatorSourceCodeView())
-        ->setLines($lines2)
-        ->disableHighlightOnClick();
-    $dataPanel->addColumn($preview2);
+    if ($testData == null) {
+      $dataPanel->addColumn(id(new PHUIBigInfoView())
+        ->setDescription(pht('No data available.'))
+        ->setTitle(pht('No Data')));
+    } else {
+      $tD = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($testData, JSON_PRETTY_PRINT), false));
+      $paste2 = id(new PhabricatorPaste())
+        ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $tD))
+        ->setTitle('api_data.json')
+        ->setLanguage('json');
+      $lines2 = phutil_split_lines($paste2->getContent());
+      $preview2 = id(new PhabricatorSourceCodeView())
+          ->setLines($lines2)
+          ->disableHighlightOnClick();
+      $dataPanel->addColumn($preview2);
+    }
     return $dataPanel;
   }
 }
