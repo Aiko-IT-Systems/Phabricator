@@ -97,8 +97,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
           ->setLines($lines2)
           ->disableHighlightOnClick();
       $dataPanel->addColumn($preview2);
-      $panelXy = $curtain->newPanel();
-      $panelXy->appendChild($dataPanel);
+      $curtain->newPanel()->appendChild($dataPanel);
     }
 
     return $this->newPage()
@@ -132,13 +131,18 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
   }
 
   private function getDiscordData(array $data) : array {
-    $id = PhabricatorEnv::getEnvConfig('discord.client.id');
-    $url = 'users/@me/applications/'.$id.'/role-connection';
+    try {
+      $id = PhabricatorEnv::getEnvConfig('discord.client.id');
+      $url = 'users/@me/applications/'.$id.'/role-connection';
 
-    $future = id(new AITSYSDiscordFuture())
-      ->setAccessToken('Bearer '.$data['access_token'])
-      ->setMethod('GET')
-      ->setRawDiscordQuery($url);
-    return $future->resolve();
+      $future = id(new AITSYSDiscordFuture())
+        ->setAccessToken('Bearer '.$data['access_token'])
+        ->setMethod('GET')
+        ->setRawDiscordQuery($url);
+      return $future->resolve();
+    } catch (Exception $e) {
+      phlog($e);
+      return array();
+    }
   }
 }
