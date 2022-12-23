@@ -23,26 +23,25 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->setName($this->getCurrentApplication()->getName())
       ->setIcon($this->getCurrentApplication()->getIcon(), $this->getCurrentApplication()->isBrandIcon())
       ->setHref($this->getApplicationURI('/')));
-    $crumbs->addTextCrumb('Main');
+    $crumbs->addTextCrumb('Overview');
 
     $header = id(new PHUIHeaderView())
-      ->setHeader(pht('Discord Anti-Raid'))
-      ->setSubheader(pht('Anti-Raid module for Discord.'))
+      ->setHeader(pht('Discord Linked Roles'))
+      ->setSubheader(pht('Linked Roles module for Discord.'))
       ->setNoBackground(true)
-      ->setHeaderIcon('fa-discord red', true);
+      ->setHeaderIcon('fa-discord green', true);
 
     $info = id(new PHUIInfoView())
-      ->setSeverity(PHUIInfoView::SEVERITY_ERROR)
-      ->setTitle(pht('This module is not yet implemented.'));
+      ->setSeverity(PHUIInfoView::SERVITY_WARNING)
+      ->setTitle(pht('This module is WIP.'));
 
     $nav = id(new AphrontSideNavFilterView())
       ->setBaseUri(new PhutilURI($this->getApplicationURI('/')))
       ->setCrumbs($crumbs);
 
     $nav->addLabel(pht('Public'));
-    $nav->addFilter('main', pht('Main'), $this->getApplicationURI('/'), 'fa-home', false);
-    $nav->addFilter('history', pht('History'), $this->getApplicationURI('/history'), 'fa-clock-rotate-left', false);
-    $nav->selectFilter('main', 'main');
+    $nav->addFilter('overview', pht('Overview'), $this->getApplicationURI('/'), 'fa-home', false);
+    $nav->selectFilter('overview', 'overview');
 
     $curtain = id(new PHUICurtainView());
 
