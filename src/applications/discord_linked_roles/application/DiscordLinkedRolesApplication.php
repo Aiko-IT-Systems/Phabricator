@@ -3,19 +3,19 @@
 final class DiscordLinkedRolesApplication extends DiscordApplication {
 
   public function getBaseURI() {
-    return '/discord/anti-raid/';
+    return '/discord/linked-roles/';
   }
 
   public function getShortDescription() {
-    return pht('Discord Anti-Raid Module');
+    return pht('Discord Linked Roles Module');
   }
 
   public function getName() {
-    return pht('Discord Anti-Raid');
+    return pht('Discord Linked Roles');
   }
 
   public function getIcon() {
-    return 'fa-shield';
+    return 'fa-link';
   }
 
   public function isBrandIcon() {
@@ -31,7 +31,7 @@ final class DiscordLinkedRolesApplication extends DiscordApplication {
   }
 
   public function getFlavorText() {
-    return pht('Anti-Raid Security for Discord.');
+    return pht('Linked Roles UI for Discord.');
   }
 
   public function getApplicationGroup() {
@@ -48,13 +48,9 @@ final class DiscordLinkedRolesApplication extends DiscordApplication {
 
   public function getRoutes() {
     return array(
-      '/discord/anti-raid/' => array(
-        '' => 'DiscordAntiRaidRenderController',
-        'history/' => 'DiscordAntiRaidRenderUIController',
-        'download/' => array(
-          '' => 'DiscordAntiRaidDownloadController',
-          'raiderlist/' => 'DiscordAntiRaidDownloadRaidersController',
-        ),
+      '/discord/linked-roles/' => array(
+        '' => 'DiscordLinkedRolesRenderController',
+        'overview/' => 'DiscordLinkedRolesRenderUIController',
       ),
     );
   }
