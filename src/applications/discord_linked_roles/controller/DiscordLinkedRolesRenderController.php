@@ -106,7 +106,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     return $accArray;
   }
 
-  private function getDiscordData(array $data) : array | null {
+  private function getDiscordData(array $data) : ?array {
     try {
       $id = PhabricatorEnv::getEnvConfig('discord.client.id');
       $url = 'users/@me/applications/'.$id.'/role-connection';
@@ -122,7 +122,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     }
   }
 
-  private function buildPanel(array $data) {
+  private function buildPanel(array $data) : AphrontMultiColumnView {
     $dataPanel = id(new AphrontMultiColumnView())
       ->setFluidLayout(true);
     $filteredData = $data;
