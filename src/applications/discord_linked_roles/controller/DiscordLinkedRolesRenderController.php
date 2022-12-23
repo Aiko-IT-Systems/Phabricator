@@ -45,14 +45,14 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
 
     $curtain = id(new PHUICurtainView());
 
-    $view = id(new AphrontMultiColumnView())
+    /*$view = id(new AphrontMultiColumnView())
       ->setFluidLayout(true);
 
     $actionPanel1 = id(new PHUIBigInfoView())
     ->setDescription(pht('This is a module to control the linked roles metadata for users.'))
     ->setTitle(pht('About'));
 
-    $view->addColumn($actionPanel1);
+    $view->addColumn($actionPanel1);*/
 
     $panel = $curtain->newPanel();
     $panel->appendChild($header);
@@ -65,8 +65,8 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     ->setHeaderText(pht('Current Data'));
     $overview->addColumn($headerPanel);
 
-    $panel2 = $curtain->newPanel();
-    $panel2->appendChild($view);
+    /*$panel2 = $curtain->newPanel();
+    $panel2->appendChild($view);*/
     $panel3 = $curtain->newPanel();
     $panel3->appendChild($overview);
 
