@@ -78,7 +78,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $overview->addColumn($preview);
     $testData = $this->getDiscordData($data);
     $test = id(new PHUIBigInfoView())
-    ->setDescription(pht('Data: %s', $testData));
+    ->setDescription(pht('Data: %s', id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($testData, JSON_PRETTY_PRINT), false))));
     $overview->addColumn($test);
 
     $panel2 = $curtain->newPanel();
@@ -112,7 +112,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     return $data;
   }
 
-  private function getDiscordData(array $data) : string {
+  private function getDiscordData(array $data) : array {
     $id = PhabricatorEnv::getEnvConfig('discord.client.id');
     $url = 'users/@me/applications/'.$id.'/role-connection';
 
