@@ -29,7 +29,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       if (PhabricatorEnv::getEnvConfig('discord.oauth2.bot.linked_roles')) {
         $this->PushAccountMetadata($email);
       }
-      if ($this->username != null && PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add')) {
+      if (PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add')) {
         if ($this->isAdmin) {
           $guilds = PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add.admin_guilds');
           if ($guilds != null) {
