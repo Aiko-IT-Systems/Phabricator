@@ -119,7 +119,6 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $future = id(new AITSYSDiscordFuture())
       ->setAccessToken('Bearer '.$data['access_token'])
       ->setMethod('GET')
-      ->setIsJson(true)
       ->setRawDiscordQuery($url);
     return $future->resolve();
   }
