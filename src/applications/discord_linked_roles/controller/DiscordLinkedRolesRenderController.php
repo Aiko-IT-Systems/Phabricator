@@ -32,7 +32,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->setHeaderIcon('fa-discord green', true);
 
     $info = id(new PHUIInfoView())
-      ->setSeverity(PHUIInfoView::SERVITY_WARNING)
+      ->setSeverity(PHUIInfoView::SEVERITY_WARNING)
       ->setTitle(pht('This module is WIP.'));
 
     $nav = id(new AphrontSideNavFilterView())
