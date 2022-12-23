@@ -65,6 +65,11 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     ->setHeaderText(pht('Current Data'));
     $overview->addColumn($headerPanel);
 
+    $data = $this->getData($user);
+    $test = id(new PHUIBigInfoView())
+    ->setDescription(pht('Data: %s', $data));
+    $overview->addColumn($test);
+
     $panel2 = $curtain->newPanel();
     $panel2->appendChild($view);
     $panel3 = $curtain->newPanel();
@@ -80,4 +85,13 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->setDisableConsole(false);
   }
 
+  private function getData(PhabricatorUser $user) : string {
+    $acc = id(new PhabricatorExternalAccountQuery())
+      ->setViewer($user)
+      ->withUserPHIDs(array($user->getPHID()))
+      ->withAccountTypes(array('discord'))
+      ->executeOne();
+
+    return json_encode($acc);
+  }
 }
