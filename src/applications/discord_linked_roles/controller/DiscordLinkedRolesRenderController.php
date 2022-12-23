@@ -117,7 +117,6 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
         ->setRawDiscordQuery($url);
       return $future->resolve();
     } catch (Exception $e) {
-      phlog($e);
       return null;
     }
   }
