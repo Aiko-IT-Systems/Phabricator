@@ -1,6 +1,6 @@
 <?php
 
-final class DiscordLinkedRolesApplication extends DiscordApplication {
+final class DiscordAntiRaidApplication extends DiscordApplication {
 
   public function getBaseURI() {
     return '/discord/anti-raid/';
