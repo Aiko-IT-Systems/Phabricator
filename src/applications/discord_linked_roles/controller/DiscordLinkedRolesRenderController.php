@@ -67,7 +67,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
 
     $data = $this->getData($user);
     $paste = id(new PhabricatorPaste())
-      ->attachContent(id(new PhutilJSON())->encodeFormatted($data))
+      ->attachContent($data)
       ->setTitle('user_data.json')
       ->setLanguage('json');
     $lines = phutil_split_lines($paste->getContent());
@@ -104,6 +104,6 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $data['id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
     $data['email'] = $account->getEmail();
     $data['access_token'] = $account->getProperties()['oauth.token.access'];
-    return json_encode($data, JSON_PRETTY_PRINT);
+    return id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($data, JSON_PRETTY_PRINT), false));
   }
 }
