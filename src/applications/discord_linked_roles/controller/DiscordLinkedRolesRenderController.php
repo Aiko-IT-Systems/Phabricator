@@ -66,9 +66,10 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $overview->addColumn($headerPanel);
 
     $data = $this->getData($user);
-    $test = id(new PHUIBigInfoView())
-    ->setDescription(pht('Data: %s', $data));
-    $overview->addColumn($test);
+    $lines = phutil_split_lines($data);
+    $preview = id(new PhabricatorSourceCodeView())
+        ->setLines($lines);
+    $overview->addColumn($preview);
 
     $panel2 = $curtain->newPanel();
     $panel2->appendChild($view);
@@ -95,9 +96,9 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       $account = $acc->executeOne();
     $data = array();
     $data['username'] = $account->getUsername();
-    $data['discord_id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
+    $data['id'] = $account->getAccountIdentifiers()['0']->getIdentifierRaw();
     $data['email'] = $account->getEmail();
-    $data['secret'] = $account->getProperties()['oauth.token.access'];
+    $data['access_token'] = $account->getProperties()['oauth.token.access'];
     return json_encode($data);
   }
 }
