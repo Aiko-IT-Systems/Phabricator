@@ -92,7 +92,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->withUserPHIDs(array($user->getPHID()))
       //->withAccountTypes(array('discord'))
       ->needAccountIdentifiers(true)
-      ->execute();
+      ->newResultObject();
     return json_encode($acc);
   }
 }
