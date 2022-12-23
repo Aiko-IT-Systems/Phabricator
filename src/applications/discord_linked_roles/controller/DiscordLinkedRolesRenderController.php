@@ -66,7 +66,9 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $overview->addColumn($headerPanel);
 
     $data = $this->getData($user);
-    $userData = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($data, JSON_PRETTY_PRINT), false));
+    $filteredData = $data;
+    unset($filteredData['access_token']);
+    $userData = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($filteredData, JSON_PRETTY_PRINT), false));
     $paste = id(new PhabricatorPaste())
       ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $userData))
       ->setTitle('user_data.json')
@@ -77,9 +79,16 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
         ->disableHighlightOnClick();
     $overview->addColumn($preview);
     $testData = $this->getDiscordData($data);
-    $test = id(new PHUIBigInfoView())
-    ->setDescription(pht('Data: %s', id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($testData, JSON_PRETTY_PRINT), false))));
-    $overview->addColumn($test);
+    $tD = id(new PhutilJSON())->encodeFormatted(json_decode(json_encode($testData, JSON_PRETTY_PRINT), false));
+    $paste2 = id(new PhabricatorPaste())
+      ->attachContent(PhabricatorSyntaxHighlighter::highlightWithLanguage('json', $tD))
+      ->setTitle('api_data.json')
+      ->setLanguage('json');
+    $lines2 = phutil_split_lines($paste2->getContent());
+    $preview2 = id(new PhabricatorSourceCodeView())
+        ->setLines($lines2)
+        ->disableHighlightOnClick();
+    $overview->addColumn($preview2);
 
     $panel2 = $curtain->newPanel();
     $panel2->appendChild($view);
