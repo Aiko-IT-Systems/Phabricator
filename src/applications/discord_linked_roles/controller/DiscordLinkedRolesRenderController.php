@@ -94,7 +94,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       $account = $acc->executeOne();
     $data = array();
     $data['username'] = $account->getUsername();
-    $data['discord_id'] = $account->getAccountID();
+    $data['discord_id'] = $account->getAccountIdentifier();
     return json_encode($data);
   }
 }
