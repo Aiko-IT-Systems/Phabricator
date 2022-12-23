@@ -73,7 +73,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $datas = $this->getData();
     //die(var_dump($datas));
     foreach($datas as $data) {
-      $curtain->newPanel()->appendChild(buildPanel($data));
+      $curtain->newPanel()->appendChild($this->buildPanel($data));
     }
 
     return $this->newPage()
