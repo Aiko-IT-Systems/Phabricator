@@ -82,7 +82,7 @@ final class PhabricatorExternalAccountQuery
     return $this->loadStandardPage($this->newResultObject());
   }
 
-  protected function willFilterPage(array $accounts) {
+  public function willFilterPage(array $accounts) {
     $viewer = $this->getViewer();
 
     $configs = id(new PhabricatorAuthProviderConfigQuery())
