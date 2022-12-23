@@ -68,7 +68,7 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $data = $this->getData($user);
     $paste = id(new PhabricatorPaste())
       ->attachContent($data)
-      ->setTitle('')
+      ->setTitle('user_data.json')
       ->setLanguage('json');
     $lines = phutil_split_lines($paste->getContent());
     $preview = id(new PhabricatorSourceCodeView())
