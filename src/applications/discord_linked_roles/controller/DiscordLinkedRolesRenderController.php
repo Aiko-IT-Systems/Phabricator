@@ -85,14 +85,16 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
       ->setDisableConsole(false);
   }
 
-  private function getData(PhabricatorUser $user) {
+  private function getData(PhabricatorUser $user) : array {
     $fakeViewer = PhabricatorUser::getOmnipotentUser();
     $acc = id(new PhabricatorExternalAccountQuery())
       ->setViewer($fakeViewer)
       ->withUserPHIDs(array($user->getPHID()))
       ->withAccountTypes(array('discord'));
       $account = $acc->executeOne();
-
-    return json_encode($account->getUsername());
+    $data = array();
+    $data['username'] = $account->getUsername();
+    $data['discord_id'] = $account->getAccountID();
+    return json_encode($data);
   }
 }
