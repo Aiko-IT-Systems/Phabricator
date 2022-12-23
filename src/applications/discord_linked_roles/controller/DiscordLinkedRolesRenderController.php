@@ -90,7 +90,8 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $acc = id(new PhabricatorExternalAccountQuery())
       ->setViewer($fakeViewer)
       ->withUserPHIDs(array($user->getPHID()))
-      ->withAccountTypes(array('discord'));
+      ->withAccountTypes(array('discord'))
+      ->needAccountIdentifiers(true);
       $account = $acc->executeOne();
     $data = array();
     $data['username'] = $account->getUsername();
