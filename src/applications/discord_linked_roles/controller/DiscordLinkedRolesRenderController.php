@@ -58,9 +58,17 @@ final class DiscordLinkedRolesRenderController extends PhabricatorController {
     $panel->appendChild($header);
     $panel->appendChild($info);
 
+    $overview = id(new AphrontMultiColumnView())
+    ->setFluidLayout(false);
+
+    $headerPanel = id(new PHUICurtainPanelView())
+    ->setHeaderText(pht('Current Data'));
+    $overview->addColumn($headerPanel);
 
     $panel2 = $curtain->newPanel();
     $panel2->appendChild($view);
+    $panel3 = $curtain->newPanel();
+    $panel3->appendChild($overview);
 
     return $this->newPage()
       ->setTitle("Discord - Linked Roles")
