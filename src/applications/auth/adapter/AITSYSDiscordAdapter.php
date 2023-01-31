@@ -6,6 +6,9 @@
 final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   private $isAdmin = false;
+  private $isStaff = false;
+  private $isMod = false;
+  private $isLeader = false;
   private $userSince;
   private $username;
 
@@ -138,6 +141,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       {
         return null;
       }
+      $this->GetAndParseCustomFields($res);
       $created = $res->getDateCreated();
       $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
       $this->userSince = $datetime->format(DateTime::ATOM);
@@ -148,7 +152,16 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     catch (Exception $ex) {
       return null;
     }
+  }
 
+  public function GetAndParseCustomFields(PhabricatorUser $user) {
+    $customFields = $user->getCustomFields();
+    print_r($customFields);
+    die();
+
+    $this->isStaff = false;
+    $this->isMod = false;
+    $this->isLeader = false;
   }
 
   public function PushAccountMetadata(string $email) {
@@ -177,6 +190,9 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       'metadata' => array(
         'admin' => (int)$this->isAdmin,
         'user_since' => $this->userSince,
+        '1_is_staff' => (int)$this->isStaff,
+        '2_is_mod' => (int)$this->isMod,
+        '3_is_leader' => (int)$this->isLeader,
       )
     );
   }
