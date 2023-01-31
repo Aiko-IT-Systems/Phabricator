@@ -156,7 +156,8 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
         $custom_field_value = $custom_field->getValueForStorage();
         $custom_field_map[$custom_field_key] = $custom_field_value;
       }
-      phlog($custom_field_map);
+      print_r($custom_field_map);
+      die();
       $created = $res->getDateCreated();
       $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
       $this->userSince = $datetime->format(DateTime::ATOM);
