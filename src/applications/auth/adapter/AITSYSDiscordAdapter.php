@@ -144,10 +144,8 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
         $field_list = PhabricatorCustomField::getObjectFields(
           $res,
           PhabricatorCustomField::ROLE_VIEW);
-        $field_list->setViewer($fakeViewer);
-        $field_list->readFieldsFromStorage($res);
-        $list = $field_list->getFields();
-        phlog($list);
+        $field_list->appendFieldsToPropertyList($res, $fakeViewer, $view);
+        phlog($res->getCustomFields());
       } catch (Exception $ex) {
         phlog($ex);
       }
