@@ -143,8 +143,15 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       $field_list = PhabricatorCustomField::getObjectFields(
         $res,
         PhabricatorCustomField::ROLE_VIEW);
-      $field_list->appendFieldsToPropertyList($res, $fakeViewer, $view);
-      phlog($res->getCustomFields());
+      $field_list->setViewer($fakeViewer);
+      $field_list->readFieldsFromStorage($res);
+      $custom_field_map = array();
+      foreach ($field_list->getFields() as $custom_field) {
+        $custom_field_key = $custom_field->getFieldKey();
+        $custom_field_value = $custom_field->getValueForStorage();
+        $custom_field_map[$custom_field_key] = $custom_field_value;
+      }
+      phlog($custom_field_map);
       $created = $res->getDateCreated();
       $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
       $this->userSince = $datetime->format(DateTime::ATOM);
