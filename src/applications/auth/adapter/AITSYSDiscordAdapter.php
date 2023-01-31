@@ -130,8 +130,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getPhabricatorAccountUsername(string $email) {
-    try {
-      $fakeViewer = PhabricatorUser::getOmnipotentUser();
+    $fakeViewer = PhabricatorUser::getOmnipotentUser();
       $res = id(new PhabricatorUsersQuery())
       ->setViewer($fakeViewer)
       ->withEmails(array($email,))
@@ -141,23 +140,26 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       {
         return null;
       }
-      $this->GetAndParseCustomFields($res);
+      $custom = $res->getCustomFields();
+      phlog($custom);
+      die();
+      //$this->getAndParseCustomFields($res);
       $created = $res->getDateCreated();
       $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
       $this->userSince = $datetime->format(DateTime::ATOM);
       $this->isAdmin = $res->getIsAdmin();
       $this->username = $res->getUsername();
       return $this->username;
+    /*try {
+
     }
     catch (Exception $ex) {
       return null;
-    }
+    }*/
   }
 
-  public function GetAndParseCustomFields(PhabricatorUser $user) {
+  public function getAndParseCustomFields(PhabricatorUser $user) {
     $customFields = $user->getCustomFields();
-    phlog($customFields);
-    die();
 
     $this->isStaff = false;
     $this->isMod = false;
