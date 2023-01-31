@@ -302,7 +302,7 @@ abstract class PhabricatorStandardCustomField
       ->setValue($this->getFieldValue())
       ->setError($this->getFieldError())
       ->setLabel($this->getFieldName())
-      ->setDisabled($this->getIsOnlyAdminEditable() && !$this->getIsAdmin())
+      ->setDisabled($this->getIsOnlyAdminEditable() && !$this->getViewer()->getIsAdmin())
       ->setPlaceholder($this->getPlaceholder());
   }
 
