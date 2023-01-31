@@ -147,7 +147,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       $field_list->readFieldsFromStorage($res);
       $custom_field_map = array();
       foreach ($field_list->getFields() as $custom_field) {
-        if (strpos($custom_field->getFieldKey(), "aitsys") === false)
+        if (strpos($custom_field->getFieldKey(), "aitsys") === false || strpos($custom_field->getFieldKey(), "div") !== false)
         {
           continue;
         }
