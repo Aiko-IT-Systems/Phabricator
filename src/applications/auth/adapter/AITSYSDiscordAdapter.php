@@ -156,7 +156,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function GetAndParseCustomFields(PhabricatorUser $user) {
     $customFields = $user->getCustomFields();
-    print_r($customFields);
+    phlog($customFields);
     die();
 
     $this->isStaff = false;
