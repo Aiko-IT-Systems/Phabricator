@@ -157,10 +157,10 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   public function getAndParseCustomFields(PhabricatorUser $user, PhabricatorUser $fakeViewer) {
     $field_list = PhabricatorCustomField::getObjectFields(
-      $res,
+      $user,
       PhabricatorCustomField::ROLE_VIEW);
     $field_list->setViewer($fakeViewer);
-    $field_list->readFieldsFromStorage($res);
+    $field_list->readFieldsFromStorage($user);
     $custom_field_map = array();
     foreach ($field_list->getFields() as $custom_field) {
       if (strpos($custom_field->getFieldKey(), "aitsys") === false || strpos($custom_field->getFieldKey(), "div") !== false)
