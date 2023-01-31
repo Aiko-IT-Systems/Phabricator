@@ -140,24 +140,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       {
         return null;
       }
-      $field_list = PhabricatorCustomField::getObjectFields(
-        $res,
-        PhabricatorCustomField::ROLE_VIEW);
-      $field_list->setViewer($fakeViewer);
-      $field_list->readFieldsFromStorage($res);
-      $custom_field_map = array();
-      foreach ($field_list->getFields() as $custom_field) {
-        if (strpos($custom_field->getFieldKey(), "aitsys") === false || strpos($custom_field->getFieldKey(), "div") !== false)
-        {
-          continue;
-        }
-        phlog($custom_field->getFieldKey());
-        $custom_field_key = $custom_field->getFieldKey();
-        $custom_field_value = $custom_field->getValueForStorage();
-        $custom_field_map[$custom_field_key] = $custom_field_value;
-      }
-      print_r($custom_field_map);
-      die();
+      $this->getAndParseCustomFields($res, $fakeViewer);
       $created = $res->getDateCreated();
       $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
       $this->userSince = $datetime->format(DateTime::ATOM);
@@ -172,12 +155,27 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     }*/
   }
 
-  public function getAndParseCustomFields(PhabricatorUser $user) {
-    $customFields = $user->getCustomFields();
+  public function getAndParseCustomFields(PhabricatorUser $user, PhabricatorUser $fakeViewer) {
+    $field_list = PhabricatorCustomField::getObjectFields(
+      $res,
+      PhabricatorCustomField::ROLE_VIEW);
+    $field_list->setViewer($fakeViewer);
+    $field_list->readFieldsFromStorage($res);
+    $custom_field_map = array();
+    foreach ($field_list->getFields() as $custom_field) {
+      if (strpos($custom_field->getFieldKey(), "aitsys") === false || strpos($custom_field->getFieldKey(), "div") !== false)
+      {
+        continue;
+      }
+      phlog($custom_field->getFieldKey());
+      $custom_field_key = $custom_field->getFieldKey();
+      $custom_field_value = $custom_field->getValueForStorage();
+      $custom_field_map[$custom_field_key] = $custom_field_value;
+    }
 
-    $this->isStaff = false;
-    $this->isMod = false;
-    $this->isLeader = false;
+    $this->isStaff = (bool)custom_field_map["std:user:aitsys:is_staff"];
+    $this->isMod = (bool)custom_field_map["std:user:aitsys:is_moderator"];
+    $this->isLeader = (bool)custom_field_map["std:user:aitsys:is_leader"];
   }
 
   public function PushAccountMetadata(string $email) {
