@@ -167,15 +167,14 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       {
         continue;
       }
-      phlog($custom_field->getFieldKey());
       $custom_field_key = $custom_field->getFieldKey();
       $custom_field_value = $custom_field->getValueForStorage();
       $custom_field_map[$custom_field_key] = $custom_field_value;
     }
 
-    $this->isStaff = (bool)custom_field_map["std:user:aitsys:is_staff"];
-    $this->isMod = (bool)custom_field_map["std:user:aitsys:is_moderator"];
-    $this->isLeader = (bool)custom_field_map["std:user:aitsys:is_leader"];
+    $this->isStaff = (bool)custom_field_map[0];
+    $this->isMod = (bool)custom_field_map[1];
+    $this->isLeader = (bool)custom_field_map[2];
   }
 
   public function PushAccountMetadata(string $email) {
