@@ -87,7 +87,8 @@ final class PhabricatorStandardCustomFieldBool
         $this->getFieldKey(),
         1,
         $this->getString('edit.checkbox'),
-        (bool)$this->getFieldValue());
+        (bool)$this->getFieldValue())
+      ->setDisabled($this->getIsOnlyAdminEditable() && !$this->getIsAdmin());
   }
 
   public function renderPropertyViewValue(array $handles) {
