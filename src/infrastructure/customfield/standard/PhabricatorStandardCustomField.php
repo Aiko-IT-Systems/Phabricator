@@ -10,6 +10,7 @@ abstract class PhabricatorStandardCustomField
   private $fieldDescription;
   private $fieldConfig;
   private $applicationField;
+  private $isOnlyAdminEditable = false;
   private $strings = array();
   private $caption;
   private $fieldError;
@@ -136,6 +137,9 @@ abstract class PhabricatorStandardCustomField
         case 'copy':
           $this->setIsCopyable($value);
           break;
+        case 'admin':
+          $this->setIsOnlyAdminEditable($value);
+          break;
         case 'type':
           // We set this earlier on.
           break;
@@ -183,6 +187,15 @@ abstract class PhabricatorStandardCustomField
 
   public function getIsEnabled() {
     return $this->isEnabled;
+  }
+
+  public function setIsOnlyAdminEditable($is_admin_only) {
+    $this->isOnlyAdminEditable = $is_admin_only;
+    return $this;
+  }
+
+  public function getIsOnlyAdminEditable() {
+    return $this->isOnlyAdminEditable;
   }
 
   public function isFieldEnabled() {
@@ -289,6 +302,7 @@ abstract class PhabricatorStandardCustomField
       ->setValue($this->getFieldValue())
       ->setError($this->getFieldError())
       ->setLabel($this->getFieldName())
+      ->setDisabled($this->getIsOnlyAdminEditable() && !$this->getIsAdmin())
       ->setPlaceholder($this->getPlaceholder());
   }
 
