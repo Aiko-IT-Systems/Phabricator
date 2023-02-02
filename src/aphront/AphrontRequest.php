@@ -691,6 +691,10 @@ final class AphrontRequest extends Phobject {
   }
 
   public function getUrl() {
+    // if script uri is not set, return null
+    if (empty($_SERVER['SCRIPT_URI'])) {
+      return "http://127.0.0.1:3000/webroot";
+    }
     return $_SERVER['SCRIPT_URI'];
   }
 
