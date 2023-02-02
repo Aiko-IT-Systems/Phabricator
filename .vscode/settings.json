@@ -4,4 +4,5 @@
     },
     "search.useParentIgnoreFiles": true,
     "search.useGlobalIgnoreFiles": true,
+    "liveServer.settings.multiRootWorkspaceName": "Phabricator",
 }
