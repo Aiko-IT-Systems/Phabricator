@@ -197,6 +197,21 @@ final class PhabricatorFilesConfigOptions
             "Set this to a valid Amazon S3 bucket to store files there. You ".
             "must also configure S3 access keys in the 'Amazon Web Services' ".
             "group.")),
+      $this->newOption('storage.local-disk.limit-enabled', 'bool', false)
+      ->setBoolOptions(
+        array(
+          pht('Enable'),
+          pht('Disable'),
+        ))
+      ->setDescription(
+        pht(
+          'Enable limitation of the Local Storage '.
+          'storage engine.')),
+      $this->newOption('storage.local-disk.max-size', 'int', 104857600)
+      ->setSummary(
+        pht(
+          'Configure the largest file which will be put into the Local Storage '.
+          'storage engine.')),
      $this->newOption('files.enable-imagemagick', 'bool', false)
        ->setBoolOptions(
          array(
