@@ -205,8 +205,8 @@ final class PhabricatorFilesConfigOptions
         ))
       ->setDescription(
         pht(
-          'Enable limitation of the Local Storage '.
-          'storage engine.')),
+          'Enable limitation of the Local Storage storage engine. Useful when '.
+          'cloudflare is enabled as proxy.')),
       $this->newOption('storage.local-disk.max-size', 'int', 104857600)
       ->setSummary(
         pht(
