@@ -6,5 +6,5 @@
 JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     JX.log('change');
-  }
+  });
 });
