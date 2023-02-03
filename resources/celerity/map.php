@@ -533,7 +533,7 @@ return array(
     'rsrc/js/core/behavior-device.js' => 'ac2b1e01',
     'rsrc/js/core/behavior-drag-and-drop-textarea.js' => '7ad020a5',
     'rsrc/js/core/behavior-fancy-datepicker.js' => '36821f8d',
-    'rsrc/js/core/behavior-form-file-validation.js' => 'ed5587a9',
+    'rsrc/js/core/behavior-form-file-validation.js' => 'c27ff236',
     'rsrc/js/core/behavior-form.js' => '55d7b788',
     'rsrc/js/core/behavior-gesture.js' => 'b58d1a2a',
     'rsrc/js/core/behavior-global-drag-and-drop.js' => '1cab0e9a',
@@ -651,7 +651,7 @@ return array(
     'javelin-behavior-aphront-basic-tokenizer' => '3b4899b0',
     'javelin-behavior-aphront-drag-and-drop-textarea' => '7ad020a5',
     'javelin-behavior-aphront-form-disable-on-submit' => '55d7b788',
-    'javelin-behavior-aphront-form-file-validation' => 'ed5587a9',
+    'javelin-behavior-aphront-form-file-validation' => 'c27ff236',
     'javelin-behavior-aphront-more' => '506aa3f4',
     'javelin-behavior-audio-source' => '3dc5ad43',
     'javelin-behavior-audit-preview' => 'b7b73831',
@@ -2104,6 +2104,11 @@ return array(
     'c03f2fb4' => array(
       'javelin-install',
     ),
+    'c27ff236' => array(
+      'javelin-behavior',
+      'javelin-stratcom',
+      'javelin-dom',
+    ),
     'c2c500a7' => array(
       'javelin-install',
       'javelin-dom',
@@ -2251,11 +2256,6 @@ return array(
     ),
     'ebe83a6b' => array(
       'javelin-install',
-    ),
-    'ed5587a9' => array(
-      'javelin-behavior',
-      'javelin-stratcom',
-      'javelin-dom',
     ),
     'edacb057' => array(
       'phui-button-css',
