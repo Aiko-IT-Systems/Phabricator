@@ -329,6 +329,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     }
 
     Javelin::initBehavior('aphront-form-disable-on-submit');
+    Javelin::initBehavior('aphront-form-file-validation');
     Javelin::initBehavior('toggle-class', array());
     Javelin::initBehavior('history-install');
     Javelin::initBehavior('phabricator-gesture');
