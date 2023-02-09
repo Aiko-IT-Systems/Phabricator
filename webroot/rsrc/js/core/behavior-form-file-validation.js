@@ -7,7 +7,7 @@ JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     var mbSize = e.getRawEvent().target.files[0].size / 1024 / 1024;
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
-    var fileDetails = JX.$N('input', {className: 'file-size'});
+    var fileDetails = JX.$N('div', {className: 'file-size'});
     if (mbSize > 100) {
       JX.DOM.setContent(fileDetails, size);
       //JX.DOM.show(JX.$('file'));
