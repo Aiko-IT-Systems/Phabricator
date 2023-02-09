@@ -8,7 +8,8 @@ JX.behavior('aphront-form-file-validation', function() {
     var mbSize = e.getRawEvent().target.files[0].size / 1024 / 1024;
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
     JX.log("Trying to get detail field");
-    var fileDetails = JX.$N('div', {className: 'file-size'}).childs[1];
+    var fileDetails = JX.$N('div', {className: 'file-size'});
+    console.log(fileDetails);
     if (mbSize > 100) {
       JX.DOM.setContent(fileDetails, size);
       //JX.DOM.show(JX.$('file'));
