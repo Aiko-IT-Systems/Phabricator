@@ -6,8 +6,9 @@
 JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
+    var fileDetails = JX.$N('input', {className: 'fileValidation'});
     if (size.includes("MB") || size.includes("GB") || size.includes("TB")) {
-      JX.DOM.setContent(JX.$('file'), size);
+      JX.DOM.setContent(fileDetails, size);
       //JX.DOM.show(JX.$('file'));
       //JX.DOM.hide(JX.$('file-size-error'));
       JX.log("Too big file: " + size);
