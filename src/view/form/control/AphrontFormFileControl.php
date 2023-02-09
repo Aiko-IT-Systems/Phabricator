@@ -14,6 +14,7 @@ final class AphrontFormFileControl extends AphrontFormControl {
         'name'      => $this->getName(),
         'disabled'  => $this->getDisabled() ? 'disabled' : null,
         'data-sigil' => 'fileToUpload',
+        'class'     => 'fileValidation',
       ));
   }
 
