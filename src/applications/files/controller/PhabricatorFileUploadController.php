@@ -67,7 +67,7 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->setName('size')
           ->addClass('file-size')
           ->setControlID('file-size')
-          ->setValue(pht('<i>Select a file to see its size..</i>')))
+          ->setValue('<i>Select a file to see its size..</i>'))
       ->appendChild(
         id(new AphrontFormTextControl())
           ->setLabel(pht('Name'))
