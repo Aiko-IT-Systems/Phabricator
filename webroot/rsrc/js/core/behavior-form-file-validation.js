@@ -6,7 +6,7 @@
 JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
-    if (size.contains("MB") || size.contains("GB") || size.contains("TB")) {
+    if (size.includes("MB") || size.includes("GB") || size.includes("TB")) {
       JX.DOM.setContent(JX.$('file-size'), size);
       JX.DOM.show(JX.$('file-size'));
       JX.DOM.hide(JX.$('file-size-error'));
