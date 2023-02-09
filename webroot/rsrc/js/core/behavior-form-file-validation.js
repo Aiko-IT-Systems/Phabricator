@@ -8,7 +8,7 @@ JX.behavior('aphront-form-file-validation', function() {
     var mbSize = e.getRawEvent().target.files[0].size / 1024 / 1024;
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
     var fileDetails = JX.$N('input', {className: 'fileValidation'});
-    if ((size.includes("MB") && mbSize > 100) || size.includes("GB") || size.includes("TB")) {
+    if (mbSize > 100) {
       JX.DOM.setContent(fileDetails, size);
       //JX.DOM.show(JX.$('file'));
       //JX.DOM.hide(JX.$('file-size-error'));
