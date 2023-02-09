@@ -7,9 +7,9 @@ JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
     if (size.includes("MB") || size.includes("GB") || size.includes("TB")) {
-      JX.DOM.setContent(JX.$('file-size'), size);
-      JX.DOM.show(JX.$('file-size'));
-      JX.DOM.hide(JX.$('file-size-error'));
+      JX.DOM.setContent(JX.$('file'), size);
+      //JX.DOM.show(JX.$('file'));
+      //JX.DOM.hide(JX.$('file-size-error'));
       JX.log("Too big file: " + size);
     }
   });
