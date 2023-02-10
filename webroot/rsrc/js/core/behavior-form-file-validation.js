@@ -19,6 +19,14 @@ JX.behavior('aphront-form-file-validation', function() {
       csize.innerText = "ok";
       JX.log("File size: " + size);
       form._disabled = false;
+      var buttons = JX.DOM.scry(root, 'button');
+      for (var ii = 0; ii < buttons.length; ii++) {
+        if (!buttons[ii].disabled) {
+          buttons[ii].disabled = '';
+          JX.DOM.alterClass(buttons[ii], 'disabled', false);
+          restore.push(buttons[ii]);
+        }
+      }
     }
   });
 
