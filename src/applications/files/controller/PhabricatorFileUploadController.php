@@ -15,10 +15,14 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
     $errors = array();
     if ($request->isFormPost()) {
       $view_policy = $request->getStr('viewPolicy');
+      $size = $request->getStr('csize');
 
       if (!$request->getFileExists('file')) {
         $e_file = pht('Required');
         $errors[] = pht('You must select a file to upload.');
+      } else if($size != null && size == "nok") {
+        $e_file = pht('File too large');
+        $errors[] = pht('The file you uploaded is too large.');
       } else {
         $file = PhabricatorFile::newFromPHPUpload(
           idx($_FILES, 'file'),
@@ -68,6 +72,14 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->addClass('file-size')
           ->setControlID('file-size')
           ->setValue('Select a file to see its size..'))
+      ->appendChild(
+        id(new AphrontFormStaticControl())
+          ->setLabel(pht('Size'))
+          ->setName('csize')
+          ->addClass('csize')
+          ->setControlID('csize')
+          ->setValue('empty'))
+          ->setHidden(true)
       ->appendChild(
         id(new AphrontFormTextControl())
           ->setLabel(pht('Name'))

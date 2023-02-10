@@ -7,15 +7,14 @@ JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     var mbSize = e.getRawEvent().target.files[0].size / 1024 / 1024;
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
-    JX.log("Trying to get detail field");
     var fileDetails = JX.$("file-size").childNodes[1];
+    var csize = JX.$("csize").childNodes[1];
     fileDetails.innerText = size;
     if (mbSize > 100) {
-      fileDetails.classList.add('aphront-form-error');
-      //JX.DOM.show(JX.$('file'));
-      //JX.DOM.hide(JX.$('file-size-error'));
+      csize.innerText = "nok";
       JX.log("Too big file: " + size);
     } else {
+      csize.innerText = "ok";
       JX.log("File size: " + size);
     }
   });
