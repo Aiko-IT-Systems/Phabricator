@@ -14,8 +14,8 @@ JX.behavior('aphront-form-file-validation', function() {
     if (mbSize > 100) {
       csize.innerText = "nok";
       JX.log("Too big file: " + size);
-      fileDetails.innerText = "File too big, please upload via drag and drop. If you decide to upload another one, please reload the page.";
       form._disabled = true;
+      fileDetails.innerText = "File too big, please upload via drag and drop. If you decide to upload another one, please reload the page.";
     } else {
       csize.innerText = "ok";
       JX.log("File size: " + size);
