@@ -11,7 +11,7 @@ JX.behavior('aphront-form-file-validation', function() {
     var fileDetails = JX.$("file-size").childNodes[1];
     var csize = JX.$("csize").childNodes[1];
     fileDetails.innerText = size;
-    if (mbSize > 100) {
+    if (mbSize > 100 || csize.innerText === "nok") {
       csize.innerText = "nok";
       JX.log("Too big file: " + size);
       form._disabled = true;
