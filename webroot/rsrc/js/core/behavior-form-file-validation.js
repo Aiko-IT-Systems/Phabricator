@@ -13,7 +13,7 @@ JX.behavior('aphront-form-file-validation', function() {
     var msize = JX.$("msize").childNodes[1];
     var emsize = JX.$("emsize").childNodes[1];
     fileDetails.innerText = size;
-    if (emsize.toString() == "1") {
+    //if (emsize.toString() == "1") {
       if (mbSize.toString() > msize.toString() || csize.innerText == "nok") {
         csize.innerText = "nok";
         JX.log("Too big file: " + size);
@@ -23,7 +23,7 @@ JX.behavior('aphront-form-file-validation', function() {
         csize.innerText = "ok";
         JX.log("File size: " + size);
       }
-    }
+    //}
   });
 
   function bytesToSize(bytes) {
