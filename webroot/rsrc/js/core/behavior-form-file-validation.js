@@ -19,6 +19,7 @@ JX.behavior('aphront-form-file-validation', function() {
     } else {
       csize.innerText = "ok";
       JX.log("File size: " + size);
+    }
   });
 
   function bytesToSize(bytes) {
