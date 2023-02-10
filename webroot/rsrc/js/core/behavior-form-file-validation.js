@@ -19,6 +19,21 @@ JX.behavior('aphront-form-file-validation', function() {
     }
   });
 
+  JX.Stratcom.listen('keydown', ['tag:form', 'tag:textarea'], function(e) {
+    var raw = e.getRawEvent();
+    if (!(e.getSpecialKey() === 'return' && (raw.ctrlKey || raw.metaKey))) {
+      return;
+    }
+
+    e.kill();
+
+    var csize = JX.$("csize").childNodes[1];
+    if (csize.innerText === "nok") {
+      JX.log("Too big file");
+      return;
+    }
+  });
+
   function bytesToSize(bytes) {
     const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
     if (bytes === 0) return 'n/a';
