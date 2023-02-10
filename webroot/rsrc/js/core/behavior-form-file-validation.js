@@ -7,35 +7,18 @@ JX.behavior('aphront-form-file-validation', function() {
   JX.Stratcom.listen('change', null, function(e) {
     var mbSize = e.getRawEvent().target.files[0].size / 1024 / 1024;
     var size = bytesToSize(e.getRawEvent().target.files[0].size);
+    var form = e.getNode('tag:form');
     var fileDetails = JX.$("file-size").childNodes[1];
     var csize = JX.$("csize").childNodes[1];
     fileDetails.innerText = size;
     if (mbSize > 100) {
       csize.innerText = "nok";
       JX.log("Too big file: " + size);
+      form._disabled = true;
     } else {
       csize.innerText = "ok";
       JX.log("File size: " + size);
-    }
-  });
-
-  JX.Stratcom.listen('keydown', ['tag:form', 'tag:textarea'], function(e) {
-    var raw = e.getRawEvent();
-    if (!(e.getSpecialKey() === 'return' && (raw.ctrlKey || raw.metaKey))) {
-      return;
-    }
-    try {
-      var csize = JX.$("csize").childNodes[1];
-      if (csize.innerText === "nok") {
-        e.preventDefault();
-        JX.log("Too big file");
-      } else {
-        JX.log("File size ok");
-        form = e.getNode('tag:form');
-        form.submit();
-      }
-    } catch (e) {
-      e.kill();
+      form._disabled = false;
     }
   });
 
