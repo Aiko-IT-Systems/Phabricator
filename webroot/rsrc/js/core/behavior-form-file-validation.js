@@ -24,13 +24,18 @@ JX.behavior('aphront-form-file-validation', function() {
     if (!(e.getSpecialKey() === 'return' && (raw.ctrlKey || raw.metaKey))) {
       return;
     }
-
-    e.kill();
-
-    var csize = JX.$("csize").childNodes[1];
-    if (csize.innerText === "nok") {
-      JX.log("Too big file");
-      return;
+    try {
+      var csize = JX.$("csize").childNodes[1];
+      if (csize.innerText === "nok") {
+        e.preventDefault();
+        JX.log("Too big file");
+      } else {
+        JX.log("File size ok");
+        form = e.getNode('tag:form');
+        form.submit();
+      }
+    } catch (e) {
+      e.kill();
     }
   });
 
