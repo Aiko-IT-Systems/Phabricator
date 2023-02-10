@@ -10,12 +10,19 @@ JX.behavior('aphront-form-file-validation', function() {
     var form = e.getNode('tag:form');
     var fileDetails = JX.$("file-size").childNodes[1];
     var csize = JX.$("csize").childNodes[1];
+    var msize = JX.$("msize").childNodes[1];
+    var emsize = JX.$("emsize").childNodes[1];
     fileDetails.innerText = size;
-    if (mbSize > 100 || csize.innerText === "nok") {
-      csize.innerText = "nok";
-      JX.log("Too big file: " + size);
-      form._disabled = true;
-      fileDetails.innerText = "File too big, please upload via drag and drop. If you decide to upload another one, please reload the page.";
+    if (emsize === "true") {
+      if (mbSize > msize || csize.innerText === "nok") {
+        csize.innerText = "nok";
+        JX.log("Too big file: " + size);
+        form._disabled = true;
+        fileDetails.innerText = "File too big, please upload via drag and drop. If you decide to upload another one, please reload the page.";
+      } else {
+        csize.innerText = "ok";
+        JX.log("File size: " + size);
+      }
     } else {
       csize.innerText = "ok";
       JX.log("File size: " + size);

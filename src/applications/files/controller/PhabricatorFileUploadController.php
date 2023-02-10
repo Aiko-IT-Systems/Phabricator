@@ -42,6 +42,8 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
     }
 
     $support_id = celerity_generate_unique_node_id();
+    $max_size = pht(PhabricatorEnv::getEnvConfig('storage.local-disk.max-size'));
+    $max_size_enabled = pht(PhabricatorEnv::getEnvConfig('storage.local-disk.limit-enabled'));
     $instructions = id(new AphrontFormMarkupControl())
       ->setControlID($support_id)
       ->setControlStyle('display: none')
@@ -74,11 +76,24 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->setValue('Select a file to see its size..'))
       ->appendChild(
         id(new AphrontFormStaticControl())
-          ->setLabel(pht('Size'))
           ->setName('csize')
           ->addClass('csize')
           ->setControlID('csize')
           ->setValue('empty')
+          ->setHidden(true))
+      ->appendChild(
+        id(new AphrontFormStaticControl())
+          ->setName('msize')
+          ->addClass('msize')
+          ->setControlID('msize')
+          ->setValue($max_size)
+          ->setHidden(true))
+      ->appendChild(
+        id(new AphrontFormStaticControl())
+          ->setName('emsize')
+          ->addClass('emsize')
+          ->setControlID('emsize')
+          ->setValue($max_size_enabled)
           ->setHidden(true))
       ->appendChild(
         id(new AphrontFormTextControl())
