@@ -78,8 +78,8 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->setName('csize')
           ->addClass('csize')
           ->setControlID('csize')
-          ->setValue('empty'))
-          ->setHidden(true)
+          ->setValue('empty')
+          ->setHidden(true))
       ->appendChild(
         id(new AphrontFormTextControl())
           ->setLabel(pht('Name'))
