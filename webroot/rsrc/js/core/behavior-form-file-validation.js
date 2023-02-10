@@ -14,20 +14,11 @@ JX.behavior('aphront-form-file-validation', function() {
     if (mbSize > 100) {
       csize.innerText = "nok";
       JX.log("Too big file: " + size);
+      fileDetails.innerText = "File too big, please upload via drag and drop. If you decide to upload another one, please reload the page.";
       form._disabled = true;
     } else {
       csize.innerText = "ok";
       JX.log("File size: " + size);
-      form._disabled = false;
-      var buttons = JX.DOM.scry(root, 'button');
-      for (var ii = 0; ii < buttons.length; ii++) {
-        if (!buttons[ii].disabled) {
-          buttons[ii].disabled = '';
-          JX.DOM.alterClass(buttons[ii], 'disabled', false);
-          restore.push(buttons[ii]);
-        }
-      }
-    }
   });
 
   function bytesToSize(bytes) {
