@@ -76,6 +76,7 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->setValue('Select a file to see its size..'))
       ->appendChild(
         id(new AphrontFormStaticControl())
+          ->setLabel("Size Status")
           ->setName('csize')
           ->addClass('csize')
           ->setControlID('csize')
@@ -83,6 +84,7 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->setHidden(true))
       ->appendChild(
         id(new AphrontFormStaticControl())
+          ->setLabel("Size Max")
           ->setName('msize')
           ->addClass('msize')
           ->setControlID('msize')
@@ -90,6 +92,7 @@ final class PhabricatorFileUploadController extends PhabricatorFileController {
           ->setHidden(true))
       ->appendChild(
         id(new AphrontFormStaticControl())
+          ->setLabel("Size Max Enabled")
           ->setName('emsize')
           ->addClass('emsize')
           ->setControlID('emsize')
