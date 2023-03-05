@@ -50,8 +50,8 @@ final class RaiderList extends RaiderListDAO
       self::CONFIG_COLUMN_SCHEMA => array(
         'actors' => 'text255',
         'guild' => 'text255',
-        'notes' => 'text512?',
-        'raiders' => 'text512',
+        'notes' => 'text255?',
+        'raiders' => 'text255',
         'type' => 'uint32',
         'timestamp' => 'uint32',
         'parentPHID' => 'phid?',
