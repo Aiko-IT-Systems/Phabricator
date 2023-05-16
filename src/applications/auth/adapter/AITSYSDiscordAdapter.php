@@ -59,7 +59,12 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountName() {
-    $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
+    $user = "";
+    if ($this->getOAuthAccountData('discriminator') == "0") {
+      $user = $this->getOAuthAccountData('username');
+    } else {
+      $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
+    }
     return $user;
   }
 
@@ -84,7 +89,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountRealName() {
-    return $this->getOAuthAccountData('name');
+    return $this->getOAuthAccountData('global_name');
   }
 
   protected function getAuthenticateBaseURI() {

@@ -41,7 +41,7 @@ final class AITSYSTwitterFuture extends FutureProxy {
       $params = $this->params;
 
       if (!$this->action) {
-        throw new Exception(pht('You must %s!', 'setRawDiscordQuery()'));
+        throw new Exception(pht('You must %s!', 'setRawTwitterQuery()'));
       }
 
       if (!$this->accessToken) {
@@ -87,7 +87,7 @@ final class AITSYSTwitterFuture extends FutureProxy {
       }
     } catch (PhutilJSONParserException $ex) {
       throw new PhutilProxyException(
-        pht('Expected JSON response from Discord.'),
+        pht('Expected JSON response from Twitter.'),
         $ex);
     }
 
@@ -95,7 +95,7 @@ final class AITSYSTwitterFuture extends FutureProxy {
       $errors = print_r($data['errors'], true);
       throw new Exception(
         pht(
-          'Received errors from Discord: %s',
+          'Received errors from Twitter: %s',
           $errors));
     }
 
