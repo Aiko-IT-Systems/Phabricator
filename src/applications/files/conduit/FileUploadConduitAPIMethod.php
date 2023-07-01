@@ -16,6 +16,7 @@ final class FileUploadConduitAPIMethod extends FileConduitAPIMethod {
       'name' => 'optional string',
       'viewPolicy' => 'optional valid policy string or <phid>',
       'canCDN' => 'optional bool',
+      'alt' => 'optional string',
     );
   }
 
@@ -29,6 +30,7 @@ final class FileUploadConduitAPIMethod extends FileConduitAPIMethod {
     $name = $request->getValue('name');
     $can_cdn = (bool)$request->getValue('canCDN');
     $view_policy = $request->getValue('viewPolicy');
+    $alt = $request->getValue('alt');
 
     $data = $request->getValue('data_base64');
     $data = $this->decodeBase64($data);
@@ -45,6 +47,10 @@ final class FileUploadConduitAPIMethod extends FileConduitAPIMethod {
 
     if ($view_policy !== null) {
       $params['viewPolicy'] = $view_policy;
+    }
+
+    if ($alt !== null) {
+      $params['alt'] = $alt;
     }
 
     $file = PhabricatorFile::newFromFileData($data, $params);

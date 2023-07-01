@@ -18,6 +18,7 @@ final class FileAllocateConduitAPIMethod
       'contentHash' => 'optional string',
       'viewPolicy' => 'optional string',
       'deleteAfterEpoch' => 'optional int',
+      'alt' => 'optional string',
     );
   }
 
@@ -30,6 +31,7 @@ final class FileAllocateConduitAPIMethod
 
     $hash = $request->getValue('contentHash');
     $name = $request->getValue('name');
+    $alt = $request->getValue('alt');
     $view_policy = $request->getValue('viewPolicy');
     $length = $request->getValue('contentLength');
 
@@ -46,6 +48,10 @@ final class FileAllocateConduitAPIMethod
     $ttl = $request->getValue('deleteAfterEpoch');
     if ($ttl) {
       $properties['ttl.absolute'] = $ttl;
+    }
+
+    if ($alt) {
+      $properties['alt'] = $alt;
     }
 
     $file = null;

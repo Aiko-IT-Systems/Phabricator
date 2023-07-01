@@ -67,7 +67,11 @@ final class PhabricatorAuthRegisterController
       $default_realname = null;
       $default_email = null;
     } else {
-      $default_username = $account->getUsername();
+      $temp_username = $account->getUsername();
+      if ($temp_username != null) {
+        $temp_username = str_replace(' ', '', str_replace('#', '', $temp_username));
+      }
+      $default_username = $temp_username;
       $default_realname = $account->getRealName();
       $default_email = $account->getEmail();
     }

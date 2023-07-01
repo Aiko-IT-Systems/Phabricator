@@ -12,6 +12,7 @@ final class PhabricatorTypeaheadResult extends Phobject {
   private $priorityType;
   private $imageSprite;
   private $icon;
+  private $iconBrand;
   private $color;
   private $closed;
   private $tokenType;
@@ -21,8 +22,9 @@ final class PhabricatorTypeaheadResult extends Phobject {
   private $phase;
   private $availabilityColor;
 
-  public function setIcon($icon) {
+  public function setIcon($icon, $brand = false) {
     $this->icon = $icon;
+    $this->iconBrand = $brand;
     return $this;
   }
 
@@ -86,6 +88,10 @@ final class PhabricatorTypeaheadResult extends Phobject {
 
   public function getIcon() {
     return nonempty($this->icon, $this->getDefaultIcon());
+  }
+
+  public function getIconBrand() {
+    return $this->iconBrand;
   }
 
   public function getPHID() {
@@ -158,6 +164,7 @@ final class PhabricatorTypeaheadResult extends Phobject {
       $this->autocomplete,
       $this->phase,
       $this->availabilityColor,
+      $this->getIconBrand(),
     );
     while (end($data) === null) {
       array_pop($data);

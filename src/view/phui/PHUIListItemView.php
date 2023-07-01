@@ -357,10 +357,11 @@ final class PHUIListItemView extends AphrontTagView {
       if ($this->getDisabled()) {
         $icon_name .= ' grey';
       }
+      $brand = $this->isBrand;
 
       $icon = id(new PHUIIconView())
         ->addClass('phui-list-item-icon')
-        ->setIcon($icon_name);
+        ->setIcon($icon_name, null, $brand);
     }
 
     if ($this->profileImage) {

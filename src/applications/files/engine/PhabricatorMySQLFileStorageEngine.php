@@ -36,7 +36,6 @@ final class PhabricatorMySQLFileStorageEngine
     return true;
   }
 
-
   public function getFilesizeLimit() {
     return PhabricatorEnv::getEnvConfig('storage.mysql-engine.max-size');
   }

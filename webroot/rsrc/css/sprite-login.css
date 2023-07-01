@@ -27,72 +27,76 @@ only screen and (min-resolution: 1.5dppx) {
   background-position: -29px 0px;
 }
 
-.login-Bitbucket {
+.login-BNet {
   background-position: -58px 0px;
 }
 
-.login-Discord {
+.login-Bitbucket {
   background-position: -87px 0px;
 }
 
-.login-Disqus {
+.login-Discord {
   background-position: -116px 0px;
 }
 
-.login-Facebook {
+.login-Disqus {
   background-position: 0px -29px;
 }
 
-.login-Generic {
+.login-Facebook {
   background-position: -29px -29px;
 }
 
-.login-Github {
+.login-Generic {
   background-position: -58px -29px;
 }
 
-.login-Google {
+.login-Github {
   background-position: -87px -29px;
 }
 
-.login-HTTP {
+.login-Google {
   background-position: -116px -29px;
 }
 
-.login-Jira {
+.login-HTTP {
   background-position: 0px -58px;
 }
 
-.login-LDAP {
+.login-Jira {
   background-position: -29px -58px;
 }
 
-.login-MediaWiki {
+.login-LDAP {
   background-position: -58px -58px;
 }
 
-.login-PayPal {
+.login-MediaWiki {
   background-position: -87px -58px;
 }
 
-.login-Phabricator {
+.login-PayPal {
   background-position: -116px -58px;
 }
 
-.login-Slack {
+.login-Phabricator {
   background-position: 0px -87px;
 }
 
-.login-Steam {
+.login-Slack {
   background-position: -29px -87px;
 }
 
-.login-Stripe {
+.login-Steam {
   background-position: -58px -87px;
 }
 
-.login-TestPayment {
+.login-Stripe {
   background-position: -87px -87px;
+}
+
+.login-TestPayment {
+  background-position: -116px -87px;
 }
 
 .login-TwitchTV {

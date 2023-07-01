@@ -29,6 +29,14 @@ final class PhabricatorLocalDiskFileStorageEngine
     return (bool)strlen($path);
   }
 
+  public function hasFilesizeLimit() {
+    return (bool)PhabricatorEnv::getEnvConfig('storage.local-disk.limit-enabled');
+  }
+
+  public function getFilesizeLimit() {
+    return PhabricatorEnv::getEnvConfig('storage.local-disk.max-size');
+  }
+
 
 /* -(  Managing File Data  )------------------------------------------------- */
 

@@ -53,6 +53,7 @@ final class FuelHandleListItemView
       $icon_image = $handle->getImageURI();
       if (!$icon_image) {
         $icon_icon = $handle->getIcon();
+        $icon_brand = $handle->getIconBrand();
         $icon_color = $handle->getIconColor();
       }
     }
@@ -71,7 +72,7 @@ final class FuelHandleListItemView
       }
 
       if ($icon_icon !== null) {
-        $view->setIcon($icon_icon);
+        $view->setIcon($icon_icon, null, $icon_brand);
       }
 
       if ($icon_color !== null) {

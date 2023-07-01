@@ -11,6 +11,11 @@
       "rule": ".login-Asana",
       "hash": "cfc35b62afb103c5d484a715071e3cc3"
     },
+    "login-BNet": {
+      "name": "login-BNet",
+      "rule": ".login-BNet",
+      "hash": "552500752b5d8fd44ea6ba6256c90342"
+    },
     "login-Bitbucket": {
       "name": "login-Bitbucket",
       "rule": ".login-Bitbucket",

@@ -23,7 +23,7 @@ final class PhabricatorFilesApplication extends PhabricatorApplication {
   }
 
   public function getFlavorText() {
-    return pht('Blob store for Pokemon pictures.');
+    return pht('Blob store for neko pictures.');
   }
 
   public function getApplicationGroup() {

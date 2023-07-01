@@ -4,7 +4,14 @@
  * Authentication adapter for Discord OAuth2.
  */
 final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
-  
+
+  private $isAdmin = false;
+  private $isStaff = false;
+  private $isMod = false;
+  private $isLeader = false;
+  private $userSince;
+  private $username;
+
   public function getAdapterType() {
     return 'discord';
   }
@@ -19,10 +26,32 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountEmail() {
-    $user = $this->getOAuthAccountData('email');
+    $email = $this->getOAuthAccountData('email');
     $verified = $this->getOAuthAccountData('verified');
     if ($verified) {
-      return $user;
+      if (PhabricatorEnv::getEnvConfig('discord.oauth2.bot.linked_roles')) {
+        $this->PushAccountMetadata($email);
+      }
+      if (PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add')) {
+        if ($this->isAdmin) {
+          $guilds = PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add.admin_guilds');
+          if ($guilds != null) {
+            foreach($guilds as $guild) {
+              $this->addToDiscordGuild($guild);
+            }
+          }
+        }
+        else
+        {
+          $guilds = PhabricatorEnv::getEnvConfig('discord.oauth2.bot.guild_auto_add.user_guilds');
+          if ($guilds != null) {
+            foreach($guilds as $guild) {
+              $this->addToDiscordGuild($guild);
+            }
+          }
+        }
+      }
+      return $email;
     }
     else {
       return null;
@@ -30,7 +59,12 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountName() {
-    $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
+    $user = "";
+    if ($this->getOAuthAccountData('discriminator') == "0") {
+      $user = $this->getOAuthAccountData('username');
+    } else {
+      $user = "{$this->getOAuthAccountData('username')}#{$this->getOAuthAccountData('discriminator')}";
+    }
     return $user;
   }
 
@@ -41,7 +75,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.gif";
     }
     else {
-      $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.png"; 
+      $avatar = "https://cdn.discordapp.com/avatars/{$user_id}/{$avatar}.png";
     }
     return $avatar;
   }
@@ -55,7 +89,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
   }
 
   public function getAccountRealName() {
-    return $this->getOAuthAccountData('name');
+    return $this->getOAuthAccountData('global_name');
   }
 
   protected function getAuthenticateBaseURI() {
@@ -74,6 +108,7 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
       'connections',
       'guilds.join',
       'guilds.members.read',
+      'role_connections.write',
     );
 
     return implode(' ', $scopes);
@@ -94,9 +129,89 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
 
   protected function loadOAuthAccountData() {
     return id(new AITSYSDiscordFuture())
-      ->setAccessToken($this->getAccessToken())
+      ->setAccessToken('Bearer '.$this->getAccessToken())
       ->setRawDiscordQuery('users/@me')
       ->resolve();
+  }
+
+  public function getPhabricatorAccountUsername(string $email) {
+    try {
+      $fakeViewer = PhabricatorUser::getOmnipotentUser();
+      $res = id(new PhabricatorUsersQuery())
+      ->setViewer($fakeViewer)
+      ->withEmails(array($email,))
+      ->executeOne();
+
+      if ($res == null)
+      {
+        return null;
+      }
+      $this->getAndParseCustomFields($res, $fakeViewer);
+      $created = $res->getDateCreated();
+      $datetime = new DateTime(phabricator_datetime($created, $fakeViewer));
+      $this->userSince = $datetime->format(DateTime::ATOM);
+      $this->isAdmin = $res->getIsAdmin();
+      $this->username = $res->getUsername();
+      return $this->username;
+    }
+    catch (Exception $ex) {
+      return null;
+    }
+  }
+
+  public function getAndParseCustomFields(PhabricatorUser $user, PhabricatorUser $fakeViewer) {
+    $field_list = PhabricatorCustomField::getObjectFields(
+      $user,
+      PhabricatorCustomField::ROLE_VIEW);
+    $field_list->setViewer($fakeViewer);
+    $field_list->readFieldsFromStorage($user);
+    $custom_field_map = array();
+    foreach ($field_list->getFields() as $custom_field) {
+      if (strpos($custom_field->getFieldKey(), "aitsys") === false || strpos($custom_field->getFieldKey(), "div") !== false)
+      {
+        continue;
+      }
+      $custom_field_key = $custom_field->getFieldKey();
+      $custom_field_value = $custom_field->getValueForStorage();
+      $custom_field_map[$custom_field_key] = $custom_field_value;
+    }
+
+    $this->isStaff = (bool)$custom_field_map["std:user:aitsys:is_staff"];
+    $this->isMod = (bool)$custom_field_map["std:user:aitsys:is_moderator"];
+    $this->isLeader = (bool)$custom_field_map["std:user:aitsys:is_leader"];
+  }
+
+  public function PushAccountMetadata(string $email) {
+    $username = $this->getPhabricatorAccountUsername($email);
+    if ($username != null) {
+        $metadata = phutil_json_encode($this->generateMetadata($username));
+        $url = 'users/@me/applications/'.$this->getClientID().'/role-connection';
+        try {
+          id(new AITSYSDiscordFuture())
+            ->setMethod('PUT')
+            ->setIsJson(true)
+            ->setAccessToken('Bearer '.$this->getAccessToken())
+            ->setRawDiscordQuery($url)
+            ->setJson($metadata)
+            ->resolve();
+        } catch (Exception $ex) {
+          phlog($ex);
+        }
+    }
+  }
+
+  public function generateMetadata(string $username) {
+    return array(
+      'platform_name' => 'AITSYS',
+      'platform_username' => $username,
+      'metadata' => array(
+        'admin' => (int)$this->isAdmin,
+        'user_since' => $this->userSince,
+        '1_is_staff' => (int)$this->isStaff,
+        '2_is_mod' => (int)$this->isMod,
+        '3_is_leader' => (int)$this->isLeader,
+      )
+    );
   }
 
   public function supportsTokenRefresh() {
@@ -107,6 +222,25 @@ final class AITSYSDiscordAdapter extends PhutilOAuthAuthAdapter {
     return array(
       'grant_type' => 'refresh_token',
     );
+  }
+
+  public function addToDiscordGuild(string $guild) {
+    try {
+      $url = '/guilds/'.$guild.'/members/'.$this->getAccountID();
+      $metadata = phutil_json_encode(array(
+        'access_token' => $this->getAccessToken(),
+      ));
+      $token = PhabricatorEnv::getEnvConfig('discord.bot.token');
+      id(new AITSYSDiscordFuture())
+        ->setMethod('PUT')
+        ->setIsJson(true)
+        ->setAccessToken('Bot '.$token)
+        ->setRawDiscordQuery($url)
+        ->setJson($metadata)
+        ->resolve();
+    } catch (Exception $ex) {
+      phlog($ex);
+    }
   }
 
 }

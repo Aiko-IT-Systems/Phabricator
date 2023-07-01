@@ -89,7 +89,7 @@ final class PHUICrumbView extends AphrontView {
     if ($this->icon) {
       $classes[] = 'phui-crumb-has-icon';
       $icon = id(new PHUIIconView())
-        ->setIcon($this->icon, $this->isBrand);
+        ->setIcon($this->icon, null, $this->isBrand);
     }
 
     // Surround the crumb name with spaces so that double clicking it only

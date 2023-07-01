@@ -34,7 +34,8 @@ final class PhabricatorApplicationDatasource
         continue;
       }
       $name = $application->getName().' '.$application->getShortDescription();
-      $img = 'phui-font-fa phui-icon-view fa-solid fa-brands'.$application->getIcon();
+      $branding = $application->isBrandIcon() ? 'fa-brands' : 'fa-solid';
+      $img = 'phui-font-fa phui-icon-view '.$branding.' '.$application->getIcon();
       $results[] = id(new PhabricatorTypeaheadResult())
         ->setName($name)
         ->setURI($uri)
@@ -44,7 +45,7 @@ final class PhabricatorApplicationDatasource
         ->setDisplayType($application->getShortDescription())
         ->setPriorityType('apps')
         ->setImageSprite('phabricator-search-icon '.$img)
-        ->setIcon($application->getIcon())
+        ->setIcon($application->getIcon(), $application->isBrandIcon())
         ->addAttribute($application->getShortDescription());
     }
 

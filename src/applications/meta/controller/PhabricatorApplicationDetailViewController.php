@@ -30,7 +30,7 @@ final class PhabricatorApplicationDetailViewController
       ->setHeader($title)
       ->setUser($viewer)
       ->setPolicyObject($selected)
-      ->setHeaderIcon($selected->getIcon());
+      ->setHeaderIcon($selected->getIcon(), $selected->isBrandIcon());
 
     if ($selected->isInstalled()) {
       $header->setStatus('fa-check', 'bluegrey', pht('Installed'));
