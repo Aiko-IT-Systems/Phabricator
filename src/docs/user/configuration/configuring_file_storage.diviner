@@ -153,6 +153,10 @@ To configure file storage on the local disk, set:
 
   - `storage.local-disk.path`: Set to some writable directory on local disk.
     Make that directory.
+  - `storage.local-disk.limit-enabled`: Enable the filesize limit for the local disk.
+    Useful when using CloudFlare as proxy.
+  - `storage.local-disk.max-size`: Change the filesize limit, in bytes.
+    Defaulting to 100 MB.
 
 Engine: Amazon S3
 =================

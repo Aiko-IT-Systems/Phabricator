@@ -4,4 +4,8 @@
     },
     "search.useParentIgnoreFiles": true,
     "search.useGlobalIgnoreFiles": true,
+    "liveServer.settings.multiRootWorkspaceName": "Phabricator",
+    "liveServer.settings.useWebExt": true,
+    "phpserver.relativePath": "./webroot",
+    "cSpell.enabled": false,
 }

@@ -11,6 +11,7 @@ abstract class PhutilOAuthAuthAdapter extends PhutilAuthAdapter {
   private $scope;
   private $state;
   private $code;
+  private $header;
 
   private $accessTokenData;
   private $oauthAccountData;
@@ -104,6 +105,19 @@ abstract class PhutilOAuthAuthAdapter extends PhutilAuthAdapter {
     return $this->clientID;
   }
 
+  public function getAuthHeader() {
+    return $this->header;
+  }
+
+  public function setAuthHeader($header) {
+    $this->header = $header;
+    return $this;
+  }
+
+  public function useBasicAuthHeader() {
+    return false;
+  }
+
   public function getAccessToken() {
     return $this->getAccessTokenData('access_token');
   }
@@ -170,6 +184,11 @@ abstract class PhutilOAuthAuthAdapter extends PhutilAuthAdapter {
 
     $future = new HTTPSFuture($uri, $query_data);
     $future->setMethod('POST');
+    if($this->useBasicAuthHeader()) {
+      $enc = base64_encode($this->getClientID().':'.$this->getClientSecret());
+      $future->addHeader('Authorization', 'Basic '.$enc);
+      $future->addHeader('Content-Type ', 'application/x-www-form-urlencoded  ');
+    }
     list($body) = $future->resolvex();
 
     $data = $this->readAccessTokenResponse($body);

@@ -273,6 +273,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     require_celerity_resource('phabricator-standard-page-view');
     require_celerity_resource('conpherence-durable-column-view');
     require_celerity_resource('font-lato');
+    require_celerity_resource('font-gg-sans');
 
     Javelin::initBehavior('workflow', array());
 
@@ -328,6 +329,7 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
     }
 
     Javelin::initBehavior('aphront-form-disable-on-submit');
+    Javelin::initBehavior('aphront-form-file-validation');
     Javelin::initBehavior('toggle-class', array());
     Javelin::initBehavior('history-install');
     Javelin::initBehavior('phabricator-gesture');

@@ -22,6 +22,14 @@ final class DiscordAntiRaidApplication extends DiscordApplication {
     return false;
   }
 
+  public function isLaunchable() {
+    return true;
+  }
+
+  public function canUninstall() {
+    return true;
+  }
+
   public function getFlavorText() {
     return pht('Anti-Raid Security for Discord.');
   }

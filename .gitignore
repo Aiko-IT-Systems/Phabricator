@@ -40,3 +40,7 @@
 # Places for users to add custom resources.
 /resources/cows/custom/*
 /resources/figlet/custom/*
+
+# Configs
+/.arcconfig
+.arcconfig

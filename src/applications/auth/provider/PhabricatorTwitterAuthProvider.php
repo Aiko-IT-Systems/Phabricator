@@ -1,27 +1,29 @@
 <?php
 
 final class PhabricatorTwitterAuthProvider
-  extends PhabricatorOAuth1AuthProvider {
+  extends PhabricatorOAuth2AuthProvider {
 
   public function getProviderName() {
     return pht('Twitter');
   }
 
   protected function getProviderConfigurationHelp() {
-    $login_uri = PhabricatorEnv::getURI($this->getLoginURI());
+    $uri = PhabricatorEnv::getProductionURI('/auth/login/twitter:twitter.com/');
+    $callback_uri = PhabricatorEnv::getURI($this->getLoginURI());
 
     return pht(
       "To configure Twitter OAuth, create a new application here:".
       "\n\n".
-      "https://dev.twitter.com/apps".
+      "https://developer.twitter.com/en/portal/apps/new".
       "\n\n".
-      "When creating your application, use these settings:".
+      "When creating your application, set up **User authentication settings**, use these settings:".
       "\n\n".
       "  - **Callback URL:** Set this to: `%s`".
       "\n\n".
-      "After completing configuration, copy the **Consumer Key** and ".
-      "**Consumer Secret** to the fields above.",
-      $login_uri);
+      "After completing configuration, copy the **Client ID** and ".
+      "**Client Secret** to the fields above.",
+      $uri,
+      $callback_uri);
   }
 
   protected function newOAuthAdapter() {
