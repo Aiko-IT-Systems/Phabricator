@@ -9,8 +9,9 @@ final class PhabricatorRobotsResourceController
     // See T13636. Prevent indexing of any content on resource domains.
 
     $out[] = 'User-Agent: *';
-    $out[] = 'Allow: /';
-    $out[] = 'Crawl-delay: 1';
+    //$out[] = 'Allow: /';
+    //$out[] = 'Crawl-delay: 1';
+    $out[] = 'Disallow: /';
 
     return $out;
   }
