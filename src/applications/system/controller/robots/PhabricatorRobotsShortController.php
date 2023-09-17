@@ -9,9 +9,9 @@ final class PhabricatorRobotsShortController
     // See T13636. Prevent indexing of any content on short domains.
 
     $out[] = 'User-Agent: *';
-    //$out[] = 'Allow: /';
-    //$out[] = 'Crawl-delay: 1';
-    $out[] = 'Disallow: /';
+    $out[] = 'Allow: /';
+    $out[] = 'Crawl-delay: 120';
+    //$out[] = 'Disallow: /';
 
     return $out;
   }

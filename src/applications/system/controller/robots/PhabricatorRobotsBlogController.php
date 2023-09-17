@@ -9,9 +9,8 @@ final class PhabricatorRobotsBlogController
     // Allow everything on blog domains to be indexed.
 
     $out[] = 'User-Agent: *';
-    $out[] = 'Disallow: /';
-    
-    //$out[] = 'Crawl-delay: 1';
+    $out[] = 'Allow: /';
+    $out[] = 'Crawl-delay: 120';
 
     return $out;
   }
