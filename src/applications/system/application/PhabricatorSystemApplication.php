@@ -26,6 +26,7 @@ final class PhabricatorSystemApplication extends PhabricatorApplication {
       '/debug/' => 'PhabricatorDebugController',
       '/favicon.ico' => 'PhabricatorFaviconController',
       '/robots.txt' => 'PhabricatorRobotsPlatformController',
+      '/riot.txt' => 'PhabricatorRiotPlatformController',
       '/services/' => array(
         'encoding/' => 'PhabricatorSystemSelectEncodingController',
         'highlight/' => 'PhabricatorSystemSelectHighlightController',

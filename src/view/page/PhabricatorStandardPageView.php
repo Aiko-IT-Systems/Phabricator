@@ -494,6 +494,12 @@ final class PhabricatorStandardPageView extends PhabricatorBarePageView
         'property' => 'twitter:domain',
         'content' => parent::getRequest()->getHost(),
       ));
+    $masta = phutil_tag(
+      'link',
+      array(
+        'value' => 'https://uwu.social/@lulalaby',
+        'rel' => 'me',
+    ));
 
     $image = null;
     $imageAlt = null;
@@ -692,6 +698,7 @@ og:type article
       $twDescription,
       $twImage,
       $twImageAlt,
+      $masta,
       $response->renderSingleResource('javelin-magical-init', 'phabricator'));
   }
 
